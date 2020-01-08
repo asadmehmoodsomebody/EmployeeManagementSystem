@@ -1,0 +1,168 @@
+c:\users\khan gul\documents\visual studio 2015\Projects\website emp\website emp\bin\roslyn\csc.exe
+c:\users\khan gul\documents\visual studio 2015\Projects\website emp\website emp\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+c:\users\khan gul\documents\visual studio 2015\Projects\website emp\website emp\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+c:\users\khan gul\documents\visual studio 2015\Projects\website emp\website emp\bin\roslyn\Microsoft.CodeAnalysis.dll
+c:\users\khan gul\documents\visual studio 2015\Projects\website emp\website emp\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+c:\users\khan gul\documents\visual studio 2015\Projects\website emp\website emp\bin\roslyn\Microsoft.CSharp.Core.targets
+c:\users\khan gul\documents\visual studio 2015\Projects\website emp\website emp\bin\roslyn\Microsoft.VisualBasic.Core.targets
+c:\users\khan gul\documents\visual studio 2015\Projects\website emp\website emp\bin\roslyn\System.Collections.Immutable.dll
+c:\users\khan gul\documents\visual studio 2015\Projects\website emp\website emp\bin\roslyn\System.Reflection.Metadata.dll
+c:\users\khan gul\documents\visual studio 2015\Projects\website emp\website emp\bin\roslyn\vbc.exe
+c:\users\khan gul\documents\visual studio 2015\Projects\website emp\website emp\bin\roslyn\VBCSCompiler.exe
+c:\users\khan gul\documents\visual studio 2015\Projects\website emp\website emp\bin\roslyn\VBCSCompiler.exe.config
+c:\users\khan gul\documents\visual studio 2015\Projects\website emp\website emp\bin\website emp.dll.config
+c:\users\khan gul\documents\visual studio 2015\Projects\website emp\website emp\bin\website emp.dll
+c:\users\khan gul\documents\visual studio 2015\Projects\website emp\website emp\bin\website emp.pdb
+c:\users\khan gul\documents\visual studio 2015\Projects\website emp\website emp\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+c:\users\khan gul\documents\visual studio 2015\Projects\website emp\website emp\bin\Microsoft.Web.Infrastructure.dll
+c:\users\khan gul\documents\visual studio 2015\Projects\website emp\website emp\bin\System.Web.Helpers.dll
+c:\users\khan gul\documents\visual studio 2015\Projects\website emp\website emp\bin\System.Web.Mvc.dll
+c:\users\khan gul\documents\visual studio 2015\Projects\website emp\website emp\bin\System.Web.Razor.dll
+c:\users\khan gul\documents\visual studio 2015\Projects\website emp\website emp\bin\System.Web.Webpages.Deployment.dll
+c:\users\khan gul\documents\visual studio 2015\Projects\website emp\website emp\bin\System.Web.Webpages.dll
+c:\users\khan gul\documents\visual studio 2015\Projects\website emp\website emp\bin\System.Web.Webpages.Razor.dll
+c:\users\khan gul\documents\visual studio 2015\Projects\website emp\website emp\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+c:\users\khan gul\documents\visual studio 2015\Projects\website emp\website emp\bin\System.Web.Razor.xml
+c:\users\khan gul\documents\visual studio 2015\Projects\website emp\website emp\bin\System.Web.Webpages.xml
+c:\users\khan gul\documents\visual studio 2015\Projects\website emp\website emp\bin\System.Web.Webpages.Deployment.xml
+c:\users\khan gul\documents\visual studio 2015\Projects\website emp\website emp\bin\System.Web.Webpages.Razor.xml
+c:\users\khan gul\documents\visual studio 2015\Projects\website emp\website emp\bin\System.Web.Helpers.xml
+c:\users\khan gul\documents\visual studio 2015\Projects\website emp\website emp\bin\System.Web.Mvc.xml
+c:\users\khan gul\documents\visual studio 2015\Projects\website emp\website emp\obj\Debug\website emp.csprojResolveAssemblyReference.cache
+c:\users\khan gul\documents\visual studio 2015\Projects\website emp\website emp\obj\Debug\website emp.dll
+c:\users\khan gul\documents\visual studio 2015\Projects\website emp\website emp\obj\Debug\website emp.pdb
+C:\Users\KHAN GUL\documents\visual studio 2015\Projects\website emp\website emp\bin\EntityFramework.dll
+C:\Users\KHAN GUL\documents\visual studio 2015\Projects\website emp\website emp\bin\EntityFramework.SqlServer.dll
+C:\Users\KHAN GUL\documents\visual studio 2015\Projects\website emp\website emp\bin\EntityFramework.xml
+C:\Users\KHAN GUL\documents\visual studio 2015\Projects\website emp\website emp\bin\EntityFramework.SqlServer.xml
+C:\Users\KHAN GUL\documents\visual studio 2015\Projects\website emp\website emp\bin\ColorMine.dll
+C:\Users\KHAN GUL\documents\visual studio 2015\Projects\website emp\website emp\bin\ImageColorDefine.dll
+C:\Users\KHAN GUL\documents\visual studio 2015\Projects\website emp\website emp\bin\TCD.Mathematics.dll
+C:\Users\KHAN GUL\documents\visual studio 2015\Projects\website emp\website emp\obj\Debug\website_emp.Migrations.initial.resources
+C:\Users\KHAN GUL\documents\visual studio 2015\Projects\website emp\website emp\obj\Debug\website emp.csproj.GenerateResource.Cache
+C:\Users\Asad Mehmood\Desktop\website emp\website emp\bin\roslyn\csc.exe
+C:\Users\Asad Mehmood\Desktop\website emp\website emp\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\Users\Asad Mehmood\Desktop\website emp\website emp\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\Asad Mehmood\Desktop\website emp\website emp\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\Users\Asad Mehmood\Desktop\website emp\website emp\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\Users\Asad Mehmood\Desktop\website emp\website emp\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\Users\Asad Mehmood\Desktop\website emp\website emp\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\Users\Asad Mehmood\Desktop\website emp\website emp\bin\roslyn\System.Collections.Immutable.dll
+C:\Users\Asad Mehmood\Desktop\website emp\website emp\bin\roslyn\System.Reflection.Metadata.dll
+C:\Users\Asad Mehmood\Desktop\website emp\website emp\bin\roslyn\vbc.exe
+C:\Users\Asad Mehmood\Desktop\website emp\website emp\bin\roslyn\VBCSCompiler.exe
+C:\Users\Asad Mehmood\Desktop\website emp\website emp\bin\roslyn\VBCSCompiler.exe.config
+C:\Users\Asad Mehmood\Desktop\website emp\website emp\bin\website emp.dll.config
+C:\Users\Asad Mehmood\Desktop\website emp\website emp\bin\website emp.dll
+C:\Users\Asad Mehmood\Desktop\website emp\website emp\bin\website emp.pdb
+C:\Users\Asad Mehmood\Desktop\website emp\website emp\bin\ColorMine.dll
+C:\Users\Asad Mehmood\Desktop\website emp\website emp\bin\EntityFramework.dll
+C:\Users\Asad Mehmood\Desktop\website emp\website emp\bin\EntityFramework.SqlServer.dll
+C:\Users\Asad Mehmood\Desktop\website emp\website emp\bin\ImageColorDefine.dll
+C:\Users\Asad Mehmood\Desktop\website emp\website emp\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Users\Asad Mehmood\Desktop\website emp\website emp\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\Asad Mehmood\Desktop\website emp\website emp\bin\System.Web.Helpers.dll
+C:\Users\Asad Mehmood\Desktop\website emp\website emp\bin\System.Web.Mvc.dll
+C:\Users\Asad Mehmood\Desktop\website emp\website emp\bin\System.Web.Razor.dll
+C:\Users\Asad Mehmood\Desktop\website emp\website emp\bin\System.Web.Webpages.Deployment.dll
+C:\Users\Asad Mehmood\Desktop\website emp\website emp\bin\System.Web.Webpages.dll
+C:\Users\Asad Mehmood\Desktop\website emp\website emp\bin\System.Web.Webpages.Razor.dll
+C:\Users\Asad Mehmood\Desktop\website emp\website emp\bin\TCD.Mathematics.dll
+C:\Users\Asad Mehmood\Desktop\website emp\website emp\bin\EntityFramework.xml
+C:\Users\Asad Mehmood\Desktop\website emp\website emp\bin\EntityFramework.SqlServer.xml
+C:\Users\Asad Mehmood\Desktop\website emp\website emp\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\Asad Mehmood\Desktop\website emp\website emp\bin\System.Web.Razor.xml
+C:\Users\Asad Mehmood\Desktop\website emp\website emp\bin\System.Web.Webpages.xml
+C:\Users\Asad Mehmood\Desktop\website emp\website emp\bin\System.Web.Webpages.Deployment.xml
+C:\Users\Asad Mehmood\Desktop\website emp\website emp\bin\System.Web.Webpages.Razor.xml
+C:\Users\Asad Mehmood\Desktop\website emp\website emp\bin\System.Web.Helpers.xml
+C:\Users\Asad Mehmood\Desktop\website emp\website emp\bin\System.Web.Mvc.xml
+C:\Users\Asad Mehmood\Desktop\website emp\website emp\obj\Debug\website emp.csprojResolveAssemblyReference.cache
+C:\Users\Asad Mehmood\Desktop\website emp\website emp\obj\Debug\website emp.dll
+C:\Users\Asad Mehmood\Desktop\website emp\website emp\obj\Debug\website emp.pdb
+E:\website emp\website emp\bin\roslyn\csc.exe
+E:\website emp\website emp\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+E:\website emp\website emp\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+E:\website emp\website emp\bin\roslyn\Microsoft.CodeAnalysis.dll
+E:\website emp\website emp\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+E:\website emp\website emp\bin\roslyn\Microsoft.CSharp.Core.targets
+E:\website emp\website emp\bin\roslyn\Microsoft.VisualBasic.Core.targets
+E:\website emp\website emp\bin\roslyn\System.Collections.Immutable.dll
+E:\website emp\website emp\bin\roslyn\System.Reflection.Metadata.dll
+E:\website emp\website emp\bin\roslyn\vbc.exe
+E:\website emp\website emp\bin\roslyn\VBCSCompiler.exe
+E:\website emp\website emp\bin\roslyn\VBCSCompiler.exe.config
+E:\website emp\website emp\bin\website emp.dll.config
+E:\website emp\website emp\bin\website emp.dll
+E:\website emp\website emp\bin\website emp.pdb
+E:\website emp\website emp\bin\ColorMine.dll
+E:\website emp\website emp\bin\EntityFramework.dll
+E:\website emp\website emp\bin\EntityFramework.SqlServer.dll
+E:\website emp\website emp\bin\ImageColorDefine.dll
+E:\website emp\website emp\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+E:\website emp\website emp\bin\Microsoft.Web.Infrastructure.dll
+E:\website emp\website emp\bin\System.Web.Helpers.dll
+E:\website emp\website emp\bin\System.Web.Mvc.dll
+E:\website emp\website emp\bin\System.Web.Razor.dll
+E:\website emp\website emp\bin\System.Web.Webpages.Deployment.dll
+E:\website emp\website emp\bin\System.Web.Webpages.dll
+E:\website emp\website emp\bin\System.Web.Webpages.Razor.dll
+E:\website emp\website emp\bin\TCD.Mathematics.dll
+E:\website emp\website emp\bin\EntityFramework.xml
+E:\website emp\website emp\bin\EntityFramework.SqlServer.xml
+E:\website emp\website emp\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+E:\website emp\website emp\bin\System.Web.Razor.xml
+E:\website emp\website emp\bin\System.Web.Webpages.xml
+E:\website emp\website emp\bin\System.Web.Webpages.Deployment.xml
+E:\website emp\website emp\bin\System.Web.Webpages.Razor.xml
+E:\website emp\website emp\bin\System.Web.Helpers.xml
+E:\website emp\website emp\bin\System.Web.Mvc.xml
+E:\website emp\website emp\obj\Debug\website emp.csprojResolveAssemblyReference.cache
+E:\website emp\website emp\obj\Debug\website emp.dll
+E:\website emp\website emp\obj\Debug\website emp.pdb
+E:\website emp\website emp\obj\Debug\website_emp.Migrations.initialcreate.resources
+E:\website emp\website emp\obj\Debug\website emp.csproj.GenerateResource.Cache
+C:\Users\Asad Mehmood\Desktop\website emp\website emp\obj\Debug\website_emp.Migrations.initialcreate.resources
+C:\Users\Asad Mehmood\Desktop\website emp\website emp\obj\Debug\website emp.csproj.GenerateResource.Cache
+D:\website emp\website emp\bin\roslyn\csc.exe
+D:\website emp\website emp\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+D:\website emp\website emp\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+D:\website emp\website emp\bin\roslyn\Microsoft.CodeAnalysis.dll
+D:\website emp\website emp\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+D:\website emp\website emp\bin\roslyn\Microsoft.CSharp.Core.targets
+D:\website emp\website emp\bin\roslyn\Microsoft.VisualBasic.Core.targets
+D:\website emp\website emp\bin\roslyn\System.Collections.Immutable.dll
+D:\website emp\website emp\bin\roslyn\System.Reflection.Metadata.dll
+D:\website emp\website emp\bin\roslyn\vbc.exe
+D:\website emp\website emp\bin\roslyn\VBCSCompiler.exe
+D:\website emp\website emp\bin\roslyn\VBCSCompiler.exe.config
+D:\website emp\website emp\bin\website emp.dll.config
+D:\website emp\website emp\bin\website emp.dll
+D:\website emp\website emp\bin\website emp.pdb
+D:\website emp\website emp\bin\ColorMine.dll
+D:\website emp\website emp\bin\EntityFramework.dll
+D:\website emp\website emp\bin\EntityFramework.SqlServer.dll
+D:\website emp\website emp\bin\ImageColorDefine.dll
+D:\website emp\website emp\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+D:\website emp\website emp\bin\Microsoft.Web.Infrastructure.dll
+D:\website emp\website emp\bin\System.Web.Helpers.dll
+D:\website emp\website emp\bin\System.Web.Mvc.dll
+D:\website emp\website emp\bin\System.Web.Razor.dll
+D:\website emp\website emp\bin\System.Web.Webpages.Deployment.dll
+D:\website emp\website emp\bin\System.Web.Webpages.dll
+D:\website emp\website emp\bin\System.Web.Webpages.Razor.dll
+D:\website emp\website emp\bin\TCD.Mathematics.dll
+D:\website emp\website emp\bin\EntityFramework.xml
+D:\website emp\website emp\bin\EntityFramework.SqlServer.xml
+D:\website emp\website emp\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+D:\website emp\website emp\bin\System.Web.Razor.xml
+D:\website emp\website emp\bin\System.Web.Webpages.xml
+D:\website emp\website emp\bin\System.Web.Webpages.Deployment.xml
+D:\website emp\website emp\bin\System.Web.Webpages.Razor.xml
+D:\website emp\website emp\bin\System.Web.Helpers.xml
+D:\website emp\website emp\bin\System.Web.Mvc.xml
+D:\website emp\website emp\obj\Debug\website emp.csprojResolveAssemblyReference.cache
+D:\website emp\website emp\obj\Debug\website_emp.Migrations.initialcreate.resources
+D:\website emp\website emp\obj\Debug\website emp.csproj.GenerateResource.Cache
+D:\website emp\website emp\obj\Debug\website emp.dll
+D:\website emp\website emp\obj\Debug\website emp.pdb

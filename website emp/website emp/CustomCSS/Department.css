@@ -1,0 +1,112 @@
+.Departments{
+    background: white;
+    height: 100%;
+    min-height: 505px;
+    max-height: 505px;
+    overflow-y: auto;
+    box-shadow:0px 0px 7px 1px lightgrey;
+}
+.Departments-body{
+    max-height: 479px;
+    overflow-y:auto;
+}
+.add-roles{
+    background: white;
+    height: 25%;
+    min-height: 150px;
+    margin-bottom: 5px;
+    box-shadow:0px 0px 7px 1px lightgrey; 
+}
+.Department-list{
+    background: white;
+    height: 75%;
+    min-height: 350px;
+    overflow: hidden;
+    box-shadow:0px 0px 7px 1px lightgrey; 
+}
+.Department-list-tile{
+    padding: 2px 0px;
+    box-shadow:1px 1px 4px 1px lightgrey; 
+}
+.edit-icon {
+    background-image: url('../Images/edit.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    /* display: block; */
+    height: 16px;
+    width: 16px;
+    cursor: pointer;
+}
+.delete-icon {
+   
+    background-image: url('../Images/delete.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    /* display: block; */
+    height: 16px;
+    width: 16px;
+    cursor: pointer;
+}
+.Departments-list-row-right{
+    padding-right: 20px !important;
+}
+.Department-list-row-left{
+    padding-left: 10px !important;
+}
+.Department-list-row-title{
+    padding-right: 10px !important;
+}
+.c-roles-rights-button{
+    padding:2px .75em;
+    width: 100px;
+}
+.c-roles-rights-button:focus,.c-roles-rights-button:active{
+    box-shadow: none;
+}
+.add-role-input{
+    border: none;
+    border-bottom:1px solid lightgrey;
+    padding-left: 6px !important;
+}
+.add-role-input:focus{
+    box-shadow: none;
+}
+
+.Department-list-footer{
+    position: absolute;
+    bottom: 0px;
+    width: 100%;
+}
+
+@media only screen and (max-width:768px){
+    .Department-list{
+        background: white;
+        height: fit-content;
+        min-height: 26px;
+        max-height: 350px;
+        overflow: hidden;
+        box-shadow:0px 0px 7px 1px lightgrey; 
+    }
+    .Department-list-body{
+        height: fit-content;
+        max-height: 326px;
+        overflow-y: auto;
+    }
+    .Departments{
+        background: white;
+        height: fit-content;
+        min-height: 26px;
+        max-height: fit-content;
+        overflow-y: auto;
+    }
+    .Departments-body{
+        max-height: 479px;
+        overflow-y:auto;
+    }
+    .Department-list-footer{
+        position: static;
+        width: 100%;
+    }
+}

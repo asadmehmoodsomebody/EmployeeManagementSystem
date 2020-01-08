@@ -1,0 +1,99 @@
+﻿
+@{
+    ViewBag.Title = "MarkAttendance";
+}
+<link href="~/CustomCSS/table.css" rel="stylesheet" />
+<input type="hidden" id="GetActiveTab" value="#MarkAttendance" />
+<div class="row no-gutters">
+    <div class="col-12 col-md-6 col-xl-4 d-inline">
+        <input type="text" placeholder="Search Employee by Name" class="shadow-none   searchby_name_emp">
+        <p class="d-inline font-weight-bold ml-5">Deprtment</p>
+        <select class="d-inline shadow-none combobox">
+            <option>None</option>
+            <option>Mcs</option>
+            <option>BScs</option>
+        </select>
+    </div>
+    <div class="col-12 col-md-6 col-xl-4 no-gutters">
+        <button type="button" class="bg-info text-white shadow-none w-100 text-white btnsearch">
+            Search
+
+            <img class="searchicon" src="~/Images/searchicon with out back.png" />
+        </button>
+    </div>
+    <div class="col-12 col-md-6 col-xl-4">
+        <p class="show_all_employee">Show all Employee : 12345</p>
+    </div>
+</div>
+<div class="row no-gutters">
+    <div class="col-12 col-md-6 col-xl-12">
+        <table class="table border">
+            <tr class="bg-info text-white">
+                <th># No</th>
+                <th>Emp Name</th>
+                <th>User Name</th>
+                <th>Department</th>
+                <th>Attendane status</th>
+            </tr>
+            <tr>
+                <td>01</td>
+                <td>Ismial</td>
+                <td>Alisha 007</td>
+                <td>Administrator</td>
+                <td>
+                    <input type="checkbox"><p class="text-success d-inline ml-2">Present</p>
+                    <input type="checkbox" class="ml-2"><p class="text-danger d-inline ml-2">Absent</p>
+                </td>
+            </tr>
+            <tr>
+                <td>01</td>
+                <td>Ismial</td>
+                <td>Alisha 007</td>
+                <td>Administrator</td>
+                <td>
+                    <input type="checkbox"><p class="text-success d-inline ml-2">Present</p>
+                    <input type="checkbox" class="ml-2"><p class="text-danger d-inline ml-2">Absent</p>
+                </td>
+            </tr>
+            <tr>
+                <td>01</td>
+                <td>Ismial</td>
+                <td>Alisha 007</td>
+                <td>Administrator</td>
+                <td>
+                    <input type="checkbox"><p class="text-success d-inline ml-2">Present</p>
+                    <input type="checkbox" class="ml-2"><p class="text-danger d-inline ml-2">Absent</p>
+                </td>
+            </tr>
+            <tr>
+                <td>01</td>
+                <td>Ismial</td>
+                <td>Alisha 007</td>
+                <td>Administrator</td>
+                <td>
+                    <input type="checkbox"><p class="text-success d-inline ml-2">Present</p>
+                    <input type="checkbox" class="ml-2"><p class="text-danger d-inline  ml-2">Absent</p>
+                </td>
+            </tr>
+        </table>
+    </div>
+</div>
+<div class="row no-gutters">
+    <div class="col-2">
+        <p>Page 1 of 20</p>
+    </div>
+    <div class="col-5 ml-auto">
+        <ul class="pagination">
+            <li><a href="#">Previous</a></li>
+            <li><a href="#">1</a></li>
+            <li><a href="#">2</a></li>
+            <li><a href="#">3</a></li>
+            <li><a href="#">4</a></li>
+            <li><a href="#">5</a></li>
+            <li><a href="#">...</a></li>
+            <li><a href="#">Next</a></li>
+        </ul>
+    </div>
+</div>
+
+

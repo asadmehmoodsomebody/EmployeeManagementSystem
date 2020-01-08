@@ -1,0 +1,81 @@
+﻿@model website_emp.Models.user
+@{
+    Layout = null;
+}
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Login</title>
+
+    <script src="~/Content/login.js"></script>
+    <link href="~/CustomCSS/login.css" rel="stylesheet" />
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+    <!-- jQuery library -->
+    <script src="Emp_js/bootstrap.bundle.js.map"></script>
+    <!-- Latest compiled JavaScript -->
+    <script src="Emp_js/bootstrap.min.js"></script>
+</head>
+<body class="bodyimage">
+
+    <div class="container-fluid mb-4  mt-0 mt-sm-3">
+        <div class="row justify-content-center">
+            <div class="col-4 d-none d-md-block border-right transdiv">
+                <img class="backimg" src="~/Images/max_icon.png" />
+                <div class="centered text-info">
+                    <h3 class="text-center">Login Form</h3>
+                    <span>Employee management system is designed to simplify
+                     the process of record maintenance of employees in an
+                     organisation. It helps in managing the information of
+                     employees for HR functions. In general, employee
+                     management system is a part of a comprehensive
+                     Human Resource Management System.</span> 
+                  <br />
+                    <a href="@Url.Action("Index","Home")" class="btn btn-info ml-5">Reach Website As a Demo User</a>
+                    
+
+</div>
+               @* <img src="~/images/image1.png" class="d-block  m-auto  maxlogo">
+    <p class="logohint">
+        MaxRemid is web Development Company located
+        in Rawalpindi
+        <br>
+        MaxRemid is web Development Company located
+        in Rawalpindi
+        <br>
+        MaxRemid is web Development Company located
+        in Rawalpindi
+        <br>
+        MaxRemid is web Development Company located
+        in Rawalpindi
+        <br>
+        MaxRemid is web Development Company located
+        in Rawalpindi
+        <br>
+        me asad  and ismail are web developers here
+    </p>*@
+            </div>
+            <div class="col-12 col-md-4">
+                <img src="~/images/max_icon.png" class="d-block  m-auto  maxlogo">
+                <hr class="border mb-0 p-0 w-25 text-center shadow" />
+                <h1 class="text-center">Login</h1>
+                @using (Html.BeginForm())
+                {
+                <p class="textfield_upertext mb-2">UserName</p>
+                <input id="username" type="text" class="form-control rounded-0 shadow-none" name="username" placeholder="Enter username">
+                <br>
+                <p class="textfield_upertext mb-2">Password</p>
+                <input id="pass" type="password" class="form-control rounded-0 shadow-none" name="password" placeholder="Enter password">
+                <div class="text-danger">@if (ViewBag.msg != null){ @ViewBag.msg}</div>
+                <button type="submit" class="btnlogin form-control bg-info  text-white rounded-0 shadow-none">Login</button>
+                }
+                <div class="mt-2">
+                    <small>Not Registered</small>&nbsp;@Html.ActionLink("Signup", "Signup", "Home")
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

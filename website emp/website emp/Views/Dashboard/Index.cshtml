@@ -1,0 +1,71 @@
+﻿
+@{
+    ViewBag.Title = "dashboard";
+}
+<input id="GetGeneralTab" value="#Dashboard>.nav-link" type="hidden" />
+@*from here*@
+<link rel="stylesheet" href="~/CustomCSS/dashboard.css">
+<div class="row">
+    <div class="col-12 col-md-6 col-lg-3  bg-white  px-3  fourcards">
+        <div class="fourcard-wrapper bg-white">
+            <p class="text-success font-weight-bold mt-3 pl-3">Total Employee</p>
+
+            <span class="float-right mb-4 pr-3"><i class="fa fa-users"></i></span>
+            @if (ViewBag.AttendanceNumber != null)
+            {<p class="pl-3">@ViewBag.AttendanceNumber</p>}
+            else
+            {<p class="pl-3">0</p>}
+            <div class="clearfix"></div>
+        </div>
+    </div>
+    <div class="col-12 col-md-6 col-lg-3   px-3 bg-white  fourcards">
+        <div class="fourcard-wrapper bg-white">
+            <p class="text-success font-weight-bold mt-3 pl-3">Departments</p>
+
+            <span class="float-right mb-4 pr-3"><i class="fa fa-home"></i></span>
+            @if (ViewBag.DepartmentsNumber != null)
+            {<p class="pl-3">@ViewBag.DepartmentsNumber</p>}
+            else
+            {<p class="pl-3">0</p>}
+            <div class="clearfix"></div>
+        </div>
+    </div>
+    <div class="col-12 col-md-6 col-lg-3 bg-white  fourcards">
+        <div class="fourcard-wrapper bg-white">
+            <p class="text-success font-weight-bold mt-3 pl-3">Present</p>
+            <span class="float-right mb-4 pr-3"><i class="fa fa-user-check"></i></span>
+            <p class="pl-3">3</p>
+            <div class="clearfix"></div>
+        </div>
+    </div>
+    <div class="col-12 col-md-6 col-lg-3 bg-white   fourcards">
+        <div class="fourcard-wrapper bg-white">
+            <p class="text-success font-weight-bold mt-3 pl-3">Absent</p>
+            <span class="float-right mb-4 pr-3"><i class="fa fa-user-slash"></i></span>
+            <p class="pl-3">0</p>
+            <div class="clearfix"></div>
+        </div>
+    </div>
+</div>
+<div class="row no-gutters mt-3 bg-white h-100 w-100 today_attendance ">
+    <div class="col-12   col-md-6  col-xl-12  w-100   no-gutters">
+        <p class="text-success font-weight-bold mt-3">Today Attendance</p>
+    </div>
+    <div class="col-12 ">
+        <hr class="mb-0">
+        <p class="mb-0">No Data Avilable</p>
+    </div>
+</div>
+<div class="row no-gutters h-100 mb-2 mt-2 w-100">
+    <div class="col-12 col-md-6 col-lg-6 pr-1  twocards">
+        <div class="twocard-wrapper bg-white h-100">
+            <p class="text-success font-weight-bold mt-3">Notice Board</p>
+        </div>
+    </div>
+    <div class="col-12 col-md-6 pl-1 col-lg-6 twocards">
+        <div class="twocard-wrapper bg-white h-100">
+            <p class="text-success font-weight-bold mt-3">Extra Board</p>
+        </div>
+    </div>
+</div>
+

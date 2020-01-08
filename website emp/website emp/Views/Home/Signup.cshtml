@@ -1,0 +1,107 @@
+﻿@model website_emp.Models.user
+@{
+    Layout = null;
+}
+
+<input type="hidden" id="GetActiveTab" value="#Signup" />
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="utf-8">
+    <title>Sign Up</title>
+
+    <link href="~/CustomCSS/login.css" rel="stylesheet" />
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+    <!-- jQuery library -->
+   @* <script src="Emp_js/bootstrap.bundle.js.map"></script>*@
+    <!-- Latest compiled JavaScript -->
+    @*<script src="Emp_js/bootstrap.min.js"></script>*@
+</head>
+<body class="bodyimage">
+  
+    @if(ViewBag.errormsg != null)
+    {
+        @ViewBag.errormsg
+    }
+    <input type="hidden" id="key" value="@ViewBag.key" />
+
+    <div>@if (ViewBag.msg != null) { @ViewBag.msg }</div>
+    <div class="container-fluid mb-4  mt-0 mt-sm-3">
+        <div class="row justify-content-center">
+            <div class="col-4 d-none d-md-block border-right transdiv">
+                <img class="backimg" src="~/Images/max_icon.png" />
+                <div class="centered">
+                    <h3 class="text-center">Registration Form</h3>
+                    <span>
+                        Employee management system is designed to simplify
+                        the process of record maintenance of employees in an
+                        organisation. It helps in managing the information of
+                        employees for HR functions. In general, employee
+                        management system is a part of a comprehensive
+                        Human Resource Management System.
+                    </span>
+                    <p><button type="button" class="demolook">Demo Look to Website</button></p>
+                </div>
+            </div>
+            <div class="col-12 col-md-4">
+                @*<img src="~/images/max_icon.png" class="d-block  m-auto  maxlogo">*@
+                @*<hr class="w-50  mb-0 p-0 text-center border"  />*@
+                <h3 class="text-center">Registration</h3>
+                @using (Html.BeginForm()) { 
+                <p class="mb-1 font-weight-bold">User Name</p>
+                @Html.EditorFor(modelitem => modelitem.UserName,new { htmlAttributes = new { @class = "form-control required shadow-none rounded-0 bg-light", @required = true, @minlength = 4, @maxlength = 100, @invalid = "true" } })
+                <small class="text-danger d-none" id="UserNameError">user name already exist</small>
+                <p class="mb-1 font-weight-bold">Name</p>
+                @Html.EditorFor(modelitem => modelitem.Name, new { htmlAttributes = new { @class = "form-control required shadow-none rounded-0 bg-light", @required = true, @minlength = 4, @maxlength = 100, @invalid = "true" } })
+                <p class="mb-1 font-weight-bold">Email</p>
+                @Html.EditorFor(modelitem => modelitem.Email, new { htmlAttributes = new { @class = "form-control required shadow-none rounded-0 bg-light", @required = true, @minlength = 4, @maxlength = 100, @invalid = "true" } })
+                    <small class="text-danger d-none" id="EmailError">Email already exist or invalid email</small>
+                 <p class="mb-1 font-weight-bold">password</p>
+               @Html.EditorFor(modelitem => modelitem.Password, new { htmlAttributes = new { @class = "form-control required shadow-none rounded-0 bg-light", @required = true, @minlength = 4, @maxlength = 100, @invalid = "true" } })
+                <p class="mb-1 font-weight-bold">Confirm Password</p>
+                <input type="password" id="c_password" name="c_password" class = "form-control shadow-none rounded-0 bg-light" required />
+                <small class="text-danger d-none" id="PasswordError">Password doesnot match</small>
+                <label class="font-weight-bold d-block  mb-0">Gender</label>
+                <div class="custom-radio">
+                    <input type="radio" checked name="gender" value="M"/><span> Male &nbsp;&nbsp;</span>
+                    <input type="radio" name="gender" value="F" /><span> Female</span><br />
+                </div>
+                <label class="font-weight-bold d-block  mb-0">Department</label>
+                @Html.DropDownList("Department",ViewBag.departments as SelectList, new { @class="form-control shadow-none rounded-0"})
+                <label class="font-weight-bold d-block  mb-0">Designation</label>
+                @Html.DropDownList("Designation", ViewBag.designations as SelectList, new { @class = "form-control shadow-none rounded-0" })
+                <button type="submit" id="Register" class="form-control bg-info mt-2  text-white rounded-0 shadow-none signuptext">Register</button>
+                }
+
+                <div class="mt-2">
+               
+                    
+                    <small>Already Registered</small>&nbsp;@Html.ActionLink("Back to login", "Login", "Home")
+                </div>
+            </div>
+        </div>
+    </div>
+    <script></script>
+    <script src="~/Content/jquery.js"></script>
+    <script>
+        let arr = [];
+        $('document').ready(function(e){
+            $.ajax({
+                type: 'post',
+                data: { data: $('#key').val() },
+                processData: 'false',
+                url: '@Url.Action("getUserNames","Home")',
+                success: function (e) {
+                    arr = e.data;
+                },
+                error: function (xhr, status, error) {
+                    alert(JSON.stringify(xhr));
+                }
+            });
+        })
+    </script>
+    <script src="~/Content/Signup.js"></script>
+</body>
+
+</html>

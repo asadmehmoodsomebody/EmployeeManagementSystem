@@ -1,0 +1,234 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    @*<script src="~/Content/togglebtn.js"></script>*@
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+    <script src="~/Content/jquery.js"></script>
+    <link href="~/CustomCSS/_Layout.css" rel="stylesheet" />
+    <link href="~/CustomCSS/ScrollbarCSS.css" rel="stylesheet" />
+    <link href="~/Content/fontawesome-all.min.css" rel="stylesheet" />
+    <title>@ViewBag.Title</title>
+</head>
+<body>
+  <header class="row w-100 no-gutters">
+      <div class="title bg-light">
+
+          
+         <button class="m-2" id="sidebar-toggler" data-target="#sidebar-main">
+             <img id="togglebar"  src="~/Images/iconfinder_three-bars_298879.png" />
+             @*<img id="togglex" style="display:none" src="~/Images/iconfinder_icon-close-round_211651.png" />*@
+
+             <img id="togglex" class="d-none" src="~/Images/iconfinder_icon-close-round_211651 (1).png" />
+             </button>
+          <figure>
+
+              
+
+              <img src="~/Images/Max Remind.jpg" />
+              
+          </figure>
+      </div>
+      <div class="col-12 col-md">
+          <div class="row no-gutters w-100 flex-row align-items-center" style="height:50px;">
+              <div class="col-10 d-flex align-self-end">
+                  
+  
+    
+        <h5 class="UserName text-center w-100">@Session["UserName"]</h5>
+    
+    
+    
+        @*<h5 class="UserName text-center w-100">Dummy_User</h5>*@
+    
+
+              </div>
+              <div class="col-2 d-flex justify-content-end align-items-center notifications">
+                  <a class="d-flex align-items-center Notification-icon" href="@Url.Action("Index","Notification")"><span><i class="fa fa-bell"></i></span></a>
+                  <a class="d-flex align-items-center Logout-icon" style="color:white; text-decoration:none;" href="@Url.Action("login","Home")"><span><i class="fa fa-sign-out-alt"></i></span>Logout</a>
+              </div>
+          </div>
+      </div>
+  </header>
+    <main class="row no-gutters w-100 main-div">
+        <aside class="sidebar" id="sidebar-main">
+            <div class="navbar flex-column no-gutters">
+             
+                
+                <a class="navbar-brand mr-0">Admin Panel</a>
+                
+                <ul class="navbar-nav p-0 w-100">
+                    
+                    
+                        @*<li class="nav-item"><a class="nav-link pl-3 d-flex align-items-center"><span class="user-icon icon sidebar-icon"></span>@Session["UserName"]-c</a></li>*@
+                    
+
+
+
+
+
+                    <li class="nav-item" id="Administration">
+                        <a href="@Url.Action("Index","Administration")" class="nav-link pl-3 d-flex align-items-center">
+                            <span class="icon sidebar-icon mb-1"><i class="fa fa-user-shield"></i></span>Administration
+                            <span class="ml-auto mr-2 toggle-icon" id="toggle-icon" data-target="#Admin"></span>
+                        </a>
+                        <ul class="collapse list-unstyled p-0 is-child" id="Admin" parent="#Administration">
+                            <li class="nav-item"><a href="@Url.Action("ManageRoles", "Administration")" class="nav-link pl-4 d-flex align-items-center" id="ManageRoles"><span class="icon sidebar-icon mb-1"><i class="fa fa-user-tag mr-2"></i></span>Manage Roles</a></li>
+                            @*<li class="nav-item"><a href="@Url.Action("UpdateEmployee", "ManageEmployee")" class="nav-link pl-4 d-flex align-items-center" id="UpdateEmployee"><span class="dashboard-icon icon sidebar-icon"></span>Update Employee</a></li>
+                            <li class="nav-item"><a href="@Url.Action("ShowEmployee", "ManageEmployee")" class="nav-link pl-4 d-flex align-items-center" id="ShowEmployee"><span class="dashboard-icon icon sidebar-icon"></span>Show Employee</a></li>
+                            <li class="nav-item"><a href="@Url.Action("DeleteEmployee", "ManageEmployee")" class="nav-link pl-4 d-flex align-items-center" id="DeleteEmployee"><span class="dashboard-icon icon sidebar-icon"></span>Delete Employee</a></li>*@
+                        </ul>
+                    </li>
+
+
+
+
+
+
+
+
+
+
+                    <li class="nav-item" id="EmployeeManagement">
+                        <a href="@Url.Action("Index","ManageEmployee")" class="nav-link pl-3 d-flex align-items-center">
+                            <span class="icon sidebar-icon mb-1"><i class="fa fa-users-cog"></i></span>Employee MGT
+                            <span class="ml-auto mr-2 toggle-icon" id="toggle-icon" data-target="#EmpMgt"></span>
+                        </a>
+                        <ul class="collapse list-unstyled p-0 is-child" id="EmpMgt" parent="#EmployeeManagement">
+                            <li class="nav-item"><a href="@Url.Action("Department","ManageEmployee")" class="nav-link pl-4 d-flex align-items-center" id="Department"><span class="icon sidebar-icon mb-1"><i class="fa fa-home"></i></span>Department</a></li>
+                            <li class="nav-item"><a href="@Url.Action("Designation", "ManageEmployee")" class="nav-link pl-4 d-flex align-items-center" id="Designation"><span class="icon sidebar-icon mb-1"><i class="fa fa-id-card"></i></span>Designation</a></li>
+                            <li class="nav-item"><a href="@Url.Action("ShowEmployee", "ManageEmployee")" class="nav-link pl-4 d-flex align-items-center" id="ShowEmployee"><span class="icon sidebar-icon mb-1"><i class="fas fa-code-branch"></i></span>Branch</a></li>
+                            <li class="nav-item"><a href="@Url.Action("DeleteEmployee", "ManageEmployee")" class="nav-link pl-4 d-flex align-items-center" id="DeleteEmployee"><span class="icon sidebar-icon mb-1"><i class="fas fa-medal"></i></span>Promotion</a></li>
+                        </ul>
+                    </li>
+                    
+
+
+
+                        @*<li class="nav-item"><a class="nav-link pl-3 d-flex align-items-center"><span class="user-icon icon sidebar-icon"></span>Dummy_User-c</a></li>*@
+                    
+                    <li class="nav-item" id="Dashboard"><a href="@Url.Action("Index","Dashboard")" class="nav-link pl-3 d-flex align-items-center"><span class="icon sidebar-icon mb-1"><i class="fa fa-columns mr-2"></i></span>Dashboard</a></li>
+                    
+                    @*Start of attendance module*@
+                    <li class="nav-item" id="Attendance">
+                        <a href="@Url.Action("Index","Attendance")"  class="nav-link pl-3 d-flex align-items-center">
+                            <span class="icon sidebar-icon mb-1"><i class="fas fa-hand-paper"></i></span>Attendance
+                            <span class="ml-auto mr-2 toggle-icon" id="toggle-icon" data-target="#dr2"></span>
+                        </a>
+                        <ul class="collapse list-unstyled p-0 is-child" id="dr2" parent="#Attendance">
+                            <li class="nav-item"><a href="@Url.Action("MarkAttendance","Attendance")" class="nav-link pl-4 d-flex align-items-center"  id="MarkAttendance"><span class="icon sidebar-icon mb-1"><i class="fas fa-user-check"></i></span>Mark Attendance</a></li>
+                            <li class="nav-item"><a href="@Url.Action("Index","Dashboard")" class="nav-link pl-4 d-flex align-items-center"><span class="icon sidebar-icon mb-1"><i class="fa fa-user-alt-slash"></i></span>Show Absentees</a></li>
+                            <li class="nav-item"><a href="@Url.Action("Index","Dashboard")" class="nav-link pl-4 d-flex align-items-center"><span class="icon sidebar-icon mb-1"><i class="fa fa-user-clock"></i></span>Check Work hours</a></li>
+                        </ul>
+                    </li>
+                    @* End of attendance module*@
+
+                    
+                    
+                    
+                    @*<li class="nav-item"><a class="nav-link d-flex align-items-center"><span class="administration-icon icon sidebar-icon"></span>Administration</a></li>*@
+                    
+                    <li class="nav-item" id="Performance">
+                      <a href="@Url.Action("Index","Performance")" class="nav-link pl-3 d-flex align-items-center"><span class="icon sidebar-icon mb-1"><i class="fa fa-user-graduate"></i></span>Performance
+                      <span class="ml-auto mr-2 toggle-icon" id="toggle-icon" data-target="#dr1"></span>   
+                      </a>
+                        <ul class="collapse list-unstyled p-0 is-child" id="dr1" parent="#Performance">
+                            <li class="nav-item"><a href="@Url.Action("Submodule1","Performance")" class="nav-link pl-4 d-flex align-items-center" id="Submodule1"><span class="icon sidebar-icon mb-1"><i class="fa fa-cog"></i></span>Dashboard-c</a></li>
+                            <li class="nav-item"><a href="@Url.Action("Submodule2","Performance")" class="nav-link pl-4 d-flex align-items-center" id="Submodule2"><span class="icon sidebar-icon mb-1"><i class="fa fa-users-cog"></i></span>Dashboard-c</a></li>
+                            <li class="nav-item"><a href="@Url.Action("Submodule3","Performance")" class="nav-link pl-4 d-flex align-items-center" id="Submodule3"><span class="icon sidebar-icon mb-1"><i class="fa fa-cog"></i></span>Dashboard-c</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item"><a class="nav-link pl-3 d-flex align-items-center"><span class="icon sidebar-icon mb-1"><i class="fa fa-clipboard-list"></i></span>Noticeboard</a></li>
+                    <li class="nav-item"><a class="nav-link pl-3 d-flex align-items-center"><span class="icon sidebar-icon mb-1"><i class="fa fa-award"></i></span>Award</a></li>
+                    
+                    
+                    <li class="nav-item"><a class="nav-link pl-3 d-flex align-items-center"><span class="icon sidebar-icon mb-1"><i class="fa fa-cog"></i></span>Setting-c</a></li>
+                    
+                </ul>
+            </div> 
+        </aside>
+        <section class="col mainbody">
+            <div class="mx-3">
+                @RenderBody()
+            </div>
+        </section>
+    </main>
+    <footer class="layout-footer">
+        <span>CopyRight@2019</span>
+    </footer>
+    <script src="~/Scripts/bootstrap.min.js"></script>
+    <script>
+        $('document').ready(function (e) {
+            if (window.innerWidth >= 768) {
+                $('.sidebar').removeClass('show');
+                $('#togglebar').removeClass('d-none');
+                $('#togglex').addClass('d-none');
+            }
+        })
+        $(window).resize(function (e) {
+            if (window.innerWidth > 768) {
+                $('.sidebar').removeClass('show');
+                $('#togglebar').removeClass('d-none');
+                $('#togglex').addClass('d-none');
+            }
+        })
+        $('#sidebar-toggler').click(function (e) {
+            let target = $(this).attr('data-target');
+            $(target).toggleClass('show');
+            $('#togglebar').toggleClass('d-none');
+            $('#togglex').toggleClass('d-none');
+
+        })
+
+        $(".toggle-icon").click(function (e) {
+            let btn = $(this);
+            let ele = btn.attr('data-target');
+            $(ele).collapse('toggle');
+            $(ele).on('hidden.bs.collapse', function () {
+                if ($(this).children().children().hasClass('sidebar-active')) {
+                    $($(this).attr('parent')+'>.nav-link').addClass('active');
+                }
+                btn.removeClass('toggle-rotation');
+            })
+            $(ele).on('shown.bs.collapse', function () {
+                if ($(this).children().children().hasClass('sidebar-active')) {
+                    $($(this).attr('parent') + '>.nav-link').removeClass('active');
+                }
+                btn.addClass('toggle-rotation');
+            })
+            e.preventDefault();
+        });
+        $('document').ready(function () {
+            if ($('#GetActiveTab') != undefined) {
+                $($('#GetActiveTab').val()).addClass('sidebar-active');
+            }
+            if ($('#GetGeneralTab') != undefined) {
+                $($('#GetGeneralTab').val()).addClass('active');
+            }
+            $.each($('.is-child'), function (e) {
+                if ($(this).children().children().hasClass('sidebar-active')) {
+                    //still working
+                    $($(this).attr('parent')+' .active').removeClass('active');
+                    console.log($(this));
+                    $(this).removeClass('collapse');
+                    $(this).css('height', 'auto');
+                    $(this).addClass('in');
+                    let it = $(this);
+                    $.each($('.toggle-icon'), function () {
+                        let att = $(this).attr('data-target').replace('#', '');
+                        console.log(att);
+                        if (att == it.attr('id')) {
+                            $(this).addClass('toggle-rotation')
+                        }
+                    });
+                }
+            })
+        });
+    </script>
+</body>
+</html>
