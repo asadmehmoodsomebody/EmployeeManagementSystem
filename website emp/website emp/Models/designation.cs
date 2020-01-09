@@ -13,6 +13,7 @@ namespace website_emp.Models
         [Required]
         public string DesignationName { get; set; }
         public virtual ICollection<user> Users { get; set; }
+        public virtual salaryTemplate SalaryTemplate { get; set; }
 
     }
 }

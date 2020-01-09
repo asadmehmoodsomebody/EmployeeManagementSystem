@@ -21,14 +21,22 @@ namespace website_emp.Models
         [Required]
         [DataType (DataType.Password)]
         public string Password { get; set; }
-        [Required]
-        public string Role { get; set; }
         public virtual designation Designation { get; set; }
         public virtual department Department { get; set; }
 
         public virtual status Status { get; set; }
 
+        public virtual ICollection<userRole> userrole { get; set;} 
+        public virtual ICollection<userRight> UserRight { get; set; }
+        public virtual shift Shift { get; set; }
+        public virtual fingerPrint FingerPrint { get; set; }
+        public virtual ICollection<leaveRequest> LeaveRequest { get; set; }
+        public virtual ICollection<attendance> Attendance { get; set; }
 
-
+        public virtual ICollection<paySlip> PaySlip { get; set; }
+        public virtual ICollection<loanRequest> LoanRequest { get; set; }
+        public virtual ICollection<project> Project { get; set; }
+        public virtual ICollection<userGroupTask> UserGroupTask { get; set; }
+        public virtual ICollection<userTask> UserTask { get; set; }
     }
 }

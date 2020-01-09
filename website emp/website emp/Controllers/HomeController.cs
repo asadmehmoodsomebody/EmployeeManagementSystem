@@ -56,8 +56,6 @@ namespace website_emp.Controllers
                     department dep = db.Departments.FirstOrDefault(p => p.DepartmentId == depid);
                     designation des = db.Designations.FirstOrDefault(p => p.DesignationId == desid);
                     status st = db.States.FirstOrDefault(p => p.StatusId == 1);
-                    string role = "Employ";
-                    User.Role = role;
                     User.Status = st;
                     User.Department = dep;
                     User.Designation = des;

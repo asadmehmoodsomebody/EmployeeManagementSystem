@@ -232,17 +232,52 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201912261108264_initialcreate.cs" />
-    <Compile Include="Migrations\201912261108264_initialcreate.designer.cs">
-      <DependentUpon>201912261108264_initialcreate.cs</DependentUpon>
+    <Compile Include="Migrations\202001090611487_databaseversion1.cs" />
+    <Compile Include="Migrations\202001090611487_databaseversion1.designer.cs">
+      <DependentUpon>202001090611487_databaseversion1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202001090717101_databaseversion2.cs" />
+    <Compile Include="Migrations\202001090717101_databaseversion2.designer.cs">
+      <DependentUpon>202001090717101_databaseversion2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202001090756185_databaseversion3.cs" />
+    <Compile Include="Migrations\202001090756185_databaseversion3.designer.cs">
+      <DependentUpon>202001090756185_databaseversion3.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202001091026521_databaseversion4.cs" />
+    <Compile Include="Migrations\202001091026521_databaseversion4.designer.cs">
+      <DependentUpon>202001091026521_databaseversion4.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Models\attendance.cs" />
     <Compile Include="Models\context.cs" />
+    <Compile Include="Models\Deduction.cs" />
     <Compile Include="Models\department.cs" />
     <Compile Include="Models\designation.cs" />
+    <Compile Include="Models\fine.cs" />
+    <Compile Include="Models\FingerPrint.cs" />
+    <Compile Include="Models\groupTask.cs" />
+    <Compile Include="Models\holiday.cs" />
+    <Compile Include="Models\LeaveRequest.cs" />
+    <Compile Include="Models\loanInstallment.cs" />
+    <Compile Include="Models\loanRequest.cs" />
+    <Compile Include="Models\module.cs" />
+    <Compile Include="Models\moduleRight.cs" />
+    <Compile Include="Models\paySlip.cs" />
+    <Compile Include="Models\project.cs" />
+    <Compile Include="Models\right.cs" />
+    <Compile Include="Models\role.cs" />
+    <Compile Include="Models\roleModuleRight.cs" />
+    <Compile Include="Models\SalaryTemplate.cs" />
     <Compile Include="Models\SecurityKey.cs" />
+    <Compile Include="Models\shift.cs" />
     <Compile Include="Models\status.cs" />
+    <Compile Include="Models\task.cs" />
     <Compile Include="Models\user.cs" />
+    <Compile Include="Models\userGroupTask.cs" />
+    <Compile Include="Models\userRight.cs" />
+    <Compile Include="Models\userRole.cs" />
+    <Compile Include="Models\userTask.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -284,8 +319,17 @@
     <Folder Include="SidebarIcons\" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201912261108264_initialcreate.resx">
-      <DependentUpon>201912261108264_initialcreate.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202001090611487_databaseversion1.resx">
+      <DependentUpon>202001090611487_databaseversion1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202001090717101_databaseversion2.resx">
+      <DependentUpon>202001090717101_databaseversion2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202001090756185_databaseversion3.resx">
+      <DependentUpon>202001090756185_databaseversion3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202001091026521_databaseversion4.resx">
+      <DependentUpon>202001091026521_databaseversion4.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

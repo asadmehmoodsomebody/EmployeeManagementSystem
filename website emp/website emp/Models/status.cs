@@ -13,5 +13,6 @@ namespace website_emp.Models
         [Required]
         public string State { get; set; }
         public virtual ICollection<user> Users { get; set; }
+        public virtual ICollection<leaveRequest> LeaveRequests { get; set; }
     }
 }
