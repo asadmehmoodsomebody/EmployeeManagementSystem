@@ -7,18 +7,18 @@ namespace website_emp.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.4.0")]
-    public sealed partial class databaseversion2 : IMigrationMetadata
+    public sealed partial class database1 : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(databaseversion2));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(database1));
         
         string IMigrationMetadata.Id
         {
-            get { return "202001090717101_databaseversion2"; }
+            get { return "202001091157585_database1"; }
         }
         
         string IMigrationMetadata.Source
         {
-            get { return null; }
+            get { return Resources.GetString("Source"); }
         }
         
         string IMigrationMetadata.Target

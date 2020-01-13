@@ -204,8 +204,6 @@ C:\Users\Farman Kaskar\Source\Repos\EmployeeManagementSystem\website emp\website
 C:\Users\Farman Kaskar\Source\Repos\EmployeeManagementSystem\website emp\website emp\bin\System.Web.Helpers.xml
 C:\Users\Farman Kaskar\Source\Repos\EmployeeManagementSystem\website emp\website emp\bin\System.Web.Mvc.xml
 C:\Users\Farman Kaskar\Source\Repos\EmployeeManagementSystem\website emp\website emp\obj\Debug\website emp.csprojResolveAssemblyReference.cache
-C:\Users\Farman Kaskar\Source\Repos\EmployeeManagementSystem\website emp\website emp\obj\Debug\website_emp.Migrations.initialcreate.resources
-C:\Users\Farman Kaskar\Source\Repos\EmployeeManagementSystem\website emp\website emp\obj\Debug\website emp.csproj.GenerateResource.Cache
 C:\Users\Farman Kaskar\Source\Repos\EmployeeManagementSystem\website emp\website emp\obj\Debug\website emp.dll
 C:\Users\Farman Kaskar\Source\Repos\EmployeeManagementSystem\website emp\website emp\obj\Debug\website emp.pdb
 C:\Users\Asad Mehmood\Source\Repos\EmployeeManagementSystem\website emp\website emp\obj\Debug\website emp.csprojResolveAssemblyReference.cache
@@ -253,3 +251,5 @@ C:\Users\Asad Mehmood\Source\Repos\EmployeeManagementSystem\website emp\website 
 C:\Users\Asad Mehmood\Source\Repos\EmployeeManagementSystem\website emp\website emp\obj\Debug\website_emp.Migrations.databaseversion2.resources
 C:\Users\Asad Mehmood\Source\Repos\EmployeeManagementSystem\website emp\website emp\obj\Debug\website_emp.Migrations.databaseversion3.resources
 C:\Users\Asad Mehmood\Source\Repos\EmployeeManagementSystem\website emp\website emp\obj\Debug\website_emp.Migrations.databaseversion4.resources
+C:\Users\Farman Kaskar\Source\Repos\EmployeeManagementSystem\website emp\website emp\obj\Debug\website_emp.Migrations.database1.resources
+C:\Users\Farman Kaskar\Source\Repos\EmployeeManagementSystem\website emp\website emp\obj\Debug\website emp.csproj.GenerateResource.Cache

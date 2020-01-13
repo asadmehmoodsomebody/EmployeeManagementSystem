@@ -232,21 +232,9 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202001090611487_databaseversion1.cs" />
-    <Compile Include="Migrations\202001090611487_databaseversion1.designer.cs">
-      <DependentUpon>202001090611487_databaseversion1.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202001090717101_databaseversion2.cs" />
-    <Compile Include="Migrations\202001090717101_databaseversion2.designer.cs">
-      <DependentUpon>202001090717101_databaseversion2.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202001090756185_databaseversion3.cs" />
-    <Compile Include="Migrations\202001090756185_databaseversion3.designer.cs">
-      <DependentUpon>202001090756185_databaseversion3.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202001091026521_databaseversion4.cs" />
-    <Compile Include="Migrations\202001091026521_databaseversion4.designer.cs">
-      <DependentUpon>202001091026521_databaseversion4.cs</DependentUpon>
+    <Compile Include="Migrations\202001091157585_database1.cs" />
+    <Compile Include="Migrations\202001091157585_database1.designer.cs">
+      <DependentUpon>202001091157585_database1.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\attendance.cs" />
@@ -319,17 +307,8 @@
     <Folder Include="SidebarIcons\" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\202001090611487_databaseversion1.resx">
-      <DependentUpon>202001090611487_databaseversion1.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202001090717101_databaseversion2.resx">
-      <DependentUpon>202001090717101_databaseversion2.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202001090756185_databaseversion3.resx">
-      <DependentUpon>202001090756185_databaseversion3.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202001091026521_databaseversion4.resx">
-      <DependentUpon>202001091026521_databaseversion4.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202001091157585_database1.resx">
+      <DependentUpon>202001091157585_database1.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
