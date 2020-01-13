@@ -203,7 +203,6 @@ C:\Users\Farman Kaskar\Source\Repos\EmployeeManagementSystem\website emp\website
 C:\Users\Farman Kaskar\Source\Repos\EmployeeManagementSystem\website emp\website emp\bin\System.Web.Webpages.Razor.xml
 C:\Users\Farman Kaskar\Source\Repos\EmployeeManagementSystem\website emp\website emp\bin\System.Web.Helpers.xml
 C:\Users\Farman Kaskar\Source\Repos\EmployeeManagementSystem\website emp\website emp\bin\System.Web.Mvc.xml
-C:\Users\Farman Kaskar\Source\Repos\EmployeeManagementSystem\website emp\website emp\obj\Debug\website emp.csprojResolveAssemblyReference.cache
 C:\Users\Farman Kaskar\Source\Repos\EmployeeManagementSystem\website emp\website emp\obj\Debug\website emp.dll
 C:\Users\Farman Kaskar\Source\Repos\EmployeeManagementSystem\website emp\website emp\obj\Debug\website emp.pdb
 C:\Users\Asad Mehmood\Source\Repos\EmployeeManagementSystem\website emp\website emp\obj\Debug\website emp.csprojResolveAssemblyReference.cache

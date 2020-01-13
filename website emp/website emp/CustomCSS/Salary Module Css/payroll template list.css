@@ -1,0 +1,26 @@
+body
+{
+    background-color: lightgray !important;
+}
+.text-search:focus
+{
+    outline: none!important;
+    width: 200px;
+}
+.text-search
+{
+    width: 200px;
+}
+.tbl
+{
+    min-width: 770px;
+}
+.tbl-style
+{
+    width: 100%;
+    overflow-x: auto;    
+}
+.hr1
+{
+    border: solid 2px blue !important;
+}

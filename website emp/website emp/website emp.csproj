@@ -136,6 +136,15 @@
     <Content Include="CustomCSS\edit_css.css" />
     <Content Include="CustomCSS\login.css" />
     <Content Include="CustomCSS\Roles.css" />
+    <Content Include="CustomCSS\Salary Module Css\Add new template-css.css" />
+    <Content Include="CustomCSS\Salary Module Css\assign-salary-to-employee.css" />
+    <Content Include="CustomCSS\Salary Module Css\check salary.css" />
+    <Content Include="CustomCSS\Salary Module Css\employee-salary-table.css" />
+    <Content Include="CustomCSS\Salary Module Css\generate payslip.css" />
+    <Content Include="CustomCSS\Salary Module Css\list of employees and their salaries.css" />
+    <Content Include="CustomCSS\Salary Module Css\make payment.css" />
+    <Content Include="CustomCSS\Salary Module Css\manage salary details.css" />
+    <Content Include="CustomCSS\Salary Module Css\payroll template list.css" />
     <Content Include="CustomCSS\ScrollbarCSS.css" />
     <Content Include="CustomCSS\table.css" />
     <Content Include="CustomCSS\userfpofile_css.css" />
