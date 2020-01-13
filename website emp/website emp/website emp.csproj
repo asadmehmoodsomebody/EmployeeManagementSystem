@@ -229,6 +229,7 @@
     <Compile Include="Controllers\ManageEmployeeController.cs" />
     <Compile Include="Controllers\NotificationController.cs" />
     <Compile Include="Controllers\PerformanceController.cs" />
+    <Compile Include="Controllers\SalaryManagementController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -295,6 +296,11 @@
     <Content Include="Views\ManageEmployee\Department.cshtml" />
     <Content Include="Views\ManageEmployee\Designation.cshtml" />
     <Content Include="Views\Notification\Index.cshtml" />
+    <Content Include="Views\SalaryManagement\AddTemplate.cshtml" />
+    <Content Include="Views\SalaryManagement\makepayment.cshtml" />
+    <Content Include="Views\SalaryManagement\AssignSalary.cshtml" />
+    <Content Include="Views\SalaryManagement\CheckSalary.cshtml" />
+    <Content Include="Views\SalaryManagement\PayrollManagement.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
