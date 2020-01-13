@@ -17,5 +17,10 @@ namespace website_emp.Controllers
         {
             return View();
         }
+        public ActionResult DailyAttendance()
+        {
+            return View();
+        }
+
     }
 }

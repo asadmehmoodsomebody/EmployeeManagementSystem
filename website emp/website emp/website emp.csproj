@@ -131,6 +131,9 @@
     <Content Include="Content\togglebtn.js" />
     <Content Include="Content\v4-shims.css" />
     <Content Include="Content\v4-shims.min.css" />
+    <Content Include="CustomCSS\Attendance Module Css\daily attendance.css" />
+    <Content Include="CustomCSS\Award Css\award_list.css" />
+    <Content Include="CustomCSS\BlueBGCheckboxCss.css" />
     <Content Include="CustomCSS\dashboard.css" />
     <Content Include="CustomCSS\Department.css" />
     <Content Include="CustomCSS\edit_css.css" />
@@ -233,6 +236,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\AdministrationController.cs" />
     <Compile Include="Controllers\AttendanceController.cs" />
+    <Compile Include="Controllers\AwardController.cs" />
     <Compile Include="Controllers\DashboardController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageEmployeeController.cs" />
@@ -310,6 +314,8 @@
     <Content Include="Views\SalaryManagement\AssignSalary.cshtml" />
     <Content Include="Views\SalaryManagement\CheckSalary.cshtml" />
     <Content Include="Views\SalaryManagement\PayrollManagement.cshtml" />
+    <Content Include="Views\Attendance\DailyAttendance.cshtml" />
+    <Content Include="Views\Award\Index_Award.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

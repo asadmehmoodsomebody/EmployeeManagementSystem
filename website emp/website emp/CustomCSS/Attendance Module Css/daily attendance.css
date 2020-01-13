@@ -1,0 +1,13 @@
+.tbl-div
+{
+    width: 100%;
+    overflow-x: auto;
+}
+.tbl
+{
+    min-width: 995px;
+}
+body
+{
+    background-color: lightgray;
+}

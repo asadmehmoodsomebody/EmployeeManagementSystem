@@ -252,3 +252,4 @@ C:\Users\Asad Mehmood\Source\Repos\EmployeeManagementSystem\website emp\website 
 C:\Users\Asad Mehmood\Source\Repos\EmployeeManagementSystem\website emp\website emp\obj\Debug\website_emp.Migrations.databaseversion4.resources
 C:\Users\Farman Kaskar\Source\Repos\EmployeeManagementSystem\website emp\website emp\obj\Debug\website_emp.Migrations.database1.resources
 C:\Users\Farman Kaskar\Source\Repos\EmployeeManagementSystem\website emp\website emp\obj\Debug\website emp.csproj.GenerateResource.Cache
+C:\Users\Farman Kaskar\Source\Repos\EmployeeManagementSystem\website emp\website emp\obj\Debug\website emp.csprojResolveAssemblyReference.cache

@@ -123,7 +123,7 @@
                         </a>
                         <ul class="collapse list-unstyled p-0 is-child" id="dr2" parent="#Attendance">
                             <li class="nav-item"><a href="@Url.Action("MarkAttendance","Attendance")" class="nav-link pl-4 d-flex align-items-center"  id="MarkAttendance"><span class="icon sidebar-icon mb-1"><i class="fas fa-user-check"></i></span>Mark Attendance</a></li>
-                            <li class="nav-item"><a href="@Url.Action("Index","Dashboard")" class="nav-link pl-4 d-flex align-items-center"><span class="icon sidebar-icon mb-1"><i class="fa fa-user-alt-slash"></i></span>Show Absentees</a></li>
+                            <li class="nav-item"><a href="@Url.Action("DailyAttendance","Attendance")" class="nav-link pl-4 d-flex align-items-center" id="DailyAttendance"><span class="icon sidebar-icon mb-1"><i class="fa fa-user-alt-slash"></i></span>Daily Attendance</a></li>
                             <li class="nav-item"><a href="@Url.Action("Index","Dashboard")" class="nav-link pl-4 d-flex align-items-center"><span class="icon sidebar-icon mb-1"><i class="fa fa-user-clock"></i></span>Check Work hours</a></li>
                         </ul>
                     </li>
@@ -159,8 +159,8 @@
                             <li class="nav-item"><a href="@Url.Action("Submodule3","Performance")" class="nav-link pl-4 d-flex align-items-center" id="Submodule3"><span class="icon sidebar-icon mb-1"><i class="fa fa-cog"></i></span>Dashboard-c</a></li>
                         </ul>
                     </li>
-                    <li class="nav-item"><a class="nav-link pl-3 d-flex align-items-center"><span class="icon sidebar-icon mb-1"><i class="fa fa-clipboard-list"></i></span>Noticeboard</a></li>
-                    <li class="nav-item"><a class="nav-link pl-3 d-flex align-items-center"><span class="icon sidebar-icon mb-1"><i class="fa fa-award"></i></span>Award</a></li>
+                    <li class="nav-item"><a  class="nav-link pl-3 d-flex align-items-center"><span class="icon sidebar-icon mb-1"><i class="fa fa-clipboard-list"></i></span>Noticeboard</a></li>
+                    <li class="nav-item" id="Index_Award"><a href="@Url.Action("Index_Award","Award")" class="nav-link pl-3 d-flex align-items-center"><span class="icon sidebar-icon mb-1"><i class="fa fa-award"></i></span>Award</a></li>
                     
                     
                     <li class="nav-item"><a class="nav-link pl-3 d-flex align-items-center"><span class="icon sidebar-icon mb-1"><i class="fa fa-cog"></i></span>Setting-c</a></li>
