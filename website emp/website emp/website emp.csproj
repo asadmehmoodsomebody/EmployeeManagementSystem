@@ -316,6 +316,7 @@
     <Content Include="Views\SalaryManagement\PayrollManagement.cshtml" />
     <Content Include="Views\Attendance\DailyAttendance.cshtml" />
     <Content Include="Views\Award\Index_Award.cshtml" />
+    <Content Include="Views\SalaryManagement\TemplateList.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

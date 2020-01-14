@@ -29,5 +29,9 @@ namespace website_emp.Controllers
         {
             return View();
         }
+        public ActionResult TemplateList()
+        {
+            return View();
+        }
     }
 }
