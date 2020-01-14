@@ -72,10 +72,10 @@
 
 
 
-                    <li class="nav-item" id="Administration">
-                        <a href="@Url.Action("Index","Administration")" class="nav-link pl-3 d-flex align-items-center">
+                    <li class="nav-item " @*id="Administration"*@>
+                        <a class="nav-link pl-3 d-flex align-items-center has-children" data-target="#Admin">
                             <span class="icon sidebar-icon mb-1"><i class="fa fa-user-shield"></i></span>Administration
-                            <span class="ml-auto mr-2 toggle-icon" id="toggle-icon" data-target="#Admin"></span>
+                            <span class="ml-auto mr-2 toggle-icon" ></span>
                         </a>
                         <ul class="collapse list-unstyled p-0 is-child" id="Admin" parent="#Administration">
                             <li class="nav-item"><a href="@Url.Action("ManageRoles", "Administration")" class="nav-link pl-4 d-flex align-items-center" id="ManageRoles"><span class="icon sidebar-icon mb-1"><i class="fa fa-user-tag mr-2"></i></span>Manage Roles</a></li>
@@ -95,11 +95,12 @@
 
 
                     <li class="nav-item" id="EmployeeManagement">
-                        <a href="@Url.Action("Index","ManageEmployee")" class="nav-link pl-3 d-flex align-items-center">
+                        <a class="nav-link pl-3 d-flex align-items-center has-children" data-target="#EmpMgt">
                             <span class="icon sidebar-icon mb-1"><i class="fa fa-users-cog"></i></span>Employee MGT
-                            <span class="ml-auto mr-2 toggle-icon" id="toggle-icon" data-target="#EmpMgt"></span>
+                            <span class="ml-auto mr-2 toggle-icon" id="toggle-icon" ></span>
                         </a>
                         <ul class="collapse list-unstyled p-0 is-child" id="EmpMgt" parent="#EmployeeManagement">
+                            <li class="nav-item"><a href="@Url.Action("Index","ManageEmployee")" class="nav-link pl-4 d-flex align-items-center" id="Index"><span class="icon sidebar-icon mb-1"><i class="fa fa-home"></i></span>Manage Employee</a></li>
                             <li class="nav-item"><a href="@Url.Action("Department","ManageEmployee")" class="nav-link pl-4 d-flex align-items-center" id="Department"><span class="icon sidebar-icon mb-1"><i class="fa fa-home"></i></span>Department</a></li>
                             <li class="nav-item"><a href="@Url.Action("Designation", "ManageEmployee")" class="nav-link pl-4 d-flex align-items-center" id="Designation"><span class="icon sidebar-icon mb-1"><i class="fa fa-id-card"></i></span>Designation</a></li>
                             <li class="nav-item"><a href="@Url.Action("ShowEmployee", "ManageEmployee")" class="nav-link pl-4 d-flex align-items-center" id="ShowEmployee"><span class="icon sidebar-icon mb-1"><i class="fas fa-code-branch"></i></span>Branch</a></li>
@@ -116,17 +117,32 @@
                     
                     @*Start of attendance module*@
                     <li class="nav-item" id="Attendance">
-                        <a href="@Url.Action("Index","Attendance")"  class="nav-link pl-3 d-flex align-items-center">
+                        <a href="@Url.Action("Index","Attendance")"  class="nav-link pl-3 d-flex align-items-center has-children" data-target="#dr2">
                             <span class="icon sidebar-icon mb-1"><i class="fas fa-hand-paper"></i></span>Attendance
-                            <span class="ml-auto mr-2 toggle-icon" id="toggle-icon" data-target="#dr2"></span>
+                            <span class="ml-auto mr-2 toggle-icon" id="toggle-icon" ></span>
                         </a>
                         <ul class="collapse list-unstyled p-0 is-child" id="dr2" parent="#Attendance">
                             <li class="nav-item"><a href="@Url.Action("MarkAttendance","Attendance")" class="nav-link pl-4 d-flex align-items-center"  id="MarkAttendance"><span class="icon sidebar-icon mb-1"><i class="fas fa-user-check"></i></span>Mark Attendance</a></li>
-                            <li class="nav-item"><a href="@Url.Action("Index","Dashboard")" class="nav-link pl-4 d-flex align-items-center"><span class="icon sidebar-icon mb-1"><i class="fa fa-user-alt-slash"></i></span>Show Absentees</a></li>
+                            <li class="nav-item"><a href="@Url.Action("DailyAttendance","Attendance")" class="nav-link pl-4 d-flex align-items-center" id="DailyAttendance"><span class="icon sidebar-icon mb-1"><i class="fa fa-user-alt-slash"></i></span>Daily Attendance</a></li>
                             <li class="nav-item"><a href="@Url.Action("Index","Dashboard")" class="nav-link pl-4 d-flex align-items-center"><span class="icon sidebar-icon mb-1"><i class="fa fa-user-clock"></i></span>Check Work hours</a></li>
                         </ul>
                     </li>
                     @* End of attendance module*@
+
+
+                    @*Start of Salary module*@
+                    <li class="nav-item" id="Salary">
+                        <a class="nav-link pl-3 d-flex align-items-center has-children" data-target="#SalaryTemplate">
+                            <span class="icon sidebar-icon mb-1"><i class="fa fa-dollar-sign"></i></span>Salary Management
+                            <span class="ml-auto mr-2 toggle-icon" id="toggle-icon"></span>
+                        </a>
+                        <ul class="collapse list-unstyled p-0 is-child" id="SalaryTemplate" parent="#Salary">
+                            <li class="nav-item"><a href="@Url.Action("AddTemplate","SalaryManagement")" class="nav-link pl-4 d-flex align-items-center" id="AddTemplate"><span class="icon sidebar-icon mb-1"><i class="fa fa-hand-holding-usd"></i></span>Add Template</a></li>
+                            <li class="nav-item"><a href="@Url.Action("AssignSalary","SalaryManagement")" class="nav-link pl-4 d-flex align-items-center" id="AssignSalary"><span class="icon sidebar-icon mb-1"><i class="fa fa-plus-circle"></i></span>Assign Salary</a></li>
+                            <li class="nav-item"><a href="@Url.Action("CheckSalary","SalaryManagement")" class="nav-link pl-4 d-flex align-items-center" id="CheckSalary"><span class="icon sidebar-icon mb-1"><i class="fa fa-meh-rolling-eyes"></i></span>Check Salary</a></li>
+                        </ul> 
+                    </li>
+                    @* End of Salary module*@
 
                     
                     
@@ -134,8 +150,8 @@
                     @*<li class="nav-item"><a class="nav-link d-flex align-items-center"><span class="administration-icon icon sidebar-icon"></span>Administration</a></li>*@
                     
                     <li class="nav-item" id="Performance">
-                      <a href="@Url.Action("Index","Performance")" class="nav-link pl-3 d-flex align-items-center"><span class="icon sidebar-icon mb-1"><i class="fa fa-user-graduate"></i></span>Performance
-                      <span class="ml-auto mr-2 toggle-icon" id="toggle-icon" data-target="#dr1"></span>   
+                      <a href="@Url.Action("Index","Performance")" class="nav-link pl-3 d-flex align-items-center has-children" data-target="#dr1"><span class="icon sidebar-icon mb-1"><i class="fa fa-user-graduate"></i></span>Performance
+                      <span class="ml-auto mr-2 toggle-icon" id="toggle-icon" ></span>   
                       </a>
                         <ul class="collapse list-unstyled p-0 is-child" id="dr1" parent="#Performance">
                             <li class="nav-item"><a href="@Url.Action("Submodule1","Performance")" class="nav-link pl-4 d-flex align-items-center" id="Submodule1"><span class="icon sidebar-icon mb-1"><i class="fa fa-cog"></i></span>Dashboard-c</a></li>
@@ -143,8 +159,8 @@
                             <li class="nav-item"><a href="@Url.Action("Submodule3","Performance")" class="nav-link pl-4 d-flex align-items-center" id="Submodule3"><span class="icon sidebar-icon mb-1"><i class="fa fa-cog"></i></span>Dashboard-c</a></li>
                         </ul>
                     </li>
-                    <li class="nav-item"><a class="nav-link pl-3 d-flex align-items-center"><span class="icon sidebar-icon mb-1"><i class="fa fa-clipboard-list"></i></span>Noticeboard</a></li>
-                    <li class="nav-item"><a class="nav-link pl-3 d-flex align-items-center"><span class="icon sidebar-icon mb-1"><i class="fa fa-award"></i></span>Award</a></li>
+                    <li class="nav-item"><a  class="nav-link pl-3 d-flex align-items-center"><span class="icon sidebar-icon mb-1"><i class="fa fa-clipboard-list"></i></span>Noticeboard</a></li>
+                    <li class="nav-item" id="Index_Award"><a href="@Url.Action("Index_Award","Award")" class="nav-link pl-3 d-flex align-items-center"><span class="icon sidebar-icon mb-1"><i class="fa fa-award"></i></span>Award</a></li>
                     
                     
                     <li class="nav-item"><a class="nav-link pl-3 d-flex align-items-center"><span class="icon sidebar-icon mb-1"><i class="fa fa-cog"></i></span>Setting-c</a></li>
@@ -185,21 +201,23 @@
 
         })
 
-        $(".toggle-icon").click(function (e) {
+        $(".has-children").click(function (e) {
             let btn = $(this);
+            let toggle = $(this).children().closest('.toggle-icon');
+            console.log(toggle);
             let ele = btn.attr('data-target');
             $(ele).collapse('toggle');
             $(ele).on('hidden.bs.collapse', function () {
                 if ($(this).children().children().hasClass('sidebar-active')) {
                     $($(this).attr('parent')+'>.nav-link').addClass('active');
                 }
-                btn.removeClass('toggle-rotation');
+                toggle.removeClass('toggle-rotation');
             })
             $(ele).on('shown.bs.collapse', function () {
                 if ($(this).children().children().hasClass('sidebar-active')) {
                     $($(this).attr('parent') + '>.nav-link').removeClass('active');
                 }
-                btn.addClass('toggle-rotation');
+                toggle.addClass('toggle-rotation');
             })
             e.preventDefault();
         });
@@ -219,13 +237,15 @@
                     $(this).css('height', 'auto');
                     $(this).addClass('in');
                     let it = $(this);
-                    $.each($('.toggle-icon'), function () {
-                        let att = $(this).attr('data-target').replace('#', '');
-                        console.log(att);
-                        if (att == it.attr('id')) {
-                            $(this).addClass('toggle-rotation')
-                        }
-                    });
+                    let toggle = $(this).children().closest('.toggle-icon').addClass('toggle-rotation');
+                    console.log($(this).children().closest('.toggle-icon'));
+                    //$.each($('.toggle-icon'), function () {
+                    //    let att = $(this).attr('data-target').replace('#', '');
+                    //    console.log(att);
+                    //    if (att == it.attr('id')) {
+                    //        $(this).addClass('toggle-rotation')
+                    //    }
+                    //});
                 }
             })
         });

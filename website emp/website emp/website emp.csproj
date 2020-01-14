@@ -131,11 +131,23 @@
     <Content Include="Content\togglebtn.js" />
     <Content Include="Content\v4-shims.css" />
     <Content Include="Content\v4-shims.min.css" />
+    <Content Include="CustomCSS\Attendance Module Css\daily attendance.css" />
+    <Content Include="CustomCSS\Award Css\award_list.css" />
+    <Content Include="CustomCSS\BlueBGCheckboxCss.css" />
     <Content Include="CustomCSS\dashboard.css" />
     <Content Include="CustomCSS\Department.css" />
     <Content Include="CustomCSS\edit_css.css" />
     <Content Include="CustomCSS\login.css" />
     <Content Include="CustomCSS\Roles.css" />
+    <Content Include="CustomCSS\Salary Module Css\Add new template-css.css" />
+    <Content Include="CustomCSS\Salary Module Css\assign-salary-to-employee.css" />
+    <Content Include="CustomCSS\Salary Module Css\check salary.css" />
+    <Content Include="CustomCSS\Salary Module Css\employee-salary-table.css" />
+    <Content Include="CustomCSS\Salary Module Css\generate payslip.css" />
+    <Content Include="CustomCSS\Salary Module Css\list of employees and their salaries.css" />
+    <Content Include="CustomCSS\Salary Module Css\make payment.css" />
+    <Content Include="CustomCSS\Salary Module Css\manage salary details.css" />
+    <Content Include="CustomCSS\Salary Module Css\payroll template list.css" />
     <Content Include="CustomCSS\ScrollbarCSS.css" />
     <Content Include="CustomCSS\table.css" />
     <Content Include="CustomCSS\userfpofile_css.css" />
@@ -224,29 +236,19 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\AdministrationController.cs" />
     <Compile Include="Controllers\AttendanceController.cs" />
+    <Compile Include="Controllers\AwardController.cs" />
     <Compile Include="Controllers\DashboardController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageEmployeeController.cs" />
     <Compile Include="Controllers\NotificationController.cs" />
     <Compile Include="Controllers\PerformanceController.cs" />
+    <Compile Include="Controllers\SalaryManagementController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202001090611487_databaseversion1.cs" />
-    <Compile Include="Migrations\202001090611487_databaseversion1.designer.cs">
-      <DependentUpon>202001090611487_databaseversion1.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202001090717101_databaseversion2.cs" />
-    <Compile Include="Migrations\202001090717101_databaseversion2.designer.cs">
-      <DependentUpon>202001090717101_databaseversion2.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202001090756185_databaseversion3.cs" />
-    <Compile Include="Migrations\202001090756185_databaseversion3.designer.cs">
-      <DependentUpon>202001090756185_databaseversion3.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202001091026521_databaseversion4.cs" />
-    <Compile Include="Migrations\202001091026521_databaseversion4.designer.cs">
-      <DependentUpon>202001091026521_databaseversion4.cs</DependentUpon>
+    <Compile Include="Migrations\202001091157585_database1.cs" />
+    <Compile Include="Migrations\202001091157585_database1.designer.cs">
+      <DependentUpon>202001091157585_database1.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\attendance.cs" />
@@ -307,6 +309,13 @@
     <Content Include="Views\ManageEmployee\Department.cshtml" />
     <Content Include="Views\ManageEmployee\Designation.cshtml" />
     <Content Include="Views\Notification\Index.cshtml" />
+    <Content Include="Views\SalaryManagement\AddTemplate.cshtml" />
+    <Content Include="Views\SalaryManagement\makepayment.cshtml" />
+    <Content Include="Views\SalaryManagement\AssignSalary.cshtml" />
+    <Content Include="Views\SalaryManagement\CheckSalary.cshtml" />
+    <Content Include="Views\SalaryManagement\PayrollManagement.cshtml" />
+    <Content Include="Views\Attendance\DailyAttendance.cshtml" />
+    <Content Include="Views\Award\Index_Award.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -319,17 +328,8 @@
     <Folder Include="SidebarIcons\" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\202001090611487_databaseversion1.resx">
-      <DependentUpon>202001090611487_databaseversion1.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202001090717101_databaseversion2.resx">
-      <DependentUpon>202001090717101_databaseversion2.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202001090756185_databaseversion3.resx">
-      <DependentUpon>202001090756185_databaseversion3.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202001091026521_databaseversion4.resx">
-      <DependentUpon>202001091026521_databaseversion4.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202001091157585_database1.resx">
+      <DependentUpon>202001091157585_database1.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

@@ -8,7 +8,7 @@ namespace website_emp.Models
 {
     public class context :DbContext
     {
-        public context() : base(@"Data Source=LAPTOP-ENVV97AF;Initial Catalog=Emp_Task_Management;Integrated security = true")
+        public context() : base(@"Data Source=DESKTOP-M1JQCQK;Initial Catalog=Emp_Task_Management;Integrated security = true")
         {
 
         }
