@@ -141,13 +141,19 @@
     <Content Include="CustomCSS\Roles.css" />
     <Content Include="CustomCSS\Salary Module Css\Add new template-css.css" />
     <Content Include="CustomCSS\Salary Module Css\assign-salary-to-employee.css" />
+    <Content Include="CustomCSS\Salary Module Css\award_list.css" />
     <Content Include="CustomCSS\Salary Module Css\check salary.css" />
+    <Content Include="CustomCSS\Salary Module Css\daily attendance.css" />
+    <Content Include="CustomCSS\Salary Module Css\edit_profile.css" />
     <Content Include="CustomCSS\Salary Module Css\employee-salary-table.css" />
     <Content Include="CustomCSS\Salary Module Css\generate payslip.css" />
     <Content Include="CustomCSS\Salary Module Css\list of employees and their salaries.css" />
     <Content Include="CustomCSS\Salary Module Css\make payment.css" />
     <Content Include="CustomCSS\Salary Module Css\manage salary details.css" />
+    <Content Include="CustomCSS\Salary Module Css\monthly attendance.css" />
     <Content Include="CustomCSS\Salary Module Css\payroll template list.css" />
+    <Content Include="CustomCSS\Salary Module Css\request-app.css" />
+    <Content Include="CustomCSS\Salary Module Css\userfpofile_css.css" />
     <Content Include="CustomCSS\ScrollbarCSS.css" />
     <Content Include="CustomCSS\table.css" />
     <Content Include="CustomCSS\userfpofile_css.css" />
@@ -240,6 +246,7 @@
     <Compile Include="Controllers\DashboardController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageEmployeeController.cs" />
+    <Compile Include="Controllers\NoticeBoardController.cs" />
     <Compile Include="Controllers\NotificationController.cs" />
     <Compile Include="Controllers\PerformanceController.cs" />
     <Compile Include="Controllers\SalaryManagementController.cs" />
@@ -304,7 +311,7 @@
     <Content Include="Views\Performance\Submodule2.cshtml" />
     <Content Include="Views\Performance\Submodule3.cshtml" />
     <Content Include="Views\Attendance\MarkAttendance.cshtml" />
-    <Content Include="Views\Administration\Index.cshtml" />
+    <Content Include="Views\Administration\UserProfile.cshtml" />
     <Content Include="Views\Administration\ManageRoles.cshtml" />
     <Content Include="Views\ManageEmployee\Department.cshtml" />
     <Content Include="Views\ManageEmployee\Designation.cshtml" />
@@ -317,6 +324,12 @@
     <Content Include="Views\Attendance\DailyAttendance.cshtml" />
     <Content Include="Views\Award\Index_Award.cshtml" />
     <Content Include="Views\SalaryManagement\TemplateList.cshtml" />
+    <Content Include="Views\Attendance\MonthlyAttendance.cshtml" />
+    <Content Include="Views\Attendance\LeaveRequest.cshtml" />
+    <Content Include="Views\SalaryManagement\GeneratePaySlip.cshtml" />
+    <Content Include="Views\SalaryManagement\EmployeeSalaries.cshtml" />
+    <Content Include="Views\SalaryManagement\ManageSalary.cshtml" />
+    <Content Include="Views\NoticeBoard\Notice_Board.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

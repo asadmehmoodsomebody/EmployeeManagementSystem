@@ -1,0 +1,28 @@
+.txa-edit
+{
+    resize: none;
+}
+/*.admin-image
+{
+    border-radius: 90px;
+    margin-top: 90px;
+}*/
+.Edit_profile_icon{
+    font-size: 100px;
+    margin-top: 10px;
+}
+.edit-profile-body
+{
+    background-color: darkgray;
+}
+.col-ronder-class
+{
+}
+input
+{
+ box-shadow: 0px 4px 5px 1px lightgray !important;
+}
+input:focus,input:active{
+    border: 1px solid skyblue !important;
+     box-shadow: 0px 4px 1px 2px lightgray !important;
+}

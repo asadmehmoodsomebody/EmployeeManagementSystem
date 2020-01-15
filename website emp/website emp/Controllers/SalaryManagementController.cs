@@ -33,5 +33,17 @@ namespace website_emp.Controllers
         {
             return View();
         }
+        public ActionResult GeneratePaySlip()
+        {
+            return View();
+        }
+        public ActionResult EmployeeSalaries()
+        {
+            return View();
+        }
+        public ActionResult ManageSalary()
+        {
+            return View();
+        }
     }
 }

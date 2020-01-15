@@ -10,10 +10,11 @@ namespace website_emp.Controllers
     {
         // GET: Administration
 
-        public ActionResult Index()
+        public ActionResult UserProfile()
         {
             return View();
         }
+        
 
 
 

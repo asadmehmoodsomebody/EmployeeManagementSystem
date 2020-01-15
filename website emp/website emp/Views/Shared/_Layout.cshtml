@@ -49,7 +49,9 @@
 
               </div>
               <div class="col-2 d-flex justify-content-end align-items-center notifications">
+
                   <a class="d-flex align-items-center Notification-icon" href="@Url.Action("Index","Notification")"><span><i class="fa fa-bell"></i></span></a>
+                  <a class="d-flex align-items-center Notification-icon" href="@Url.Action("UserProfile","Administration")"><span><i class="fa fa-user-circle"></i></span>&nbsp; Profile</a>
                   <a class="d-flex align-items-center Logout-icon" style="color:white; text-decoration:none;" href="@Url.Action("login","Home")"><span><i class="fa fa-sign-out-alt"></i></span>Logout</a>
               </div>
           </div>
@@ -124,6 +126,9 @@
                         <ul class="collapse list-unstyled p-0 is-child" id="dr2" parent="#Attendance">
                             <li class="nav-item"><a href="@Url.Action("MarkAttendance","Attendance")" class="nav-link pl-4 d-flex align-items-center"  id="MarkAttendance"><span class="icon sidebar-icon mb-1"><i class="fas fa-user-check"></i></span>Mark Attendance</a></li>
                             <li class="nav-item"><a href="@Url.Action("DailyAttendance","Attendance")" class="nav-link pl-4 d-flex align-items-center" id="DailyAttendance"><span class="icon sidebar-icon mb-1"><i class="fa fa-user-alt-slash"></i></span>Daily Attendance</a></li>
+                            <li class="nav-item"><a href="@Url.Action("MonthlyAttendance","Attendance")" class="nav-link pl-4 d-flex align-items-center" id="MonthlyAttendance"><span class="icon sidebar-icon mb-1"><i class="fa fa-user-alt-slash"></i></span>Monthly Attendance</a></li>
+                            <li class="nav-item"><a href="@Url.Action("LeaveRequest","Attendance")" class="nav-link pl-4 d-flex align-items-center" id="LeaveRequest"><span class="icon sidebar-icon mb-1"><i class="fa fa-user-alt-slash"></i></span>Leave Request</a></li>
+
                             <li class="nav-item"><a href="@Url.Action("Index","Dashboard")" class="nav-link pl-4 d-flex align-items-center"><span class="icon sidebar-icon mb-1"><i class="fa fa-user-clock"></i></span>Check Work hours</a></li>
                         </ul>
                     </li>
@@ -143,6 +148,9 @@
 
                             <li class="nav-item"><a href="@Url.Action("TemplateList","SalaryManagement")" class="nav-link pl-4 d-flex align-items-center" id="TemplateList"><span class="icon sidebar-icon mb-1"><i class="fa fa-meh-rolling-eyes"></i></span>Template List</a></li>
                             <li class="nav-item"><a href="@Url.Action("makepayment","SalaryManagement")" class="nav-link pl-4 d-flex align-items-center" id="makepayments"><span class="icon sidebar-icon mb-1"><i class="fa fa-meh-rolling-eyes"></i></span>Make Payments</a></li>
+                            <li class="nav-item"><a href="@Url.Action("GeneratePaySlip","SalaryManagement")" class="nav-link pl-4 d-flex align-items-center" id="GeneratePaySlip"><span class="icon sidebar-icon mb-1"><i class="fa fa-meh-rolling-eyes"></i></span>Generate Payslip</a></li>
+                            <li class="nav-item"><a href="@Url.Action("EmployeeSalaries","SalaryManagement")" class="nav-link pl-4 d-flex align-items-center" id="EmployeeSalaries"><span class="icon sidebar-icon mb-1"><i class="fa fa-meh-rolling-eyes"></i></span>Employee Salaries</a></li>
+                            <li class="nav-item"><a href="@Url.Action("ManageSalary","SalaryManagement")" class="nav-link pl-4 d-flex align-items-center" id="ManageSalary"><span class="icon sidebar-icon mb-1"><i class="fa fa-meh-rolling-eyes"></i></span>Manage Salary</a></li>
                         </ul> 
                     </li>
                     @* End of Salary module*@
@@ -162,7 +170,7 @@
                             <li class="nav-item"><a href="@Url.Action("Submodule3","Performance")" class="nav-link pl-4 d-flex align-items-center" id="Submodule3"><span class="icon sidebar-icon mb-1"><i class="fa fa-cog"></i></span>Dashboard-c</a></li>
                         </ul>
                     </li>
-                    <li class="nav-item"><a  class="nav-link pl-3 d-flex align-items-center"><span class="icon sidebar-icon mb-1"><i class="fa fa-clipboard-list"></i></span>Noticeboard</a></li>
+                    <li class="nav-item"><a href="@Url.Action("Notice_Board","NoticeBoard")" class="nav-link pl-3 d-flex align-items-center" id="Notice_Board"><span class="icon sidebar-icon mb-1"><i class="fa fa-clipboard-list"></i></span>Noticeboard</a></li>
                     <li class="nav-item" id="Index_Award"><a href="@Url.Action("Index_Award","Award")" class="nav-link pl-3 d-flex align-items-center"><span class="icon sidebar-icon mb-1"><i class="fa fa-award"></i></span>Award</a></li>
                     
                     
