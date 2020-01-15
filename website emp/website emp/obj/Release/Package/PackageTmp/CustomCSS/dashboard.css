@@ -1,0 +1,25 @@
+.mainbody
+{
+    background-color: lightgrey;
+}
+.fourcards
+{
+   
+    background: transparent !important;
+    
+
+}
+.today_attendance
+{
+    height: 150px;
+}
+.twocards
+{
+    height: 300px;
+    background: transparent;
+}
+.fourcard-wrapper{
+}
+.clear-fix{
+    clear: both;
+}

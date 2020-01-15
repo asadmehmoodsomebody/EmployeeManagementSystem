@@ -1,0 +1,74 @@
+﻿
+@{
+    ViewBag.Title = "LeaveRequest";
+}
+<link href="~/CustomCSS/Salary Module Css/request-app.css" rel="stylesheet" />
+<input type="hidden" id="GetActiveTab" value="#LeaveRequest" />
+<div class="row no-gutters">
+    <div class="col-8">
+        
+        <span>Leave Request</span>
+    </div>
+</div>
+<div class="row mt-3 bg-primary no-gutters m-0 text-white">
+    <div class="col-12 m-0" style="height: 40px;">
+        <span class="spanicon font-weight-bolder">
+            <i class="fas fa-calculator ml-3  mt-2">    &nbsp;Requested Application</i>
+        </span>
+    </div>
+</div>
+<div class="bg-white  no-gutters">
+    <div class="tbl-div mt-3 w-100">
+        <table class="table table-striped table-bordered tbl w-100">
+            <tr>
+                <th>S/L</th>
+                <th>Employee Name</th>
+                <th>Leave type</th>
+                <th>Request Duration</th>
+                <th>Application Date</th>
+                <th>Number of Day</th>
+                <th>Purpose</th>
+                <th>Status</th>
+                <th>Action</th>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td>M.Ismail</td>
+                <td>casual leave</td>
+                <td>28/12/2019 <b>to</b> 02/01/2020</td>
+                <td>26.12/2019</td>
+                <td>4</td>
+                <td>I am going to murre</td>
+                <td>
+                    <button type="submit" class="bg-danger text-white shadow border-0">Rejected</button>
+                </td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>Zumaid khan</td>
+                <td>casual leave</td>
+                <td>28/12/2019 <b>to</b> 02/01/2020</td>
+                <td>26.12/2019</td>
+                <td>4</td>
+                <td>I am going to murre</td>
+                <td>
+                    <button type="submit" class="bg-primary text-white shadow border-0">Accepted</button>
+                </td>
+            </tr>
+        </table>
+        <p class="ml-2 d-none">No data have found</p>
+    </div>
+</div>
+<div class="row bg-white no-gutters">
+    <div class="col-8 mt-5">
+        <p class="ml-2">Showing 0 to 0 of 0 entries</p>
+    </div>
+    <div class="col-4 mt-5 d-none">
+        <div class="pagination float-right mr-4">
+            <button type="button">previous</button>
+            <button type="button">1</button>
+            <button type="button">Next</button>
+        </div>
+    </div>
+</div>
+

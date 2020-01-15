@@ -1,0 +1,29 @@
+﻿
+@{
+    ViewBag.Title = "GeneratePaySlip";
+}
+
+<input type="hidden" id="GetActiveTab" value="#GeneratePaySlip" />
+<link href="~/CustomCSS/Salary Module Css/generate payslip.css" rel="stylesheet" />
+<hr class="mt-0 mb-0 hr1">
+<div class="bg-white mt-3">
+    <h5 class="ml-2 pt-2">Generate Payslip</h5>
+    <div class="h-100 text-center">
+        <div>
+            <label class="d-inline">Select Department</label>
+            <select class="ml-3 border shadow w-50">
+                <option>IT</option>
+                <option>Accountant</option>
+                <option>Marketing</option>
+                <option>Bussiness</option>
+            </select>
+        </div>
+        <div class="mt-4">
+            <label class="d-inline">Select Month</label>
+            <input type="date" class="ml-5 w-50 shadow border fas fa-calculator text-secondary">
+        </div>
+        <div class="mt-4">
+            <button type="submit" class="bg-info shadow border-0 text-white font-weight-bold w-25 ml-5 btn-go mb-5">Go</button>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,31 @@
+﻿
+@{
+    ViewBag.Title = "ManageSarlary";
+}
+<link href="~/CustomCSS/Salary Module Css/manage salary details.css" rel="stylesheet" />
+<input type="hidden" id="GetActiveTab" value="#ManageSalary" />
+<div class="row mt-3">
+    <div class="col-12">
+        <h4 class="d-inline">Payroll management</h4>
+        <p class="d-inline float-right mt-2">Payroll > Payroll Tempalate</p>
+    </div>
+</div>
+<hr class="mb-0 hr1">
+<div class="bg-white h-100">
+    <h5 class="ml-2">Manage salary Details</h5>
+    <div class="row text-center mb-5">
+        <div class="col-8 mt-2 ml-2">
+            <label class="d-inline">Select Department</label>
+            <select class="ml-3 w-50">
+                <option>IT</option>
+                <option>Accountant</option>
+                <option>Marketing</option>
+                <option>Bussiness</option>
+            </select>
+        </div>
+        <div class="col-3">
+            <button type="submit" class="bg-info shadow border-0 font-weight-bold text-white form-control">Go</button>
+        </div>
+    </div>
+</div>
+

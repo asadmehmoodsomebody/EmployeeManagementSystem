@@ -1,0 +1,73 @@
+.maindiv
+{
+    border: solid 1px lightgray;
+    background-color:lightgray;
+    height: 100%;
+}
+.container1
+{
+    background-color: white;
+    border-radius: 5px;
+}
+.container2
+{
+   background-color: white;
+    border-radius: 5px; 
+}
+.btnsearch
+{
+    border-radius: 15px;
+    font-weight: bold;
+}
+.searchicon
+{
+    width: 17px;
+    margin-left: 15px;
+}
+.ManageEmpIcon-edit {
+    display:block;
+    background-image: url('../Images/editi.png');
+    width: 20px;
+    background-position:center;
+    background-repeat:no-repeat;
+    background-size:cover;
+    height:20px;
+}
+.ManageEmpIcon-delete 
+{
+    display:block;
+    background-image: url('../Images/delete-forever.png');
+    width: 20px;
+    background-position:center;
+    background-repeat:no-repeat;
+    background-size:cover;
+    height:20px;
+}
+.ManageEmpIcon-add 
+{
+    display:block;
+    background-image: url('../Images/adddd.png');
+    width: 20px;
+    background-position:center;
+    background-repeat:no-repeat;
+    background-size:cover;
+    height:20px;
+    margin-right: 4px;
+}
+.searchby_name_emp
+{
+    border-style: none !important;
+    border-bottom: solid 2px lightgray !important;
+    width: 250px;
+}
+.show_all_employee
+{
+    border-style: outset; 
+    padding-left: 13px;
+    border-radius: 13px;
+    margin-top: 3px;
+}
+.combobox
+{
+    margin-left: 5px;
+}

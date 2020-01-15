@@ -1,0 +1,17 @@
+/*Just Paste link of this css in any where the scroll bar will automatically change*/
+
+
+::-webkit-scrollbar{
+    width: 6px;
+    background-color: darkgray;
+}
+::-webkit-scrollbar-track{
+    border-radius: 4px;
+}
+::-webkit-scrollbar-thumb{
+    background-color: #48A1E5;
+    border-radius: 4px;
+ box-shadow: 50px;
+}
+
+

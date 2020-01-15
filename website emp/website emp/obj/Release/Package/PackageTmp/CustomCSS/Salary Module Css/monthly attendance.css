@@ -1,0 +1,17 @@
+body
+{
+    background-color: lightgray;
+}
+.btn-filter
+{
+    margin-top: 28px !important;
+}
+.tbl-div
+{
+    width: 100%;
+    overflow-x: auto;
+}
+.tbl
+{
+    min-width: 995px;
+}

@@ -1,0 +1,32 @@
+
+.hr1
+{
+    border: solid 2px blue !important;
+}y
+.profile
+{
+    background-image: url(../icons/add%20emp.png);
+    width: 5px;
+    height: 5px;
+    border-radius: 20px;
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    visibility: visible;
+    display: inline-block;
+}
+.profile-icon
+{
+    width: 50px;
+    border-radius: 20px;
+    
+}
+.tbl-div
+{
+    width: 100%;
+    overflow-x: auto;
+}
+.tbl
+{
+    min-width: 770px;
+}
