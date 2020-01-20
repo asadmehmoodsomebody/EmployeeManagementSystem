@@ -133,6 +133,7 @@
     <Content Include="Content\v4-shims.min.css" />
     <Content Include="CustomCSS\Attendance Module Css\daily attendance.css" />
     <Content Include="CustomCSS\Award Css\award_list.css" />
+    <Content Include="CustomCSS\BigBoxCSS.css" />
     <Content Include="CustomCSS\BlueBGCheckboxCss.css" />
     <Content Include="CustomCSS\dashboard.css" />
     <Content Include="CustomCSS\Department.css" />
@@ -331,6 +332,10 @@
     <Content Include="Views\SalaryManagement\EmployeeSalaries.cshtml" />
     <Content Include="Views\SalaryManagement\ManageSalary.cshtml" />
     <Content Include="Views\NoticeBoard\Notice_Board.cshtml" />
+    <Content Include="Views\Attendance\LeaveRequest_E.cshtml" />
+    <Content Include="Views\Attendance\Holidays.cshtml" />
+    <Content Include="Views\Administration\ManageShifts.cshtml" />
+    <Content Include="Views\Administration\ShiftsDetail.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

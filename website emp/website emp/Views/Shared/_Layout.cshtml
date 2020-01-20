@@ -13,6 +13,7 @@
     <link href="~/CustomCSS/_Layout.css" rel="stylesheet" />
     <link href="~/CustomCSS/ScrollbarCSS.css" rel="stylesheet" />
     <link href="~/Content/fontawesome-all.min.css" rel="stylesheet" />
+    <link href="~/CustomCSS/BigBoxCSS.css" rel="stylesheet" />
     <title>@ViewBag.Title</title>
 </head>
 <body>
@@ -74,13 +75,15 @@
 
 
 
-                    <li class="nav-item " @*id="Administration"*@>
+                    <li class="nav-item " id="Administration">
                         <a class="nav-link pl-3 d-flex align-items-center has-children" data-target="#Admin">
                             <span class="icon sidebar-icon mb-1"><i class="fa fa-user-shield"></i></span>Administration
                             <span class="ml-auto mr-2 toggle-icon" ></span>
                         </a>
                         <ul class="collapse list-unstyled p-0 is-child" id="Admin" parent="#Administration">
                             <li class="nav-item"><a href="@Url.Action("ManageRoles", "Administration")" class="nav-link pl-4 d-flex align-items-center" id="ManageRoles"><span class="icon sidebar-icon mb-1"><i class="fa fa-user-tag mr-2"></i></span>Manage Roles</a></li>
+                            <li class="nav-item"><a href="@Url.Action("ManageShifts", "Administration")" class="nav-link pl-4 d-flex align-items-center" id="ManageShifts"><span class="icon sidebar-icon mb-1"><i class="fa fa-user-tag mr-2"></i></span>Manage Shifts</a></li>
+                            <li class="nav-item"><a href="@Url.Action("ShiftsDetail", "Administration")" class="nav-link pl-4 d-flex align-items-center" id="ShiftsDetail"><span class="icon sidebar-icon mb-1"><i class="fa fa-user-tag mr-2"></i></span>ShiftsDetail</a></li>
                             @*<li class="nav-item"><a href="@Url.Action("UpdateEmployee", "ManageEmployee")" class="nav-link pl-4 d-flex align-items-center" id="UpdateEmployee"><span class="dashboard-icon icon sidebar-icon"></span>Update Employee</a></li>
                             <li class="nav-item"><a href="@Url.Action("ShowEmployee", "ManageEmployee")" class="nav-link pl-4 d-flex align-items-center" id="ShowEmployee"><span class="dashboard-icon icon sidebar-icon"></span>Show Employee</a></li>
                             <li class="nav-item"><a href="@Url.Action("DeleteEmployee", "ManageEmployee")" class="nav-link pl-4 d-flex align-items-center" id="DeleteEmployee"><span class="dashboard-icon icon sidebar-icon"></span>Delete Employee</a></li>*@
@@ -105,8 +108,8 @@
                             <li class="nav-item"><a href="@Url.Action("Index","ManageEmployee")" class="nav-link pl-4 d-flex align-items-center" id="Index"><span class="icon sidebar-icon mb-1"><i class="fa fa-home"></i></span>Manage Employee</a></li>
                             <li class="nav-item"><a href="@Url.Action("Department","ManageEmployee")" class="nav-link pl-4 d-flex align-items-center" id="Department"><span class="icon sidebar-icon mb-1"><i class="fa fa-home"></i></span>Department</a></li>
                             <li class="nav-item"><a href="@Url.Action("Designation", "ManageEmployee")" class="nav-link pl-4 d-flex align-items-center" id="Designation"><span class="icon sidebar-icon mb-1"><i class="fa fa-id-card"></i></span>Designation</a></li>
-                            <li class="nav-item"><a href="@Url.Action("ShowEmployee", "ManageEmployee")" class="nav-link pl-4 d-flex align-items-center" id="ShowEmployee"><span class="icon sidebar-icon mb-1"><i class="fas fa-code-branch"></i></span>Branch</a></li>
-                            <li class="nav-item"><a href="@Url.Action("DeleteEmployee", "ManageEmployee")" class="nav-link pl-4 d-flex align-items-center" id="DeleteEmployee"><span class="icon sidebar-icon mb-1"><i class="fas fa-medal"></i></span>Promotion</a></li>
+                            @*<li class="nav-item"><a href="@Url.Action("ShowEmployee", "ManageEmployee")" class="nav-link pl-4 d-flex align-items-center" id="ShowEmployee"><span class="icon sidebar-icon mb-1"><i class="fas fa-code-branch"></i></span>Branch</a></li>
+                            <li class="nav-item"><a href="@Url.Action("DeleteEmployee", "ManageEmployee")" class="nav-link pl-4 d-flex align-items-center" id="DeleteEmployee"><span class="icon sidebar-icon mb-1"><i class="fas fa-medal"></i></span>Promotion</a></li>*@
                         </ul>
                     </li>
                     
@@ -128,6 +131,9 @@
                             <li class="nav-item"><a href="@Url.Action("DailyAttendance","Attendance")" class="nav-link pl-4 d-flex align-items-center" id="DailyAttendance"><span class="icon sidebar-icon mb-1"><i class="fa fa-user-alt-slash"></i></span>Daily Attendance</a></li>
                             <li class="nav-item"><a href="@Url.Action("MonthlyAttendance","Attendance")" class="nav-link pl-4 d-flex align-items-center" id="MonthlyAttendance"><span class="icon sidebar-icon mb-1"><i class="fa fa-user-alt-slash"></i></span>Monthly Attendance</a></li>
                             <li class="nav-item"><a href="@Url.Action("LeaveRequest","Attendance")" class="nav-link pl-4 d-flex align-items-center" id="LeaveRequest"><span class="icon sidebar-icon mb-1"><i class="fa fa-user-alt-slash"></i></span>Leave Request</a></li>
+                            <li class="nav-item"><a href="@Url.Action("Holidays","Attendance")" class="nav-link pl-4 d-flex align-items-center" id="Holidays"><span class="icon sidebar-icon mb-1"><i class="fa fa-user-alt-slash"></i></span>Holidays</a></li>
+                            <li class="nav-item"><a href="@Url.Action("LeaveRequest_E","Attendance")" class="nav-link pl-4 d-flex align-items-center" id="LeaveRequest_E"><span class="icon sidebar-icon mb-1"><i class="fa fa-user-alt-slash"></i></span>LeaveRequest_E</a></li>
+
 
                             <li class="nav-item"><a href="@Url.Action("Index","Dashboard")" class="nav-link pl-4 d-flex align-items-center"><span class="icon sidebar-icon mb-1"><i class="fa fa-user-clock"></i></span>Check Work hours</a></li>
                         </ul>

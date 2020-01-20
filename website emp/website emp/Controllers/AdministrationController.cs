@@ -14,14 +14,16 @@ namespace website_emp.Controllers
         {
             return View();
         }
-        
-
-
-
-
-
 
         public ActionResult ManageRoles()
+        {
+            return View();
+        }
+        public ActionResult ManageShifts()
+        {
+            return View();
+        }
+        public ActionResult ShiftsDetail()
         {
             return View();
         }

@@ -1,0 +1,44 @@
+﻿
+@{
+    ViewBag.Title = "ShiftsDetail";
+}
+<input type="hidden" id="GetActiveTab" value="#ManageShifts" />
+<div class="Big-Box mt-3">
+    <div class="row text-center " >
+        <div class="col-12">
+            <h3 class="bg-info text-white  pt-2 pb-2">Shift Details</h3>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-12 col-md-4 col-xl-4 ml-2 mr-2">
+            <label class="font-weight-bold mb-0 mt-2">Shift Name</label>
+            <input type="text" placeholder="Name" class="form-control shadow">
+        </div>
+        <div class="col-12 col-md-4 col-xl-4">
+            <label class="font-weight-bold mb-0 mt-2">Strting Time</label>
+            <input type="text" placeholder="Format" class="form-control shadow">
+        </div>
+        <div class="col-12 col-md-4 col-xl-4">
+            <label class="font-weight-bold mb-0 mt-2">Ending Time</label>
+            <input type="text" placeholder="Format" class="form-control shadow">
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-12 col-md-4 col-xl-4">
+            <label class="font-weight-bold mb-0 mt-2">Late Time</label>
+            <input type="text" placeholder="Name" class="shadow form-control">
+        </div>
+        <div class="col-12 col-md-4 col-xl-4">
+            <label class="font-weight-bold mb-0 mt-2">Status</label>
+            <select class="form-control shadow">
+                <option>Active</option>
+                <option>Reject</option>
+                <option>Pending</option>
+            </select>
+        </div>
+        <div class="col-12 col-md-4 col-xl-4">
+            <button type="submit" class="form-control text-white bg-info shadow border-00 btn-submit mb-3">Submit</button>
+        </div>
+    </div>
+</div>

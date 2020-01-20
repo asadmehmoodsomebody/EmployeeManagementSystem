@@ -29,6 +29,14 @@ namespace website_emp.Controllers
         {
             return View();
         }
+        public ActionResult LeaveRequest_E()
+        {
+            return View();
+        }
+        public ActionResult Holidays()
+        {
+            return View();
+        }
 
     }
 }
