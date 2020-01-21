@@ -45,5 +45,9 @@ namespace website_emp.Controllers
         {
             return View();
         }
+        public ActionResult SalaryReport()
+        {
+            return View();
+        }
     }
 }
