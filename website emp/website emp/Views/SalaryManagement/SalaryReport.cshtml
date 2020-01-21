@@ -1,0 +1,111 @@
+﻿
+@{
+    ViewBag.Title = "SalaryReport";
+}
+
+<link href="~/CustomCSS/Salary Module Css/salary-report.css" rel="stylesheet" />
+<input type="hidden" id="GetActiveTab" value="#SalaryReport" />
+
+<div class="mt-3 Big-Box">
+    <div>
+        <div class="col-12 col-xl-12 col-md-12 d-flex text-justify justify-content-center justify-content-sm-start">
+            <h5>Salary Report</h5>
+        </div>
+        <div class="row m-3">
+            <div class="col-12 col-xl-2 col-md-3 d-flex text-justify justify-content-center justify-content-sm-center">
+                <label class="mb-0 mt-2">Select Year</label>
+            </div>
+            <div class="col-12 col-xl-2 col-md-2 d-flex   text-justify justify-content-center justify-content-sm-center">
+                <select class="form-control shadow">
+                    <option>2018</option>
+                    <option>2019</option>
+                    <option>2020</option>
+                </select>
+            </div>
+            <div class="col-12 col-xl-2 col-md-3 d-flex text-justify justify-content-center justify-content-sm-center">
+                <label class="mb-0 mt-2">Select Month</label>
+            </div>
+            <div class="col-12 col-xl-2 col-md-2 d-flex   text-justify justify-content-center justify-content-sm-center">
+                <select class="form-control shadow">
+                    <option>January</option>
+                    <option>Febuary</option>
+                    <option>March</option>
+                </select>
+            </div>
+            <div class="col-12 col-xl-2 col-md-2 d-flex  text-justify justify-content-center justify-content-sm-center  mt-3 mt-xl-0 mt-md-0">
+                <button type="button" class="shadow border-0 font-weight-bold text-white form-control bg-info b-view">View</button>
+            </div>
+        </div>
+    </div>
+    <div class="total-salary-report-div h-div">
+        <div class="col-12 d-flex text-justify justify-content-center justify-content-sm-start">
+            <h5 class="mb-0 mt-2">Total Salary Report</h5>
+        </div>
+        <div class="col-12 pt-2 d-flex text-justify justify-content-center justify-content-sm-end pb-2 pr-md-5 pr-xl-5 pr-sm-5">
+            <span>Printed Date :</span>
+            <span>17/06/2020</span>
+        </div>
+        <div class="tbl-div">
+            <table class="table table-bordered table-striped  tbl">
+                <tr class="bg-info text-white">
+                    <th>S.No</th>
+                    <th>Emp Id</th>
+                    <th>Emp Name</th>
+                    <th>Year</th>
+                    <th>Month</th>
+                    <th>Net Salary</th>
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td>101</td>
+                    <td>Zumaid khattak</td>
+                    <td>2019</td>
+                    <td>October</td>
+                    <td>28600</td>
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td>101</td>
+                    <td>Zumaid khattak</td>
+                    <td>2019</td>
+                    <td>October</td>
+                    <td>28600</td>
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td>101</td>
+                    <td>Zumaid khattak</td>
+                    <td>2019</td>
+                    <td>October</td>
+                    <td>28600</td>
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td>101</td>
+                    <td>Zumaid khattak</td>
+                    <td>2019</td>
+                    <td>October</td>
+                    <td>28600</td>
+                </tr>
+            </table>
+
+            <div class="col-12 pt-2 d-flex text-justify justify-content-center justify-content-sm-end pb-2 pr-md-5 pr-xl-5 pr-sm-5">
+                <span class="font-weight-bold">Total Salary &nbsp;&nbsp;</span>
+                <span>118000</span>
+            </div>
+        </div>
+
+        <div class="row mt-5 no-gutters pb-4">
+            <div class="col-sm-6 col-12  col-xl-6 d-flex text-justify justify-content-sm-start justify-content-center">
+                <p class="ml-2 d-inline">Showing 1 to 4 of 4 entries</p>
+            </div>
+            <div class="col-sm-6 col-12  col-xl-6 d-flex text-justify  justify-content-sm-end justify-content-center pr-md-5 pr-xl-5 pr-sm-5 pagination">
+                <button type="submit">Previous</button>
+                <button type="submit">1</button>
+                <button type="submit">2</button>
+                <button type="submit">3</button>
+                <button type="submit">Next</button>
+            </div>
+        </div>
+    </div>
+</div>

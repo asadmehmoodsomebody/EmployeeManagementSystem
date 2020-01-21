@@ -3,7 +3,21 @@
 {
     width: 150px;
 }
-.hr1
+.btn-go
 {
-    border: solid 2px blue !important;
+    margin-left: 20px;
 }
+.tbl
+{
+    overflow-x: auto;
+}
+.tbl-div
+{
+    width: 100%;
+    overflow-x: auto;
+}
+.tbl
+{
+    min-width: 770px;
+}
+
