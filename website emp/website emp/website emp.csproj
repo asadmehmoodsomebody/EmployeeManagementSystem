@@ -137,7 +137,6 @@
     <Content Include="CustomCSS\BlueBGCheckboxCss.css" />
     <Content Include="CustomCSS\dashboard.css" />
     <Content Include="CustomCSS\Department.css" />
-    <Content Include="CustomCSS\edit_css.css" />
     <Content Include="CustomCSS\login.css" />
     <Content Include="CustomCSS\Roles.css" />
     <Content Include="CustomCSS\Salary Module Css\Add new template-css.css" />
@@ -193,6 +192,7 @@
     <Content Include="Images\toggleIcon.png" />
     <Content Include="Images\tol_emp.png" />
     <Content Include="Images\top.PNG" />
+    <Content Include="Images\zebra.PNG" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <None Include="Properties\PublishProfiles\EmpSystem.pubxml" />
