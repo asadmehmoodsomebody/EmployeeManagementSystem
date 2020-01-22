@@ -20,6 +20,7 @@
 {
     width: 100%;
     overflow: scroll;
+    overflow-y:auto;
     height: 300px;
 }
 th
