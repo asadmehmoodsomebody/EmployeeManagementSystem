@@ -7,14 +7,14 @@
 {
     margin-left: 20px;
 }
-.tbl
-{
-    overflow-x: auto;
-}
 .tbl-div
 {
     width: 100%;
     overflow-x: auto;
+}
+.tbl
+{
+    min-width: 995px;
 }
 .tbl-div
 {
@@ -24,12 +24,9 @@
 }
 th
 {
-    background-color:skyblue !important;
+    background-color:skyblue;
     position:sticky;
     top:0;
 }
-.tbl
-{
-    min-width: 770px;
-}
+
 
