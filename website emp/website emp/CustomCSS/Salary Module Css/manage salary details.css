@@ -16,6 +16,18 @@
     width: 100%;
     overflow-x: auto;
 }
+.tbl-div
+{
+    width: 100%;
+    overflow: scroll;
+    height: 300px;
+}
+th
+{
+    background-color:skyblue !important;
+    position:sticky;
+    top:0;
+}
 .tbl
 {
     min-width: 770px;
