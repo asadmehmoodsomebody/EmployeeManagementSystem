@@ -1,8 +1,4 @@
 
-.hr1
-{
-    border: solid 2px blue !important;
-}y
 .profile
 {
     background-image: url(../icons/add%20emp.png);
@@ -29,4 +25,13 @@
 .tbl
 {
     min-width: 770px;
+}
+.select-pages
+{
+    width: 50px;
+    height: 25px;
+}
+.text-search:focus
+{
+    outline: none!important;
 }
