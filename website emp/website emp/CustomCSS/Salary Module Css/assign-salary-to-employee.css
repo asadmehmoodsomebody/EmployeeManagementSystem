@@ -1,11 +1,11 @@
-.select-pages
+
+.btn-submit
 {
-    width: 50px;
-    height: 25px;
+    width: 150px;
 }
-.text-search:focus
+.btn-go
 {
-    outline: none!important;
+    margin-left: 20px;
 }
 .tbl-div
 {
@@ -14,7 +14,7 @@
 }
 .tbl
 {
-    min-width: 980px;
+    min-width: 995px;
 }
 .tbl-div
 {
@@ -28,4 +28,5 @@ th
     position:sticky;
     top:0;
 }
-  
+
+

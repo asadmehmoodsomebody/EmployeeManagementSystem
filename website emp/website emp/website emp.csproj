@@ -140,6 +140,7 @@
     <Content Include="CustomCSS\login.css" />
     <Content Include="CustomCSS\Roles.css" />
     <Content Include="CustomCSS\Salary Module Css\Add new template-css.css" />
+    <Content Include="CustomCSS\Salary Module Css\assign-salary-to-employee.css" />
     <Content Include="CustomCSS\Salary Module Css\bigboxcss.css" />
     <Content Include="CustomCSS\Salary Module Css\check salary.css" />
     <Content Include="CustomCSS\Salary Module Css\generate payslip.css" />
