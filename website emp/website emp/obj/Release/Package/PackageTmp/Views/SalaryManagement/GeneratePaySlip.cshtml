@@ -5,25 +5,40 @@
 
 <input type="hidden" id="GetActiveTab" value="#GeneratePaySlip" />
 <link href="~/CustomCSS/Salary Module Css/generate payslip.css" rel="stylesheet" />
-<hr class="mt-0 mb-0 hr1">
-<div class="bg-white mt-3">
-    <h5 class="ml-2 pt-2">Generate Payslip</h5>
-    <div class="h-100 text-center">
-        <div>
-            <label class="d-inline">Select Department</label>
-            <select class="ml-3 border shadow w-50">
-                <option>IT</option>
-                <option>Accountant</option>
-                <option>Marketing</option>
-                <option>Bussiness</option>
-            </select>
+<div class="Big-Box mt-3">
+    <div class="bg-white">
+        <div class="col-12 col-xl-3 col-md-4 d-flex text-justify justify-content-center justify-content-sm-start">
+            <h5 class="mt-2">Generate Payslip</h5>
         </div>
-        <div class="mt-4">
-            <label class="d-inline">Select Month</label>
-            <input type="date" class="ml-5 w-50 shadow border fas fa-calculator text-secondary">
+        <div class="row m-3">
+            <div class="col-12 col-xl-3 col-md-4 d-flex text-justify justify-content-center justify-content-sm-center">
+                <label class="mb-0 mt-2">Select Department</label>
+            </div>
+            <div class="col-12 col-xl-5 col-md-5 d-flex   text-justify justify-content-center justify-content-sm-center input-group">
+                <select class="border shadow form-control">
+                    <option>IT</option>
+                    <option>Accountant</option>
+                    <option>Marketing</option>
+                    <option>Bussiness</option>
+                </select>
+                <div class="input-group-append shadow"><span class="input-group-text fas fa-calendar"></span></div>
+            </div>
         </div>
-        <div class="mt-4">
-            <button type="submit" class="bg-info shadow border-0 text-white font-weight-bold w-25 ml-5 btn-go mb-5">Go</button>
+        <div class="row m-3">
+            <div class="col-12 col-xl-3 col-md-4 d-flex text-justify justify-content-center justify-content-sm-center">
+                <label class="mb-0 mt-2">Select Month</label>
+            </div>
+            <div class="col-12 col-xl-5 col-md-5 d-flex   text-justify justify-content-center justify-content-sm-center input-group">
+                <input type="date" class="form-control shadow">
+                <div class="input-group-append shadow"><span class="input-group-text fas fa-home"></span></div>
+            </div>
+        </div>
+        <div class="row m-3 pb-4">
+            <div class="col-12 col-xl-3 col-md-4 d-flex text-justify justify-content-center justify-content-sm-center">
+            </div>
+            <div class="col-12 col-xl-5 col-md-5 d-flex  text-justify  justify-content-sm-center justify-content-center  justify-content-lg-center mt-3 mt-xl-0 mt-md-0">
+                <button type="submit" class="shadow border-0 font-weight-bold text-white btn-block p-2 rounded btn-info">Go</button>
+            </div>
         </div>
     </div>
 </div>

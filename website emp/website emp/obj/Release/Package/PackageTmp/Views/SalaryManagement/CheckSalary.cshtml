@@ -4,32 +4,29 @@
 }
 <input type="hidden" id="GetActiveTab" value="#CheckSalary" />
 <link href="~/CustomCSS/Salary Module Css/check salary.css" rel="stylesheet" />
-<div class="row mt-3">
-    <div class="col-12">
-        <h4 class="d-inline">Payroll management</h4>
-        <p class="d-inline float-right mt-2">Payroll > Payroll Tempalate</p>
+<div class="Big-Box mt-3">
+    <div class="col-12 col-md-12 col-xl-12 d-flex  justify-content-center justify-content-sm-start">
+        <h5>Check Salary Details</h5>
     </div>
-</div>
-<hr class="mt-0 mb-0 hr1">
-<div class="bg-white mt-0">
-    <div class="row no-gutters pt-2">
-        <div class="col-12">
-            <select class="ml-3">
+    <div class="row m-3 no-gutters">
+        <div class="col-sm-6 col-12  col-xl-6 d-flex text-justify justify-content-sm-start justify-content-center mt-1">
+            <select class="shadow select-pages">
                 <option>10</option>
                 <option>25</option>
                 <option>50</option>
                 <option>100</option>
             </select>
-            <p class="d-inline">Records per page</p>
-            <div class="float-right mr-3">
-                <label>Search :</label>
-                <input type="text" class="border shadow pl-2 text-search">
-            </div>
+            <p class="d-inline ml-3">Records per page</p>
+        </div>
+        <div class="col-sm-6 col-12  col-xl-6 d-flex text-justify  justify-content-center justify-content-sm-end pr-md-5 pr-xl-5 pr-sm-5">
+            <p class="d-inline mt-1">Search</p>
+            &nbsp;
+            <input type="text" class="shadow border pl-2 mb-2 text-search">
         </div>
     </div>
     <div class="tbl-div">
         <table class="table table-bordered table-striped tbl">
-            <tr>
+            <tr class="bg-info text-white">
                 <th>
                     <input type="checkbox" class="">
                 </th>
@@ -44,7 +41,7 @@
                 <td> <input type="checkbox" class=""></td>
                 <td class="text-center">
                     <a href="#" class="profile"></a>
-                    <img src="icons/admin.png" class="profile-icon">
+                    <img src="~/Images/admin.png" class="profile-icon">
                 </td>
                 <td>Zumaid khan</td>
                 <td>RS:2000</td>
@@ -61,7 +58,7 @@
                 <td> <input type="checkbox" class=""></td>
                 <td class="text-center">
                     <a href="#" class="profile"></a>
-                    <img src="icons/admin.png" class="profile-icon">
+                    <img src="~/Images/admin.png" class="profile-icon">
                 </td>
                 <td>Zumaid khan</td>
                 <td>RS:2000</td>
@@ -78,7 +75,7 @@
                 <td> <input type="checkbox" class=""></td>
                 <td class="text-center">
                     <a href="#" class="profile"></a>
-                    <img src="icons/admin.png" class="profile-icon">
+                    <img src="~/Images/admin.png" class="profile-icon">
                 </td>
                 <td>Zumaid khan</td>
                 <td>RS:2000</td>
@@ -95,7 +92,7 @@
                 <td> <input type="checkbox" class=""></td>
                 <td class="text-center">
                     <a href="#" class="profile"></a>
-                    <img src="icons/admin.png" class="profile-icon">
+                    <img src="~/Images/admin.png" class="profile-icon">
                 </td>
                 <td>Zumaid khan</td>
                 <td>RS:2000</td>
@@ -105,23 +102,22 @@
                 </td>
                 <td>
                     <button type="submit" class="bg-info text-white shadow border-0"><i class="fas fa-edit"></i> Edit</button>
-                    <button type="submit" class="bg-danger text-white shadow border-0"><i class="fas fa-trash-alt"></i> Delete</button>
+                    <button type="submit" class="bg-danger text-white shadow border-0"><i class="fas fa-trash-alt "></i> Delete</button>
                 </td>
             </tr>
 
         </table>
     </div>
     <div class="row mt-5 no-gutters pb-4">
-        <div class="col-12">
-            <p class="ml-2 d-inline">Showing 1 to 4 of 4 entries</p>
-            <div class="pagination float-right mr-3">
-                <button type="submit">Previous</button>
-                <button type="submit" class="text-white bg-info">1</button>
-                <button type="submit">2</button>
-                <button type="submit">3</button>
-                <button type="submit">Next</button>
-            </div>
+        <div class="col-sm-6 col-12  col-xl-6 d-flex text-justify justify-content-sm-start justify-content-center">
+            <p class="ml-2 mt-2 d-inline">Showing 1 to 4 of 4 entries</p>
+        </div>
+        <div class="col-sm-6 col-12  col-xl-6 d-flex text-justify  justify-content-sm-end justify-content-center pr-md-5 pr-xl-5 pr-sm-5 pagination">
+            <button type="submit">Previous</button>
+            <button type="submit">1</button>
+            <button type="submit">2</button>
+            <button type="submit">3</button>
+            <button type="submit">Next</button>
         </div>
     </div>
 </div>
-

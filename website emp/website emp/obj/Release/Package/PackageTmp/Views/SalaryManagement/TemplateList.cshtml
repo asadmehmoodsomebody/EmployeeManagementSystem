@@ -2,88 +2,128 @@
 @{
     ViewBag.Title = "TemplateList";
 }
-
+<link href="~/CustomCSS/Salary Module Css/payroll template list.css" rel="stylesheet" />
 <input type="hidden" id="GetActiveTab" value="#TemplateList" />
-<div class="row mt-3">
-    <div class="col-12">
-        <h4 class="d-inline">Payroll management</h4>
-        <p class="d-inline float-right mt-2">Payroll > Payroll Tempalate</p>
-    </div>
-</div>
-<hr class="mt-0 mb-0 hr1">
-<div class="bg-white mt-0">
-    <a href="#" class="text-decoration-none">Payroll Template list</a>
-    <a href="#" class="text-decoration-none"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Payroll Template list</a>
-    <div class="row mt-4">
-        <div class="col-12">
-            <select class="ml-3">
-                <option>10</option>
-                <option>25</option>
-                <option>50</option>
-                <option>100</option>
-            </select>
-            <p class="d-inline">Records per page</p>
-            <div class="float-right mr-3">
-                <label>Search :</label>
-                <input type="text" class="shadow border pl-2 text-search">
+<div class="Big-Box mt-3">
+    <!--                <div class="row mt-3">
+                <div class="col-12 col-xl-6 col-md-6 d-flex text-justify justify-content-center justify-content-sm-start">
+                    <h4>Payroll management</h4>
+                </div>
+
+                <div class="col-12 col-xl-6 col-md-6 d-flex text-justify justify-content-center justify-content-sm-end">
+                  <p class="">Payroll > Payroll Tempalate</p>
+                </div>
+            </div>-->
+    <!--<hr class="mt-0 mb-0 hr1">-->
+    <div class="bg-white mt-0">
+        <div class="row no-gutters">
+            <ul class="nav nav-tabs mt-2 w-100">
+                <li class="nav-item"><a href="payroll%20template%20list.html" class="nav-link active">Payroll List</a></li>
+                <li class="nav-item"><a href="Add%20new%20template.html" class="nav-link">Add New Template</a></li>
+            </ul>
+        </div>
+        <div class="row mt-4 no-gutters">
+            <div class="col-sm-6 col-12  col-xl-6 d-flex text-justify justify-content-sm-start justify-content-center">
+                <select class="ml-3 shadow select-pages">
+                    <option>10</option>
+                    <option>25</option>
+                    <option>50</option>
+                    <option>100</option>
+                </select>
+                <p class="d-inline ml-3">Records per page</p>
+            </div>
+            <div class="col-sm-6 col-12  col-xl-6 d-flex text-justify  justify-content-center justify-content-sm-end pr-md-5 pr-xl-5 pr-sm-5">
+                <p class="d-inline mt-1">Search</p>
+                &nbsp;
+                <input type="text" class="shadow border pl-2 mb-2 text-search">
             </div>
         </div>
-    </div>
-    <div class="tbl-style bg-white">
-        <table class="table-bordered table table-striped mt-3  tbl">
-            <tr>
-                <th>SL</th>
-                <th>Template Name</th>
-                <th>Payroll Tempalte</th>
-                <th>Overtime Rate</th>
-                <th class="pl-5">Action</th>
-            </tr>
-            <tr>
-                <td>1</td>
-                <td>Manager</td>
-                <td>RS 10000</td>
-                <td>300/H</td>
-                <td>
-                    <button type="submit" class="bg-info text-white shadow border-0"><i class="fas fa-edit"></i> Edit</button>
-                    <button type="submit" class="bg-danger text-white shadow border-0"><i class="fas fa-trash-alt"></i> Delete</button>
-                </td>
-            </tr>
-            <tr>
-                <td>2</td>
-                <td>Manager</td>
-                <td>RS 10000</td>
-                <td>300/H</td>
-                <td>
-                    <button type="submit" class="bg-info text-white shadow border-0"><i class="fas fa-edit"></i> Edit</button>
-                    <button type="submit" class="bg-danger text-white shadow border-0"><i class="fas fa-trash-alt"></i> Delete</button>
-                </td>
-            </tr>
-            <tr>
-                <td>3</td>
-                <td>Manager</td>
-                <td>RS 10000</td>
-                <td>300/H</td>
-                <td>
-                    <button type="submit" class="bg-info text-white shadow border-0"><i class="fas fa-edit"></i> Edit</button>
-                    <button type="submit" class="bg-danger text-white shadow border-0"><i class="fas fa-trash-alt"></i> Delete</button>
-                </td>
-            </tr>
-            <tr>
-                <td>4</td>
-                <td>Manager</td>
-                <td>RS 10000</td>
-                <td>300/H</td>
-                <td>
-                    <button type="submit" class="bg-info text-white shadow border-0"><i class="fas fa-edit"></i> Edit</button>
-                    <button type="submit" class="bg-danger text-white shadow border-0"><i class="fas fa-trash-alt"></i> Delete</button>
-                </td>
-            </tr>
-        </table>
-    </div>
-    <div class="row mt-5 no-gutters pb-4">
-        <div class="col-12">
-            <p class="ml-2 d-inline">Showing 1 to 4 of 4 entries</p>
-            <div class="pagination float-right mr-3">
+        <div class="tbl-div bg-white mt-2">
+            <table class="table-bordered table table-striped  tbl">
+                <tr class="bg-info text-white">
+                    <th>SL</th>
+                    <th>Template Name</th>
+                    <th>Payroll Tempalte</th>
+                    <th>Overtime Rate</th>
+                    <th class="pl-5">Action</th>
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td>Manager</td>
+                    <td>RS 10000</td>
+                    <td>300/H</td>
+                    <td>
+                        <button type="submit" class="bg-info text-white shadow border-0"><i class="fas fa-edit"></i> Edit</button>
+                        <button type="submit" class="bg-danger text-white shadow border-0"><i class="fas fa-trash-alt"></i> Delete</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>Manager</td>
+                    <td>RS 10000</td>
+                    <td>300/H</td>
+                    <td>
+                        <button type="submit" class="bg-info text-white shadow border-0"><i class="fas fa-edit"></i> Edit</button>
+                        <button type="submit" class="bg-danger text-white shadow border-0"><i class="fas fa-trash-alt"></i> Delete</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td>Manager</td>
+                    <td>RS 10000</td>
+                    <td>300/H</td>
+                    <td>
+                        <button type="submit" class="bg-info text-white shadow border-0"><i class="fas fa-edit"></i> Edit</button>
+                        <button type="submit" class="bg-danger text-white shadow border-0"><i class="fas fa-trash-alt"></i> Delete</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>4</td>
+                    <td>Manager</td>
+                    <td>RS 10000</td>
+                    <td>300/H</td>
+                    <td>
+                        <button type="submit" class="bg-info text-white shadow border-0"><i class="fas fa-edit"></i> Edit</button>
+                        <button type="submit" class="bg-danger text-white shadow border-0"><i class="fas fa-trash-alt"></i> Delete</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>4</td>
+                    <td>Manager</td>
+                    <td>RS 10000</td>
+                    <td>300/H</td>
+                    <td>
+                        <button type="submit" class="bg-info text-white shadow border-0"><i class="fas fa-edit"></i> Edit</button>
+                        <button type="submit" class="bg-danger text-white shadow border-0"><i class="fas fa-trash-alt"></i> Delete</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>4</td>
+                    <td>Manager</td>
+                    <td>RS 10000</td>
+                    <td>300/H</td>
+                    <td>
+                        <button type="submit" class="bg-info text-white shadow border-0"><i class="fas fa-edit"></i> Edit</button>
+                        <button type="submit" class="bg-danger text-white shadow border-0"><i class="fas fa-trash-alt"></i> Delete</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>4</td>
+                    <td>Manager</td>
+                    <td>RS 10000</td>
+                    <td>300/H</td>
+                    <td>
+                        <button type="submit" class="bg-info text-white shadow border-0"><i class="fas fa-edit"></i> Edit</button>
+                        <button type="submit" class="bg-danger text-white shadow border-0"><i class="fas fa-trash-alt"></i> Delete</button>
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <div class="row mt-5 no-gutters pb-4">
+            <div class="col-sm-6 col-12  col-xl-6 d-flex text-justify justify-content-sm-start justify-content-center">
+                <p class="ml-2 d-inline">Showing 1 to 4 of 4 entries</p>
+            </div>
+            <div class="col-sm-6 col-12  col-xl-6 d-flex text-justify  justify-content-sm-end justify-content-center pr-md-5 pr-xl-5 pr-sm-5 pagination">
                 <button type="submit">Previous</button>
                 <button type="submit">1</button>
                 <button type="submit">2</button>

@@ -16,12 +16,15 @@
 {
     min-width: 770px;
 }
-.tbl-style
+.tbl-div
 {
     width: 100%;
-    overflow-x: auto;    
+    overflow: scroll;
+    height: 300px;
 }
-.hr1
+th
 {
-    border: solid 2px blue !important;
+    background-color:skyblue;
+    position:sticky;
+    top:0;
 }

@@ -1,18 +1,31 @@
-body
+.select-pages
 {
-    background-color: lightgray;
+    width: 50px;
+    height: 25px;
 }
-.hr1
+.text-search:focus
 {
-    border: solid 2px blue !important;
+    outline: none!important;
 }
 .tbl-div
 {
-width: 100%;
+    width: 100%;
     overflow-x: auto;
 }
 .tbl
 {
     min-width: 770px;
+}
+.tbl-div
+{
+    width: 100%;
+    overflow: scroll;
+    height: 300px;
+}
+th
+{
+    background-color:skyblue;
+    position:sticky;
+    top:0;
 }
   
