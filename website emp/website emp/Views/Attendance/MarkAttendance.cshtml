@@ -3,97 +3,160 @@
     ViewBag.Title = "MarkAttendance";
 }
 <link href="~/CustomCSS/table.css" rel="stylesheet" />
+<link href="~/CustomCSS/BigBoxCSS.css" rel="stylesheet" />
 <input type="hidden" id="GetActiveTab" value="#MarkAttendance" />
-<div class="row no-gutters">
-    <div class="col-12 col-md-6 col-xl-4 d-inline">
-        <input type="text" placeholder="Search Employee by Name" class="shadow-none   searchby_name_emp">
-        <p class="d-inline font-weight-bold ml-5">Deprtment</p>
-        <select class="d-inline shadow-none combobox">
-            <option>None</option>
-            <option>Mcs</option>
-            <option>BScs</option>
-        </select>
+<div class="Big-Box">
+    <div class="row p-3 pb-0">
+        <div class="col-12 col-xl-6 col-md-6 d-flex text-justify justify-content-center justify-content-sm-center">
+            <select class="shadow select-pages">
+                <option>10</option>
+                <option>25</option>
+                <option>50</option>
+                <option>100</option>
+            </select>
+            <p class="pl-3">Records per page</p>
+        </div>
+        <div class="col-12 col-xl-6 col-md-6 d-flex text-justify justify-content-center justify-content-sm-center">
+          <span>Total Employees &nbsp;&nbsp; </span>
+            <span class="font-weight-bold">25</span>
+        </div>
     </div>
-    <div class="col-12 col-md-6 col-xl-4 no-gutters">
-        <button type="button" class="bg-info text-white shadow-none w-100 text-white btnsearch">
-            Search
-
-            <img class="searchicon" src="~/Images/searchicon with out back.png" />
-        </button>
+    <div class="row m-3">
+        <div class="col-12 col-xl-3 col-md-3 d-flex text-justify justify-content-center justify-content-sm-center">
+            <label class="mb-0 mt-2 ">Select Department</label>
+        </div>
+        <div class="col-12 col-xl-3 col-md-3 d-flex   text-justify justify-content-center justify-content-sm-center input-group">
+            <select class="form-control shadow">
+                <option>IT</option>
+                <option>Accountant</option>
+                <option>Marketing</option>
+                <option>Bussiness</option>
+            </select>
+            <div class="input-group-append shadow"><span class="input-group-text fas fa-home"></span></div>
+        </div>
+        <div class="col-12 col-xl-3 col-md-3 d-flex text-justify  justify-content-center justify-content-sm-center pr-md-5 pr-xl-5 pr-sm-5">
+            <p class="d-inline mb-0 mt-2">Search</p>
+        </div>
+        <div class="col-12 col-xl-3 col-md-3 d-flex text-justify  justify-content-center justify-content-sm-center  input-group">
+            <input type="text" class="shadow pl-2  form-control">
+            <div class="input-group-append shadow"><span class="input-group-text fas fa-search d-flex"></span></div>
+        </div>
     </div>
-    <div class="col-12 col-md-6 col-xl-4">
-        <p class="show_all_employee">Show all Employee : 12345</p>
     </div>
-</div>
-<div class="row no-gutters">
-    <div class="col-12 col-md-6 col-xl-12">
-        <table class="table border">
-            <tr class="bg-info text-white">
-                <th># No</th>
-                <th>Emp Name</th>
-                <th>User Name</th>
-                <th>Department</th>
-                <th>Attendane status</th>
-            </tr>
-            <tr>
-                <td>01</td>
-                <td>Ismail</td>
-                <td>GulKhan 007</td>
-                <td>Administrator</td>
-                <td>
-                    <input type="checkbox"><p class="text-success d-inline ml-2">Present</p>
-                    <input type="checkbox" class="ml-2"><p class="text-danger d-inline ml-2">Absent</p>
-                </td>
-            </tr>
-            <tr>
-                <td>01</td>
-                <td>Ismail</td>
-                <td>GulKhan 007</td>
-                <td>Administrator</td>
-                <td>
-                    <input type="checkbox"><p class="text-success d-inline ml-2">Present</p>
-                    <input type="checkbox" class="ml-2"><p class="text-danger d-inline ml-2">Absent</p>
-                </td>
-            </tr>
-            <tr>
-                <td>01</td>
-                <td>Ismail</td>
-                <td>GulKhan 007</td>
-                <td>Administrator</td>
-                <td>
-                    <input type="checkbox"><p class="text-success d-inline ml-2">Present</p>
-                    <input type="checkbox" class="ml-2"><p class="text-danger d-inline ml-2">Absent</p>
-                </td>
-            </tr>
-            <tr>
-                <td>01</td>
-                <td>Ismail</td>
-                <td>GulKhan 007</td>
-                <td>Administrator</td>
-                <td>
-                    <input type="checkbox"><p class="text-success d-inline ml-2">Present</p>
-                    <input type="checkbox" class="ml-2"><p class="text-danger d-inline  ml-2">Absent</p>
-                </td>
-            </tr>
-        </table>
-    </div>
-</div>
-<div class="row no-gutters">
-    <div class="col-2">
-        <p>Page 1 of 20</p>
-    </div>
-    <div class="col-5 ml-auto">
-        <ul class="pagination">
-            <li><a href="#">Previous</a></li>
-            <li><a href="#">1</a></li>
-            <li><a href="#">2</a></li>
-            <li><a href="#">3</a></li>
-            <li><a href="#">4</a></li>
-            <li><a href="#">5</a></li>
-            <li><a href="#">...</a></li>
-            <li><a href="#">Next</a></li>
-        </ul>
-    </div>
+    <div class="Big-Box">
+        <div class="tbl-div">
+    <table class="table border table-bordered table-striped tbl">
+        <tr class="bg-info text-white">
+            <th># No</th>
+            <th>Emp Name</th>
+            <th>User Name</th>
+            <th>Department</th>
+            <th>Attendane status</th>
+        </tr>
+        <tr>
+            <td>01</td>
+            <td>Ismail</td>
+            <td>GulKhan 007</td>
+            <td>Administrator</td>
+            <td>
+                <input type="checkbox"><p class="text-success d-inline ml-2">Present</p>
+                <input type="checkbox" class="ml-2"><p class="text-danger d-inline ml-2">Absent</p>
+            </td>
+        </tr>
+        <tr>
+            <td>02</td>
+            <td>Zumaid khattak</td>
+            <td>Zumaid khan</td>
+            <td>Web Development</td>
+            <td>
+                <input type="checkbox"><p class="text-success d-inline ml-2">Present</p>
+                <input type="checkbox" class="ml-2"><p class="text-danger d-inline ml-2">Absent</p>
+            </td>
+        </tr>
+        <tr>
+            <td>02</td>
+            <td>Zumaid khattak</td>
+            <td>Zumaid khan</td>
+            <td>Web Development</td>
+            <td>
+                <input type="checkbox"><p class="text-success d-inline ml-2">Present</p>
+                <input type="checkbox" class="ml-2"><p class="text-danger d-inline ml-2">Absent</p>
+            </td>
+        </tr>
+        <tr>
+            <td>02</td>
+            <td>Zumaid khattak</td>
+            <td>Zumaid khan</td>
+            <td>Web Development</td>
+            <td>
+                <input type="checkbox"><p class="text-success d-inline ml-2">Present</p>
+                <input type="checkbox" class="ml-2"><p class="text-danger d-inline ml-2">Absent</p>
+            </td>
+        </tr>
+        <tr>
+            <td>02</td>
+            <td>Zumaid khattak</td>
+            <td>Zumaid khan</td>
+            <td>Web Development</td>
+            <td>
+                <input type="checkbox"><p class="text-success d-inline ml-2">Present</p>
+                <input type="checkbox" class="ml-2"><p class="text-danger d-inline ml-2">Absent</p>
+            </td>
+        </tr>
+        <tr>
+            <td>02</td>
+            <td>Zumaid khattak</td>
+            <td>Zumaid khan</td>
+            <td>Web Development</td>
+            <td>
+                <input type="checkbox"><p class="text-success d-inline ml-2">Present</p>
+                <input type="checkbox" class="ml-2"><p class="text-danger d-inline ml-2">Absent</p>
+            </td>
+        </tr>
+        <tr>
+            <td>02</td>
+            <td>Zumaid khattak</td>
+            <td>Zumaid khan</td>
+            <td>Web Development</td>
+            <td>
+                <input type="checkbox"><p class="text-success d-inline ml-2">Present</p>
+                <input type="checkbox" class="ml-2"><p class="text-danger d-inline ml-2">Absent</p>
+            </td>
+        </tr>
+        <tr>
+            <td>02</td>
+            <td>Zumaid khattak</td>
+            <td>Zumaid khan</td>
+            <td>Web Development</td>
+            <td>
+                <input type="checkbox"><p class="text-success d-inline ml-2">Present</p>
+                <input type="checkbox" class="ml-2"><p class="text-danger d-inline ml-2">Absent</p>
+            </td>
+        </tr>
+        <tr>
+            <td>02</td>
+            <td>Zumaid khattak</td>
+            <td>Zumaid khan</td>
+            <td>Web Development</td>
+            <td>
+                <input type="checkbox"><p class="text-success d-inline ml-2">Present</p>
+                <input type="checkbox" class="ml-2"><p class="text-danger d-inline ml-2">Absent</p>
+            </td>
+        </tr>
+    </table>
+        </div>
+        <div class="row mt-3 no-gutters pb-4">
+            <div class="col-sm-6 col-12  col-xl-6 d-flex text-justify justify-content-sm-start justify-content-center">
+                <p class="ml-2 d-inline">Showing 1 to 4 of 4 entries</p>
+            </div>
+            <div class="col-sm-6 col-12  col-xl-6 d-flex text-justify  justify-content-sm-end justify-content-center pr-md-5 pr-xl-5 pr-sm-5 pagination">
+                <button type="submit">Previous</button>
+                <button type="submit">1</button>
+                <button type="submit">2</button>
+                <button type="submit">3</button>
+                <button type="submit">Next</button>
+            </div>
+        </div>
 </div>
 
 

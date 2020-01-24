@@ -194,10 +194,12 @@
     <Content Include="Images\tol_emp.png" />
     <Content Include="Images\top.PNG" />
     <Content Include="Images\zebra.PNG" />
+    <Content Include="Scripts\assign-salary-to-employee.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <None Include="Properties\PublishProfiles\EmpSystem.pubxml" />
     <None Include="Properties\PublishProfiles\zumaid.pubxml" />
+    <None Include="Properties\PublishProfiles\zumaidk.pubxml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\fontawesome\all.js" />
     <Content Include="Scripts\fontawesome\all.min.js" />
@@ -213,6 +215,7 @@
     <Content Include="Scripts\fontawesome\solid.min.js" />
     <Content Include="Scripts\fontawesome\v4-shims.js" />
     <Content Include="Scripts\fontawesome\v4-shims.min.js" />
+    <Content Include="Scripts\jenerate-payslip.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
     <Content Include="Scripts\modernizr-2.6.2.js" />

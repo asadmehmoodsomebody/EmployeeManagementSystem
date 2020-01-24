@@ -28,5 +28,8 @@ th
     position:sticky;
     top:0;
 }
-
+.div-show
+{
+    display:none;
+}
 
