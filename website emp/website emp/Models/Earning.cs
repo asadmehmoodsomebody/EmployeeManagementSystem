@@ -5,10 +5,13 @@ using System.Web;
 
 namespace website_emp.Models
 {
-    public class Role
+    public class Earning
     {
-        public int RoleId { get; set; }
-        public string RoleName { get; set; }
+        public int EarningId { get; set; }
+        public int SalarySlipId { get; set; }
+        public string Title { get; set; }
+        public string Description { get; set; }
+        public double Amount { get; set; }
         public bool IsDeleted { get; set; }
         public int? CreatedBy { get; set; }
         public int? ModifiedBy { get; set; }

@@ -2,21 +2,22 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
-using System.ComponentModel.DataAnnotations;
 
 namespace website_emp.Models
 {
-    public class attendance
+    public class Attendance
     {
         public int AttendanceId { get; set; }
-        public virtual user User { get; set; }
-        [DataType(DataType.DateTime)]
+        public int EmployeId { get; set; }
+        public int ShiftId { get; set; }
+        public DateTime Checkin { get; set; }
+        public DateTime Checkout { get; set; }
         public DateTime Date { get; set; }
-        [Required]
         public string Status { get; set; }
-        [DataType(DataType.DateTime)]
-        public DateTime StartTime { get; set; }
-        [DataType(DataType.DateTime)]
-        public DateTime EndTime { get; set; }
+        public bool IsDeleted { get; set; }
+        public int? CreatedBy { get; set; }
+        public int? ModifiedBy { get; set; }
+        public DateTime CreationDate { get; set; }
+        public DateTime ModificationDate { get; set; }
     }
 }

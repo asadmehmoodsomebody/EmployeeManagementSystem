@@ -2,24 +2,21 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
-using System.ComponentModel.DataAnnotations;
 
 namespace website_emp.Models
 {
-    public class salaryTemplate
+    public class SalaryTemplate
     {
-        [Key]
         public int SalaryTemplateId { get; set; }
-        [Required]
-        public virtual designation Designation { get; set; }
-        [Required]
-        public virtual department Department { get; set; }
-        [Required]
-        public float Amount { get; set; }
-        [Range(0,100)]
-        public double AbsentieDeductionPercentage { get; set; }
-        [Range(0,100)]
-        public double LoanDeductionPercentage { get; set; }
-
+        public int DepartmentId { get; set; }
+        public int DesignationId { get; set; }
+        public string TemplateName { get; set; }
+        public double AmountPerHour { get; set; }
+        public double AbsentiesPercentageDeduction { get; set; }
+        public bool IsDeleted { get; set; }
+        public int? CreatedBy { get; set; }
+        public int? ModifiedBy { get; set; }
+        public DateTime CreationDate { get; set; }
+        public DateTime ModificationDate { get; set; }
     }
 }

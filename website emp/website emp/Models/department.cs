@@ -6,15 +6,16 @@ using System.Web;
 
 namespace website_emp.Models
 {
-    public class department
+    public class Department
     {
         [Key]
-        public int DepartmentId {get;set; }
-        [Required]
+        public int DepartmentId { get; set; }
+        public int DesignationId { get; set; }
         public string DepartmentName { get; set; }
-        public virtual ICollection<user> Users { get; set; }
-        public virtual salaryTemplate SalaryTemplate { get; set; }
-
-        public virtual ICollection<project> Project { get; set; }
+        public bool IsDeleted { get; set; }
+        public int? CreatedBy { get; set; }
+        public int? ModifiedBy { get; set; }
+        public DateTime CreationDate { get; set; }
+        public DateTime ModificationDate { get; set; }
     }
 }

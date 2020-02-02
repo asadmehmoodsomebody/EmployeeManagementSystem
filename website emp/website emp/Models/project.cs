@@ -2,25 +2,23 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
-using System.ComponentModel.DataAnnotations;
 
 namespace website_emp.Models
 {
-    public class project
+    public class Project
     {
-        [Key]
         public int ProjectId { get; set; }
-        public string ProjectName { get; set; }
-        [DataType(DataType.DateTime)]
+        public int DepartmentId { get; set; }
         public DateTime StartDate { get; set; }
-        [DataType(DataType.DateTime)]
-        public DateTime OptimisticEndTime { get; set; }
-        [DataType(DataType.DateTime)]
-        public DateTime PesimisticEndTime { get; set; }
-        [DataType(DataType.DateTime)]
-        public DateTime CompeletionTime { get; set; }
-        public virtual department Department { get; set; }
-        public virtual user User { get; set; }
-        public bool Completed { get; set; }
+        public string ProjectTitile { get; set; }
+        public string ProjectDescription { get; set; }
+        public DateTime OptimisticTime { get; set; }
+        public DateTime OptimizedTime { get; set; }
+        public DateTime LazyTime { get; set; }
+        public bool IsDeleted { get; set; }
+        public int? CreatedBy { get; set; }
+        public int? ModifiedBy { get; set; }
+        public DateTime CreationDate { get; set; }
+        public DateTime ModificationDate { get; set; }
     }
 }

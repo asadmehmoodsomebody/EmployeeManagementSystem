@@ -2,18 +2,20 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
-using System.ComponentModel.DataAnnotations;
+
 namespace website_emp.Models
 {
-    public class holiday
+    public class Holiday
     {
-        [Key]
         public int HolidayId { get; set; }
-        [DataType(DataType.DateTime)]
-        [Required]
-        public DateTime HolidayDateTime { get; set;}
-        [Required]
-        public string Description { get; set; }
-           
+        public string HolidayName { get; set; }
+        public string HolidayDescription {get;set;}
+        public DateTime HolidayStartDate { get; set; }
+        public DateTime HolidayEndTime { get; set; }
+        public bool IsDeleted { get; set; }
+        public int? CreatedBy { get; set; }
+        public int? ModifiedBy { get; set; }
+        public DateTime CreationDate { get; set; }
+        public DateTime ModificationDate { get; set; }
     }
 }

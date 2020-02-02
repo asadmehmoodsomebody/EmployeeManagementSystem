@@ -5,10 +5,11 @@ using System.Web;
 
 namespace website_emp.Models
 {
-    public class Role
+    public class EmployeShift
     {
-        public int RoleId { get; set; }
-        public string RoleName { get; set; }
+        public int EmployeShiftId { get; set; }
+        public int EmployeId { get; set; }
+        public int ShiftId { get; set; }
         public bool IsDeleted { get; set; }
         public int? CreatedBy { get; set; }
         public int? ModifiedBy { get; set; }

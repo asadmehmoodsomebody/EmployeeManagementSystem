@@ -2,19 +2,18 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
-using System.ComponentModel.DataAnnotations;
 
 namespace website_emp.Models
 {
-    public class moduleRight
+    public class ModuleRight
     {
-        [Key]
         public int ModuleRightId { get; set; }
-        [Required]
-        public virtual module Module { get; set; }
-        [Required]
-        public virtual right Right { get; set; }
-        public virtual ICollection<roleModuleRight> RoleModuleRight { get; set; }
-        public virtual ICollection<userRight> UserRight { get; set; }
+        public int ModuleId { get; set; }
+        public int RightId { get; set; }
+        public bool IsDeleted { get; set; }
+        public int? CreatedBy { get; set; }
+        public int? ModifiedBy { get; set; }
+        public DateTime CreationDate { get; set; }
+        public DateTime ModificationDate { get; set; }
     }
 }
