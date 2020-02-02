@@ -1,45 +1,32 @@
-.assign-salary-to-emp-body
+
+.btn-submit
 {
-    background-color: lightgray;
+    width: 150px;
 }
-.btn-browse-icon
+.btn-go
 {
- width: 30px;
- border-radius: 35px;    
+    margin-left: 20px;
 }
-.browse-image-btn
+.tbl-div
 {
- width: 150px;
- font-size: 15px;
-border-radius: 15px; 
+    width: 100%;
+    overflow-x: auto;
 }
-.browse-image-btn:focus
+.tbl
 {
-    outline: none !important; 
+    min-width: 995px;
 }
-.emp-image
+.tbl-div
 {
-    width: 130px;
+    width: 100%;
+    overflow: scroll;
+    height: 300px;
 }
-.join-date-class
+th
 {
-    background-image: url(../icons/16x16%20appointment.png);
-    width: 12px;
-    background-repeat: no-repeat;
-    background-size: contain;
+    background-color:skyblue;
+    position:sticky;
+    top:0;
 }
-.btn-save
-{
- width: 150px;
- font-size: 20px;
-border-radius: 15px;    
-}
-.btn-save-icon
-{
-    width: 30px;
-    border-radius: 15px;
-}
-.btn-save:focus
-{
-    outline: none !important; 
-}
+
+

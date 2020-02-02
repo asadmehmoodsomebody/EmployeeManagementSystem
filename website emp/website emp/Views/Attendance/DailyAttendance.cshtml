@@ -7,58 +7,66 @@
 
 
 <link href="~/CustomCSS/Attendance Module Css/daily attendance.css" rel="stylesheet" />
-<div class="row no-gutters">
-    <div class="col-8">
-        <span class="spanicon font-weight-bolder text-info">
-            <i class="fas fa-tachometer-alt"></i>
-            Dashboard
-        </span>
-        <span>/Daily Attendance</span>
-    </div>
-</div>
-<div class="row mt-3 bg-primary no-gutters m-0 text-white">
-    <div class="col-12 m-0" style="height: 40px;">
-        <span class="spanicon font-weight-bolder">
-            <i class="fas fa-calculator ml-3  mt-2">    &nbsp;Daily Attendance</i>
-        </span>
-    </div>
-</div>
-<div class="bg-white no-gutters">
-    <div class="row text-center pt-3">
-        <div class="col-12">
-            <span class="pl-2">Date</span>
-            <input type="date" class="w-25 shadow border bg-light">
-            <button type="submit" class="bg-info text-white border-0 shadow w-25">Filter</button>
+<link href="~/CustomCSS/BigBoxCSS.css" rel="stylesheet" />
+<div class="Big-Box mt-3">
+    <div class="row p-2">
+        <div class="col-12 d-flex text-justify justify-content-center justify-content-sm-start">
+            <span class="spanicon font-weight-bolder text-info">
+                <i class="fas fa-tachometer-alt"></i>
+                Dashboard
+            </span>
+            <span>/Daily Attendance</span>
         </div>
     </div>
-    <div class="tbl-div mt-3">
-        <table class="table table-striped table-bordered tbl">
-            <tr>
-                <th>S/L</th>
-                <th>Date</th>
-                <th>Employee Name</th>
-                <th>In Time</th>
-                <th>Out Time</th>
-                <th>Working Time</th>
-                <th>Late</th>
-                <th>Late Time</th>
-                <th>OverTime</th>
-            </tr>
-        </table>
-        <hr class="mt-5">
-        <p class="ml-2">No data have found</p>
-    </div>
-</div>
-<div class="row bg-white no-gutters">
-    <div class="col-8 mt-5">
-        <p class="ml-2">Showing 1 to 4 of 4 entries</p>
-    </div>
-    <div class="col-4 mt-5">
-        <div class="pagination float-right mr-4">
-            <button type="button">previous</button>
-            <button type="button">1</button>
-            <button type="button">Next</button>
+    <div class="row p-2 bg-info  text-white no-gutters">
+        <div class="col-12 d-flex text-justify justify-content-center justify-content-sm-start">
+            <span class="spanicon font-weight-bolder">
+                <i class="fas fa-calculator ml-3  mt-2">    &nbsp;Daily Attendance</i>
+            </span>
         </div>
     </div>
-</div>
+    <div class="Big-Box p-3 pt-3 pb-3">
+        <div class="row m-3">
+            <div class="col-12 col-md-3 col-xl-3  d-flex text-justify justify-content-center justify-content-sm-center">
+                <span class="pl-2">Date</span>
+                </div>
+            <div class="col-12 col-md-4 col-xl-4 d-flex text-justify justify-content-center justify-content-sm-center">
+                <input type="date" class="shadow form-control">
+            </div>
+            <div class="col-12 col-md-4 col-xl-4 d-flex text-justify justify-content-center justify-content-sm-center">
+                <button type="submit" class="bg-info text-white border-0 shadow  form-control">Filter</button>
+            </div>
+            </div>
+        </div>
+        <div class="tbl-div mt-3">
+            <table class="table table-striped table-bordered tbl">
+                <tr>
+                    <th>S/L</th>
+                    <th>Date</th>
+                    <th>Employee Name</th>
+                    <th>In Time</th>
+                    <th>Out Time</th>
+                    <th>Working Time</th>
+                    <th>Late</th>
+                    <th>Late Time</th>
+                    <th>OverTime</th>
+                </tr>
+            </table>
+            <hr class="mt-5">
+            <p class="ml-2">No data have found</p>
+        </div>
+    </div>
+    <div class="row bg-white no-gutters">
+        <div class="col-8 mt-5">
+            <p class="ml-2">Showing 1 to 4 of 4 entries</p>
+        </div>
+        <div class="col-4 mt-5">
+            <div class="pagination float-right mr-4">
+                <button type="button">previous</button>
+                <button type="button">1</button>
+                <button type="button">Next</button>
+            </div>
+        </div>
+    </div>
 
+</div>

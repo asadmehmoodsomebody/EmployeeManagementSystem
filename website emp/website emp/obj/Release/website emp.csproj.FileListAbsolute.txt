@@ -40,3 +40,45 @@ C:\Users\Farman Kaskar\Source\Repos\EmployeeManagementSystem\website emp\website
 C:\Users\Farman Kaskar\Source\Repos\EmployeeManagementSystem\website emp\website emp\obj\Release\website emp.csproj.GenerateResource.Cache
 C:\Users\Farman Kaskar\Source\Repos\EmployeeManagementSystem\website emp\website emp\obj\Release\website emp.dll
 C:\Users\Farman Kaskar\Source\Repos\EmployeeManagementSystem\website emp\website emp\obj\Release\website emp.pdb
+C:\Users\zumaid khan khattak\Desktop\EmployeeManagementSystem\website emp\website emp\bin\roslyn\csc.exe
+C:\Users\zumaid khan khattak\Desktop\EmployeeManagementSystem\website emp\website emp\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\Users\zumaid khan khattak\Desktop\EmployeeManagementSystem\website emp\website emp\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\zumaid khan khattak\Desktop\EmployeeManagementSystem\website emp\website emp\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\Users\zumaid khan khattak\Desktop\EmployeeManagementSystem\website emp\website emp\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\Users\zumaid khan khattak\Desktop\EmployeeManagementSystem\website emp\website emp\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\Users\zumaid khan khattak\Desktop\EmployeeManagementSystem\website emp\website emp\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\Users\zumaid khan khattak\Desktop\EmployeeManagementSystem\website emp\website emp\bin\roslyn\System.Collections.Immutable.dll
+C:\Users\zumaid khan khattak\Desktop\EmployeeManagementSystem\website emp\website emp\bin\roslyn\System.Reflection.Metadata.dll
+C:\Users\zumaid khan khattak\Desktop\EmployeeManagementSystem\website emp\website emp\bin\roslyn\vbc.exe
+C:\Users\zumaid khan khattak\Desktop\EmployeeManagementSystem\website emp\website emp\bin\roslyn\VBCSCompiler.exe
+C:\Users\zumaid khan khattak\Desktop\EmployeeManagementSystem\website emp\website emp\bin\roslyn\VBCSCompiler.exe.config
+C:\Users\zumaid khan khattak\Desktop\EmployeeManagementSystem\website emp\website emp\bin\website emp.dll.config
+C:\Users\zumaid khan khattak\Desktop\EmployeeManagementSystem\website emp\website emp\bin\website emp.dll
+C:\Users\zumaid khan khattak\Desktop\EmployeeManagementSystem\website emp\website emp\bin\website emp.pdb
+C:\Users\zumaid khan khattak\Desktop\EmployeeManagementSystem\website emp\website emp\bin\ColorMine.dll
+C:\Users\zumaid khan khattak\Desktop\EmployeeManagementSystem\website emp\website emp\bin\EntityFramework.dll
+C:\Users\zumaid khan khattak\Desktop\EmployeeManagementSystem\website emp\website emp\bin\EntityFramework.SqlServer.dll
+C:\Users\zumaid khan khattak\Desktop\EmployeeManagementSystem\website emp\website emp\bin\ImageColorDefine.dll
+C:\Users\zumaid khan khattak\Desktop\EmployeeManagementSystem\website emp\website emp\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Users\zumaid khan khattak\Desktop\EmployeeManagementSystem\website emp\website emp\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\zumaid khan khattak\Desktop\EmployeeManagementSystem\website emp\website emp\bin\System.Web.Helpers.dll
+C:\Users\zumaid khan khattak\Desktop\EmployeeManagementSystem\website emp\website emp\bin\System.Web.Mvc.dll
+C:\Users\zumaid khan khattak\Desktop\EmployeeManagementSystem\website emp\website emp\bin\System.Web.Razor.dll
+C:\Users\zumaid khan khattak\Desktop\EmployeeManagementSystem\website emp\website emp\bin\System.Web.Webpages.Deployment.dll
+C:\Users\zumaid khan khattak\Desktop\EmployeeManagementSystem\website emp\website emp\bin\System.Web.Webpages.dll
+C:\Users\zumaid khan khattak\Desktop\EmployeeManagementSystem\website emp\website emp\bin\System.Web.Webpages.Razor.dll
+C:\Users\zumaid khan khattak\Desktop\EmployeeManagementSystem\website emp\website emp\bin\TCD.Mathematics.dll
+C:\Users\zumaid khan khattak\Desktop\EmployeeManagementSystem\website emp\website emp\bin\EntityFramework.xml
+C:\Users\zumaid khan khattak\Desktop\EmployeeManagementSystem\website emp\website emp\bin\EntityFramework.SqlServer.xml
+C:\Users\zumaid khan khattak\Desktop\EmployeeManagementSystem\website emp\website emp\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\zumaid khan khattak\Desktop\EmployeeManagementSystem\website emp\website emp\bin\System.Web.Razor.xml
+C:\Users\zumaid khan khattak\Desktop\EmployeeManagementSystem\website emp\website emp\bin\System.Web.Webpages.xml
+C:\Users\zumaid khan khattak\Desktop\EmployeeManagementSystem\website emp\website emp\bin\System.Web.Webpages.Deployment.xml
+C:\Users\zumaid khan khattak\Desktop\EmployeeManagementSystem\website emp\website emp\bin\System.Web.Webpages.Razor.xml
+C:\Users\zumaid khan khattak\Desktop\EmployeeManagementSystem\website emp\website emp\bin\System.Web.Helpers.xml
+C:\Users\zumaid khan khattak\Desktop\EmployeeManagementSystem\website emp\website emp\bin\System.Web.Mvc.xml
+C:\Users\zumaid khan khattak\Desktop\EmployeeManagementSystem\website emp\website emp\obj\Release\website emp.csprojResolveAssemblyReference.cache
+C:\Users\zumaid khan khattak\Desktop\EmployeeManagementSystem\website emp\website emp\obj\Release\website_emp.Migrations.database1.resources
+C:\Users\zumaid khan khattak\Desktop\EmployeeManagementSystem\website emp\website emp\obj\Release\website emp.csproj.GenerateResource.Cache
+C:\Users\zumaid khan khattak\Desktop\EmployeeManagementSystem\website emp\website emp\obj\Release\website emp.dll
+C:\Users\zumaid khan khattak\Desktop\EmployeeManagementSystem\website emp\website emp\obj\Release\website emp.pdb

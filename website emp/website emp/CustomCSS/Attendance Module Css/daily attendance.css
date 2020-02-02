@@ -2,12 +2,18 @@
 {
     width: 100%;
     overflow-x: auto;
+    width: 100%;
+    overflow: scroll;
+    height: 300px;
+    overflow-y:auto;
 }
 .tbl
 {
-    min-width: 995px;
+    min-width: 980px;
 }
-body
+th
 {
-    background-color: lightgray;
+    background-color:skyblue;
+    position:sticky;
+    top:0;
 }

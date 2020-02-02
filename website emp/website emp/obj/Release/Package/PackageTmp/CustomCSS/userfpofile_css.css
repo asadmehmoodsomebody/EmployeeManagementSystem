@@ -1,12 +1,11 @@
-.adminimage
+.admin-image
 {
-    width: 130px;
+    width: 200px;
+    height:200px;
+    margin-top:30px;
+    border-radius:100px;
 }
-#address
+.txa-edit
 {
-    display: none;
-}
-.fourcard-wrapper
-{
-    clear: both;
+    resize:none;
 }

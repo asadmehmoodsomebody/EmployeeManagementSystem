@@ -1,5 +1,5 @@
 
-.btn-update
+.btn-submit
 {
     width: 150px;
 }
@@ -28,5 +28,8 @@ th
     position:sticky;
     top:0;
 }
-
+.div-show
+{
+    display:none;
+}
 

@@ -1,12 +1,31 @@
-.btn-go
+.select-pages
 {
-    margin-left: 140px !important;
+    width: 50px;
+    height: 25px;
 }
-body
+.text-search:focus
 {
-    background-color: lightgray;
+    outline: none!important;
 }
-.hr1
+.tbl-div
 {
-    border: solid 2px blue !important;
+    width: 100%;
+    overflow-x: auto;
 }
+.tbl
+{
+    min-width: 980px;
+}
+.tbl-div
+{
+    width: 100%;
+    overflow: scroll;
+    height: 300px;
+}
+th
+{
+    background-color:skyblue;
+    position:sticky;
+    top:0;
+}
+  
