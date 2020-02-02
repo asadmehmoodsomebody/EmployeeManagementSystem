@@ -131,11 +131,23 @@
     <Content Include="Content\togglebtn.js" />
     <Content Include="Content\v4-shims.css" />
     <Content Include="Content\v4-shims.min.css" />
+    <Content Include="CustomCSS\Attendance Module Css\daily attendance.css" />
+    <Content Include="CustomCSS\Award Css\award_list.css" />
+    <Content Include="CustomCSS\BigBoxCSS.css" />
+    <Content Include="CustomCSS\BlueBGCheckboxCss.css" />
     <Content Include="CustomCSS\dashboard.css" />
     <Content Include="CustomCSS\Department.css" />
-    <Content Include="CustomCSS\edit_css.css" />
     <Content Include="CustomCSS\login.css" />
     <Content Include="CustomCSS\Roles.css" />
+    <Content Include="CustomCSS\Salary Module Css\Add new template-css.css" />
+    <Content Include="CustomCSS\Salary Module Css\assign-salary-to-employee.css" />
+    <Content Include="CustomCSS\Salary Module Css\bigboxcss.css" />
+    <Content Include="CustomCSS\Salary Module Css\check salary.css" />
+    <Content Include="CustomCSS\Salary Module Css\generate payslip.css" />
+    <Content Include="CustomCSS\Salary Module Css\list of employees and their salaries.css" />
+    <Content Include="CustomCSS\Salary Module Css\manage salary details.css" />
+    <Content Include="CustomCSS\Salary Module Css\payroll template list.css" />
+    <Content Include="CustomCSS\Salary Module Css\salary-report.css" />
     <Content Include="CustomCSS\ScrollbarCSS.css" />
     <Content Include="CustomCSS\table.css" />
     <Content Include="CustomCSS\userfpofile_css.css" />
@@ -181,8 +193,13 @@
     <Content Include="Images\toggleIcon.png" />
     <Content Include="Images\tol_emp.png" />
     <Content Include="Images\top.PNG" />
+    <Content Include="Images\zebra.PNG" />
+    <Content Include="Scripts\assign-salary-to-employee.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
+    <None Include="Properties\PublishProfiles\EmpSystem.pubxml" />
+    <None Include="Properties\PublishProfiles\zumaid.pubxml" />
+    <None Include="Properties\PublishProfiles\zumaidk.pubxml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\fontawesome\all.js" />
     <Content Include="Scripts\fontawesome\all.min.js" />
@@ -198,6 +215,7 @@
     <Content Include="Scripts\fontawesome\solid.min.js" />
     <Content Include="Scripts\fontawesome\v4-shims.js" />
     <Content Include="Scripts\fontawesome\v4-shims.min.js" />
+    <Content Include="Scripts\jenerate-payslip.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
     <Content Include="Scripts\modernizr-2.6.2.js" />
@@ -224,25 +242,22 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\AdministrationController.cs" />
     <Compile Include="Controllers\AttendanceController.cs" />
+    <Compile Include="Controllers\AwardController.cs" />
     <Compile Include="Controllers\DashboardController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageEmployeeController.cs" />
+    <Compile Include="Controllers\NoticeBoardController.cs" />
     <Compile Include="Controllers\NotificationController.cs" />
     <Compile Include="Controllers\PerformanceController.cs" />
+    <Compile Include="Controllers\SalaryManagementController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201912261108264_initialcreate.cs" />
-    <Compile Include="Migrations\201912261108264_initialcreate.designer.cs">
-      <DependentUpon>201912261108264_initialcreate.cs</DependentUpon>
+    <Compile Include="Migrations\202001091157585_database1.cs" />
+    <Compile Include="Migrations\202001091157585_database1.designer.cs">
+      <DependentUpon>202001091157585_database1.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
-    <Compile Include="Models\context.cs" />
-    <Compile Include="Models\department.cs" />
-    <Compile Include="Models\designation.cs" />
-    <Compile Include="Models\SecurityKey.cs" />
-    <Compile Include="Models\status.cs" />
-    <Compile Include="Models\user.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -267,11 +282,30 @@
     <Content Include="Views\Performance\Submodule2.cshtml" />
     <Content Include="Views\Performance\Submodule3.cshtml" />
     <Content Include="Views\Attendance\MarkAttendance.cshtml" />
-    <Content Include="Views\Administration\Index.cshtml" />
+    <Content Include="Views\Administration\UserProfile.cshtml" />
     <Content Include="Views\Administration\ManageRoles.cshtml" />
     <Content Include="Views\ManageEmployee\Department.cshtml" />
     <Content Include="Views\ManageEmployee\Designation.cshtml" />
     <Content Include="Views\Notification\Index.cshtml" />
+    <Content Include="Views\SalaryManagement\AddTemplate.cshtml" />
+    <Content Include="Views\SalaryManagement\makepayment.cshtml" />
+    <Content Include="Views\SalaryManagement\AssignSalary.cshtml" />
+    <Content Include="Views\SalaryManagement\CheckSalary.cshtml" />
+    <Content Include="Views\SalaryManagement\PayrollManagement.cshtml" />
+    <Content Include="Views\Attendance\DailyAttendance.cshtml" />
+    <Content Include="Views\Award\Index_Award.cshtml" />
+    <Content Include="Views\SalaryManagement\TemplateList.cshtml" />
+    <Content Include="Views\Attendance\MonthlyAttendance.cshtml" />
+    <Content Include="Views\Attendance\LeaveRequest.cshtml" />
+    <Content Include="Views\SalaryManagement\GeneratePaySlip.cshtml" />
+    <Content Include="Views\SalaryManagement\EmployeeSalaries.cshtml" />
+    <Content Include="Views\SalaryManagement\ManageSalary.cshtml" />
+    <Content Include="Views\NoticeBoard\Notice_Board.cshtml" />
+    <Content Include="Views\Attendance\LeaveRequest_E.cshtml" />
+    <Content Include="Views\Attendance\Holidays.cshtml" />
+    <Content Include="Views\Administration\ManageShifts.cshtml" />
+    <Content Include="Views\Administration\ShiftsDetail.cshtml" />
+    <Content Include="Views\SalaryManagement\SalaryReport.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -281,11 +315,12 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Models\" />
     <Folder Include="SidebarIcons\" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201912261108264_initialcreate.resx">
-      <DependentUpon>201912261108264_initialcreate.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202001091157585_database1.resx">
+      <DependentUpon>202001091157585_database1.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

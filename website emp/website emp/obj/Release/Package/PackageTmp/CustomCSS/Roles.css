@@ -1,0 +1,124 @@
+.modules{
+    background: white;
+    height: 100%;
+    min-height: 505px;
+    max-height: 505px;
+    overflow-y: auto;
+}
+.modules-body{
+    max-height: 479px;
+    overflow-y:auto;
+}
+.manage-roles{
+    height: 100%;
+    min-height: 500px;
+}
+.add-roles{
+    background: white;
+    height: 25%;
+    min-height: 150px;
+    margin-bottom: 5px;
+    box-shadow:0px 0px 7px 1px lightgrey; 
+}
+.roles-list{
+    background: white;
+    height: 75%;
+    min-height: 350px;
+    overflow: hidden;
+    box-shadow:0px 0px 7px 1px lightgrey; 
+}
+.role-list-tile{
+    padding: 2px 0px;
+    box-shadow:1px 1px 4px 1px lightgrey; 
+}
+.roles-list-body{
+    max-height: 326px;
+    overflow-y: auto;
+}
+.modules{
+    
+    box-shadow:0px 0px 7px 1px lightgrey; 
+}
+.module-row{
+    border-bottom:2px solid lightgrey
+}
+.edit-icon {
+    
+    background-image: url('../Images/edit.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    /* display: block; */
+    height: 16px;
+    width: 16px;
+    cursor: pointer;
+}
+.delete-icon {
+    background-image: url('../Images/delete.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    /* display: block; */
+    height: 16px;
+    width: 16px;
+    cursor: pointer;
+}
+.roles-list-row-right{
+    padding-right: 20px !important;
+}
+.roles-list-row-left{
+    padding-left: 10px !important;
+}
+.roles-list-row-title{
+    padding-right: 10px !important;
+}
+.c-roles-rights-button{
+    padding:2px .75em;
+    width: 100px;
+}
+.c-roles-rights-button:focus,.c-roles-rights-button:active{
+    box-shadow: none;
+}
+.add-role-input{
+    border: none;
+    border-bottom:1px solid lightgrey;
+    padding-left: 6px !important;
+}
+.add-role-input:focus{
+    box-shadow: none;
+}
+.modules td,.modules th{
+    max-width: 20%;
+    min-width: 20%;
+}
+
+@media only screen and (max-width:768px){
+    .roles-list{
+        background: white;
+        height: fit-content;
+        min-height: 26px;
+        max-height: 350px;
+        overflow: hidden;
+        box-shadow:0px 0px 7px 1px lightgrey; 
+    }
+    .roles-list-body{
+        height: fit-content;
+        max-height: 326px;
+        overflow-y: auto;
+    }
+    .manage-roles{
+        height: fit-content;
+        min-height: 0px;
+    }
+    .modules{
+        background: white;
+        height: fit-content;
+        min-height: 26px;
+        max-height: fit-content;
+        overflow-y: auto;
+    }
+    .modules-body{
+        max-height: 479px;
+        overflow-y:auto;
+    }
+}

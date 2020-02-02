@@ -1,0 +1,9 @@
+
+.hr1
+{
+    border: solid 2px blue !important;
+}
+.txt-3-fields:focus
+{
+ outline:none;
+}

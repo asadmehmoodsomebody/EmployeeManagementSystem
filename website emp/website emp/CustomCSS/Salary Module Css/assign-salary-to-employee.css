@@ -1,0 +1,35 @@
+
+.btn-submit
+{
+    width: 150px;
+}
+.btn-go
+{
+    margin-left: 20px;
+}
+.tbl-div
+{
+    width: 100%;
+    overflow-x: auto;
+}
+.tbl
+{
+    min-width: 995px;
+}
+.tbl-div
+{
+    width: 100%;
+    overflow: scroll;
+    height: 300px;
+}
+th
+{
+    background-color:skyblue;
+    position:sticky;
+    top:0;
+}
+.div-show
+{
+    display:none;
+}
+

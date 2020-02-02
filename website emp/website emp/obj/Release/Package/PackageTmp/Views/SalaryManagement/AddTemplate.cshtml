@@ -1,0 +1,79 @@
+﻿
+@{
+    ViewBag.Title = "AddTemplate";
+}
+<input type="hidden" id="GetActiveTab" value="#AddTemplate" />
+
+<link href="~/CustomCSS/Salary Module Css/Add new template-css.css" rel="stylesheet" />
+<div class="Big-Box mt-3">
+    <div class="row no-gutters">
+        <!-- <div class="col-3">
+             <a href="#" class="text-decoration-none">Payroll List</a>
+         </div>
+         <div class="col-4">
+             <a href="#" class="text-decoration-none">Add New Template</a>
+         </div>-->
+        <ul class="nav nav-tabs mt-2 w-100">
+            <li class="nav-item"><a href="payroll%20template%20list.html" class="nav-link">Payroll List</a></li>
+            <li class="nav-item"><a href="Add%20new%20template.html" class="nav-link active">Add New Template</a></li>
+        </ul>
+    </div>
+
+    <!-- <table class="table table-borderless">
+         <tr class="d-flex text-justify  justify-content-sm-center justify-content-center">
+             <td class="mt-1">Template Name</td>
+             <td class="w-50"><input type="text" class="w-100 form-control shadow" placeholder="Enter Salary grade"></td>
+         </tr>
+
+            <tr class="d-flex text-justify  justify-content-sm-center justify-content-center">
+             <td class="mt-1">Payroll Template</td>
+             <td class="w-50"><input type="text" class="w-100 form-control shadow" placeholder="Enter Salary grade"></td>
+         </tr>
+
+            <tr class="d-flex text-justify  justify-content-sm-center justify-content-center">
+             <td class="mt-1">Overtime Rate &nbsp;  &nbsp;</td>
+             <td class="w-50"><input type="text" class="w-100 form-control shadow" placeholder="Enter Salary grade"></td>
+         </tr>
+
+         <tr class="d-flex text-justify justify-content-center">
+             <td class="w-25">
+                <button type="button" class="text-white bg-info form-control btn shadow btn-save" >Save</button>
+             </td>
+         </tr>
+     </table>-->
+    <div class="row m-3">
+        <div class="col-12 col-xl-3 col-md-4 d-flex text-justify justify-content-center justify-content-sm-center">
+            <label class="mb-0 mt-2">Template Name</label>
+        </div>
+        <div class="col-12 col-xl-5 col-md-8 d-flex   text-justify justify-content-center justify-content-sm-center input-group">
+            <input type="text" class="form-control shadow">
+            <div class="input-group-append shadow"><span class="input-group-text fas fa-user-edit pt-2 d-flex "></span></div>
+        </div>
+    </div>
+    <div class="row m-3">
+        <div class="col-12 col-xl-3 col-md-4 d-flex text-justify justify-content-center justify-content-sm-center">
+            <label class="mb-0 mt-2">Payroll Template</label>
+        </div>
+        <div class="col-12 col-xl-5 col-md-8 d-flex   text-justify justify-content-center justify-content-sm-center input-group">
+            <input type="text" class="form-control shadow">
+            <div class="input-group-append shadow"><span class="input-group-text fas fa-edit pt-2 d-flex "></span></div>
+        </div>
+    </div>
+    <div class="row m-3">
+        <div class="col-12 col-xl-3 col-md-4 d-flex text-justify justify-content-center justify-content-sm-center">
+            <label class="mb-0 mt-2">Overtime Rate</label>
+        </div>
+        <div class="col-12 col-xl-5 col-md-8 d-flex   text-justify justify-content-center justify-content-sm-center input-group">
+            <input type="text" class="form-control shadow">
+            <div class="input-group-append shadow"><span class="input-group-text fas fa-medal pt-2 d-flex "></span></div>
+        </div>
+    </div>
+    <div class="row m-3 pb-4">
+        <div class="col-12 col-xl-3 col-md-4 d-flex text-justify justify-content-center justify-content-sm-center">
+        </div>
+        <div class="col-12 col-xl-5 col-md-8 d-flex  text-justify  justify-content-sm-center justify-content-center  justify-content-lg-center mt-3 mt-xl-0 mt-md-0">
+            <button type="submit" class="shadow border-0 font-weight-bold text-white form-control p-2 rounded bg-info">Go</button>
+            <div class="input-group-append shadow"><span class="input-group-text fas fa-arrow-alt-circle-right pt-2 d-flex "></span></div>
+        </div>
+    </div>
+</div>
