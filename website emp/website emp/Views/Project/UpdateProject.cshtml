@@ -1,0 +1,56 @@
+﻿@model website_emp.Models.Project
+@{
+    ViewBag.Title = "UpdateProject";
+}
+
+<main>
+    <div class="row no-gutters w-100 align-content-center p-2 border-bottom">
+        <div class="col-11 d-flex align-self-center">
+            <h5 class="m-0 p-0">Add Project</h5>
+        </div>
+    </div>
+
+    @using (@Html.BeginForm())
+    {
+        <input type="hidden" name="ProjectId" value="@Model.ProjectId" />
+        <input type="hidden" name="CreatedBy" value="@Model.Createdby" />
+        <input type="hidden" name="CreatedOn" value="@Model.Createdon" />
+        <div class="row w-100 no-gutters bg-light">
+            <div class="col-12">
+                <div class="row no-gutters w-100">
+                    <div class="col-6 px-2">
+                        <h5>Department:</h5>
+                        @Html.DropDownList("DepartmentId", ViewData["DepartmentId"] as SelectList, new { @class = "form-control" })
+                    </div>
+                    <div class="col-6 px-2">
+                        <h5>Project Name:</h5>
+                        <input name="ProjectTitle" value="@Model.ProjectTitle" class="form-control" />
+                    </div>
+                </div>
+                <div class="row no-gutters w-100 mt-3">
+                    <div class="col-6 px-2">
+                        <h5>Start Date:</h5>
+                        @Html.EditorFor(Model => Model.StartDate)
+                    </div>
+                    <div class="col-6 px-2">
+                        <h5>End Date:</h5>
+                        <input class="form-control" name="EndDate" value="@if(Model.EndDate.HasValue) { Model.EndDate.Value.ToShortDateString(); }" type="datetime" />
+                    </div>
+                </div>
+                <div class="row no-gutters w-100 mt-3">
+                    <div class="col-12 px-2">
+                        <h5>Description:</h5>
+                        <textarea class="w-100 form-control" name="ProjectDescription">@Model.ProjectDescription</textarea>
+                    </div>
+                </div>
+                <div class="row no-gutters w-100 mt-3">
+                    <div class="col-12 px-2 d-flex align-items-center justify-content-end">
+                        <button class="btn btn-primary" type="submit">Update</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    }
+
+</main>
+
