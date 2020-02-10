@@ -9,15 +9,16 @@ namespace website_emp.Models
     public class Role
     {
         [Key]
-        public int RoleId { get; set; }
+        public long RoleId { get; set; }
         [Required]
         [StringLength(maximumLength:150)]
-        //unique
         public string RoleName { get; set; }
-        public int Createdby { get; set; }
-        public DateTime Createdon { get; set; }
-        public int? Modifiedby { get; set; }
+        public long CreatedBy { get; set; }
+        public DateTime? CreatedOn { get; set; }
+        public long ModifiedBy { get; set; }
         public DateTime? Modifiedon { get; set; }
-        public bool Deleted { get; set; }
+        public bool? IsDeleted { get; set; }
+        public ICollection<EmployeRole> employerole { get; set; }
+        public ICollection<RoleModuleRight> rolemoduleright { get; set; }
     }
 }

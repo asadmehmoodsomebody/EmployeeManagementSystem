@@ -10,8 +10,6 @@ namespace website_emp.Models
     {
         [Key]
         public long TaskId { get; set; }
-        //foriegn key
-        public int ProjectId { get; set; }
         [StringLength(maximumLength:150)]
         public string TaskTitle { get; set; }
         public string TaskDescription { get; set; }
@@ -24,9 +22,11 @@ namespace website_emp.Models
         public string Status { get; set; }
         public string StatusDescription { get; set; }
         //foriegn key employe
-        public int AssignedBy { get; set; }
+        public long AssignedBy { get; set; }
+        public Employe assingedby { get; set; }
         //foriegn key employe
-        public int AssingedTo { get; set; }
+        public long AssingedTo { get; set; }
+        public Employe assingedto { get; set; }
         [StringLength(maximumLength: 100)]
         public string Priority { get; set; }
         public int Createdby { get; set; }
@@ -34,5 +34,7 @@ namespace website_emp.Models
         public int? Modifiedby { get; set; }
         public DateTime? Modifiedon { get; set; }
         public bool Deleted { get; set; }
+        public long ProjectId { get; set; }
+        public Project project { get; set; }
     }
 }

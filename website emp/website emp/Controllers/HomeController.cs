@@ -5,7 +5,6 @@ using System.Text;
 using System.Web;
 using System.Web.Mvc;
 using website_emp.Models;
-using website_emp.Models.ViewModels;
 
 namespace website_emp.Controllers
 {
@@ -26,11 +25,11 @@ namespace website_emp.Controllers
         {
             if (!String.IsNullOrEmpty(username) && !String.IsNullOrEmpty(password))
             {
-                var result = from user in _context.employe
-                             where user.UserName == username && password == user.Password
+                IEnumerable<Employe> result = (from user in _context.employe
+                             where user.UserName == username && user.Password == password
                              && user.IsActive == true && user.IsDeleted == false
-                             select user;
-                if (result.Count() > 0) return Redirect("Dashboard/Index");
+                             select user).ToList();
+                if (result.Count() > 0) return RedirectToAction("Index","Dashboard");
             }
             ViewBag.msg = "Wrong username or password";
             return View();
@@ -39,10 +38,6 @@ namespace website_emp.Controllers
         public ActionResult Signup()
         {
 
-            var departments = (from dep in _context.department
-                              where dep.Deleted == false
-                              select new SelectListItem {Text= dep.DepartmentName, Value = dep.DepartmentId.ToString() }).ToList();
-            ViewData["DepartmentId"] = new SelectList(departments, "Value", "Text");
 
             return View();
         }
@@ -51,22 +46,14 @@ namespace website_emp.Controllers
         {
            try
             {
-                emp.IsActive = null;
-                emp.IsDeleted = false;
-                emp.Createdon = DateTime.Now;
-                _context.employe.Add(emp);
-                _context.SaveChangesAsync();
-                return Redirect("Dashboard/Index");
+               
 
             }catch (Exception ex)
             {
 
             }
                 
-            var departments = (from dep in _context.department
-                               where dep.Deleted == false
-                               select new SelectListItem { Text = dep.DepartmentName, Value = dep.DepartmentId.ToString() }).ToList();
-            ViewData["DepartmentId"] = new SelectList(departments, "Value", "Text");
+           
             return View();
         }
         

@@ -8,40 +8,41 @@ namespace website_emp.Models
 {
     public class Context:DbContext
     {
-        public Context():base("Server=LAPTOP-ENVV97AF;initial catalog = Emp_Task_Management;integrated security = true;") {}
+        public Context():base("Server=LAPTOP-ENVV97AF;initial catalog = EMS;integrated security = true;") {}
         public DbSet<Department> department { get; set; }
-        public DbSet<DepartmentDesignationAssociative> departmentdesignationassociative { get; set; }
+        public DbSet<DepartmentDesignation> departmentdesignation { get; set; }
         public DbSet<Designation> designation { get; set; }
         public DbSet<Employe> employe { get; set; }
-        public DbSet<EmployeModuleRightAssociative> employemodulerightassociative { get; set; }
-        public DbSet<EmployeRoleAssociative> employeroleassociative { get; set; }
+        public DbSet<EmployeModuleRight> employemoduleright { get; set; }
+        public DbSet<EmployeRole> employerole { get; set; }
         public DbSet<Module> module { get; set; }
-        public DbSet<ModuleRightAssociative> modulerightassociative { get; set; }
+        public DbSet<ModuleRight> moduleright { get; set; }
         public DbSet<Project> project { get; set; }
         public DbSet<Right> right { get; set; }
         public DbSet<Role> role { get; set; }
-        public DbSet<RoleModuleRightAssociative> rolemodulerightassociative { get; set; }
-        public DbSet<Task> task { get; set; }
-        public DbSet<EmployeDepartmentDesignation> employedepartmentdesignation { get; set; }
-        public DbSet<EmployeRole> employerole { get; set; }
+        public DbSet<RoleModuleRight> rolemoduleright { get; set; }
+        public DbSet<Attendance> attendance { get; set; }
+        public DbSet<Deduction> deduction { get; set; }
+        public DbSet<Earning> earning { get; set; }
+        public DbSet<Increment>  increment { get; set; }
+        public DbSet<Loan> loan { get; set; }
+        public DbSet<SalarySlip> salaryslip { get; set; }
+        public DbSet<Shift> shift { get; set; }
+        public DbSet<FingerPrint> fingerprint { get; set; }
+        public DbSet<Holiday> holiday { get; set; }
+        public DbSet<Leave> leave { get; set; }
+        public DbSet<SalaryTemplate> salarytemplate { get; set; }
+        public DbSet<MentainanceCounter> counter { get; set; }
+
 
 
         protected override void OnModelCreating(DbModelBuilder builder)
         {
-            builder.Entity<DepartmentDesignationAssociative>().HasIndex(p => new { p.DepartmentId, p.DesignationId }).IsUnique(true);
-            builder.Entity<Employe>().Property(p => p.UserName).HasMaxLength(150);
-            builder.Entity<Employe>().HasIndex(p => p.UserName).IsUnique(true);
-            builder.Entity<EmployeModuleRightAssociative>().HasIndex(p => new { p.ModuleRightId, p.EmployeId }).IsUnique(true);
-            builder.Entity<EmployeRoleAssociative>().HasIndex(p => new { p.EmployeId, p.RoleId }).IsUnique(true);
-            builder.Entity<Module>().HasIndex(p => p.ModuleName).IsUnique(true);
-            builder.Entity<ModuleRightAssociative>().HasIndex(p => new { p.ModuleId, p.RightId }).IsUnique(true);
-            builder.Entity<Right>().Property(p => p.RightName).HasMaxLength(100);
-            builder.Entity<Right>().HasIndex(p => p.RightName).IsUnique(true);
-            builder.Entity<Role>().Property(p => p.RoleName).HasMaxLength(100);
-            builder.Entity<Role>().HasIndex(p => p.RoleName).IsUnique(true);
-            builder.Entity<RoleModuleRightAssociative>().HasIndex(p => new { p.ModuleRightId, p.RoleId }).IsUnique(true);
-            builder.Entity<EmployeDepartmentDesignation>().HasIndex(p => p.DepartmentDesignationId).IsUnique(true);
-            builder.Entity<EmployeRole>().HasIndex(p => new { p.EmployeId, p.RoleId }).IsUnique(true);
+            builder.Entity<DepartmentDesignation>().HasOptional(a => a.employe).WithRequired(b => b.departmentdesignation);
+            builder.Entity<DepartmentDesignation>().HasOptional(a => a.salarytemplate).WithRequired(b => b.departmentdesignation);
+            builder.Entity<Project>().HasOptional(a => a.employe).WithRequired(b => b.project);
+            builder.Entity<FingerPrint>().HasOptional(a => a.employe).WithRequired(b => b.fingerprint);
+
         }
     }
 }

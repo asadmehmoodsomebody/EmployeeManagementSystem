@@ -1,8 +1,8 @@
 ﻿
         
 $('document').ready(function () {
-    $('#UserName').on('change keyup keypress',function (e) {
-        let dd = arr.find((data) => data.username.toLowerCase() == $('#UserName').val().toLowerCase()) || null;
+    $('#UserName').on('change keyup keypress', function (e) {
+        let dd = arr.find((data) => data.toLowerCase() == $('#UserName').val().toLowerCase()) || null;
         if (dd != null) {
             $('#UserName').css('border-color', 'red');
             $("#UserName").attr('invalid', 'true');
@@ -17,10 +17,10 @@ $('document').ready(function () {
             }
         }
     });
-    $('#Name').on("keyup keypress change", function (e) {
+    $('#FirstName').on("keyup keypress change", function (e) {
         let regex = /[a-zA-Z]/i;
-        if ($('#Name').val() == "") $('#Name').attr('invalid', 'true');
-        else if ($('#Name').val().length > 0) $('#Name').attr('invalid', 'false');
+        if ($('#FirstName').val() == "") $('#FirstName').attr('invalid', 'true');
+        else if ($('#FirstName').val().length > 0) $('#FirstName').attr('invalid', 'false');
         if (!regex.test(e.key) && e.key != " " && e.key != 32) {
             console.log('here');
             e.preventDefault();
@@ -29,56 +29,48 @@ $('document').ready(function () {
 
     });
     $('#Password').on("keyup keypress change", function (e) {
-        if ($('#Password').val().length<6) $('#Password').attr('invalid', 'true');
-        else  $('#Password').attr('invalid', 'false');
+        if ($('#Password').val().length < 6) $('#Password').attr('invalid', 'true');
+        else $('#Password').attr('invalid', 'false');
     });
-    $('#Email').keyup(function (e) {
-        let pattern = /[A-Z0-9a-z\_\.]{4,}@[A-Za-z]{3,}\.[A-Za-z]{2,}$/i;
-        let dd = arr.find((data) => data.email.toLowerCase() == $('#Email').val().toLowerCase()) || null;
-        if (dd != null) {
-            $('#Email').css('border-color', 'red');
-            $("#Email").attr('invalid', 'true');
-            $("#EmailError").removeClass('d-none');
+    //$('#EmailAddress').keyup(function (e) {
+    //    let pattern = /[A-Z0-9a-z\_\.]{4,}@[A-Za-z]{3,}\.[A-Za-z]{2,}$/i;
+    //    if (!pattern.test($('#Email').val())) {
+    //        $('#EmailAddress').css('border-color', 'red');
+    //        $("#EmailAddress").attr('invalid', 'true');
+    //        $("#EmailError").removeClass('d-none');
+    //    } else {
+    //        $('#EmailAddress').css('border-color', '#ced4da');
+    //        $("#EmailAddress").attr('invalid', 'false');
+    //        $("#EmailError").addClass('d-none');
+    //    }
+    //});
+
+    $('#Register').click(function (e) {
+        let check = false;
+        $.each($('.required'), function (e) {
+            if ($(this).attr('invalid') == "true") {
+                $(this).css('border-color', 'red');
+                check = true;
+            } else {
+                $(this).css('border-color', '#ced4da');
+            }
+        })
+        if (check) {
+            if ($('#Password').attr('invalid') == 'true') {
+                $('#c_password').css('border-color', '#ced4da');
+                $('#PasswordError').addClass('d-none')
+            }
+
+            e.preventDefault();
         } else {
-            $('#Email').css('border-color', '#ced4da');
-            $("#Email").attr('invalid', 'false');
-            $("#EmailError").addClass('d-none');
-            if (!pattern.test($('#Email').val())) {
-                $('#Email').css('border-color', 'red');
-                $("#Email").attr('invalid', 'true');
-                $("#EmailError").removeClass('d-none');
+            if ($('#Password').val() != $('#c_password').val()) {
+                e.preventDefault();
+                $('#c_password').css('border-color', 'red');
+                $('#PasswordError').removeClass('d-none')
+            } else {
+                $('#c_password').css('border-color', '#ced4da');
+                $('#PasswordError').addClass('d-none')
             }
         }
-        
     })
 });
-
-$('#Register').click(function (e) {
-    let check = false;
-    $.each($('.required'), function (e) {
-        if ($(this).attr('invalid') == "true") {
-            $(this).css('border-color', 'red');
-            check = true;
-        } else {
-            $(this).css('border-color', '#ced4da');
-        }
-    })
-    if (check)
-    {
-        if ($('#Password').attr('invalid') == 'true') {
-            $('#c_password').css('border-color', '#ced4da');
-            $('#PasswordError').addClass('d-none')
-        }
-
-        e.preventDefault();
-    } else {
-        if ($('#Password').val() != $('#c_password').val()) {
-            e.preventDefault();
-            $('#c_password').css('border-color', 'red');
-            $('#PasswordError').removeClass('d-none')
-        } else {
-            $('#c_password').css('border-color', '#ced4da');
-            $('#PasswordError').addClass('d-none')
-        }
-    }
-})

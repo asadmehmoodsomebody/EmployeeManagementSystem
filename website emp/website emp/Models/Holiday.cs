@@ -6,17 +6,16 @@ using System.Web;
 
 namespace website_emp.Models
 {
-    public class Right
-    { 
+    public class Holiday
+    {
         [Key]
-        public long RightId { get; set; }
-        [Required]
-        public string RightName { get; set; }
+        public long HolidayId { get; set;}
+        public string HolidayName { get; set; }
+        public DateTime? HolidayDate { get; set; }
         public long CreatedBy { get; set; }
         public DateTime? CreatedOn { get; set; }
         public long ModifiedBy { get; set; }
         public DateTime? Modifiedon { get; set; }
         public bool? IsDeleted { get; set; }
-        public ICollection<ModuleRight> moduleright { get; set; }
     }
 }

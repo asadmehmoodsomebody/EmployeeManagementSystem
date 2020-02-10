@@ -9,15 +9,16 @@ namespace website_emp.Models
     public class Module
     {
         [Key]
-        public int ModuleId { get; set; }
+        public long ModuleId { get; set; }
         [Required]
         [StringLength(maximumLength:150)]
-        //Unique
         public string ModuleName { get; set; }
-        public int Createdby { get; set; }
-        public DateTime Createdon { get; set; }
-        public int? Modifiedby { get; set; }
+        public long CreatedBy { get; set; }
+        public DateTime? CreatedOn { get; set; }
+        public long ModifiedBy { get; set; }
         public DateTime? Modifiedon { get; set; }
-        public bool Deleted { get; set; }
+        public bool? IsDeleted { get; set; }
+        public ICollection<ModuleRight> moduleright { get; set; }
+
     }
 }

@@ -6,17 +6,14 @@ using System.Web;
 
 namespace website_emp.Models
 {
-    public class Right
-    { 
+    public class FingerPrint
+    {
         [Key]
-        public long RightId { get; set; }
-        [Required]
-        public string RightName { get; set; }
-        public long CreatedBy { get; set; }
+        public long FingerPrintId { get; set; }
+        public string Fingerprint { get; set; }
+        public virtual Employe employe { get; set; }
         public DateTime? CreatedOn { get; set; }
-        public long ModifiedBy { get; set; }
         public DateTime? Modifiedon { get; set; }
         public bool? IsDeleted { get; set; }
-        public ICollection<ModuleRight> moduleright { get; set; }
     }
 }

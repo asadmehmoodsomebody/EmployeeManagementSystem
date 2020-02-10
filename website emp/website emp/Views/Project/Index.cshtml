@@ -1,5 +1,4 @@
-﻿@model IEnumerable<website_emp.Models.Project>
-@{
+﻿@{
     ViewBag.Title = "Project";
     int rowcount = 1;
 }
@@ -10,7 +9,7 @@
            <h5 class="m-0 p-0">Project</h5>
        </div>
        <div class="col-1">
-           <button class="btn btn-primary">Add</button>
+           <a class="btn btn-primary" href="">Add</a>
        </div>
    </div>
     <div class="row no-gutters w-100 bg-light">
@@ -21,15 +20,11 @@
                 <div class="col-2 text-center">Action</div>
             </div>
             <table class="w-100">
-                @foreach (var modelitem in Model)
-                {
                     <tr class="row w-100 px-2 py-1 no-gutters bg-light">
-                        <td class="col-1">@rowcount</td>
-                        <td class="col-9"><a href="@Url.Action("ProjectDetail","Project",new { projectid =@modelitem.ProjectId })">@modelitem.ProjectTitle</a></td>
-                        <td class="col-2 text-center"><a href="@Url.Action("UpdateProject", "Project", new { projectid = modelitem.ProjectId })">Edit</a> <a href="@modelitem.ProjectId">Delete</a></td>
+                        <td class="col-1"></td>
+                        <td class="col-9"><a href=""></a></td>
+                        <td class="col-2 text-center"><a href="">Edit</a> <a href="">Delete</a></td>
                     </tr>
-                    rowcount++;
-                }
                 @*<script>
                     for (let i = 0 ; i < 10 ; i++) {
                         document.write(`<tr class="row w-100 px-2 py-1 no-gutters bg-light">
