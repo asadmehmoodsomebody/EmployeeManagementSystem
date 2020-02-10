@@ -17,5 +17,26 @@ namespace website_emp.Controllers
         {
             return View();
         }
+        public ActionResult DailyAttendance()
+        {
+            return View();
+        }
+        public ActionResult MonthlyAttendance()
+        {
+            return View();
+        }
+        public ActionResult LeaveRequest()
+        {
+            return View();
+        }
+        public ActionResult LeaveRequest_E()
+        {
+            return View();
+        }
+        public ActionResult Holidays()
+        {
+            return View();
+        }
+
     }
 }

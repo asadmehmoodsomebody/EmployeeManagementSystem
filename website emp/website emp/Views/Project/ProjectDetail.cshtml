@@ -1,0 +1,121 @@
+﻿
+@{
+    ViewBag.Title = "ProjectDetail";
+    int rowcount = 1;
+}
+
+<main>
+    <div class="row no-gutters w-100 align-content-center p-2 border-bottom">
+        <div class="col-10 d-flex align-self-center">
+            <h5 class="m-0 p-0">Title</h5>
+        </div>
+        <div class="col-2">
+            <a class="btn btn-primary"">Add Task</a>
+        </div>
+    </div>
+    <div class="row no-gutters w-100 bg-light">
+        <div class="col-9">
+            <fieldset>
+                <legend>Detail</legend>
+                <div class="row">
+                    <div class="col-6">
+                        <h5>Department : </h5><span>Dep Name</span>
+                    </div>
+                    <div class="col-6">
+                        <h5>Project : </h5><span>Project</span>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12">
+                        <h5>Created by : </h5><span>Name</span>&nbsp;&nbsp;<button class="btn btn-primary">View</button>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12">
+                        <h5>Detail :</h5>
+                        <p>p des</p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-6">
+                        <h5>Start Date: </h5><span>date</span>
+                    </div>
+                    <div class="col-6">
+                        <h5>End Date: </h5><span>date</span>
+                    </div>
+                </div>
+            </fieldset>
+        </div>
+        <div class="col-3">
+            <div class="row w-100 no-gutters">
+                <div class="col-12 d-flex justify-content-center py-2">
+                    <button class="btn btn-primary w-50">Back</button>
+                </div>
+                <div class="col-12 d-flex justify-content-center py-2">
+                    <a href="" class="btn btn-primary w-50">Edit</a>
+                </div>
+                <div class="col-12 d-flex justify-content-center py-2">
+                    <button class="btn btn-primary w-50">Delete</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row w-100 no-gutters search-panel bg-light">
+        <div class="col-9">
+            <input class="form-control" />
+        </div>
+        <div class="col-3">
+            <button class="btn btn-primary">Search</button>
+        </div>
+    </div>
+    <div class="row no-gutters w-100 bg-light">
+        <div class="col-12">
+            <div class="row no-gutters w-100 flex-nowrap bg-primary text-light font-weight-bold p-2">
+                <div class="col-1">#</div>
+                <div class="col-9">Project</div>
+                <div class="col-2 text-center">Action</div>
+            </div>
+            <table class="w-100">
+             
+                    <tr class="row w-100 px-2 py-1 no-gutters bg-light">
+                        <td class="col-1">#</td>
+                        <td class="col-9"><a href="">task</a></td>
+                        <td class="col-2 text-center"><a href="">Edit</a> <a href="task">Delete</a></td>
+                    </tr>
+                @*<script>
+                        for (let i = 0 ; i < 10 ; i++) {
+                            document.write(`<tr class="row w-100 px-2 py-1 no-gutters bg-light">
+                        <td class="col-1">${i+1}</td>
+                        <td class="col-9">Project Name</td>
+                        <td class="col-2 text-center">Edit Delete</td>
+                    </tr>`);
+                        }
+
+                    </script>*@
+
+
+            </table>
+            <div class="footer">
+                <div class="row no-gutters w-100">
+                    <div class="col-12 col-md-6 d-flex align-items-center justify-content-center justify-content-md-start pl-0 pl-md-2">
+                        <p class="text-justify">
+                            page <span id="start-number">1</span>&nbsp;of <span id="total-pages">10</span>
+                        </p>
+                    </div>
+                    <div class="col-12 col-md-6 d-flex justify-content-center justify-content-md-end pr-0 pr-md-2">
+                        <nav aria-label="Page navigation example">
+                            <ul class="pagination">
+                                <li class="page-item"><a class="page-link" href="#">Previous</a></li>
+                                <li class="page-item"><a class="page-link" href="#">1</a></li>
+                                <li class="page-item"><a class="page-link" href="#">2</a></li>
+                                <li class="page-item"><a class="page-link" href="#">3</a></li>
+                                <li class="page-item"><a class="page-link" href="#">Next</a></li>
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div> 
+</main>
+

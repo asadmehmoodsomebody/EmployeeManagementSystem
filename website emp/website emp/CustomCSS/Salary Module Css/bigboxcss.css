@@ -1,0 +1,10 @@
+.Big-Box
+{
+    background-color: white;
+    height: 100%;
+    //width: 100%;
+    /*min-height: 530px;
+    max-height: 530px;*/
+    
+    box-shadow: 0px 0px 7px 1px lightgrey;
+}

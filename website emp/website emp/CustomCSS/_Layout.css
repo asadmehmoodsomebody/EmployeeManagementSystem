@@ -87,7 +87,7 @@ header {
     left:0px;
     bottom:50px;
     background-color: white;
-    overflow-y: auto;
+    overflow-y:hidden;
     transition: 0.5s all linear;
 }
 .sidebar .navbar .navbar-nav{
@@ -110,6 +110,10 @@ header {
     text-align:center;
     font-size:1em;
     color:white!important;
+}
+.navbar-nav{
+    overflow-y:auto;
+    max-height:calc(100vh - 150px);
 }
 
 /*header heading*/

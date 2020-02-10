@@ -1,0 +1,31 @@
+
+.profile-icon {
+    width: 50px;
+    border-radius: 20px;
+}
+.tbl
+{
+    min-width: 770px;
+}
+.tbl-div
+{
+    overflow: scroll;
+    max-height: 300px;
+     width: 100%;
+    overflow-x: auto;
+}
+th
+{
+    background-color:skyblue;
+    position:sticky;
+    top:0;
+}
+.select-pages
+{
+    width: 50px;
+    height: 25px;
+}
+.text-search:focus
+{
+    outline: none!important;
+}

@@ -10,7 +10,7 @@ namespace website_emp.Controllers
 {
     public class HomeController : Controller
     {
-        public context db = new context();
+        private Context _context = new Context();
         // GET: Home
         public ActionResult Index()
         {
@@ -23,57 +23,38 @@ namespace website_emp.Controllers
         [HttpPost]
         public ActionResult Login(string username, string password)
         {
-            var data = from user in db.Users
-                       where username == user.UserName && password == user.Password
-                       select user;
-            if (data.Count() > 0)
+            if (!String.IsNullOrEmpty(username) && !String.IsNullOrEmpty(password))
             {
-                return Redirect("/Home/Index");
-                
+                IEnumerable<Employe> result = (from user in _context.employe
+                             where user.UserName == username && user.Password == password
+                             && user.IsActive == true && user.IsDeleted == false
+                             select user).ToList();
+                if (result.Count() > 0) return RedirectToAction("Index","Dashboard");
             }
-            ViewBag.msg = "Wrong Username of Password";
+            ViewBag.msg = "Wrong username or password";
             return View();
         }
+        
         public ActionResult Signup()
         {
-            ViewBag.key = "sendsomedata";
 
-            IEnumerable<SelectListItem> deps = db.Departments.Select(p => new SelectListItem { Value = p.DepartmentId.ToString(), Text = p.DepartmentName });
-            IEnumerable<SelectListItem> des = db.Designations.Select(p => new SelectListItem { Value = p.DesignationId.ToString(), Text = p.DesignationName });
-            ViewBag.departments = new SelectList(deps, "Value", "Text");
-            ViewBag.designations = new SelectList(des, "Value", "Text");
+
             return View();
         }
         [HttpPost]
-        public ActionResult Signup(user User ,string Department,string Designation, string gender)
+        public ActionResult Signup(Employe emp)
         {
-            if (User.UserName != "" || User.Name != "" || User.Password != "" || User.Email != "")
+           try
             {
-                try
-                {
-                    int depid = int.Parse(Department);
-                    int desid = int.Parse(Designation);
-                    department dep = db.Departments.FirstOrDefault(p => p.DepartmentId == depid);
-                    designation des = db.Designations.FirstOrDefault(p => p.DesignationId == desid);
-                    status st = db.States.FirstOrDefault(p => p.StatusId == 1);
-                    string role = "Employ";
-                    User.Role = role;
-                    User.Status = st;
-                    User.Department = dep;
-                    User.Designation = des;
-                    db.Users.Add(User);
-                    db.SaveChanges();
-                    return Redirect("dashboard");
-                }
-                catch(Exception ex)
-                {
-                    ViewBag.errormsg = "Some Thing Went Wrong";
-                    return Signup();
+               
 
-                }
-              
+            }catch (Exception ex)
+            {
+
             }
-            return Signup();
+                
+           
+            return View();
         }
         
         public ActionResult dashboard()
@@ -82,17 +63,12 @@ namespace website_emp.Controllers
         }
 
         [HttpPost]
-        public JsonResult getUserNames(string data)
+        public JsonResult getUserNames()
         {
-            if (data == "sendsomedata") {
-                var names = (from user in db.Users
-                             select new { username =user.UserName , email=user.Email}).ToArray();
-                return Json(new { data = names });
-            }
-            else
-            {
-                return Json(new { data = "HelloWOrld" });
-            }
+
+            IEnumerable<string> names = from name in _context.employe
+                                        select name.UserName;
+                return Json(new { names = names });
             
         }
 

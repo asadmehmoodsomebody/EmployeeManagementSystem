@@ -1,0 +1,47 @@
+﻿
+@{
+    ViewBag.Title = "LeaveRequest_E";
+}
+
+<input type="hidden" id="GetActiveTab" value="#LeaveRequest_E" />
+<h4 class="mt-2">Assign Leave</h4>
+
+<div class="row">
+    <div class="col-12 col-md-8 col-xl-8">
+        <p class="mb-1">Leave Type</p>
+        <select class="form-control shadow">
+            <option>Casual</option>
+            <option>Sick</option>
+            <option>Family problem</option>
+        </select>
+    </div>
+</div>
+<div class="row mt-4">
+    <div class="col-12 col-md-8 col-xl-8">
+        <p>Select Duration</p>
+        <input type="radio"> Single &nbsp;&nbsp;&nbsp;
+        <input type="radio"> Multiple&nbsp;&nbsp;&nbsp;
+        <input type="radio"> Half Day&nbsp;&nbsp;&nbsp;
+    </div>
+</div>
+<div class="row mt-4">
+    <div class="col-12 col-md-8 col-xl-8">
+        <p class="font-weight-bold mb-1">Select Dates :</p>
+        <p class="mb-0">(You can select multiple dates)</p>
+        <input type="text" class="form-control shadow h-50">
+    </div>
+</div>
+<div class="row mt-5">
+    <div class="col-12 col-md-8 col-xl-8">
+        <p class="mb-1">Reason For Absence </p>
+        <textarea class="form-control shadow  txta"></textarea>
+    </div>
+</div>
+<div class="row  mt-4 mb-4">
+    <div class="col-6 col-md-4 col-xl-4">
+        <button type="submit" class="form-control shadow border-0 bg-info text-white">Save</button>
+    </div>
+    <div class="col-6 col-md-4 col-xl-4">
+        <button type="submit" class="form-control shadow border-0 text-white bg-danger">Reset</button>
+    </div>
+</div>

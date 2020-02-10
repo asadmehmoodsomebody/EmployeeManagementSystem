@@ -1,0 +1,30 @@
+.select-pages
+{
+    width: 50px;
+    height: 25px;
+}
+.text-search:focus
+{
+    outline: none!important;
+    width: 200px;
+}
+.text-search
+{
+    width: 200px;
+}
+.tbl
+{
+    min-width: 770px;
+}
+.tbl-div
+{
+    width: 100%;
+    overflow: scroll;
+    height: 300px;
+}
+th
+{
+    background-color:skyblue;
+    position:sticky;
+    top:0;
+}
