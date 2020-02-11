@@ -8,7 +8,7 @@ namespace website_emp.Models
 {
     public class Context:DbContext
     {
-        public Context():base("Server=LAPTOP-ENVV97AF;initial catalog = EMS;integrated security = true;") {}
+        public Context():base("Server=DESKTOP-M1JQCQK;initial catalog = EMS;integrated security = true;") {}
         public DbSet<Department> department { get; set; }
         public DbSet<DepartmentDesignation> departmentdesignation { get; set; }
         public DbSet<Designation> designation { get; set; }
