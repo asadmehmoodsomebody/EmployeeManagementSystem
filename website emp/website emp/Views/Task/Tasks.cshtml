@@ -1,0 +1,68 @@
+﻿
+@{
+    ViewBag.Title = "Tasks";
+}
+
+<link href="~/CustomCSS/Task.css" rel="stylesheet" />
+
+<div class="pt-2 px-3">
+
+
+    <div class="row no-gutters w-100">
+        <div class="col-6">
+            <form action="index" method="get" class="">
+                <input type="search" value="@ViewData["search"]" class="form-control d-inline-block w-50" name="search" placeholder="Search by task,project" />
+                <button class="btn btn-secondary ml-2">Search</button>
+            </form>
+        </div>
+    </div>
+    <div class="row main-div-task no-gutters w-100 bg-light">
+        <div class="table-row w-100">
+            <table class="table-custom-task">
+                <tr class="bg-primary text-light">
+                    <th>#</th>
+                    <th>Project</th>
+                    <th>Task</th>
+                    <th>Assigned to</th>
+                    <th>Assigned by</th>
+                    <th>Status</th>
+                    <th>Action</th>
+                </tr>
+                <script>
+                for (let i = 0 ; i < 10 ; i++)
+                {
+                    document.write(
+                        `<tr class="bg-white">
+                <td>${i+1}</td>
+                <td>Project</td>
+                <td>Task</td>
+                <td>Assigned to</td>
+                <td>Assigned by</td>
+                <td>Status</td>
+                <td>Action</td>
+            </tr>`)
+                }
+                </script>
+            </table>
+        </div>
+
+        <div class="row no-gutters w-100">
+            <div class="col-12 col-md-6 d-flex align-items-center justify-content-center justify-content-md-start pl-0 pl-md-2">
+                <p class="text-justify">
+                    page <span id="start-number">1</span>&nbsp;of <span id="total-pages">10</span>
+                </p>
+            </div>
+            <div class="col-12 col-md-6 d-flex justify-content-center justify-content-md-end pr-0 pr-md-2">
+                <nav aria-label="Page navigation example">
+                    <ul class="pagination">
+                        <li class="page-item"><a class="page-link" href="#">Previous</a></li>
+                        <li class="page-item"><a class="page-link" href="#">1</a></li>
+                        <li class="page-item"><a class="page-link" href="#">2</a></li>
+                        <li class="page-item"><a class="page-link" href="#">3</a></li>
+                        <li class="page-item"><a class="page-link" href="#">Next</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </div>
+</div>

@@ -245,11 +245,6 @@ C:\Users\Asad Mehmood\Source\Repos\EmployeeManagementSystem\website emp\website 
 C:\Users\Asad Mehmood\Source\Repos\EmployeeManagementSystem\website emp\website emp\bin\System.Web.Webpages.Razor.xml
 C:\Users\Asad Mehmood\Source\Repos\EmployeeManagementSystem\website emp\website emp\bin\System.Web.Helpers.xml
 C:\Users\Asad Mehmood\Source\Repos\EmployeeManagementSystem\website emp\website emp\bin\System.Web.Mvc.xml
-C:\Users\Asad Mehmood\Source\Repos\EmployeeManagementSystem\website emp\website emp\obj\Debug\website_emp.Migrations.databaseversion1.resources
-C:\Users\Asad Mehmood\Source\Repos\EmployeeManagementSystem\website emp\website emp\obj\Debug\website emp.csproj.GenerateResource.Cache
-C:\Users\Asad Mehmood\Source\Repos\EmployeeManagementSystem\website emp\website emp\obj\Debug\website_emp.Migrations.databaseversion2.resources
-C:\Users\Asad Mehmood\Source\Repos\EmployeeManagementSystem\website emp\website emp\obj\Debug\website_emp.Migrations.databaseversion3.resources
-C:\Users\Asad Mehmood\Source\Repos\EmployeeManagementSystem\website emp\website emp\obj\Debug\website_emp.Migrations.databaseversion4.resources
 C:\Users\Farman Kaskar\Source\Repos\EmployeeManagementSystem\website emp\website emp\obj\Debug\website_emp.Migrations.database1.resources
 C:\Users\Farman Kaskar\Source\Repos\EmployeeManagementSystem\website emp\website emp\obj\Debug\website emp.csproj.GenerateResource.Cache
 C:\Users\Farman Kaskar\Source\Repos\EmployeeManagementSystem\website emp\website emp\obj\Debug\website emp.csprojResolveAssemblyReference.cache
@@ -295,3 +290,22 @@ C:\Users\zumaid khan khattak\Desktop\EmployeeManagementSystem\website emp\websit
 C:\Users\zumaid khan khattak\Desktop\EmployeeManagementSystem\website emp\website emp\obj\Debug\website emp.csproj.GenerateResource.Cache
 C:\Users\zumaid khan khattak\Desktop\EmployeeManagementSystem\website emp\website emp\obj\Debug\website emp.dll
 C:\Users\zumaid khan khattak\Desktop\EmployeeManagementSystem\website emp\website emp\obj\Debug\website emp.pdb
+C:\Users\Asad Mehmood\Source\Repos\EmployeeManagementSystem\website emp\website emp\bin\Microsoft.AspNet.Identity.Core.dll
+C:\Users\Asad Mehmood\Source\Repos\EmployeeManagementSystem\website emp\website emp\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+C:\Users\Asad Mehmood\Source\Repos\EmployeeManagementSystem\website emp\website emp\bin\Microsoft.AspNet.Identity.Owin.dll
+C:\Users\Asad Mehmood\Source\Repos\EmployeeManagementSystem\website emp\website emp\bin\Microsoft.Owin.dll
+C:\Users\Asad Mehmood\Source\Repos\EmployeeManagementSystem\website emp\website emp\bin\Microsoft.Owin.Security.Cookies.dll
+C:\Users\Asad Mehmood\Source\Repos\EmployeeManagementSystem\website emp\website emp\bin\Microsoft.Owin.Security.dll
+C:\Users\Asad Mehmood\Source\Repos\EmployeeManagementSystem\website emp\website emp\bin\Microsoft.Owin.Security.OAuth.dll
+C:\Users\Asad Mehmood\Source\Repos\EmployeeManagementSystem\website emp\website emp\bin\Newtonsoft.Json.dll
+C:\Users\Asad Mehmood\Source\Repos\EmployeeManagementSystem\website emp\website emp\bin\Owin.dll
+C:\Users\Asad Mehmood\Source\Repos\EmployeeManagementSystem\website emp\website emp\bin\Microsoft.AspNet.Identity.Core.xml
+C:\Users\Asad Mehmood\Source\Repos\EmployeeManagementSystem\website emp\website emp\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+C:\Users\Asad Mehmood\Source\Repos\EmployeeManagementSystem\website emp\website emp\bin\Microsoft.AspNet.Identity.Owin.xml
+C:\Users\Asad Mehmood\Source\Repos\EmployeeManagementSystem\website emp\website emp\bin\Microsoft.Owin.xml
+C:\Users\Asad Mehmood\Source\Repos\EmployeeManagementSystem\website emp\website emp\bin\Microsoft.Owin.Security.xml
+C:\Users\Asad Mehmood\Source\Repos\EmployeeManagementSystem\website emp\website emp\bin\Microsoft.Owin.Security.Cookies.xml
+C:\Users\Asad Mehmood\Source\Repos\EmployeeManagementSystem\website emp\website emp\bin\Microsoft.Owin.Security.OAuth.xml
+C:\Users\Asad Mehmood\Source\Repos\EmployeeManagementSystem\website emp\website emp\bin\Newtonsoft.Json.xml
+C:\Users\Asad Mehmood\Source\Repos\EmployeeManagementSystem\website emp\website emp\obj\Debug\website_emp.Migrations.fifth.resources
+C:\Users\Asad Mehmood\Source\Repos\EmployeeManagementSystem\website emp\website emp\obj\Debug\website emp.csproj.GenerateResource.Cache

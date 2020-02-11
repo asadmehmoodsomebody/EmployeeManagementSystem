@@ -16,10 +16,12 @@ namespace website_emp.Controllers
         {
             return View();
         }
+        [AllowAnonymous]
         public ActionResult Login()
         {
             return View();
         }
+        [AllowAnonymous]
         [HttpPost]
         public ActionResult Login(string username, string password)
         {

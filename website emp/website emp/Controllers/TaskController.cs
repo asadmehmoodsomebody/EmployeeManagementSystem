@@ -17,6 +17,34 @@ namespace website_emp.Controllers
             
             return View();
         }
+        [Route("Task/ViewAllTasks")]
+        public ActionResult Tasks()
+        {
+            return View();
+        }
+        [Route("Task/AddTask")]
+        public ActionResult AddTask()
+        {
+            return View();
+        }
+        [HttpPost]
+        public ActionResult AddTask(Task task)
+        {
+            return View();
+        }
+
+        [Route("Task/EditTask")]
+        
+        public ActionResult Edit()
+        {
+            return View();
+        }
+        [HttpPost]
+        public ActionResult Edit(Task task)
+        {
+            return View();
+        }
+        
 
     }
 }

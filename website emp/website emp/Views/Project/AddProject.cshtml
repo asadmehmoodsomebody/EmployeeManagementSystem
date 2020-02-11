@@ -2,6 +2,20 @@
 @{
     ViewBag.Title = "AddProject";
 }
+<style>
+    .main-div-min-height{
+        min-height:500px;
+    }
+    .project-add-form{
+        position:relative;
+        height:fit-content;
+    }
+    .project-add-btn-div{
+        position:absolute;
+        bottom:5px;
+        right:2.5px;
+    }
+</style>
 
 <main>
     <div class="row no-gutters w-100 align-content-center p-2 border-bottom">
@@ -12,37 +26,41 @@
     
        @using (@Html.BeginForm())
        {
-        <div class="row w-100 no-gutters bg-light">
-            <div class="col-12">
+        <div class="row w-100 no-gutters justify-content-center px-2 pt-0 pt-lg-5 bg-light py-3 main-div-min-height shadow">
+            <div class="col-12 col-lg-8 bg-white p-2 project-add-form rounded pb-5">
                 <div class="row no-gutters w-100">
-                    <div class="col-6 px-2">
-                        <h5>Department:</h5>
-                        @Html.DropDownList("DepartmentId",ViewData["DepartmentId"] as SelectList,new { @class="form-control"})
+                    <div class="col-12 col-lg-6 px-2">
+                        <h5 class="jumbotron-fluid"><small>Departments: </small></h5>
+                       <select class="form-control">
+                           <option>Hello</option>
+                           <option>Hello</option>
+                           <option>Hello</option>
+                       </select>
                     </div>
-                    <div class="col-6 px-2">
-                        <h5>Project Name:</h5>
+                    <div class="col-12 col-lg-6 px-2">
+                        <h5 class="jumbotron-fluid"><small>Project Name</small></h5>
                         <input name="ProjectTitle" class="form-control" />
                     </div>
                 </div>
                 <div class="row no-gutters w-100 mt-3">
-                    <div class="col-6 px-2">
-                        <h5>Start Date:</h5>
-                        @Html.EditorFor(Model=>Model.StartDate)
+                    <div class="col-12 col-lg-6 px-2">
+                        <h5 class="jumbotron-fluid"><small>Start Date:</small></h5>
+                        <input class="form-control" />
                     </div>
-                    <div class="col-6 px-2">
-                        <h5>End Date:</h5>
+                    <div class="col-12 col-lg-6 px-2">
+                        <h5 class="jumbotron-fluid"><small>End Date:</small></h5>
                         <input class="form-control" name="EndDate" type="datetime" />
                     </div>
                 </div>
                 <div class="row no-gutters w-100 mt-3">
                     <div class="col-12 px-2">
-                        <h5>Description:</h5>
-                        <textarea class="w-100 form-control" name="ProjectDescription"></textarea>
+                        <h5 class="jumbotron-fluid"><small>Description:</small></h5>
+                        <textarea class="w-100 form-control" name="ProjectDescription" style="resize:none;"></textarea>
                     </div>
                 </div>
-                <div class="row no-gutters w-100 mt-3">
-                    <div class="col-12 px-2 d-flex align-items-center justify-content-end">
-                        <button class="btn btn-primary" type="submit">Add</button>
+                <div class="row no-gutters w-100 mt-3 project-add-btn-div justify-content-end">
+                    <div class="col-12 col-lg-3 px-2 d-flex align-items-center justify-content-end">
+                        <button class="btn-block rounded shadow-none btn-primary" type="submit">Add</button>
                     </div>
                 </div>
             </div>

@@ -38,10 +38,9 @@ namespace website_emp.Models
 
         protected override void OnModelCreating(DbModelBuilder builder)
         {
-            builder.Entity<DepartmentDesignation>().HasOptional(a => a.employe).WithRequired(b => b.departmentdesignation);
+            builder.Entity<Employe>().HasOptional(a => a.departmentdesignation).WithRequired(b => b.employe);
             builder.Entity<DepartmentDesignation>().HasOptional(a => a.salarytemplate).WithRequired(b => b.departmentdesignation);
-            builder.Entity<Project>().HasOptional(a => a.employe).WithRequired(b => b.project);
-            builder.Entity<FingerPrint>().HasOptional(a => a.employe).WithRequired(b => b.fingerprint);
+            builder.Entity<Employe>().HasOptional(a => a.fingerprint).WithRequired(b => b.employe);
 
         }
     }

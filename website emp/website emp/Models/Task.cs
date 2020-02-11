@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Web;
 
@@ -8,7 +9,7 @@ namespace website_emp.Models
 {
     public class Task
     {
-        [Key]
+        [Key, DatabaseGenerated(DatabaseGeneratedOption.None)]
         public long TaskId { get; set; }
         [StringLength(maximumLength:150)]
         public string TaskTitle { get; set; }
@@ -17,7 +18,7 @@ namespace website_emp.Models
         public DateTime OptitimisticTime { get; set; }
         public DateTime OptimizedTime { get; set; }
         public DateTime LazyTime { get; set; }
-        public int Points { get; set; }
+        public long Points { get; set; }
         [StringLength(maximumLength:50)]
         public string Status { get; set; }
         public string StatusDescription { get; set; }
@@ -31,10 +32,14 @@ namespace website_emp.Models
         public string Priority { get; set; }
         public int Createdby { get; set; }
         public DateTime Createdon { get; set; }
-        public int? Modifiedby { get; set; }
+        public long? ModifiedBy { get; set; }
         public DateTime? Modifiedon { get; set; }
         public bool Deleted { get; set; }
         public long ProjectId { get; set; }
         public Project project { get; set; }
+        public string Type { get; set; }
+
+        public string Module { get; set; }
+        public DateTime? CompletionTime { get; set; }
     }
 }

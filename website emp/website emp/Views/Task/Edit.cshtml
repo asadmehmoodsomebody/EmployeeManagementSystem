@@ -1,0 +1,114 @@
+﻿
+@{
+    ViewBag.Title = "Edit Task";
+}
+
+<style>
+    .main-div-add-task {
+        max-height: calc(100vh - 190px);
+        min-height: calc(100vh - 190px);
+        overflow-y: auto;
+    }
+</style>
+
+<main class="pt-2 shadow">
+    <div class="row w-100 bg-light no-gutters">
+        <h4 class="font-weight-bold"><small>Add Task</small></h4>
+    </div>
+    <div class="row w-100 no-gutters main-div-add-task bg-white">
+        <div class="row w-100 no-gutters input-row">
+            <div class="col-12 col-md-4 p-2 input-col">
+                <h5 class="jumbotron-fluid"><small>Project</small></h5>
+                <select class="form-control shadow-none rounded-0">
+                    <option>EMR</option>
+                    <option>MEMR</option>
+                </select>
+            </div>
+            <div class="col-12 col-md-4 p-2 input-col">
+                <h5 class="jumbotron-fluid"><small>Module</small></h5>
+                <input class="form-control shadow-none rounded-0" />
+            </div>
+        </div>
+        <div class="row w-100 no-gutters input-row">
+            <div class="col-12 p-2 input-col">
+                <h5 class="jumbotron-fluid"><small>Task Detail</small></h5>
+                <textarea class="form-control shadow-none rounded-0" style="resize:none;"></textarea>
+            </div>
+        </div>
+        <div class="row w-100 no-gutters input-row">
+            <div class="col-12 col-md-4 p-2 input-col">
+                <h5 class="jumbotron-fluid"><small>Assigned by</small></h5>
+                <select class="form-control shadow-none rounded-0">
+                    <option>EMR</option>
+                    <option>MEMR</option>
+                </select>
+            </div>
+            <div class="col-12 col-md-4 p-2 input-col">
+                <h5 class="jumbotron-fluid"><small>Assigned to</small></h5>
+                <select class="form-control shadow-none rounded-0">
+                    <option>EMR</option>
+                    <option>MEMR</option>
+                </select>
+            </div>
+        </div>
+        <div class="row w-100 no-gutters input-row">
+            <div class="col-12 col-md-4 p-2 input-col">
+                <h5 class="jumbotron-fluid"><small>Type</small></h5>
+                <select class="form-control shadow-none rounded-0">
+                    <option>EMR</option>
+                    <option>MEMR</option>
+                </select>
+            </div>
+            <div class="col-12 col-md-4 p-2 input-col">
+                <h5 class="jumbotron-fluid"><small>Priority</small></h5>
+                <select class="form-control shadow-none rounded-0">
+                    <option>EMR</option>
+                    <option>MEMR</option>
+                </select>
+            </div>
+            <div class="col-12 col-md-4 p-2 input-col">
+                <h5 class="jumbotron-fluid"><small>Points</small></h5>
+                <input class="form-control shadow-none rounded-0" type="number" min="1" max="10" />
+            </div>
+        </div>
+        <div class="row w-100 no-gutters input-row">
+            <div class="col-12 col-md-4 p-2 input-col">
+                <h5 class="jumbotron-fluid"><small>Assigned date</small></h5>
+                <input class="form-control shadow-none rounded-0" type="datetime" />
+            </div>
+        </div>
+        <div class="row w-100 no-gutters input-row">
+            <div class="col-12 col-md-4 p-2 input-col">
+                <h5 class="jumbotron-fluid"><small>Expected Time</small></h5>
+                <input class="form-control shadow-none rounded-0" type="datetime" />
+            </div>
+            <div class="col-12 col-md-4 p-2 input-col">
+                <h5 class="jumbotron-fluid"><small>Optimistic Time</small></h5>
+                <input class="form-control shadow-none rounded-0" type="datetime" />
+            </div>
+            <div class="col-12 col-md-4 p-2 input-col">
+                <h5 class="jumbotron-fluid"><small>Lazy Time</small></h5>
+                <input class="form-control shadow-none rounded-0" type="datetime" />
+            </div>
+        </div>
+        <div class="row w-100 no-gutters input-row">
+            <div class="col-12 col-md-4 p-2 input-col">
+                <h5 class="jumbotron-fluid"><small>Status</small></h5>
+                <select class="form-control shadow-none rounded-0">
+                    <option>Completed</option>
+                    <option selected>Pending</option>
+                    <option>Delayed</option>
+                </select>
+            </div>
+        </div>
+        <div class="row no-gutters w-100 justify-content-end p-2">
+            <div class="col-12 col-sm-2">
+                <button class="btn-block btn btn-primary rounded-0">Edit</button>
+            </div>
+        </div>
+    </div>
+
+</main>
+
+
+

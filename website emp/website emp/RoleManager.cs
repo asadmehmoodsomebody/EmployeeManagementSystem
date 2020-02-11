@@ -1,13 +1,14 @@
-﻿using System;
+﻿using Microsoft.AspNet.Identity;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using System.Web.Security;
 
 namespace website_emp
 {
-    public class roleProvider : System.Web.Security.RoleProvider
+    public class RoleManager : RoleProvider
     {
-        public string _Name { get; set; }
         public override string ApplicationName
         {
             get
@@ -70,6 +71,5 @@ namespace website_emp
         {
             throw new NotImplementedException();
         }
-
     }
 }
