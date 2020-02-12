@@ -55,7 +55,7 @@
                 <p class="mb-1 font-weight-bold">First Name</p>
                 @Html.EditorFor(modelitem => modelitem.FirstName, new { htmlAttributes = new { @class = "form-control required shadow-none rounded-0 bg-light", @required = true, @minlength = 4, @maxlength = 100, @invalid = "true" } })
                 <p class="mb-1 font-weight-bold">Email</p>
-                @Html.EditorFor(modelitem => modelitem.EmailAddress, new { htmlAttributes = new { @class = "form-control required shadow-none rounded-0 bg-light", @required = true, @minlength = 4, @maxlength = 100 } })
+                @Html.EditorFor(modelitem => modelitem.Email, new { htmlAttributes = new { @class = "form-control required shadow-none rounded-0 bg-light", @required = true, @minlength = 4, @maxlength = 100 } })
                     <small class="text-danger d-none" id="EmailError">Email already exist or invalid email</small>
                  <p class="mb-1 font-weight-bold">password</p>
                @Html.EditorFor(modelitem => modelitem.Password, new { htmlAttributes = new { @class = "form-control required shadow-none rounded-0 bg-light", @required = true,@type="password", @minlength = 4, @maxlength = 100, @invalid = "true" } })
@@ -64,11 +64,15 @@
                 <small class="text-danger d-none" id="PasswordError">Password doesnot match</small>
                 <label class="font-weight-bold d-block  mb-0">Gender</label>
                 <div class="custom-radio">
-                    <input type="radio" checked name="Gender" value="M"/><span> Male &nbsp;&nbsp;</span>
-                    <input type="radio" name="Gender" value="F" /><span> Female</span><br />
+                    <input type="radio" checked name="Gender" value="Male"/><span> Male &nbsp;&nbsp;</span>
+                    <input type="radio" name="Gender" value="Female" /><span> Female</span><br />
                 </div>
                 <label class="font-weight-bold d-block  mb-0">Department</label>
-                @Html.DropDownList("DepartmentId", ViewBag.DepartmentId as SelectList, new { @class="form-control shadow-none rounded-0"})
+                @Html.DropDownList("DepartmentId", ViewData["DepartmentId"] as SelectList, new { @class="form-control shadow-none rounded-0"})
+                    <label class="font-weight-bold d-block  mb-0">Department</label>
+                @Html.DropDownList("ShiftId", ViewData["ShiftId"] as SelectList, new { @class = "form-control shadow-none rounded-0" })
+                    <label class="font-weight-bold d-block  mb-0">Department</label>
+                  @Html.DropDownList("SalaryTemplateId", ViewData["SalaryTemplateId"] as SelectList, new { @class = "form-control shadow-none rounded-0" })
                 <button type="submit" id="Register" class="form-control bg-info mt-2  text-white rounded-0 shadow-none signuptext">Register</button>
                 }
 

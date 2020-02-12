@@ -53,7 +53,7 @@
 
                   <a class="d-flex align-items-center Notification-icon" href="@Url.Action("Index","Notification")"><span><i class="fa fa-bell"></i></span></a>
                   <a class="d-flex align-items-center Notification-icon" href="@Url.Action("UserProfile","Administration")"><span><i class="fa fa-user-circle"></i></span>&nbsp; Profile</a>
-                  <a class="d-flex align-items-center Logout-icon" style="color:white; text-decoration:none;" href="@Url.Action("login","Home")"><span><i class="fa fa-sign-out-alt"></i></span>Logout</a>
+                  <a class="d-flex align-items-center Logout-icon" style="color:white; text-decoration:none;" href="@Url.Action("logout","Home")"><span><i class="fa fa-sign-out-alt"></i></span>Logout</a>
               </div>
           </div>
       </div>
@@ -63,8 +63,15 @@
             <div class="navbar flex-column no-gutters">
              
                 
+                @if (User.IsInRole("Admin")) {
                 <a class="navbar-brand mr-0">Admin Panel</a>
-                
+                }
+                else
+                {
+                 <a class="navbar-brand mr-0">User Panel</a>
+                }
+
+
                 <ul class="navbar-nav p-0 w-100">
                     
                     
@@ -177,6 +184,40 @@
                             <li class="nav-item"><a href="@Url.Action("Submodule3","Performance")" class="nav-link pl-4 d-flex align-items-center" id="Submodule3"><span class="icon sidebar-icon mb-1"><i class="fa fa-cog"></i></span>Dashboard-c</a></li>
                         </ul>
                     </li>
+
+                    @* Project *@
+                    <li class="nav-item" id="Project">
+                        <a href="@Url.Action("Index","Project")" class="nav-link pl-3 d-flex align-items-center has-children" data-target="#dr4">
+                            <span class="icon sidebar-icon mb-1"><i class="fa fa-user-graduate"></i></span>Project
+                            <span class="ml-auto mr-2 toggle-icon" id="toggle-icon"></span>
+                        </a>
+                        <ul class="collapse list-unstyled p-0 is-child" id="dr4" parent="#Performance">
+                            <li class="nav-item"><a href="@Url.Action("Index","Project")" class="nav-link pl-4 d-flex align-items-center" id="Submodule1"><span class="icon sidebar-icon mb-1"><i class="fa fa-cog"></i></span>Projects</a></li>
+                            @if (User.IsInRole("Admin")){
+                            <li class="nav-item"><a href="@Url.Action("Add","Project")" class="nav-link pl-4 d-flex align-items-center" id="Submodule2"><span class="icon sidebar-icon mb-1"><i class="fa fa-users-cog"></i></span>Add Project</a></li>
+                            <li class="nav-item"><a href="@Url.Action("Update","Project")" class="nav-link pl-4 d-flex align-items-center" id="Submodule3"><span class="icon sidebar-icon mb-1"><i class="fa fa-cog"></i></span>Update Project</a></li>
+                            }
+                        </ul>
+                    </li>
+                    @* Task *@
+                    <li class="nav-item" id="Task">
+                        <a href="@Url.Action("Index","Task")" class="nav-link pl-3 d-flex align-items-center has-children" data-target="#dr5">
+                            <span class="icon sidebar-icon mb-1"><i class="fa fa-user-graduate"></i></span>Task
+                            <span class="ml-auto mr-2 toggle-icon" id="toggle-icon"></span>
+                        </a>
+                        <ul class="collapse list-unstyled p-0 is-child" id="dr5" parent="#Performance">
+                            
+                            <li class="nav-item"><a href="@Url.Action("ViewAllTasks","Task")" class="nav-link pl-4 d-flex align-items-center" id="Submodule2"><span class="icon sidebar-icon mb-1"><i class="fa fa-users-cog"></i></span>View Tasks</a></li>
+                            @if (User.IsInRole("Admin"))
+                            {
+                                <li class="nav-item"><a href="@Url.Action("AddTask","Task")" class="nav-link pl-4 d-flex align-items-center" id="Submodule3"><span class="icon sidebar-icon mb-1"><i class="fa fa-cog"></i></span>Add Task</a></li>
+                                <li class="nav-item"><a href="@Url.Action("EditTask","Task")" class="nav-link pl-4 d-flex align-items-center" id="Submodule3"><span class="icon sidebar-icon mb-1"><i class="fa fa-cog"></i></span>Edit Task</a></li>
+                                <li class="nav-item"><a href="@Url.Action("Index","Task")" class="nav-link pl-4 d-flex align-items-center" id="Submodule1"><span class="icon sidebar-icon mb-1"><i class="fa fa-cog"></i></span>All Tasks</a></li>
+                            }
+                            
+                        </ul>
+                    </li>
+                    @* Others *@
                     <li class="nav-item"><a href="@Url.Action("Notice_Board","NoticeBoard")" class="nav-link pl-3 d-flex align-items-center" id="Notice_Board"><span class="icon sidebar-icon mb-1"><i class="fa fa-clipboard-list"></i></span>Noticeboard</a></li>
                     <li class="nav-item" id="Index_Award"><a href="@Url.Action("Index_Award","Award")" class="nav-link pl-3 d-flex align-items-center"><span class="icon sidebar-icon mb-1"><i class="fa fa-award"></i></span>Award</a></li>
                     

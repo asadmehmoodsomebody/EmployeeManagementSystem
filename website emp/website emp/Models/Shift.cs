@@ -12,6 +12,7 @@ namespace website_emp.Models
         [Key, DatabaseGenerated(DatabaseGeneratedOption.None)]
         public int ShiftId { get; set; }
         public DateTime? ShiftStartTime { get; set; }
+        public string ShiftName { get; set; }
         public DateTime? ShiftEndTime { get; set; }
         public long CreatedBy { get; set; }
         public DateTime? CreatedOn { get; set; }

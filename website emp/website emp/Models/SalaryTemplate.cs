@@ -11,6 +11,7 @@ namespace website_emp.Models
     {
         [Key, DatabaseGenerated(DatabaseGeneratedOption.None)]
         public long SalaryTemplateId { get; set; }
+        public string TemplateName { get; set; }
         public long Payroll { get; set; }
         public long CreatedBy { get; set; }
         public DateTime? CreatedOn { get; set; }

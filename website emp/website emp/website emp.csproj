@@ -293,6 +293,10 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202002120820338_seventhcall.cs" />
+    <Compile Include="Migrations\202002120820338_seventhcall.designer.cs">
+      <DependentUpon>202002120820338_seventhcall.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Attendance.cs" />
     <Compile Include="Models\Context.cs" />
@@ -388,6 +392,11 @@
     <Folder Include="App_Data\" />
     <Folder Include="Models\ViewModels\" />
     <Folder Include="SidebarIcons\" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\202002120820338_seventhcall.resx">
+      <DependentUpon>202002120820338_seventhcall.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

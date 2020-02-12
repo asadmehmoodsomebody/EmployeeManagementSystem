@@ -49,7 +49,17 @@ namespace website_emp
 
         public override string[] GetRolesForUser(string username)
         {
-            throw new NotImplementedException();
+            using (var context = new Models.Context())
+            {
+                List<string> result = (from emp in context.employe
+                                       join emprole in context.employerole
+                                       on emp.EmployeId equals emprole.EmployeId
+                                       join role in context.role
+                                       on emprole.RoleId equals role.RoleId
+                                       where emp.UserName == username
+                                       select role.RoleName).ToList<string>();
+                return result.ToArray<string>();
+            }
         }
 
         public override string[] GetUsersInRole(string roleName)
@@ -59,7 +69,8 @@ namespace website_emp
 
         public override bool IsUserInRole(string username, string roleName)
         {
-            throw new NotImplementedException();
+            if (GetRolesForUser(username).Contains(roleName)) return true;
+            return false;
         }
 
         public override void RemoveUsersFromRoles(string[] usernames, string[] roleNames)
@@ -70,6 +81,7 @@ namespace website_emp
         public override bool RoleExists(string roleName)
         {
             throw new NotImplementedException();
+            
         }
     }
 }

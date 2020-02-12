@@ -51,5 +51,6 @@ namespace website_emp.Models
         public long SalaryTemplateId { get; set; }
         public SalaryTemplate salarytemplate { get; set; }
         public DepartmentDesignation departmentdesignation { get; set; }
+        public string Gender { get; set; }
     }
 }

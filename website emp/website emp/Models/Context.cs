@@ -33,14 +33,14 @@ namespace website_emp.Models
         public DbSet<Leave> leave { get; set; }
         public DbSet<SalaryTemplate> salarytemplate { get; set; }
         public DbSet<MentainanceCounter> counter { get; set; }
-
+        public DbSet<Task> task { get; set; }
 
 
         protected override void OnModelCreating(DbModelBuilder builder)
         {
             builder.Entity<Employe>().HasOptional(p => p.departmentdesignation).WithMany().WillCascadeOnDelete(false);
             builder.Entity<Employe>().HasOptional(a => a.fingerprint).WithRequired(b => b.employe);
-
+            builder.Entity<Employe>().HasOptional(a => a.fingerprint).WithRequired(b => b.employe);
         }
     }
 }

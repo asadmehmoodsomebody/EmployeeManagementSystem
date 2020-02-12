@@ -1,5 +1,4 @@
-﻿
-@{
+﻿@{
     ViewBag.Title = "Index";
 }
 
@@ -16,7 +15,11 @@
             </form>
         </div>
         <div class="col-6 d-flex justify-content-end">
-            <div class="btn btn-primary">Add Task</div>
+            @if (User.IsInRole("Admin"))
+            {
+                <div class="btn btn-primary">Add Task</div>
+            }
+            
         </div>
     </div>
     <div class="row main-div-task no-gutters w-100 bg-light">

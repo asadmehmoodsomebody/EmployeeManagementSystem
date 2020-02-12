@@ -1,4 +1,4 @@
-﻿
+﻿@model website_emp.Models.Project
 @{
     ViewBag.Title = "ProjectDetail";
     int rowcount = 1;
@@ -7,10 +7,14 @@
 <main>
     <div class="row no-gutters w-100 align-content-center p-2 border-bottom">
         <div class="col-10 d-flex align-self-center">
-            <h5 class="m-0 p-0">Title</h5>
+            <h5 class="m-0 p-0">Project</h5>
         </div>
         <div class="col-2">
-            <a class="btn btn-primary"">Add Task</a>
+            @if (User.IsInRole("Admin"))
+            {
+                <a class="btn btn-primary" href="@Url.Action("AddTask","Task")">Add Task</a>
+            }
+            
         </div>
     </div>
     <div class="row no-gutters w-100 bg-light">
@@ -19,29 +23,30 @@
                 <legend>Detail</legend>
                 <div class="row">
                     <div class="col-6">
-                        <h5>Department : </h5><span>Dep Name</span>
+                        <h5>Department : </h5><span>@Model.department.DepartmentName</span>
                     </div>
                     <div class="col-6">
-                        <h5>Project : </h5><span>Project</span>
+                        <h5>Project : </h5><span>@Model.ProjectTitle</span>
                     </div>
                 </div>
                 <div class="row">
                     <div class="col-12">
-                        <h5>Created by : </h5><span>Name</span>&nbsp;&nbsp;<button class="btn btn-primary">View</button>
+                        <h5>Created by : </h5><span>@ViewData["CreatedBy"]</span>&nbsp;&nbsp; @if (User.IsInRole("Admin"))
+                        {<a class="btn btn-primary" href="#">View</a>}
                     </div>
                 </div>
                 <div class="row">
                     <div class="col-12">
                         <h5>Detail :</h5>
-                        <p>p des</p>
+                        <p>@Model.ProjectDescription</p>
                     </div>
                 </div>
                 <div class="row">
                     <div class="col-6">
-                        <h5>Start Date: </h5><span>date</span>
+                        <h5>Start Date: </h5><span>@Model.StartDate.ToShortDateString()</span>
                     </div>
                     <div class="col-6">
-                        <h5>End Date: </h5><span>date</span>
+                        <h5>End Date: </h5><span>@Model.EndDate.Value</span>
                     </div>
                 </div>
             </fieldset>
@@ -62,7 +67,7 @@
     </div>
     <div class="row w-100 no-gutters search-panel bg-light">
         <div class="col-9">
-            <input class="form-control" />
+            <input class="form-control" value="" name="search" />
         </div>
         <div class="col-3">
             <button class="btn btn-primary">Search</button>
@@ -82,6 +87,22 @@
                         <td class="col-9"><a href="">task</a></td>
                         <td class="col-2 text-center"><a href="">Edit</a> <a href="task">Delete</a></td>
                     </tr>
+                @foreach (var item in Model.task)
+                {
+                    <tr class="row w-100 px-2 py-1 no-gutters bg-light">
+                        <td class="col-1">@rowcount</td>
+                        <td class="col-9">@item.TaskTitle</td>
+                        @if (User.IsInRole("Admin"))
+                        {
+                            <td class="col-2 text-center"><a>Edit</a><a>Delete</a> </td>
+                        }
+                        else
+                        {
+                            <td class="col-2 text-center">No Action </td>
+                        }
+
+                    </tr>
+                }
                 @*<script>
                         for (let i = 0 ; i < 10 ; i++) {
                             document.write(`<tr class="row w-100 px-2 py-1 no-gutters bg-light">

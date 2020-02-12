@@ -16,31 +16,41 @@ namespace website_emp.Controllers
         [Route("Project/Index")]
         public ActionResult Index()
         {
-         
+            var projects = (from proj in context.project
+                            where proj.Deleted == false
+                            select proj
+                             ).ToList();
 
-            return View();
+            return View(projects);
         }
         public ActionResult ProjectDetail()
         {
-            return View();
+            Project proj = new Project();
+            return View(proj);
         }
 
 
         [HttpGet]
         public ActionResult ProjectDetail(int? projectId)
         {
-
-            return View();
+            Project proj = context.project.Find(projectId.Value);
+            proj.task = context.task.Where(p => p.ProjectId == proj.ProjectId).Select(p=>p).ToList();
+            proj.department = context.department.Find(proj.DepartmentId);
+            ViewData["CreatedBy"] = context.employe.Find(proj.Createdby).FirstName;
+            return View(proj);
         }
+        [Authorize(Roles = "Admin")]
         public ActionResult AddProject()
         {
             return View();
         }
         [HttpPost]
+        [Authorize(Roles = "Admin")]
         public ActionResult AddProject(Project project)
         {
             return View();
         }
+        [Authorize(Roles = "Admin")]
         public ActionResult UpdateProject(int? projectid)
         {
             
@@ -48,6 +58,7 @@ namespace website_emp.Controllers
             return View();
         }
         [HttpPost]
+        [Authorize(Roles = "Admin")]
         public ActionResult UpdateProject (Project project)
         {
             return View();
