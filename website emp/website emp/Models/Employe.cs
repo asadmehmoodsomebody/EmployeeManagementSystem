@@ -37,9 +37,7 @@ namespace website_emp.Models
         public bool? IsDeleted { get; set; }
         public bool? IsActive { get; set; }
         public long Departmentid { get; set; }
-        public long DepartmentDesignationId { get; set; }
         public virtual Department department { get; set; }
-        public virtual DepartmentDesignation departmentdesignation { get; set; }
         public virtual ICollection<Increment> increments { get; set; }
         public virtual ICollection<EmployeRole> employerole {get;set;}
         public virtual ICollection<EmployeModuleRight> moduleright { get; set; }
@@ -50,6 +48,8 @@ namespace website_emp.Models
         public virtual ICollection<Attendance> attendance { get; set; }
         public virtual FingerPrint fingerprint { get; set; }
         public virtual ICollection<SalarySlip> salaryslip { get; set; }
-        public virtual ICollection<Loan> loan { get; set; }
+        public long SalaryTemplateId { get; set; }
+        public SalaryTemplate salarytemplate { get; set; }
+        public DepartmentDesignation departmentdesignation { get; set; }
     }
 }

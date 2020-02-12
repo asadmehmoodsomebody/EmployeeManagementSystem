@@ -8,7 +8,7 @@ namespace website_emp.Models
 {
     public class Context:DbContext
     {
-        public Context():base("Server=DESKTOP-M1JQCQK;initial catalog = EMS;integrated security = true;") {}
+        public Context():base("Server=LAPTOP-ENVV97AF;initial catalog = EMS;integrated security = true;") {}
         public DbSet<Department> department { get; set; }
         public DbSet<DepartmentDesignation> departmentdesignation { get; set; }
         public DbSet<Designation> designation { get; set; }
@@ -38,8 +38,7 @@ namespace website_emp.Models
 
         protected override void OnModelCreating(DbModelBuilder builder)
         {
-            builder.Entity<Employe>().HasOptional(a => a.departmentdesignation).WithRequired(b => b.employe);
-            builder.Entity<DepartmentDesignation>().HasOptional(a => a.salarytemplate).WithRequired(b => b.departmentdesignation);
+            builder.Entity<Employe>().HasOptional(p => p.departmentdesignation).WithMany().WillCascadeOnDelete(false);
             builder.Entity<Employe>().HasOptional(a => a.fingerprint).WithRequired(b => b.employe);
 
         }

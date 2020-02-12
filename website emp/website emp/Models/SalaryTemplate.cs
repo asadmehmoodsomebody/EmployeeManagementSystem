@@ -12,11 +12,11 @@ namespace website_emp.Models
         [Key, DatabaseGenerated(DatabaseGeneratedOption.None)]
         public long SalaryTemplateId { get; set; }
         public long Payroll { get; set; }
-        public virtual DepartmentDesignation departmentdesignation { get; set; }
         public long CreatedBy { get; set; }
         public DateTime? CreatedOn { get; set; }
         public long? ModifiedBy { get; set; }
         public DateTime? Modifiedon { get; set; }
         public bool? IsDeleted { get; set; }
+        public ICollection<Employe> employe { get; set; }
     }
 }
