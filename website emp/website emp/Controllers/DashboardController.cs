@@ -9,7 +9,6 @@ namespace website_emp.Controllers
     public class DashboardController : Controller
     {
         // GET: Dashboard
-        [Authorize(Roles ="Admin")]
         public ActionResult Index()
         {
             //Models.status statusid = db.States.FirstOrDefault(p => p.State == "Allowed");

@@ -23,10 +23,10 @@ namespace website_emp.Models
         public string Status { get; set; }
         public string StatusDescription { get; set; }
         //foriegn key employe
-        public long AssignedBy { get; set; }
+        public long AssignedById { get; set; }
         public Employe assingedby { get; set; }
         //foriegn key employe
-        public long AssingedTo { get; set; }
+        public long AssingedToId { get; set; }
         public Employe assingedto { get; set; }
         [StringLength(maximumLength: 100)]
         public string Priority { get; set; }

@@ -17,6 +17,7 @@ namespace website_emp.Models
         public DateTime? CreatedOn { get; set; }
         public long? ModifiedBy { get; set; }
         public DateTime? Modifiedon { get; set; }
+        public double AbsentiesPercentage { get; set; }
         public bool? IsDeleted { get; set; }
         public ICollection<Employe> employe { get; set; }
     }

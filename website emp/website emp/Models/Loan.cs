@@ -26,5 +26,6 @@ namespace website_emp.Models
         public long EmployeId { get; set; }
         public Employe employe { get; set; }
         public bool? IsFinished { get; set; }
+        public bool Accepted { get; set; }
     }
 }

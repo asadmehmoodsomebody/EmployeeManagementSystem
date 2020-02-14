@@ -6,21 +6,20 @@
 
 <main>
     <div class="row no-gutters w-100 align-content-center p-2 border-bottom">
-        <div class="col-10 d-flex align-self-center">
+        <div class="col-9 d-flex align-self-center">
             <h5 class="m-0 p-0">Project</h5>
         </div>
-        <div class="col-2">
+        <div class="col-3 d-flex justify-content-end">
             @if (User.IsInRole("Admin"))
             {
-                <a class="btn btn-primary" href="@Url.Action("AddTask","Task")">Add Task</a>
+                <a class="btn btn-primary shadow-none rounded-0" href="@Url.Action("AddTask","Task")">Add Task</a>
             }
             
         </div>
     </div>
-    <div class="row no-gutters w-100 bg-light">
-        <div class="col-9">
+    <div class="row no-gutters w-100 bg-white p-2 shadow flex-column-reverse flex-md-row">
+        <div class="col-12 col-md-9">
             <fieldset>
-                <legend>Detail</legend>
                 <div class="row">
                     <div class="col-6">
                         <h5>Department : </h5><span>@Model.department.DepartmentName</span>
@@ -32,7 +31,7 @@
                 <div class="row">
                     <div class="col-12">
                         <h5>Created by : </h5><span>@ViewData["CreatedBy"]</span>&nbsp;&nbsp; @if (User.IsInRole("Admin"))
-                        {<a class="btn btn-primary" href="#">View</a>}
+                        {<a class="btn btn-primary rounded-0 shadow-none" href="#">View</a>}
                     </div>
                 </div>
                 <div class="row">
@@ -46,50 +45,50 @@
                         <h5>Start Date: </h5><span>@Model.StartDate.ToShortDateString()</span>
                     </div>
                     <div class="col-6">
-                        <h5>End Date: </h5><span>@Model.EndDate.Value</span>
+                       @* <h5>End Date: </h5><span>@Model.EndDate.Value</span>*@
                     </div>
                 </div>
             </fieldset>
         </div>
-        <div class="col-3">
+        <div class="col-12 col-md-3">
             <div class="row w-100 no-gutters">
                 <div class="col-12 d-flex justify-content-center py-2">
-                    <button class="btn btn-primary w-50">Back</button>
+                    <button class="btn btn-primary rounded-0 shadow-none w-50">Back</button>
+                </div>
+                @if (User.IsInRole("Admin"))
+                {
+                <div class="col-12 d-flex justify-content-center py-2">
+                    <a href="" class="btn btn-primary rounded-0 shadow-none w-50">Edit</a>
                 </div>
                 <div class="col-12 d-flex justify-content-center py-2">
-                    <a href="" class="btn btn-primary w-50">Edit</a>
-                </div>
-                <div class="col-12 d-flex justify-content-center py-2">
-                    <button class="btn btn-primary w-50">Delete</button>
-                </div>
+                    <button class="btn btn-primary rounded-0 shadow-none w-50">Delete</button>
+                </div>}
             </div>
         </div>
     </div>
-    <div class="row w-100 no-gutters search-panel bg-light">
-        <div class="col-9">
-            <input class="form-control" value="" name="search" />
+    @if (User.IsInRole("Admin"))
+    {
+    <div class="row w-100 no-gutters search-panel bg-light py-2 pl-2">
+        <div class="col-3 pr-1">
+            <input class="form-control rounded-0 shadow-none" value="" name="search" />
         </div>
         <div class="col-3">
-            <button class="btn btn-primary">Search</button>
+            <button class="btn btn-primary rounded-0 shadow-none">Search</button>
         </div>
     </div>
     <div class="row no-gutters w-100 bg-light">
         <div class="col-12">
             <div class="row no-gutters w-100 flex-nowrap bg-primary text-light font-weight-bold p-2">
                 <div class="col-1">#</div>
-                <div class="col-9">Project</div>
+                <div class="col-9">Task Name</div>
                 <div class="col-2 text-center">Action</div>
             </div>
             <table class="w-100">
-             
-                    <tr class="row w-100 px-2 py-1 no-gutters bg-light">
-                        <td class="col-1">#</td>
-                        <td class="col-9"><a href="">task</a></td>
-                        <td class="col-2 text-center"><a href="">Edit</a> <a href="task">Delete</a></td>
-                    </tr>
-                @foreach (var item in Model.task)
+            @if (Model.task.Count() > 0)
+            {
+                foreach (var item in Model.task)
                 {
-                    <tr class="row w-100 px-2 py-1 no-gutters bg-light">
+                    <tr class="row w-100 px-2 py-1 no-gutters bg-white shadow">
                         <td class="col-1">@rowcount</td>
                         <td class="col-9">@item.TaskTitle</td>
                         @if (User.IsInRole("Admin"))
@@ -102,7 +101,18 @@
                         }
 
                     </tr>
+                    rowcount++;
                 }
+            }
+            else
+            {
+                <tr class="row w-100 px-2 py-1 no-gutters bg-white shadow">
+                    <td class="col-12 text-center">
+                        No Task Are Available for this Project
+                    </td>
+                </tr>
+            }
+
                 @*<script>
                         for (let i = 0 ; i < 10 ; i++) {
                             document.write(`<tr class="row w-100 px-2 py-1 no-gutters bg-light">
@@ -116,7 +126,7 @@
 
 
             </table>
-            <div class="footer">
+            <div class="footer pt-2">
                 <div class="row no-gutters w-100">
                     <div class="col-12 col-md-6 d-flex align-items-center justify-content-center justify-content-md-start pl-0 pl-md-2">
                         <p class="text-justify">
@@ -137,6 +147,6 @@
                 </div>
             </div>
         </div>
-    </div> 
+    </div> }
 </main>
 

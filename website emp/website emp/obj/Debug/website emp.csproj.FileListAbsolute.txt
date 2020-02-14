@@ -307,5 +307,5 @@ C:\Users\Asad Mehmood\Source\Repos\EmployeeManagementSystem\website emp\website 
 C:\Users\Asad Mehmood\Source\Repos\EmployeeManagementSystem\website emp\website emp\bin\Microsoft.Owin.Security.Cookies.xml
 C:\Users\Asad Mehmood\Source\Repos\EmployeeManagementSystem\website emp\website emp\bin\Microsoft.Owin.Security.OAuth.xml
 C:\Users\Asad Mehmood\Source\Repos\EmployeeManagementSystem\website emp\website emp\bin\Newtonsoft.Json.xml
-C:\Users\Asad Mehmood\Source\Repos\EmployeeManagementSystem\website emp\website emp\obj\Debug\website_emp.Migrations.seventhcall.resources
+C:\Users\Asad Mehmood\Source\Repos\EmployeeManagementSystem\website emp\website emp\obj\Debug\website_emp.Migrations.pentacall.resources
 C:\Users\Asad Mehmood\Source\Repos\EmployeeManagementSystem\website emp\website emp\obj\Debug\website emp.csproj.GenerateResource.Cache

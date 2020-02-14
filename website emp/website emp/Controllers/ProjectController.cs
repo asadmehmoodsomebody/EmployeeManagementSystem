@@ -42,13 +42,46 @@ namespace website_emp.Controllers
         [Authorize(Roles = "Admin")]
         public ActionResult AddProject()
         {
+            IEnumerable<SelectListItem> items = from dep in context.department
+                                                where dep.IsDeleted == false
+                                                select new SelectListItem
+                                                {
+                                                    Value = dep.DepartmentId.ToString(),
+                                                    Text = dep.DepartmentName
+                                                };
+            ViewData["DepartmentId"] = new SelectList(items, "Value", "Text");
             return View();
         }
         [HttpPost]
         [Authorize(Roles = "Admin")]
         public ActionResult AddProject(Project project)
         {
-            return View();
+            MentainanceCounter counter = context.counter.Where(p => p.TableName == "Project").Select(p => p).FirstOrDefault();
+            counter.Count++;
+            project.ProjectId = (int)counter.Count;
+            context.SaveChanges();
+            project.department = context.department.Find(project.DepartmentId);
+            project.Createdby = 1;
+            project.Createdon = DateTime.Now;
+            if (ModelState.IsValid)
+            {
+                context.project.Add(project);
+                context.SaveChanges();
+                return RedirectToAction("Index", "Project");
+            }
+            else
+            {
+                IEnumerable<SelectListItem> items = from dep in context.department
+                                                    where dep.IsDeleted == false
+                                                    select new SelectListItem
+                                                    {
+                                                        Value = dep.DepartmentId.ToString(),
+                                                        Text = dep.DepartmentName
+                                                    };
+                ViewData["DepartmentId"] = new SelectList(items, "Value", "Text");
+                return View();
+            }
+            
         }
         [Authorize(Roles = "Admin")]
         public ActionResult UpdateProject(int? projectid)

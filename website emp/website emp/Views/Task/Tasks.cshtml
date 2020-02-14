@@ -1,6 +1,7 @@
-﻿
+﻿@model Pagination<website_emp.Models.Task>
 @{
     ViewBag.Title = "Tasks";
+    int rowcount = 1 + ((Model.PageNumber-1)*10);
 }
 
 <link href="~/CustomCSS/Task.css" rel="stylesheet" />
@@ -9,15 +10,15 @@
 
 
     <div class="row no-gutters w-100">
-        <div class="col-6">
-            <form action="index" method="get" class="">
-                <input type="search" value="@ViewData["search"]" class="form-control d-inline-block w-50" name="search" placeholder="Search by task,project" />
-                <button class="btn btn-secondary ml-2">Search</button>
+        <div class="col-6 py-1">
+            <form action="ViewAllTasks" method="get" class="">
+                <input type="search" value="@ViewData["search"]" class="form-control d-inline-block shadow-none rounded-0 w-50" name="search" placeholder="Search by task,project" />
+                <button class="btn btn-secondary rounded-0 shadow-none ml-2">Search</button>
             </form>
         </div>
     </div>
     <div class="row main-div-task no-gutters w-100 bg-light">
-        <div class="table-row w-100">
+        <div class="table-row w-100" style="min-width:500px">
             <table class="table-custom-task">
                 <tr class="bg-primary text-light">
                     <th>#</th>
@@ -26,9 +27,19 @@
                     <th>Assigned to</th>
                     <th>Assigned by</th>
                     <th>Status</th>
-                    <th>Action</th>
                 </tr>
-                <script>
+                @foreach (var item in Model)
+                {
+                    <tr class="bg-white shadow">
+                        <td>@rowcount</td>
+                        <td><a href="@Url.Action("ProjectDetail","Project",new { projectid= item.ProjectId})">@item.project.ProjectTitle</a></td>
+                        <td><a href="@Url.Action("TaskDetail","Task",new { taskid= item.TaskId})">@item.TaskTitle</a></td>
+                        <td>@item.assingedto.FirstName @item.assingedto.LastName</td>
+                        <td>@item.assingedby.FirstName @item.assingedby.LastName</td>
+                        <td>@item.Status</td>
+                    </tr>
+                }
+                @*<script>
                 for (let i = 0 ; i < 10 ; i++)
                 {
                     document.write(
@@ -42,7 +53,7 @@
                 <td>Action</td>
             </tr>`)
                 }
-                </script>
+                </script>*@
             </table>
         </div>
 

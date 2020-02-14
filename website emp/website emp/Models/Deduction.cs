@@ -12,7 +12,7 @@ namespace website_emp.Models
         [Key, DatabaseGenerated(DatabaseGeneratedOption.None)]
         public long DeductionId { get; set; }
         public string ComName { get; set; }
-        public string Amount { get; set; }
+        public long Amount { get; set; }
         public long salaryslipid { get; set; }
         public virtual SalarySlip salaryslip { get; set; }
         public long CreatedBy { get; set; }

@@ -1,4 +1,4 @@
-﻿
+﻿@model website_emp.Models.Task
 @{
     ViewBag.Title = "AddTask";
 }
@@ -15,87 +15,87 @@
     <div class="row w-100 bg-light no-gutters">
         <h4 class="font-weight-bold"><small>Add Task</small></h4>
     </div>
+@using (Html.BeginForm("AddTask","Task",FormMethod.Post))
+{
     <div class="row w-100 no-gutters main-div-add-task bg-white">
+       
         <div class="row w-100 no-gutters input-row">
             <div class="col-12 col-md-4 p-2 input-col">
                 <h5 class="jumbotron-fluid"><small>Project</small></h5>
-                <select class="form-control shadow-none rounded-0">
-                    <option>EMR</option>
-                    <option>MEMR</option>
-                </select>
+                @Html.DropDownList("ProjectId", ViewData["ProjectId"] as SelectList, new { @class = "form-control rounded-0 shadow-none" })
+            </div>
+            <div class="col-12 col-md-4 p-2 input-col">
+                <h5 class="jumbotron-fluid"><small>Task Title</small></h5>
+                <input name="TaskTitle" class="form-control shadow-none rounded-0" />
             </div>
             <div class="col-12 col-md-4 p-2 input-col">
                 <h5 class="jumbotron-fluid"><small>Module</small></h5>
-                <input class="form-control shadow-none rounded-0" />
+                <input name="Module" class="form-control shadow-none rounded-0" />
             </div>
         </div>
         <div class="row w-100 no-gutters input-row">
             <div class="col-12 p-2 input-col">
                 <h5 class="jumbotron-fluid"><small>Task Detail</small></h5>
-                <textarea class="form-control shadow-none rounded-0" style="resize:none;"></textarea>
+                <textarea name="TaskDetail" class="form-control shadow-none rounded-0" style="resize:none;"></textarea>
             </div>
         </div>
         <div class="row w-100 no-gutters input-row">
             <div class="col-12 col-md-4 p-2 input-col">
                 <h5 class="jumbotron-fluid"><small>Assigned by</small></h5>
-                <select class="form-control shadow-none rounded-0">
-                    <option>EMR</option>
-                    <option>MEMR</option>
-                </select>
+                @Html.DropDownList("AssignedById", ViewData["AssignedBy"] as SelectList, new { @class = "form-control rounded-0 shadow-none" })
             </div>
             <div class="col-12 col-md-4 p-2 input-col">
                 <h5 class="jumbotron-fluid"><small>Assigned to</small></h5>
-                <select class="form-control shadow-none rounded-0">
-                    <option>EMR</option>
-                    <option>MEMR</option>
-                </select>
+                @Html.DropDownList("AssingedToId", ViewData["AssignedTo"] as SelectList, new { @class = "form-control rounded-0 shadow-none" })
             </div>
         </div>
         <div class="row w-100 no-gutters input-row">
             <div class="col-12 col-md-4 p-2 input-col">
                 <h5 class="jumbotron-fluid"><small>Type</small></h5>
-                <select class="form-control shadow-none rounded-0">
-                    <option>EMR</option>
-                    <option>MEMR</option>
+                <select name="Type" class="form-control shadow-none rounded-0">
+                    <option>Bug</option>
+                    <option>New</option>
                 </select>
             </div>
             <div class="col-12 col-md-4 p-2 input-col">
                 <h5 class="jumbotron-fluid"><small>Priority</small></h5>
-                <select class="form-control shadow-none rounded-0">
-                    <option>EMR</option>
-                    <option>MEMR</option>
+                <select name="Priority" class="form-control shadow-none rounded-0">
+                    <option>High</option>
+                    <option>Normal</option>
+                    <option>Low</option>
                 </select>
             </div>
             <div class="col-12 col-md-4 p-2 input-col">
                 <h5 class="jumbotron-fluid"><small>Points</small></h5>
-                <input class="form-control shadow-none rounded-0" type="number" min="1" max="10"/>
+                @Html.EditorFor(model => model.Points,new { htmlAttributes =new { @class="form-control shadow-none rounded-0"} })
             </div>
         </div>
         <div class="row w-100 no-gutters input-row">
             <div class="col-12 col-md-4 p-2 input-col">
                 <h5 class="jumbotron-fluid"><small>Assigned date</small></h5>
-                <input class="form-control shadow-none rounded-0" type="datetime"/>
+                @Html.EditorFor(model => model.StartDate, new { htmlAttributes = new { @class = "form-control shadow-none rounded-0" } })
             </div>
         </div>
         <div class="row w-100 no-gutters input-row">
             <div class="col-12 col-md-4 p-2 input-col">
                 <h5 class="jumbotron-fluid"><small>Expected Time</small></h5>
-                <input class="form-control shadow-none rounded-0" type="datetime"/>
+                @Html.EditorFor(model => model.OptimizedTime, new { htmlAttributes = new { @class = "form-control shadow-none rounded-0" } })
             </div>
             <div class="col-12 col-md-4 p-2 input-col">
                 <h5 class="jumbotron-fluid"><small>Optimistic Time</small></h5>
-                <input class="form-control shadow-none rounded-0" type="datetime"/>
+                @Html.EditorFor(model => model.OptitimisticTime, new { htmlAttributes = new { @class = "form-control shadow-none rounded-0" } })
             </div>
             <div class="col-12 col-md-4 p-2 input-col">
                 <h5 class="jumbotron-fluid"><small>Lazy Time</small></h5>
-                <input class="form-control shadow-none rounded-0" type="datetime"/>
+                @Html.EditorFor(model => model.LazyTime, new { htmlAttributes = new { @class = "form-control shadow-none rounded-0" } })
             </div>
         </div>
         <div class="row w-100 no-gutters input-row">
             <div class="col-12 col-md-4 p-2 input-col">
                 <h5 class="jumbotron-fluid"><small>Status</small></h5>
-                <select class="form-control shadow-none rounded-0">
+                <select name="Status" class="form-control shadow-none rounded-0">
                     <option>Completed</option>
+                    <option>Ongoing</option>
                     <option selected>Pending</option>
                     <option>Delayed</option>
                 </select>
@@ -103,10 +103,11 @@
             </div>
         <div class="row no-gutters w-100 justify-content-end p-2">
             <div class="col-12 col-sm-2">
-                <button class="btn-block btn btn-primary rounded-0">Add Task</button>
+                <button class="btn-block shadow-none btn btn-primary rounded-0" type="submit">Add Task</button>
             </div>
         </div>
         </div>
+        }
     
 </main>
 

@@ -156,6 +156,17 @@
     <Content Include="Content\fontawesome.css" />
     <Content Include="Content\fontawesome.min.css" />
     <Content Include="Content\jquery.js" />
+    <Content Include="Content\Jquery_datepicker\AUTHORS.txt" />
+    <Content Include="Content\Jquery_datepicker\index.html" />
+    <Content Include="Content\Jquery_datepicker\jquery-ui.css" />
+    <Content Include="Content\Jquery_datepicker\jquery-ui.js" />
+    <Content Include="Content\Jquery_datepicker\jquery-ui.min.css" />
+    <Content Include="Content\Jquery_datepicker\jquery-ui.min.js" />
+    <Content Include="Content\Jquery_datepicker\jquery-ui.structure.css" />
+    <Content Include="Content\Jquery_datepicker\jquery-ui.structure.min.css" />
+    <Content Include="Content\Jquery_datepicker\jquery-ui.theme.css" />
+    <Content Include="Content\Jquery_datepicker\jquery-ui.theme.min.css" />
+    <Content Include="Content\Jquery_datepicker\LICENSE.txt" />
     <Content Include="Content\login.js" />
     <Content Include="Content\regular.css" />
     <Content Include="Content\regular.min.css" />
@@ -234,6 +245,7 @@
     <Content Include="Scripts\assign-salary-to-employee.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Content\Jquery_datepicker\package.json" />
     <None Include="Properties\PublishProfiles\EmpSystem.pubxml" />
     <None Include="Properties\PublishProfiles\zumaid.pubxml" />
     <None Include="Properties\PublishProfiles\zumaidk.pubxml" />
@@ -293,9 +305,9 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202002120820338_seventhcall.cs" />
-    <Compile Include="Migrations\202002120820338_seventhcall.designer.cs">
-      <DependentUpon>202002120820338_seventhcall.cs</DependentUpon>
+    <Compile Include="Migrations\202002130842077_pentacall.cs" />
+    <Compile Include="Migrations\202002130842077_pentacall.designer.cs">
+      <DependentUpon>202002130842077_pentacall.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Attendance.cs" />
@@ -324,6 +336,7 @@
     <Compile Include="Models\Right.cs" />
     <Compile Include="Models\Role.cs" />
     <Compile Include="Models\RoleModuleRight.cs" />
+    <Compile Include="Pagination.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RoleManager.cs" />
   </ItemGroup>
@@ -394,8 +407,8 @@
     <Folder Include="SidebarIcons\" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\202002120820338_seventhcall.resx">
-      <DependentUpon>202002120820338_seventhcall.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202002130842077_pentacall.resx">
+      <DependentUpon>202002130842077_pentacall.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

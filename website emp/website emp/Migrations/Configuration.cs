@@ -21,32 +21,32 @@
         protected override void Seed(website_emp.Models.Context context)
         {
             try {
-                
+                DateTime tempdate=DateTime.Now;
                    context.counter.AddOrUpdate(
-                  new Models.MentainanceCounter() {MaintainanceCounterId=1, Count = 0, TableName = "Attendance" },
-                  new Models.MentainanceCounter() { MaintainanceCounterId = 2, Count = 0, TableName = "Deduction" },
+                  new Models.MentainanceCounter() {MaintainanceCounterId=1, Count = 4, TableName = "Attendance" },
+                  new Models.MentainanceCounter() { MaintainanceCounterId = 2, Count = 1, TableName = "Deduction" },
                   new Models.MentainanceCounter() { MaintainanceCounterId = 3, Count = 2, TableName = "Department" },
                   new Models.MentainanceCounter() { MaintainanceCounterId = 4, Count = 2, TableName = "Designation" },
                   new Models.MentainanceCounter() { MaintainanceCounterId = 5, Count = 4, TableName = "DepartmentDesignation" },
-                  new Models.MentainanceCounter() { MaintainanceCounterId = 6, Count = 0, TableName = "Earning" },
-                  new Models.MentainanceCounter() { MaintainanceCounterId = 7, Count = 2, TableName = "Employe" },
+                  new Models.MentainanceCounter() { MaintainanceCounterId = 6, Count = 1, TableName = "Earning" },
+                  new Models.MentainanceCounter() { MaintainanceCounterId = 7, Count = 3, TableName = "Employe" },
                   new Models.MentainanceCounter() { MaintainanceCounterId = 8, Count = 0, TableName = "EmployeModuleRight" },
                   new Models.MentainanceCounter() { MaintainanceCounterId = 9, Count = 3, TableName = "EmployeRole" },
                   new Models.MentainanceCounter() { MaintainanceCounterId = 10, Count = 0, TableName = "FingerPrint" },
-                  new Models.MentainanceCounter() { MaintainanceCounterId = 11, Count = 0, TableName = "Holiday" },
+                  new Models.MentainanceCounter() { MaintainanceCounterId = 11, Count = 1, TableName = "Holiday" },
                   new Models.MentainanceCounter() { MaintainanceCounterId = 12, Count = 0, TableName = "Increment" },
-                  new Models.MentainanceCounter() { MaintainanceCounterId = 13, Count = 0, TableName = "Leave" },
-                  new Models.MentainanceCounter() { MaintainanceCounterId = 14, Count = 0, TableName = "Loan" },
+                  new Models.MentainanceCounter() { MaintainanceCounterId = 13, Count = 2, TableName = "Leave" },
+                  new Models.MentainanceCounter() { MaintainanceCounterId = 14, Count = 1, TableName = "Loan" },
                   new Models.MentainanceCounter() { MaintainanceCounterId = 15, Count = 0, TableName = "Module" },
                   new Models.MentainanceCounter() { MaintainanceCounterId = 16, Count = 0, TableName = "ModuleRight" },
-                  new Models.MentainanceCounter() { MaintainanceCounterId = 17, Count = 0, TableName = "Project" },
+                  new Models.MentainanceCounter() { MaintainanceCounterId = 17, Count = 2, TableName = "Project" },
                   new Models.MentainanceCounter() { MaintainanceCounterId = 18, Count = 0, TableName = "Right" },
                   new Models.MentainanceCounter() { MaintainanceCounterId = 19, Count = 2, TableName = "Role" },
                   new Models.MentainanceCounter() { MaintainanceCounterId = 20, Count = 0, TableName = "RoleModuleRight" },
-                  new Models.MentainanceCounter() { MaintainanceCounterId = 21, Count = 0, TableName = "SalarySlip" },
+                  new Models.MentainanceCounter() { MaintainanceCounterId = 21, Count = 4, TableName = "SalarySlip" },
                   new Models.MentainanceCounter() { MaintainanceCounterId = 22, Count = 1, TableName = "SalaryTemplate" },
                   new Models.MentainanceCounter() { MaintainanceCounterId = 23, Count = 2, TableName = "Shift" },
-                  new Models.MentainanceCounter() { MaintainanceCounterId = 24, Count = 0, TableName = "Task" }
+                  new Models.MentainanceCounter() { MaintainanceCounterId = 24, Count = 15, TableName = "Task" }
                  );
                 context.SaveChanges();
                  context.department.AddOrUpdate(
@@ -242,8 +242,8 @@
                         TaskDescription = "Dummy task has no descriptions",
                         Createdon = DateTime.Now,
                         Createdby = 1,
-                        AssignedBy = 1,
-                        AssingedTo = 1,
+                        AssignedById = 1,
+                        AssingedToId = 1,
                         assingedby = context.employe.Find(1),
                         assingedto = context.employe.Find(1),
                         Type = "Bug",
@@ -268,8 +268,8 @@
                          TaskDescription = "Dummy task has no descriptions",
                          Createdon = DateTime.Now,
                          Createdby = 1,
-                         AssignedBy = 1,
-                         AssingedTo = 2,
+                         AssignedById = 1,
+                         AssingedToId = 2,
                          assingedby = context.employe.Find(1),
                          assingedto = context.employe.Find(2),
                          Type = "Bug",
@@ -294,8 +294,8 @@
                           TaskDescription = "Dummy task has no descriptions",
                           Createdon = DateTime.Now,
                           Createdby = 1,
-                          AssignedBy = 1,
-                          AssingedTo = 2,
+                          AssignedById = 1,
+                          AssingedToId = 2,
                           assingedby = context.employe.Find(1),
                           assingedto = context.employe.Find(2),
                           Type = "Bug",
@@ -320,8 +320,8 @@
                            TaskDescription = "Dummy task has no descriptions",
                            Createdon = DateTime.Now,
                            Createdby = 1,
-                           AssignedBy = 1,
-                           AssingedTo = 2,
+                           AssignedById = 1,
+                           AssingedToId = 2,
                            assingedby = context.employe.Find(1),
                            assingedto = context.employe.Find(2),
                            Type = "Bug",
@@ -338,8 +338,274 @@
                            Module = "Management",
                            Points = 8,
                            CompletionTime = null
-                       }
+                       },
+                        new Models.Task
+                        {
+                            TaskId = 7,
+                            TaskTitle = "Dummy Task",
+                            TaskDescription = "Dummy task has no descriptions",
+                            Createdon = DateTime.Now,
+                            Createdby = 1,
+                            AssignedById = 1,
+                            AssingedToId = 2,
+                            assingedby = context.employe.Find(1),
+                            assingedto = context.employe.Find(2),
+                            Type = "Bug",
+                            Status = "Ongoing",
+                            StatusDescription = "Ongoing",
+                            ProjectId = 2,
+                            project = context.project.Find(2),
+                            Priority = "High",
+                            StartDate = DateTime.Now,
+                            Deleted = false,
+                            LazyTime = DateTime.Now,
+                            OptimizedTime = DateTime.Now,
+                            OptitimisticTime = DateTime.Now,
+                            Module = "Management",
+                            Points = 8,
+                            CompletionTime = null
+                        },
+                         new Models.Task
+                         {
+                             TaskId = 8,
+                             TaskTitle = "Dummy Task",
+                             TaskDescription = "Dummy task has no descriptions",
+                             Createdon = DateTime.Now,
+                             Createdby = 1,
+                             AssignedById = 1,
+                             AssingedToId = 2,
+                             assingedby = context.employe.Find(1),
+                             assingedto = context.employe.Find(2),
+                             Type = "Bug",
+                             Status = "Ongoing",
+                             StatusDescription = "Ongoing",
+                             ProjectId = 2,
+                             project = context.project.Find(2),
+                             Priority = "High",
+                             StartDate = DateTime.Now,
+                             Deleted = false,
+                             LazyTime = DateTime.Now,
+                             OptimizedTime = DateTime.Now,
+                             OptitimisticTime = DateTime.Now,
+                             Module = "Management",
+                             Points = 8,
+                             CompletionTime = null
+                         }, new Models.Task
+                         {
+                             TaskId = 9,
+                             TaskTitle = "Dummy Task",
+                             TaskDescription = "Dummy task has no descriptions",
+                             Createdon = DateTime.Now,
+                             Createdby = 1,
+                             AssignedById = 1,
+                             AssingedToId = 2,
+                             assingedby = context.employe.Find(1),
+                             assingedto = context.employe.Find(2),
+                             Type = "Bug",
+                             Status = "Ongoing",
+                             StatusDescription = "Ongoing",
+                             ProjectId = 2,
+                             project = context.project.Find(2),
+                             Priority = "High",
+                             StartDate = DateTime.Now,
+                             Deleted = false,
+                             LazyTime = DateTime.Now,
+                             OptimizedTime = DateTime.Now,
+                             OptitimisticTime = DateTime.Now,
+                             Module = "Management",
+                             Points = 8,
+                             CompletionTime = null
+                         }, new Models.Task
+                         {
+                             TaskId = 10,
+                             TaskTitle = "Dummy Task",
+                             TaskDescription = "Dummy task has no descriptions",
+                             Createdon = DateTime.Now,
+                             Createdby = 1,
+                             AssignedById = 1,
+                             AssingedToId = 2,
+                             assingedby = context.employe.Find(1),
+                             assingedto = context.employe.Find(2),
+                             Type = "Bug",
+                             Status = "Ongoing",
+                             StatusDescription = "Ongoing",
+                             ProjectId = 2,
+                             project = context.project.Find(2),
+                             Priority = "High",
+                             StartDate = DateTime.Now,
+                             Deleted = false,
+                             LazyTime = DateTime.Now,
+                             OptimizedTime = DateTime.Now,
+                             OptitimisticTime = DateTime.Now,
+                             Module = "Management",
+                             Points = 8,
+                             CompletionTime = null
+                         }, new Models.Task
+                         {
+                             TaskId = 11,
+                             TaskTitle = "Dummy Task",
+                             TaskDescription = "Dummy task has no descriptions",
+                             Createdon = DateTime.Now,
+                             Createdby = 1,
+                             AssignedById = 1,
+                             AssingedToId = 2,
+                             assingedby = context.employe.Find(1),
+                             assingedto = context.employe.Find(2),
+                             Type = "Bug",
+                             Status = "Ongoing",
+                             StatusDescription = "Ongoing",
+                             ProjectId = 2,
+                             project = context.project.Find(2),
+                             Priority = "High",
+                             StartDate = DateTime.Now,
+                             Deleted = false,
+                             LazyTime = DateTime.Now,
+                             OptimizedTime = DateTime.Now,
+                             OptitimisticTime = DateTime.Now,
+                             Module = "Management",
+                             Points = 8,
+                             CompletionTime = null
+                         }
+                         , new Models.Task
+                         {
+                             TaskId = 12,
+                             TaskTitle = "Dummy Task",
+                             TaskDescription = "Dummy task has no descriptions",
+                             Createdon = DateTime.Now,
+                             Createdby = 1,
+                             AssignedById = 1,
+                             AssingedToId = 2,
+                             assingedby = context.employe.Find(1),
+                             assingedto = context.employe.Find(2),
+                             Type = "Bug",
+                             Status = "Ongoing",
+                             StatusDescription = "Ongoing",
+                             ProjectId = 2,
+                             project = context.project.Find(2),
+                             Priority = "High",
+                             StartDate = DateTime.Now,
+                             Deleted = false,
+                             LazyTime = DateTime.Now,
+                             OptimizedTime = DateTime.Now,
+                             OptitimisticTime = DateTime.Now,
+                             Module = "Management",
+                             Points = 8,
+                             CompletionTime = null
+                         }, new Models.Task
+                         {
+                             TaskId = 13,
+                             TaskTitle = "Dummy Task",
+                             TaskDescription = "Dummy task has no descriptions",
+                             Createdon = DateTime.Now,
+                             Createdby = 1,
+                             AssignedById = 1,
+                             AssingedToId = 2,
+                             assingedby = context.employe.Find(1),
+                             assingedto = context.employe.Find(2),
+                             Type = "Bug",
+                             Status = "Ongoing",
+                             StatusDescription = "Ongoing",
+                             ProjectId = 2,
+                             project = context.project.Find(2),
+                             Priority = "High",
+                             StartDate = DateTime.Now,
+                             Deleted = false,
+                             LazyTime = DateTime.Now,
+                             OptimizedTime = DateTime.Now,
+                             OptitimisticTime = DateTime.Now,
+                             Module = "Management",
+                             Points = 8,
+                             CompletionTime = null
+                         }, new Models.Task
+                         {
+                             TaskId = 14,
+                             TaskTitle = "Dummy Task",
+                             TaskDescription = "Dummy task has no descriptions",
+                             Createdon = DateTime.Now,
+                             Createdby = 1,
+                             AssignedById = 1,
+                             AssingedToId = 2,
+                             assingedby = context.employe.Find(1),
+                             assingedto = context.employe.Find(2),
+                             Type = "Bug",
+                             Status = "Ongoing",
+                             StatusDescription = "Ongoing",
+                             ProjectId = 2,
+                             project = context.project.Find(2),
+                             Priority = "High",
+                             StartDate = DateTime.Now,
+                             Deleted = false,
+                             LazyTime = DateTime.Now,
+                             OptimizedTime = DateTime.Now,
+                             OptitimisticTime = DateTime.Now,
+                             Module = "Management",
+                             Points = 8,
+                             CompletionTime = null
+                         }, new Models.Task
+                         {
+                             TaskId = 15,
+                             TaskTitle = "Dummy Task",
+                             TaskDescription = "Dummy task has no descriptions",
+                             Createdon = DateTime.Now,
+                             Createdby = 1,
+                             AssignedById = 1,
+                             AssingedToId = 2,
+                             assingedby = context.employe.Find(1),
+                             assingedto = context.employe.Find(2),
+                             Type = "Bug",
+                             Status = "Ongoing",
+                             StatusDescription = "Ongoing",
+                             ProjectId = 2,
+                             project = context.project.Find(2),
+                             Priority = "High",
+                             StartDate = DateTime.Now,
+                             Deleted = false,
+                             LazyTime = DateTime.Now,
+                             OptimizedTime = DateTime.Now,
+                             OptitimisticTime = DateTime.Now,
+                             Module = "Management",
+                             Points = 8,
+                             CompletionTime = null
+                         }
+
                     );
+                context.SaveChanges();
+                context.leave.AddOrUpdate(
+                    new Models.Leave { Description = "Leave for Mother Illness", LeaveId = 1, EmployeId = 2, employe = context.employe.Find(2), startTime = DateTime.Now, endTime = tempdate.Add(TimeSpan.FromDays(6)), IsAccepted = false, TotalDays = 6 },
+                    new Models.Leave { Description = "Leave for Mother Illness", LeaveId = 2, EmployeId = 2, employe = context.employe.Find(2), startTime = DateTime.Now, endTime = tempdate.Add(TimeSpan.FromDays(6)), IsAccepted = true, TotalDays = 6 }
+                    );
+                context.SaveChanges();
+                context.attendance.AddOrUpdate(
+                    new Models.Attendance { AttendanceId = 1, EmployeId = 1, employe = context.employe.Find(1), ForDay = DateTime.Parse("2/12/2020"), InTime = DateTime.Parse("2/12/2020 08:00 AM"), OutTime = DateTime.Parse("2/12/2020 05:15 PM"), IsDeleted = false, Status = "P" },
+                    new Models.Attendance { AttendanceId = 2, EmployeId = 1, employe = context.employe.Find(1), ForDay = DateTime.Parse("2/13/2020"), InTime =null, OutTime = null, IsDeleted = false, Status = "A" },
+                    new Models.Attendance { AttendanceId = 3, EmployeId = 2, employe = context.employe.Find(2), ForDay = DateTime.Parse("2/12/2020"), InTime = DateTime.Parse("2/12/2020 08:00 AM"), OutTime = DateTime.Parse("2/12/2020 05:15 PM"), IsDeleted = false, Status = "P" },
+                    new Models.Attendance { AttendanceId = 4, EmployeId = 2, employe = context.employe.Find(2), ForDay = DateTime.Parse("2/13/2020"), InTime = DateTime.Parse("2/13/2020 08:00 AM"), OutTime = DateTime.Parse("2/13/2020 05:15 PM"), IsDeleted = false, Status = "P" }
+                    );
+                context.SaveChanges();
+                context.holiday.AddOrUpdate(
+                    new Models.Holiday { CreatedBy = 1, CreatedOn = DateTime.Now, HolidayDate = tempdate.Add(TimeSpan.FromDays(1)), HolidayId = 1, HolidayName = "Pakistan Day", IsDeleted = false }
+                    );
+                context.SaveChanges();
+                context.loan.AddOrUpdate(
+                    new Models.Loan {LoanId=1,CreatedBy=2,CreatedOn=DateTime.Now,DateStartLoan=DateTime.Now,DateEndLoan=tempdate.Add(TimeSpan.FromDays(365)),EmployeId=2,employe=context.employe.Find(2),RequestDate=DateTime.Now,RequestAmount=200000,AllotedAmount=150000,ReductionAmount=10,IsFinished=false,IsDeleted=false,Remaining=150000,Accepted=true }
+                    );
+                context.SaveChanges();
+                context.salaryslip.AddOrUpdate(
+                    new Models.SalarySlip { CreatedBy = 1, CreatedOn = DateTime.Now, employe = context.employe.Find(1), EmployeId = 1, ForMonth = DateTime.Parse("1/1/2020"), SalarySlipId = 1, IsDeleted = false },
+                    new Models.SalarySlip { CreatedBy = 1, CreatedOn = DateTime.Now, employe = context.employe.Find(2), EmployeId = 2, ForMonth = DateTime.Parse("1/1/2020"), SalarySlipId = 2, IsDeleted = false },
+                    new Models.SalarySlip { CreatedBy = 1, CreatedOn = DateTime.Now, employe = context.employe.Find(1), EmployeId = 1, ForMonth = DateTime.Now, SalarySlipId = 3, IsDeleted = false },
+                    new Models.SalarySlip { CreatedBy = 1, CreatedOn = DateTime.Now, employe = context.employe.Find(2), EmployeId = 2, ForMonth = DateTime.Now, SalarySlipId = 4, IsDeleted = false }
+                    );
+                context.SaveChanges();
+                context.earning.AddOrUpdate(
+                    new Models.Earning { SalarySlipId=1,salaryslip=context.salaryslip.Find(1),ComName="Bonus for function",Amount=1000,EarningId=1,CreatedBy=1,CreatedOn=DateTime.Now,IsDeleted=false}
+                    );
+                context.SaveChanges();
+                context.deduction.AddOrUpdate(
+                    new Models.Deduction { ComName = "Fine", IsDeleted = false, Amount = 500, salaryslipid = 1, salaryslip = context.salaryslip.Find(1), DeductionId = 1, CreatedOn = DateTime.Now, CreatedBy = 1 }
+                    );
+                context.SaveChanges();
+
             }
             catch (DbEntityValidationException ex) {
                 System.Diagnostics.Debug.WriteLine(ex.Message);
