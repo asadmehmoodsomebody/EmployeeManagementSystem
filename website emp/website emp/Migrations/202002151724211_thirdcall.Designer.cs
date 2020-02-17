@@ -7,13 +7,13 @@ namespace website_emp.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.4.0")]
-    public sealed partial class pentacall : IMigrationMetadata
+    public sealed partial class thirdcall : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(pentacall));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(thirdcall));
         
         string IMigrationMetadata.Id
         {
-            get { return "202002130842077_pentacall"; }
+            get { return "202002151724211_thirdcall"; }
         }
         
         string IMigrationMetadata.Source

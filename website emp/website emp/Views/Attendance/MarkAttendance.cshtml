@@ -1,162 +1,117 @@
-﻿
+﻿@model IEnumerable<website_emp.Models.ViewModels.EmployeAttendanceViewModel>
 @{
     ViewBag.Title = "MarkAttendance";
+    int rowcount = 0;
 }
+@functions {
+    public string getNullorString(string value)
+    {
+        return (String.IsNullOrEmpty(value)) ? "" : value;
+    }
+        }
 <link href="~/CustomCSS/table.css" rel="stylesheet" />
 <link href="~/CustomCSS/BigBoxCSS.css" rel="stylesheet" />
 <input type="hidden" id="GetActiveTab" value="#MarkAttendance" />
 <div class="Big-Box">
     <div class="row p-3 pb-0">
         <div class="col-12 col-xl-6 col-md-6 d-flex text-justify justify-content-center justify-content-sm-center">
-            <select class="shadow select-pages">
-                <option>10</option>
-                <option>25</option>
-                <option>50</option>
-                <option>100</option>
-            </select>
-            <p class="pl-3">Records per page</p>
         </div>
         <div class="col-12 col-xl-6 col-md-6 d-flex text-justify justify-content-center justify-content-sm-center">
           <span>Total Employees &nbsp;&nbsp; </span>
-            <span class="font-weight-bold">25</span>
+            <span class="font-weight-bold">@ViewData["total"]</span>
         </div>
     </div>
-    <div class="row m-3">
-        <div class="col-12 col-xl-3 col-md-3 d-flex text-justify justify-content-center justify-content-sm-center">
-            <label class="mb-0 mt-2 ">Select Department</label>
+    <form action="@Url.Action("MarkAttendance","Attendance")">
+        <div class="row w-100 no-gutters m-3">
+
+            <div class="col-4 d-flex   text-justify justify-content-center justify-content-sm-center input-group">
+                <label class="mb-0 mt-2 ">Select Department</label>
+                @Html.DropDownList("departmentid", ViewBag.departments as SelectList, "Select department", new { @class = "form-control shadow" })
+            </div>
+            <div class="col-4 d-flex text-justify  justify-content-center justify-content-sm-center  input-group">
+                <input type="search" value="@ViewData["search"]" name="search" class="shadow pl-2  form-control">
+            </div>
+            <div class="col-4 d-flex text-justify  justify-content-center justify-content-sm-center pr-md-5 pr-xl-5 pr-sm-5">
+                <button class="btn shadow-none rounded-0 btn-warning">Search</button>
+            </div>
+
         </div>
-        <div class="col-12 col-xl-3 col-md-3 d-flex   text-justify justify-content-center justify-content-sm-center input-group">
-            <select class="form-control shadow">
-                <option>IT</option>
-                <option>Accountant</option>
-                <option>Marketing</option>
-                <option>Bussiness</option>
-            </select>
-            <div class="input-group-append shadow"><span class="input-group-text fas fa-home"></span></div>
-        </div>
-        <div class="col-12 col-xl-3 col-md-3 d-flex text-justify  justify-content-center justify-content-sm-center pr-md-5 pr-xl-5 pr-sm-5">
-            <p class="d-inline mb-0 mt-2">Search</p>
-        </div>
-        <div class="col-12 col-xl-3 col-md-3 d-flex text-justify  justify-content-center justify-content-sm-center  input-group">
-            <input type="text" class="shadow pl-2  form-control">
-            <div class="input-group-append shadow"><span class="input-group-text fas fa-search d-flex"></span></div>
-        </div>
-    </div>
+    </form>
     </div>
     <div class="Big-Box">
         <div class="tbl-div">
-    <table class="table border table-bordered table-striped tbl">
-        <tr class="bg-info text-white">
-            <th># No</th>
-            <th>Emp Name</th>
-            <th>User Name</th>
-            <th>Department</th>
-            <th>Attendane status</th>
-        </tr>
-        <tr>
-            <td>01</td>
-            <td>Ismail</td>
-            <td>GulKhan 007</td>
-            <td>Administrator</td>
-            <td>
-                <input type="checkbox"><p class="text-success d-inline ml-2">Present</p>
-                <input type="checkbox" class="ml-2"><p class="text-danger d-inline ml-2">Absent</p>
-            </td>
-        </tr>
-        <tr>
-            <td>02</td>
-            <td>Zumaid khattak</td>
-            <td>Zumaid khan</td>
-            <td>Web Development</td>
-            <td>
-                <input type="checkbox"><p class="text-success d-inline ml-2">Present</p>
-                <input type="checkbox" class="ml-2"><p class="text-danger d-inline ml-2">Absent</p>
-            </td>
-        </tr>
-        <tr>
-            <td>02</td>
-            <td>Zumaid khattak</td>
-            <td>Zumaid khan</td>
-            <td>Web Development</td>
-            <td>
-                <input type="checkbox"><p class="text-success d-inline ml-2">Present</p>
-                <input type="checkbox" class="ml-2"><p class="text-danger d-inline ml-2">Absent</p>
-            </td>
-        </tr>
-        <tr>
-            <td>02</td>
-            <td>Zumaid khattak</td>
-            <td>Zumaid khan</td>
-            <td>Web Development</td>
-            <td>
-                <input type="checkbox"><p class="text-success d-inline ml-2">Present</p>
-                <input type="checkbox" class="ml-2"><p class="text-danger d-inline ml-2">Absent</p>
-            </td>
-        </tr>
-        <tr>
-            <td>02</td>
-            <td>Zumaid khattak</td>
-            <td>Zumaid khan</td>
-            <td>Web Development</td>
-            <td>
-                <input type="checkbox"><p class="text-success d-inline ml-2">Present</p>
-                <input type="checkbox" class="ml-2"><p class="text-danger d-inline ml-2">Absent</p>
-            </td>
-        </tr>
-        <tr>
-            <td>02</td>
-            <td>Zumaid khattak</td>
-            <td>Zumaid khan</td>
-            <td>Web Development</td>
-            <td>
-                <input type="checkbox"><p class="text-success d-inline ml-2">Present</p>
-                <input type="checkbox" class="ml-2"><p class="text-danger d-inline ml-2">Absent</p>
-            </td>
-        </tr>
-        <tr>
-            <td>02</td>
-            <td>Zumaid khattak</td>
-            <td>Zumaid khan</td>
-            <td>Web Development</td>
-            <td>
-                <input type="checkbox"><p class="text-success d-inline ml-2">Present</p>
-                <input type="checkbox" class="ml-2"><p class="text-danger d-inline ml-2">Absent</p>
-            </td>
-        </tr>
-        <tr>
-            <td>02</td>
-            <td>Zumaid khattak</td>
-            <td>Zumaid khan</td>
-            <td>Web Development</td>
-            <td>
-                <input type="checkbox"><p class="text-success d-inline ml-2">Present</p>
-                <input type="checkbox" class="ml-2"><p class="text-danger d-inline ml-2">Absent</p>
-            </td>
-        </tr>
-        <tr>
-            <td>02</td>
-            <td>Zumaid khattak</td>
-            <td>Zumaid khan</td>
-            <td>Web Development</td>
-            <td>
-                <input type="checkbox"><p class="text-success d-inline ml-2">Present</p>
-                <input type="checkbox" class="ml-2"><p class="text-danger d-inline ml-2">Absent</p>
-            </td>
-        </tr>
-    </table>
+            <form action="@Url.Action("AddAttendance","Attendance")" method="post">
+                <table class="table border table-bordered table-striped tbl">
+                    <tr class="bg-info text-white">
+                        <th># No</th>
+                        <th>Emp Name</th>
+                        <th>User Name</th>
+                        <th>Department</th>
+                        <th>Attendane status</th>
+                    </tr>
+                    @if (true)
+                    {
+                        foreach (var item in Model)
+                        {
+
+                            <input type="hidden" name="attendance[@rowcount].EmployeId" value="@item.employe.EmployeId" />
+                            <tr>
+                                <td>@(rowcount + 1)</td>
+                                <td>@item.employe.FirstName @getNullorString(item.employe.LastName)</td>
+                                <td>@item.employe.UserName</td>
+                                <td>@item.employe.department.DepartmentName</td>
+                                @if (item.leaves.Count() > 0)
+                                {
+                                    <td>
+                                        <input type="text" name="attendance[@rowcount].Status" value="Leave" style="background:yellow;" />
+                                    </td>
+                                }
+                                else
+                                {
+                                    if (item.attendance == null)
+                                    {
+                                        <td>
+                                            <input type="radio" value="Present" name="attendance[@rowcount].Status"><p class="text-success d-inline ml-2">Present</p>
+                                            <input type="radio" value="Absent" name="attendance[@rowcount].Status" class="ml-2"><p class="text-danger d-inline ml-2">Absent</p>
+                                        </td>
+                                    }
+                                    else
+                                    {
+                                        if (item.attendance.Status == "Present")
+                                        {
+                                            <td>
+                                                <input type="radio" checked value="Present" name="attendance[@rowcount].Status"><p class="text-success d-inline ml-2">Present</p>
+                                                <input type="radio" value="Absent" name="attendance[@rowcount].Status" class="ml-2"><p class="text-danger d-inline ml-2">Absent</p>
+                                            </td>
+                                        }
+                                        else
+                                        {
+                                            <td>
+                                                <input type="radio" value="Present" name="attendance[@rowcount].Status"><p class="text-success d-inline ml-2">Present</p>
+                                                <input type="radio" checked value="Absent" name="attendance[@rowcount].Status" class="ml-2"><p class="text-danger d-inline ml-2">Absent</p>
+                                            </td>
+                                        }
+                                    }
+
+                                }
+
+                            </tr>
+                            rowcount++;
+                        }
+                    }
+                    else
+                    {
+                        <tr>
+                            <td colspan="5" class="text-center">@ViewData["message"].ToString()</td>
+                        </tr>
+                    }
+
+                </table>
         </div>
         <div class="row mt-3 no-gutters pb-4">
-            <div class="col-sm-6 col-12  col-xl-6 d-flex text-justify justify-content-sm-start justify-content-center">
-                <p class="ml-2 d-inline">Showing 1 to 4 of 4 entries</p>
-            </div>
-            <div class="col-sm-6 col-12  col-xl-6 d-flex text-justify  justify-content-sm-end justify-content-center pr-md-5 pr-xl-5 pr-sm-5 pagination">
-                <button type="submit">Previous</button>
-                <button type="submit">1</button>
-                <button type="submit">2</button>
-                <button type="submit">3</button>
-                <button type="submit">Next</button>
-            </div>
+            <button type="submit">submit</button>
         </div>
+        </form>
 </div>
 
 

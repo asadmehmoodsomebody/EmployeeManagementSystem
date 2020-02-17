@@ -20,5 +20,6 @@ namespace website_emp.Models
         public double AbsentiesPercentage { get; set; }
         public bool? IsDeleted { get; set; }
         public ICollection<Employe> employe { get; set; }
+        public virtual ICollection<SalarySlip> salaryslip { get; set; } 
     }
 }

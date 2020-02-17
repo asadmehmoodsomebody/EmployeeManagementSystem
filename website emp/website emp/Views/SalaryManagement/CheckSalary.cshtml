@@ -9,7 +9,7 @@
         <h5>Check Salary Details</h5>
     </div>
     <div class="row m-3 no-gutters">
-        <div class="col-sm-6 col-12  col-xl-6 d-flex text-justify justify-content-sm-start justify-content-center">
+        <div class="col-12 col-md-4 col-xl-6 d-flex text-justify justify-content-sm-center justify-content-center">
             <select class="shadow select-pages">
                 <option>10</option>
                 <option>25</option>
@@ -18,20 +18,21 @@
             </select>
             <p class="d-inline ml-3">Records per page</p>
         </div>
-        <div class="col-sm-2 col-12  col-xl-2 d-flex text-justify  justify-content-center justify-content-sm-end pr-md-5 pr-xl-5 pr-sm-5">
-            <p class="d-inline mb-0 mt-2">Search</p>
+        <div class="col-12 col-md-2 col-xl-1  d-flex text-justify  justify-content-center justify-content-center">
         </div>
-        <div class="col-sm-4 col-12  col-xl-4 d-flex text-justify  justify-content-center justify-content-sm-end pr-md-5 pr-xl-5 pr-sm-5 input-group">
-            <input type="text" class="shadow pl-2  form-control">
-            <div class="input-group-append shadow"><span class="input-group-text fas fa-search pt-2 d-flex "></span></div>
+        <div class="col-12 col-md-2 col-xl-1  d-flex text-justify  justify-content-center justify-content-center">
+            <p class="d-inline mb-0 pt-2">Search</p>
+        </div>
+        <div class="col-12  col-md-4 col-xl-4 d-flex text-justify  justify-content-center justify-content-sm-end  input-group">
+            <input type="text" class="shadow  form-control">
+            @*<div class="input-group-append shadow"><span class="input-group-text fas fa-search d-flex"></span></div>*@
+            <button type="submit" class="input-group-append shadow fas fa-search"></button>
         </div>
     </div>
     <div class="tbl-div">
         <table class="table table-bordered table-striped tbl">
             <tr class="text-white">
-                <th>
-                    <input type="checkbox" class="">
-                </th>
+                <th>Emp Id</th>
                 <th>Profile</th>
                 <th>Name</th>
                 <th>Monthly Salary</th>
@@ -39,134 +40,40 @@
                 <th>Status</th>
                 <th class="pl-5">Action</th>
             </tr>
+            @for (var i = 201; i <= 220; i++)
+            {
             <tr>
-                <td> <input type="checkbox" class=""></td>
+                <td>@i</td>
                 <td class="text-center">
                     <a href="#" class="profile"></a>
-
                     <img src="~/Images/zebra.PNG" class="profile-icon" />
                 </td>
                 <td>Zumaid khan</td>
-                <td>RS:2000</td>
+                <td>RS:23000</td>
                 <td>22/10/2020</td>
                 <td>
+                    @if (i % 2 == 0)
+                    {
                     <button type="submit" class="bg-dark text-white shadow border-0">Generated</button>
+                    }
+                    else
+                    {
+                    <button type="submit" class="bg-danger text-white shadow border-0">Pending</button>
+                    }
                 </td>
                 <td>
                     <button type="submit" class="bg-info text-white shadow border-0"><i class="fas fa-edit"></i> Edit</button>
                     <button type="submit" class="bg-danger text-white shadow border-0"><i class="fas fa-trash-alt"></i> Delete</button>
                 </td>
             </tr>
-            <tr>
-                <td> <input type="checkbox" class=""></td>
-                <td class="text-center">
-                    <a href="#" class="profile"></a>
-                    <img src="~/Images/admin.png" class="profile-icon">
-                </td>
-                <td>Zumaid khan</td>
-                <td>RS:2000</td>
-                <td>22/10/2020</td>
-                <td>
-                    <button type="submit" class="bg-dark text-white shadow border-0">Generated</button>
-                </td>
-                <td>
-                    <button type="submit" class="bg-info text-white shadow border-0"><i class="fas fa-edit"></i> Edit</button>
-                    <button type="submit" class="bg-danger text-white shadow border-0"><i class="fas fa-trash-alt"></i> Delete</button>
-                </td>
-            </tr>
-            <tr>
-                <td> <input type="checkbox" class=""></td>
-                <td class="text-center">
-                    <a href="#" class="profile"></a>
-                    <img src="~/Images/admin.png" class="profile-icon">
-                </td>
-                <td>Zumaid khan</td>
-                <td>RS:2000</td>
-                <td>22/10/2020</td>
-                <td>
-                    <button type="submit" class="bg-dark text-white shadow border-0">Generated</button>
-                </td>
-                <td>
-                    <button type="submit" class="bg-info text-white shadow border-0"><i class="fas fa-edit"></i> Edit</button>
-                    <button type="submit" class="bg-danger text-white shadow border-0"><i class="fas fa-trash-alt"></i> Delete</button>
-                </td>
-            </tr>
-            <tr>
-                <td> <input type="checkbox" class=""></td>
-                <td class="text-center">
-                    <a href="#" class="profile"></a>
-                    <img src="~/Images/admin.png" class="profile-icon">
-                </td>
-                <td>Zumaid khan</td>
-                <td>RS:2000</td>
-                <td>22/10/2020</td>
-                <td>
-                    <button type="submit" class="bg-dark text-white shadow border-0">Generated</button>
-                </td>
-                <td>
-                    <button type="submit" class="bg-info text-white shadow border-0"><i class="fas fa-edit"></i> Edit</button>
-                    <button type="submit" class="bg-danger text-white shadow border-0"><i class="fas fa-trash-alt "></i> Delete</button>
-                </td>
-            </tr>
-            <tr>
-                <td> <input type="checkbox" class=""></td>
-                <td class="text-center">
-                    <a href="#" class="profile"></a>
-                    <img src="~/Images/admin.png" class="profile-icon">
-                </td>
-                <td>Zumaid khan</td>
-                <td>RS:2000</td>
-                <td>22/10/2020</td>
-                <td>
-                    <button type="submit" class="bg-dark text-white shadow border-0">Generated</button>
-                </td>
-                <td>
-                    <button type="submit" class="bg-info text-white shadow border-0"><i class="fas fa-edit"></i> Edit</button>
-                    <button type="submit" class="bg-danger text-white shadow border-0"><i class="fas fa-trash-alt "></i> Delete</button>
-                </td>
-            </tr>
-            <tr>
-                <td> <input type="checkbox" class=""></td>
-                <td class="text-center">
-                    <a href="#" class="profile"></a>
-                    <img src="~/Images/admin.png" class="profile-icon">
-                </td>
-                <td>Zumaid khan</td>
-                <td>RS:2000</td>
-                <td>22/10/2020</td>
-                <td>
-                    <button type="submit" class="bg-dark text-white shadow border-0">Generated</button>
-                </td>
-                <td>
-                    <button type="submit" class="bg-info text-white shadow border-0"><i class="fas fa-edit"></i> Edit</button>
-                    <button type="submit" class="bg-danger text-white shadow border-0"><i class="fas fa-trash-alt "></i> Delete</button>
-                </td>
-            </tr>
-            <tr>
-                <td> <input type="checkbox" class=""></td>
-                <td class="text-center">
-                    <a href="#" class="profile"></a>
-                    <img src="~/Images/admin.png" class="profile-icon">
-                </td>
-                <td>Zumaid khan</td>
-                <td>RS:2000</td>
-                <td>22/10/2020</td>
-                <td>
-                    <button type="submit" class="bg-dark text-white shadow border-0">Generated</button>
-                </td>
-                <td>
-                    <button type="submit" class="bg-info text-white shadow border-0"><i class="fas fa-edit"></i> Edit</button>
-                    <button type="submit" class="bg-danger text-white shadow border-0"><i class="fas fa-trash-alt "></i> Delete</button>
-                </td>
-            </tr>
-
+            }
         </table>
     </div>
     <div class="row mt-5 no-gutters pb-4">
-        <div class="col-sm-6 col-12  col-xl-6 d-flex text-justify justify-content-sm-start justify-content-center">
-            <p class="ml-2  d-inline">Showing 1 to 4 of 4 entries</p>
+        <div class="col-12  col-md-6 col-xl-5 d-flex text-justify justify-content-sm-center justify-content-center justify-content-xl-start ml-xl-3">
+            <p class="ml-2 d-inline">Showing 1 to 10 of 10 entries</p>
         </div>
-        <div class="col-sm-6 col-12  col-xl-6 d-flex text-justify  justify-content-sm-end justify-content-center pr-md-5 pr-xl-5 pr-sm-5 pagination">
+        <div class="col-12 col-md-6  col-xl-6 d-flex text-justify  justify-content-sm-center justify-content-xl-end justify-content-center pagination ">
             <button type="submit">Previous</button>
             <button type="submit">1</button>
             <button type="submit">2</button>

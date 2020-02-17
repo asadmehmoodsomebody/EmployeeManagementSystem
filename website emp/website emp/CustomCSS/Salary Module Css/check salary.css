@@ -5,12 +5,12 @@
 }
 .tbl
 {
-    min-width: 770px;
+    min-width: 900px;
 }
 .tbl-div
 {
     overflow: scroll;
-    max-height: 300px;
+    max-height: 450px;
      width: 100%;
     overflow-x: auto;
 }
@@ -22,7 +22,7 @@ th
 }
 .select-pages
 {
-    width: 50px;
+    width: 80px;
     height: 25px;
 }
 .text-search:focus

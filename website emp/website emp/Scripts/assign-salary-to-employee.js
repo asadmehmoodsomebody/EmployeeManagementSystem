@@ -1,7 +1,7 @@
 ﻿
-    $(document).ready(function(){
-        $('.b-go').click(function(){
-            $('.div-show').show();
-        });
+    //$(document).ready(function(){
+    //    $('.b-go').click(function(){
+    //        $('.div-show').show();
+    //    });
             
-    });
+    //});

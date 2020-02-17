@@ -46,7 +46,7 @@
                   new Models.MentainanceCounter() { MaintainanceCounterId = 21, Count = 4, TableName = "SalarySlip" },
                   new Models.MentainanceCounter() { MaintainanceCounterId = 22, Count = 1, TableName = "SalaryTemplate" },
                   new Models.MentainanceCounter() { MaintainanceCounterId = 23, Count = 2, TableName = "Shift" },
-                  new Models.MentainanceCounter() { MaintainanceCounterId = 24, Count = 15, TableName = "Task" }
+                  new Models.MentainanceCounter() { MaintainanceCounterId = 24, Count = 13, TableName = "Task" }
                  );
                 context.SaveChanges();
                  context.department.AddOrUpdate(
@@ -130,6 +130,9 @@
                                           Relegion = "Islam",
                                           Picture = "dummy",
                                           Education = "MCS",
+                                          City="Nowshera",
+                                          Country="Pakistan",
+                                          AboutMe="I am software engineer",
                                           SalaryTemplateId = 1,
                                           salarytemplate = context.salarytemplate.Find(1),
                                           shift = context.shift.Find(1),
@@ -156,6 +159,9 @@
                                              Relegion = "Islam",
                                              Picture = "dummy1",
                                              Education = "MCS",
+                                             City = "Pabbi",
+                                             Country = "Pakistan",
+                                             AboutMe = "I am Design Engineer",
                                              SalaryTemplateId = 1,
                                              salarytemplate = context.salarytemplate.Find(1),
                                              shift = context.shift.Find(1),
@@ -591,10 +597,10 @@
                     );
                 context.SaveChanges();
                 context.salaryslip.AddOrUpdate(
-                    new Models.SalarySlip { CreatedBy = 1, CreatedOn = DateTime.Now, employe = context.employe.Find(1), EmployeId = 1, ForMonth = DateTime.Parse("1/1/2020"), SalarySlipId = 1, IsDeleted = false },
-                    new Models.SalarySlip { CreatedBy = 1, CreatedOn = DateTime.Now, employe = context.employe.Find(2), EmployeId = 2, ForMonth = DateTime.Parse("1/1/2020"), SalarySlipId = 2, IsDeleted = false },
-                    new Models.SalarySlip { CreatedBy = 1, CreatedOn = DateTime.Now, employe = context.employe.Find(1), EmployeId = 1, ForMonth = DateTime.Now, SalarySlipId = 3, IsDeleted = false },
-                    new Models.SalarySlip { CreatedBy = 1, CreatedOn = DateTime.Now, employe = context.employe.Find(2), EmployeId = 2, ForMonth = DateTime.Now, SalarySlipId = 4, IsDeleted = false }
+                    new Models.SalarySlip { CreatedBy = 1, CreatedOn = DateTime.Now, employe = context.employe.Find(1), EmployeId = 1, ForMonth = DateTime.Parse("1/1/2020"), SalarySlipId = 1, IsDeleted = false,SalaryTemplateId=1,salarytemplate=context.salarytemplate.Find(1) },
+                    new Models.SalarySlip { CreatedBy = 1, CreatedOn = DateTime.Now, employe = context.employe.Find(2), EmployeId = 2, ForMonth = DateTime.Parse("1/1/2020"), SalarySlipId = 2, IsDeleted = false, SalaryTemplateId = 1, salarytemplate = context.salarytemplate.Find(1) },
+                    new Models.SalarySlip { CreatedBy = 1, CreatedOn = DateTime.Now, employe = context.employe.Find(1), EmployeId = 1, ForMonth = DateTime.Now, SalarySlipId = 3, IsDeleted = false, SalaryTemplateId = 1, salarytemplate = context.salarytemplate.Find(1) },
+                    new Models.SalarySlip { CreatedBy = 1, CreatedOn = DateTime.Now, employe = context.employe.Find(2), EmployeId = 2, ForMonth = DateTime.Now, SalarySlipId = 4, IsDeleted = false, SalaryTemplateId = 1, salarytemplate = context.salarytemplate.Find(1) }
                     );
                 context.SaveChanges();
                 context.earning.AddOrUpdate(

@@ -179,6 +179,10 @@
     <Content Include="Content\v4-shims.css" />
     <Content Include="Content\v4-shims.min.css" />
     <Content Include="CustomCSS\Attendance Module Css\daily attendance.css" />
+    <Content Include="CustomCSS\Attendance Module Css\DailyAttendance.css" />
+    <Content Include="CustomCSS\Attendance Module Css\LeaveRequestAdmin.css" />
+    <Content Include="CustomCSS\Attendance Module Css\ManualAttendance.css" />
+    <Content Include="CustomCSS\Attendance Module Css\MonthlyAttendance.css" />
     <Content Include="CustomCSS\Award Css\award_list.css" />
     <Content Include="CustomCSS\BigBoxCSS.css" />
     <Content Include="CustomCSS\BlueBGCheckboxCss.css" />
@@ -235,6 +239,7 @@
     <Content Include="Images\more_persons.png" />
     <Content Include="Images\plus.png" />
     <Content Include="Images\present.png" />
+    <Content Include="Images\Profile\dummy.jpg" />
     <Content Include="Images\searchicon with out back.png" />
     <Content Include="Images\searchicon.png" />
     <Content Include="Images\search_icon_big.png" />
@@ -250,6 +255,7 @@
     <None Include="Properties\PublishProfiles\zumaid.pubxml" />
     <None Include="Properties\PublishProfiles\zumaidk.pubxml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
+    <Content Include="Scripts\common.js" />
     <Content Include="Scripts\fontawesome\all.js" />
     <Content Include="Scripts\fontawesome\all.min.js" />
     <Content Include="Scripts\fontawesome\brands.js" />
@@ -305,9 +311,9 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202002130842077_pentacall.cs" />
-    <Compile Include="Migrations\202002130842077_pentacall.designer.cs">
-      <DependentUpon>202002130842077_pentacall.cs</DependentUpon>
+    <Compile Include="Migrations\202002151724211_thirdcall.cs" />
+    <Compile Include="Migrations\202002151724211_thirdcall.designer.cs">
+      <DependentUpon>202002151724211_thirdcall.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Attendance.cs" />
@@ -336,6 +342,11 @@
     <Compile Include="Models\Right.cs" />
     <Compile Include="Models\Role.cs" />
     <Compile Include="Models\RoleModuleRight.cs" />
+    <Compile Include="Models\ViewModels\DepartmentViewModel.cs" />
+    <Compile Include="Models\ViewModels\EmployeAttendanceViewModel.cs" />
+    <Compile Include="Models\ViewModels\EmployeSalaryDepartmentViewModel.cs" />
+    <Compile Include="Models\ViewModels\EmployeSalaryTemplate.cs" />
+    <Compile Include="Models\ViewModels\MonthlyAttendanceViewModel.cs" />
     <Compile Include="Pagination.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RoleManager.cs" />
@@ -394,6 +405,13 @@
     <Content Include="Views\Task\Tasks.cshtml" />
     <Content Include="Views\Task\AddTask.cshtml" />
     <Content Include="Views\Task\Edit.cshtml" />
+    <Content Include="Views\Attendance\AddHolidays.cshtml" />
+    <Content Include="Views\Attendance\LeaveRequestAdmin.cshtml" />
+    <Content Include="Views\Attendance\ManualAttendance.cshtml" />
+    <Content Include="Views\Attendance\MyLeave.cshtml" />
+    <Content Include="Views\Attendance\WorkHours.cshtml" />
+    <Content Include="Views\Attendance\WorkHoursMonthly.cshtml" />
+    <Content Include="Views\Administration\UpdateShift.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -403,12 +421,11 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Models\ViewModels\" />
     <Folder Include="SidebarIcons\" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\202002130842077_pentacall.resx">
-      <DependentUpon>202002130842077_pentacall.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202002151724211_thirdcall.resx">
+      <DependentUpon>202002151724211_thirdcall.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

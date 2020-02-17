@@ -1,4 +1,4 @@
-﻿
+﻿@model website_emp.Models.SalaryTemplate
 @{
     ViewBag.Title = "AddTemplate";
 }
@@ -13,9 +13,9 @@
          <div class="col-4">
              <a href="#" class="text-decoration-none">Add New Template</a>
          </div>-->
-        <ul class="nav nav-tabs mt-2 w-100">
-            <li class="nav-item"><a href="payroll%20template%20list.html" class="nav-link">Payroll List</a></li>
-            <li class="nav-item"><a href="Add%20new%20template.html" class="nav-link active">Add New Template</a></li>
+        <ul class="nav nav-tabs mt-2">
+            <li class="nav-item"><button type="submit" class="nav-link border-white shadow">@Html.ActionLink("Payroll List", "TemplateList", null, new { @class = "text-black text-decoration-none font-weight-bold" })</button></li>
+            <li class="nav-item"><button type="submit" class="nav-link border-white shadow">@Html.ActionLink("Add New Template", "AddTemplate", null, new { @class = "text-black text-decoration-none font-weight-bold" })</button></li>
         </ul>
     </div>
 
@@ -41,12 +41,14 @@
              </td>
          </tr>
      </table>-->
+    @using (Html.BeginForm())
+    {
     <div class="row m-3">
         <div class="col-12 col-xl-3 col-md-4 d-flex text-justify justify-content-center justify-content-sm-center">
             <label class="mb-0 mt-2">Template Name</label>
         </div>
         <div class="col-12 col-xl-5 col-md-8 d-flex   text-justify justify-content-center justify-content-sm-center input-group">
-            <input type="text" class="form-control shadow">
+            <input type="text" required name="TemplateName" class="form-control shadow">
             <div class="input-group-append shadow"><span class="input-group-text fas fa-user-edit pt-2 d-flex "></span></div>
         </div>
     </div>
@@ -55,25 +57,49 @@
             <label class="mb-0 mt-2">Payroll Template</label>
         </div>
         <div class="col-12 col-xl-5 col-md-8 d-flex   text-justify justify-content-center justify-content-sm-center input-group">
-            <input type="text" class="form-control shadow">
+            <input type="text" name="Payroll" required class="form-control shadow">
             <div class="input-group-append shadow"><span class="input-group-text fas fa-edit pt-2 d-flex "></span></div>
         </div>
     </div>
-    <div class="row m-3">
+    @*<div class="row m-3">
         <div class="col-12 col-xl-3 col-md-4 d-flex text-justify justify-content-center justify-content-sm-center">
-            <label class="mb-0 mt-2">Overtime Rate</label>
+            <label class="mb-0 mt-2">Amount Per/Hour</label>
         </div>
         <div class="col-12 col-xl-5 col-md-8 d-flex   text-justify justify-content-center justify-content-sm-center input-group">
             <input type="text" class="form-control shadow">
             <div class="input-group-append shadow"><span class="input-group-text fas fa-medal pt-2 d-flex "></span></div>
         </div>
+    </div>*@
+    <div class="row m-3">
+        <div class="col-12 col-xl-3 col-md-4 d-flex text-justify justify-content-center justify-content-sm-center">
+            <label class="mb-0 mt-2">Absenties % Deduction</label>
+        </div>
+        <div class="col-12 col-xl-5 col-md-8 d-flex   text-justify justify-content-center justify-content-sm-center input-group">
+            <input type="text" name="AbsentiesPercentage" required class="form-control shadow">
+            <div class="input-group-append shadow"><span class="input-group-text fas fa-minus pt-2 d-flex "></span></div>
+        </div>
     </div>
+    @*<div class="row m-3">
+        <div class="col-12 col-xl-3 col-md-4 d-flex text-justify justify-content-center justify-content-sm-center">
+            <label class="mb-0 mt-2">Department</label>
+        </div>
+        <div class="col-12 col-xl-5 col-md-8 d-flex   text-justify justify-content-center justify-content-sm-center input-group">
+            <select class="form-control shadow">
+                <option>It</option>
+                <option>Accountant</option>
+                <option>Manager</option>
+                <option>Developer</option>
+            </select>
+            <div class="input-group-append shadow"><span class="input-group-text fas fa-home pt-2 d-flex "></span></div>
+        </div>
+    </div>*@
     <div class="row m-3 pb-4">
         <div class="col-12 col-xl-3 col-md-4 d-flex text-justify justify-content-center justify-content-sm-center">
         </div>
         <div class="col-12 col-xl-5 col-md-8 d-flex  text-justify  justify-content-sm-center justify-content-center  justify-content-lg-center mt-3 mt-xl-0 mt-md-0">
-            <button type="submit" class="shadow border-0 font-weight-bold text-white form-control p-2 rounded bg-info">Go</button>
-            <div class="input-group-append shadow"><span class="input-group-text fas fa-arrow-alt-circle-right pt-2 d-flex "></span></div>
+            <button type="submit" class="bg-info shadow form-control">Go</button>
+            @*<div class="input-group-append shadow"><span class="input-group-text fas fa-arrow-alt-circle-right pt-2 d-flex "></span></div>*@
         </div>
     </div>
+    }
 </div>

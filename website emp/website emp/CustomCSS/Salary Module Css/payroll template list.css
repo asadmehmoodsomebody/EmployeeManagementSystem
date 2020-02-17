@@ -1,6 +1,6 @@
 .select-pages
 {
-    width: 50px;
+    width: 70px;
     height: 25px;
 }
 .text-search:focus
@@ -14,13 +14,15 @@
 }
 .tbl
 {
-    min-width: 770px;
+    min-width:800px;
+    min-height:300px;
 }
 .tbl-div
 {
     width: 100%;
-    overflow: scroll;
-    height: 300px;
+    /*overflow: scroll;*/
+    overflow-x:auto;
+    /*overflow:auto;*/
 }
 th
 {

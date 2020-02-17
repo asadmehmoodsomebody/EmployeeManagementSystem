@@ -1,47 +1,44 @@
-﻿
+﻿@model website_emp.Models.Leave
 @{
     ViewBag.Title = "LeaveRequest_E";
 }
 
 <input type="hidden" id="GetActiveTab" value="#LeaveRequest_E" />
-<h4 class="mt-2">Assign Leave</h4>
+<div class="Big-Box mt-3">
+    <div class="row">
+        <div class="col-12">
+            <button onclick="location.href= '@Url.Action("MyLeave", "Attendance")'" class="bg-primary shadow border-0 m-3 text-white float-right"><i class="fa fa-eye"></i> Show my Leave Requests</button>
+        </div>
+    </div>
+    @using (Html.BeginForm())
+    {
+    <div class="row mx-5">
+        <div class="col-sm-12 col-lg-3">
+            Select Duration
+            <input type="text" class="form-control" name="TotalDays" value="" />
+        </div>
+        <div class="col-sm-12 col-lg-3">
+            Start Date
+            <input type="text" class="form-control" name="startTime" value="" />
+        </div>
+        <div class="col-sm-12 col-lg-3">
+            End Date
+            <input type="text" class="form-control" name="endTime" value="" />
+        </div>
+    </div>
 
-<div class="row">
-    <div class="col-12 col-md-8 col-xl-8">
-        <p class="mb-1">Leave Type</p>
-        <select class="form-control shadow">
-            <option>Casual</option>
-            <option>Sick</option>
-            <option>Family problem</option>
-        </select>
+
+    <div class="row mx-5 mb-3">
+
+        <div class="col-sm-12 col-lg-6">
+            Leave Discription
+            <textarea name="Description" class="form-control" style="resize:none"></textarea>
+        </div>
+       
+        <div class="col-sm-12 col-lg-3 mt-4">
+            
+            <button type="submit" class="form-control shadow border-0 bg-success text-white">Save</button> 
+        </div>
     </div>
-</div>
-<div class="row mt-4">
-    <div class="col-12 col-md-8 col-xl-8">
-        <p>Select Duration</p>
-        <input type="radio"> Single &nbsp;&nbsp;&nbsp;
-        <input type="radio"> Multiple&nbsp;&nbsp;&nbsp;
-        <input type="radio"> Half Day&nbsp;&nbsp;&nbsp;
-    </div>
-</div>
-<div class="row mt-4">
-    <div class="col-12 col-md-8 col-xl-8">
-        <p class="font-weight-bold mb-1">Select Dates :</p>
-        <p class="mb-0">(You can select multiple dates)</p>
-        <input type="text" class="form-control shadow h-50">
-    </div>
-</div>
-<div class="row mt-5">
-    <div class="col-12 col-md-8 col-xl-8">
-        <p class="mb-1">Reason For Absence </p>
-        <textarea class="form-control shadow  txta"></textarea>
-    </div>
-</div>
-<div class="row  mt-4 mb-4">
-    <div class="col-6 col-md-4 col-xl-4">
-        <button type="submit" class="form-control shadow border-0 bg-info text-white">Save</button>
-    </div>
-    <div class="col-6 col-md-4 col-xl-4">
-        <button type="submit" class="form-control shadow border-0 text-white bg-danger">Reset</button>
-    </div>
+    }
 </div>

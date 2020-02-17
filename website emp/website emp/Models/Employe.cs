@@ -25,11 +25,15 @@ namespace website_emp.Models
         [StringLength(maximumLength: 200, MinimumLength = 5, ErrorMessage = "MjnimumLength is 5")]
         public string Password { get; set; }
         public string Address { get; set; }
+        public string Number { get; set; }
         public string Education { get; set; }
         public string Picture { get; set; }
         public DateTime? DOB { get; set; }
         public bool? IsMarried { get; set; }
         public string Relegion { get; set; }
+        public string Country { get; set; }
+        public string City { get; set; }
+        public string AboutMe { get; set; }
         public long CreatedBy { get; set; }
         public DateTime? CreatedOn { get; set; }
         public long? ModifiedBy { get; set; }
@@ -37,6 +41,7 @@ namespace website_emp.Models
         public bool? IsDeleted { get; set; }
         public bool? IsActive { get; set; }
         public long Departmentid { get; set; }
+        public long? DepartmentDesignationId { get; set; }
         public virtual Department department { get; set; }
         public virtual ICollection<Increment> increments { get; set; }
         public virtual ICollection<EmployeRole> employerole {get;set;}

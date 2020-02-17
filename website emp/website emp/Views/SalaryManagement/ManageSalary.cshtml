@@ -24,127 +24,43 @@
             </div>
             <div class="col-12 col-xl-4 col-md-4 d-flex  text-justify justify-content-center justify-content-sm-center  mt-3 mt-xl-0 mt-md-0">
                 <button type="submit" class="shadow border-0 font-weight-bold text-white form-control bg-info b-go">Go</button>
-                <div class="input-group-append shadow"><span class="input-group-text fas fa-arrow-alt-circle-right d-flex"></span></div>
+                @*<div class="input-group-append shadow"><span class="input-group-text fas fa-arrow-alt-circle-right d-flex"></span></div>*@
             </div>
         </div>
     </div>
         <div class="tbl-div mt-4">
             <table class="table table-bordered mt-0 table-striped tbl">
                 <tr class="text-white bg-info">
+                    <th>Emp Id</th>
                     <th>Employee Name</th>
                     <th>Designation</th>
+                    <th>Department</th>
                     <th>Payroll Tempalate</th>
                 </tr>
-                <tr>
-                    <td>Zumaid khan</td>
-                    <td>Developer</td>
-                    <td>
-                        <select class="w-50">
-                            <option>IT</option>
-                            <option>Accountant</option>
-                            <option>Marketing</option>
-                            <option>Bussiness</option>
-                        </select>
-                    </td>
-                </tr>
-                <tr>
-                    <td>Zumaid khan</td>
-                    <td>Developer</td>
-                    <td>
-                        <select class="w-50">
-                            <option>IT</option>
-                            <option>Accountant</option>
-                            <option>Marketing</option>
-                            <option>Bussiness</option>
-                        </select>
-                    </td>
-                </tr>
-                <tr>
-                    <td>Zumaid khan</td>
-                    <td>Developer</td>
-                    <td>
-                        <select class="w-50">
-                            <option>IT</option>
-                            <option>Accountant</option>
-                            <option>Marketing</option>
-                            <option>Bussiness</option>
-                        </select>
-                    </td>
-                </tr>
-                <tr>
-                    <td>Zumaid khan</td>
-                    <td>Developer</td>
-                    <td>
-                        <select class="w-50">
-                            <option>IT</option>
-                            <option>Accountant</option>
-                            <option>Marketing</option>
-                            <option>Bussiness</option>
-                        </select>
-                    </td>
-                </tr>
-                <tr>
-                    <td>Zumaid khan</td>
-                    <td>Developer</td>
-                    <td>
-                        <select class="w-50">
-                            <option>IT</option>
-                            <option>Accountant</option>
-                            <option>Marketing</option>
-                            <option>Bussiness</option>
-                        </select>
-                    </td>
-                </tr>
-                <tr>
-                    <td>Zumaid khan</td>
-                    <td>Developer</td>
-                    <td>
-                        <select class="w-50">
-                            <option>IT</option>
-                            <option>Accountant</option>
-                            <option>Marketing</option>
-                            <option>Bussiness</option>
-                        </select>
-                    </td>
-                </tr>
-                <tr>
-                    <td>Zumaid khan</td>
-                    <td>Developer</td>
-                    <td>
-                        <select class="w-50">
-                            <option>IT</option>
-                            <option>Accountant</option>
-                            <option>Marketing</option>
-                            <option>Bussiness</option>
-                        </select>
-                    </td>
-                </tr>
-                <tr>
-                    <td>Zumaid khan</td>
-                    <td>Developer</td>
-                    <td>
-                        <select class="w-50">
-                            <option>IT</option>
-                            <option>Accountant</option>
-                            <option>Marketing</option>
-                            <option>Bussiness</option>
-                        </select>
-                    </td>
-                </tr>
-                <!--                        <script>
-                                        for(var i=1; i<=50; i++)
-                                            {
-                                                document.write("<tr>");
-                                                document.write("<td>"+"ismail");
-                                                document.write("</td>");
-                                                document.write("<td>"+"developers");
-                                                document.write("</td>");
-                                                document.write("<td>"+"<select><option>it</option><option>kulkula</option><option>bussiness</option></select>");
-                                                document.write("</td>");
-                                                document.write("</tr>");
-                                            }
-                                        </script>-->
-
+                @for (var a = 101; a <= 110; a++)
+            {
+                    <tr>
+                        <td>@a</td>
+                        <td>Zumaid khan</td>
+                        <td>
+                            <select class="w-50">
+                                <option>Manager</option>
+                                <option>Developer</option>
+                                <option>Designer</option>
+                                <option>Sqa</option>
+                            </select>
+                        </td>
+                        <td>
+                            <select class="w-50">
+                                <option>IT</option>
+                                <option>Accountant</option>
+                                <option>Marketing</option>
+                                <option>Bussiness</option>
+                            </select>
+                        </td>
+                        <td>Rs:35000</td>
+                    </tr>
+                }
 
             </table>
         </div>

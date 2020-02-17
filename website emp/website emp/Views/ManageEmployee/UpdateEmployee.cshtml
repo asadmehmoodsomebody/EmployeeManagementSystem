@@ -1,63 +1,148 @@
-﻿
+﻿@model website_emp.Models.Employe
 @{
     ViewBag.Title = "UpdateEmployee";
 }
-<input type="hidden" id="GetActiveTab" value="#UpdateEmployee" />
-<link href="~/CustomCSS/edit_css.css" rel="stylesheet" />
-<div class="row">
-    <div class="col-12 col-md-6 col-xl-8 bg-white">
-        <h3>Edit Profile</h3>
-        <div class="col-12 col-md-12 col-xl-4 mt-5 no-gutters">
-            <p class="font-weight-bold  mb-0">Company</p>
-            <input type="text" class="form-control shadow-none ">
-        </div>
-        <div class="col-12 col-md-12 col-xl-4 mt-5 no-gutters">
-            <p class="font-weight-bold  mb-0">UserName</p>
-            <input type="text" class="form-control shadow-none">
-        </div>
-        <div class="col-12 col-md-12 col-xl-4 mt-5 no-gutters">
-            <p class="font-weight-bold  mb-0">Email</p>
-            <input type="text" class="form-control shadow-none">
-        </div>
-        <div class="col-12 col-md-12 col-xl-6 mt-5 no-gutters">
-            <p class="font-weight-bold  mb-0">First Name</p>
-            <input type="text" class="form-control shadow-none">
-        </div>
-        <div class="col-12 col-md-12 col-xl-6 mt-5 no-gutters">
-            <p class="font-weight-bold  mb-0">Last Name</p>
-            <input type="text" class="form-control shadow-none">
-        </div>
-        <div class="col-12 col-md-12 col-xl-12 mt-5 no-gutters">
-            <p class="font-weight-bold  mb-0">Address</p>
-            <input type="text" class="form-control shadow-none">
-        </div>
-        <div class="col-12 col-md-12 col-xl-4 mt-5 no-gutters">
-            <p class="font-weight-bold mb-0">City</p>
-            <input type="text" class="form-control shadow-none">
-        </div>
-        <div class="col-12 col-md-12 col-xl-4 mt-5 no-gutters">
-            <p class="font-weight-bold mb-0">Country</p>
-            <input type="text" class="form-control shadow-none">
-        </div>
-        <div class="col-12 col-md-12 col-xl-4 mt-5 no-gutters">
-            <p class="font-weight-bold mb-0">Postal Code</p>
-            <input type="text" class="form-control shadow-none">
-        </div>
-        <div class="col-12 col-md-12 col-xl-12 mt-5 no-gutters">
-            <p class="font-weight-bold mb-0">About Me</p>
-            <textarea class="form-control mb-5 shadow-none txt_about_me"></textarea>
-        </div>
-    </div>
-    <!--           <p>user profile Here</p>-->
-    <div class="col-6 col-md-6 col-xl-4 bg-white justify-content-center  border fourcards">
-        <div class="profile_div">
-            <img src="icons/building.jpg">
-            <img src="icons/admin.png" class="w-25">
-            <p class="font-weight-bolder">Zumaid Khattak</p>
-            <p>I am Employee of MaxRemind</p>
-            <p>We work on Employee management system</p>
-            <p>Me Asad And Ismail work both on Employee Management System</p>
-        </div>
-    </div>
-</div>
-
+@functions {
+    public string getNullorValue(string value)
+    {
+        return (String.IsNullOrEmpty(value)) ? "" : value;
+    }
+        }
+<input type="hidden" id="GetActiveTab" value="#Index" />
+<style>
+    .date::-webkit-datetime-edit {
+        -webkit-appearance: none;
+    }
+</style>
+<main>
+    <h3 class="bg-info text-white m-0"><small>Employe Form</small></h3>
+    @using (Html.BeginForm())
+    {
+        <input type="hidden" value="@Model.EmployeId" name="EmployeId" />
+        <div class="main-div-employe-form bg-white p-3">
+            <div class="row no-gutters w-100 align-items-end flex-column-reverse flex-sm-row">
+                <div class="col-12 col-md-4 px-2">
+                    <label>First Name<sup>*</sup>:</label>
+                    <input type="text" value="@Model.FirstName" class="form-control rounded-0 shadow-none" name="FirstName" />
+                </div>
+                <div class="col-12 col-md-4 px-2">
+                    <label>Last Name:</label>
+                    <input type="text" value="@getNullorValue(Model.LastName)" class="form-control rounded-0 shadow-none" name="LastName" />
+                </div>
+                <div class="col-12 col-md-4 px-2">
+                    <input id="FileNameTarget" value="@getNullorValue(Model.Picture)" type="hidden" name="Picture" />
+                    <figure style="background:silver;width:190px;height:190px; margin:auto; margin-bottom:5px;">
+                        <img id="FileDisplayTarget" style="width:100%;height:100%;" src="@Url.Content("~/Images/Profile/"+Model.Picture)" />
+                    </figure>
+                    <button class="btn btn-info btn-block w-25 m-auto rounded-0 shadow-none" style="position:relative">
+                        Upload
+                        <input type="file" id="Uploader" style="position:absolute;width:100%;height:100%;bottom:0px;left:0px;opacity:0;z-index:1" name="FirstName" />
+                    </button>
+                </div>
+            </div>
+            <div class="row w-100 no-gutters  py-2">
+                <div class="col-12 col-md-4  px-2">
+                    <label>Password<sup>*</sup>:<small class="text-muted">(Must be more than 6 characters)</small></label>
+                    <input type="password" value="@Model.Password" class="form-control rounded-0 shadow-none" name="Password" />
+                </div>
+                <div class="col-12 col-md-4  px-2">
+                    <label>Confirm Password<sup>*</sup>:<small class="text-muted">(Must be same as Password)</small></label>
+                    <input type="password" class="form-control rounded-0 shadow-none" />
+                </div>
+            </div>
+            <div class="row w-100 no-gutters  py-2">
+                <div class="col-12 col-md-4  px-2">
+                    <label>Country:</label>
+                    <input type="text" value="@getNullorValue(Model.Country)" name="Country" class="form-control rounded-0 shadow-none" />
+                </div>
+                <div class="col-12 col-md-4  px-2">
+                    <label>City:</label>
+                    <input type="text" value="@getNullorValue(Model.City)"  name="City" class="form-control rounded-0 shadow-none" />
+                </div>
+                <div class="col-12 col-md-4  px-2">
+                    <label>Address:</label>
+                    <input type="text" value="@getNullorValue(Model.Address)" name="Address" class="form-control rounded-0 shadow-none" />
+                </div>
+            </div>
+            <div class="row w-100 no-gutters  py-2">
+                <div class="col-12 col-md-4  px-2">
+                    <label>Email:</label>
+                    <input type="email" value="@getNullorValue(Model.Email)" class="form-control rounded-0 shadow-none" name="Email" />
+                </div>
+                <div class="col-12 col-md-4  px-2">
+                    <label>Department<sup>*</sup>:</label>
+                    @Html.DropDownList("Departmentid", ViewBag.departments as SelectList, new { @id = "Departments", @class = "form-control rounded-0 shadow-none" })
+                </div>
+                <div class="col-12 col-md-4  px-2">
+                    <label>Designation:</label>
+                    @Html.DropDownList("DesignationId", ViewBag.designations as SelectList, new { @id = "Designations", @class = "form-control rounded-0 shadow-none" })
+                </div>
+            </div>
+            <div class="row w-100 no-gutters  py-2">
+                <div class="col-12 col-md-4  px-2">
+                    <label>Date of Birth:</label>
+                    <input class="form-control rounded-0 shadow-none date" value="@Model.DOB.Value.ToShortDateString()" name="DOB" />
+                </div>
+                <div class="col-12 col-md-4  px-2">
+                    <label>Gender:</label>
+                    <select class="form-control rounded-0 shadow-none" name="Gender">
+                        <option value="Male">Male</option>
+                        <option value="Female">Female</option>
+                    </select>
+                </div>
+                <div class="col-12 col-md-4  px-2">
+                    <label>Relegion:</label>
+                    <select class="form-control rounded-0 shadow-none" name="Relegion">
+                        <option value="Islam">Islam</option>
+                        <option value="Christianity">Christianity</option>
+                        <option value="Ohter">Ohter</option>
+                    </select>
+                </div>
+            </div>
+            <div class="row w-100 no-gutters  py-2">
+                <div class="col-12 col-md-4  px-2">
+                    <label>Salary Template<sup>*</sup>:</label>
+                    @Html.DropDownList("SalaryTemplateId", ViewBag.salarytemplates as SelectList, new { @class = "form-control rounded-0 shadow-none" })
+                </div>
+                <div class="col-12 col-md-4  px-2">
+                    <label>Shift<sup>*</sup>:</label>
+                    @Html.DropDownList("ShiftId", ViewBag.shifts as SelectList, new { @class = "form-control rounded-0 shadow-none" })
+                </div>
+                <div class="col-12 col-md-4  px-2">
+                    <label>Education:</label>
+                    <input class="form-control rounded-0 shadow-none" value="@getNullorValue(Model.Education)" name="Education" />
+                </div>
+            </div>
+            <div class="row w-100 no-gutters py-2">
+                <div class="col-12 col-md-4  px-2">
+                    <label>Number:</label>
+                    <input class="form-control rounded-0 shadow-none" value="@getNullorValue(Model.Number)" name="Number" />
+                </div>
+                <div class="col-12 col-md-4 d-flex align-items-end  px-2">
+                    @Html.CheckBox("IsMarried", Model.IsMarried.Value)
+                    <label>Is Married</label>
+                </div>
+                <div class="col-12 col-md-4 d-flex align-items-end px-2">
+                    @Html.CheckBox("IsActive", Model.IsActive.Value)
+                    <label>Is Active</label>
+                </div>
+            </div>
+            <div class="row w-100 no-gutters  py-2">
+                <div class="col-12  px-2">
+                    <label>About Me:</label>
+                    <textarea name="AboutMe"  class="form-control shadow-none rounded-0" style="resize:none">@Model.AboutMe</textarea>
+                </div>
+            </div>
+            <div class="row w-100 no-gutters justify-content-end  py-2">
+                <div class="col-14 col-sm-3  px-2">
+                    <button type="submit" class="btn btn-info btn-block shadow-none rounded-0">Update Employe</button>
+                </div>
+            </div>
+        </div>}
+</main>
+<script>
+    $(document).ready(function (e) {
+        $(".date").datepicker();
+    })
+    initUploader($("#Uploader"), $("#FileNameTarget"), $("#FileDisplayTarget"),'@Url.Action("filehandler","ManageEmployee")');
+</script>

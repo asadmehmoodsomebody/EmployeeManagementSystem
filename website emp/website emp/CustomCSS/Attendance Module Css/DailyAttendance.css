@@ -1,0 +1,17 @@
+﻿
+.tbl-div
+{
+    width: 100%;
+    overflow-x: auto;
+}
+.Tbl-Daily
+{
+    min-width: 995px;
+}
+.attendance_active{
+   text-decoration:none;
+    background: blue;
+    color: white;
+   height: 40px;
+
+}

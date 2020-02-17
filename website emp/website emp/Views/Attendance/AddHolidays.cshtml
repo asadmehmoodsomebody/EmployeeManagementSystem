@@ -1,0 +1,32 @@
+﻿
+@{
+    ViewBag.Title = "AddHolidays";
+}
+<input type="hidden" id="GetActiveTab" value="#AddHolidays" />
+
+<div class="Big-Box mt-3">
+    <form method="post" action="@Url.Action("AddHolidays","Attendance")">
+    <div class="row">
+        <div class="col-lg-3 col-sm-12"></div>
+        <div class="col-lg-2 col-sm-12 m-3">
+           Date: 
+            <input type="date" name="HolidayDate" class="form-control" />
+        </div>
+        <div class="col-lg-2 col-sm-12 m-3">
+            Occasion
+            <input type="text" required name="HolidayName"  class="form-control" />
+        </div>
+        <div class="col-lg-2 col-sm-12 m-3">
+            <input type="submit" class="form-control mt-4 bg-success text-white shadow" value="Submit" />
+        </div>
+        <div class="col-lg-3 col-sm-12">
+            <button onclick="location.href= '@Url.Action("Holidays", "Attendance")'" class="bg-primary shadow border-0 m-3 text-white"><i class="fa fa-times-circle"> Close</i></button>
+
+        </div>
+    </div>
+    </form>
+</div>
+
+
+
+

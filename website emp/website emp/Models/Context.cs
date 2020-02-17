@@ -39,6 +39,7 @@ namespace website_emp.Models
         protected override void OnModelCreating(DbModelBuilder builder)
         {
             builder.Entity<Employe>().HasOptional(p => p.departmentdesignation).WithMany().WillCascadeOnDelete(false);
+            builder.Entity<SalaryTemplate>().HasOptional(p => p.salaryslip).WithMany().WillCascadeOnDelete(false);
             builder.Entity<Employe>().HasOptional(a => a.fingerprint).WithRequired(b => b.employe);
             builder.Entity<Employe>().HasOptional(a => a.fingerprint).WithRequired(b => b.employe);
         }

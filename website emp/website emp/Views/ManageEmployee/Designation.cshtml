@@ -1,4 +1,4 @@
-﻿
+﻿@model Pagination<website_emp.Models.Designation>
 @{
     ViewBag.Title = "Designation";
 }
@@ -13,15 +13,18 @@
             <div class="row no-gutters pr-0 pr-md-2 w-100">
                 <div class="col-12 add-roles">
                     <div class="roles-title">
-                        <span class="bg-info pl-1 d-block font-weight-bold text-white">Add Designation</span>
+                        <span class="bg-info pl-1 d-block font-weight-bold text-white">@ViewData["status"]</span>
                     </div>
                     <div class="roles-body py-1 px-3">
                         <h5 class="m-0"><small class="font-weight-bold">Designation Title</small></h5>
-                        <input class="form-control shadow-0 rounded-0 add-role-input">
-                        <div class="add-roles-button d-flex justify-content-end align-items-center mt-2">
-                            <button class="btn rounded-pill mr-2 c-roles-rights-button" style="background: #f0f0f0;">Cancel</button>
-                            <button class="btn btn-info rounded-pill c-roles-rights-button">Save</button>
-                        </div>
+                        @using (Html.BeginForm(ViewData["action"].ToString(), "ManageEmployee"))
+                        {
+                            <input type="hidden" value="@ViewData["designationid"]" name="DesignationId" />
+                            <input value="@ViewData["designationname"]" name="DesignationName" class="form-control shadow-0 rounded-0 add-role-input">
+                            <div class="add-roles-button d-flex justify-content-end align-items-center mt-2">
+                                <button type="reset" class="btn rounded-pill mr-2 c-roles-rights-button" style="background: #f0f0f0;">Cancel</button>
+                                <button type="submit" class="btn btn-info rounded-pill c-roles-rights-button">Save</button>
+                            </div>}
                     </div>
                 </div>
             </div>
@@ -32,18 +35,29 @@
                 <div class="col-6 Department-list-row-title"><span class="text-white d-block font-weight-bold m-0 text-right">Action</span></div>
             </div>
             <div class="Departments-body pr-1">
-                <script>
-                            for (let i = 0 ; i  < 3 ; i++){
-                                document.write(`<div class="row Department-list-tile mb-1 no-gutters w-100 align-items-center roles-list-row">
+                @foreach (var item in Model)
+                {
+                    <div class="row Department-list-tile mb-1 no-gutters w-100 align-items-center roles-list-row">
+                        <div class="col-6 Department-list-row-left"><span class="d-block m-0">@item.DesignationName</span></div>
+                        <div class="col-6 Departments-list-row-right d-flex justify-content-end">
+                            <a href="@Url.Action("Designation","ManageEmployee",new { designationid=item.DesignationId})" class="m-0 text-right"><span class="d-block edit-icon"></span></a>&nbsp;
+                            <a href="@Url.Action("DeleteDesignation","ManageEmployee",new { designationid=item.DesignationId})" class=" m-0 text-right"><span class="d-block delete-icon"></span></a>
+                        </div>
+                    </div>
+                }
+                @*<script>
+                    for (let i = 0 ; i < 3 ; i++) {
+                        document.write(`<div class="row Department-list-tile mb-1 no-gutters w-100 align-items-center roles-list-row">
                         <div class="col-6 Department-list-row-left"><span class="d-block m-0">Designation Name</span></div>
                         <div class="col-6 Departments-list-row-right d-flex justify-content-end"><a href="#" class="m-0 text-right"><span class="d-block edit-icon" ></span></a>&nbsp;
                             <a href="#" class=" m-0 text-right"><span class="d-block delete-icon" ></span></a>
                         </div>
                         </div>`);
-                            }
-                </script>
+                    }
+                </script>*@
 
             </div>
+
             <div class="Department-list-footer">
                 <div class="row no-gutters w-100">
                     <div class="col-12 col-md-6 d-flex align-items-center justify-content-center justify-content-md-start pl-0 pl-md-2">

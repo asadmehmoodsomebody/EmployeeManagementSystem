@@ -53,7 +53,7 @@
             </div>
             <div class="col-12 col-xl-2 col-md-2 d-flex  text-justify justify-content-center justify-content-sm-center  mt-3 mt-xl-0 mt-md-0 input-group">
                 <button type="button" class="shadow border-0 font-weight-bold text-white form-control bg-info b-view">View</button>
-                <div class="input-group-append shadow"><span class="input-group-text fas fa-photo-video d-flex"></span></div>
+                @*<div class="input-group-append shadow"><span class="input-group-text fas fa-photo-video d-flex"></span></div>*@
             </div>
         </div>
     </div>
@@ -68,101 +68,22 @@
         <div class="tbl-div">
             <table class="table table-bordered table-striped  tbl">
                 <tr class="text-white">
-                    <th>S.No</th>
                     <th>Emp Id</th>
                     <th>Emp Name</th>
                     <th>Year</th>
                     <th>Month</th>
                     <th>Net Salary</th>
                 </tr>
+               @for (var a = 301; a <= 320; a++)
+               {
                 <tr>
-                    <td>1</td>
-                    <td>101</td>
+                    <td>@a</td>
                     <td>Zumaid khattak</td>
                     <td>2019</td>
                     <td>October</td>
                     <td>28600</td>
                 </tr>
-                <tr>
-                    <td>1</td>
-                    <td>101</td>
-                    <td>Zumaid khattak</td>
-                    <td>2019</td>
-                    <td>October</td>
-                    <td>28600</td>
-                </tr>
-                <tr>
-                    <td>1</td>
-                    <td>101</td>
-                    <td>Zumaid khattak</td>
-                    <td>2019</td>
-                    <td>October</td>
-                    <td>28600</td>
-                </tr>
-                <tr>
-                    <td>1</td>
-                    <td>101</td>
-                    <td>Zumaid khattak</td>
-                    <td>2019</td>
-                    <td>October</td>
-                    <td>28600</td>
-                </tr>
-                <tr>
-                    <td>1</td>
-                    <td>101</td>
-                    <td>Zumaid khattak</td>
-                    <td>2019</td>
-                    <td>October</td>
-                    <td>28600</td>
-                </tr>
-                <tr>
-                    <td>1</td>
-                    <td>101</td>
-                    <td>Zumaid khattak</td>
-                    <td>2019</td>
-                    <td>October</td>
-                    <td>28600</td>
-                </tr>
-                <tr>
-                    <td>1</td>
-                    <td>101</td>
-                    <td>Zumaid khattak</td>
-                    <td>2019</td>
-                    <td>October</td>
-                    <td>28600</td>
-                </tr>
-                <tr>
-                    <td>1</td>
-                    <td>101</td>
-                    <td>Zumaid khattak</td>
-                    <td>2019</td>
-                    <td>October</td>
-                    <td>28600</td>
-                </tr>
-                <tr>
-                    <td>1</td>
-                    <td>101</td>
-                    <td>Zumaid khattak</td>
-                    <td>2019</td>
-                    <td>October</td>
-                    <td>28600</td>
-                </tr>
-                <tr>
-                    <td>1</td>
-                    <td>101</td>
-                    <td>Zumaid khattak</td>
-                    <td>2019</td>
-                    <td>October</td>
-                    <td>28600</td>
-                </tr>
-                <tr>
-                    <td>1</td>
-                    <td>101</td>
-                    <td>Zumaid khattak</td>
-                    <td>2019</td>
-                    <td>October</td>
-                    <td>28600</td>
-                </tr>
+               }
             </table>
 
             <div class="col-12 pt-2 d-flex text-justify justify-content-center justify-content-sm-end pb-2 pr-md-5 pr-xl-5 pr-sm-5">
@@ -172,10 +93,10 @@
         </div>
 
         <div class="row mt-5 no-gutters pb-4">
-            <div class="col-sm-6 col-12  col-xl-6 d-flex text-justify justify-content-sm-start justify-content-center">
-                <p class="ml-2 d-inline">Showing 1 to 4 of 4 entries</p>
+            <div class="col-12  col-md-6 col-xl-5 d-flex text-justify justify-content-sm-center justify-content-center justify-content-xl-start ml-xl-3">
+                <p class="ml-2 d-inline">Showing 1 to 10 of 10 entries</p>
             </div>
-            <div class="col-sm-6 col-12  col-xl-6 d-flex text-justify  justify-content-sm-end justify-content-center pr-md-5 pr-xl-5 pr-sm-5 pagination">
+            <div class="col-12 col-md-6  col-xl-6 d-flex text-justify  justify-content-sm-center justify-content-xl-end justify-content-center pagination ">
                 <button type="submit">Previous</button>
                 <button type="submit">1</button>
                 <button type="submit">2</button>

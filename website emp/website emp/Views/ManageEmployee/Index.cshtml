@@ -1,109 +1,117 @@
-﻿
+﻿@model Pagination<website_emp.Models.Employe>
 @{
     ViewBag.Title = "Manage Employee";
+    int rowcount = 1 + ((Model.PageNumber - 1) * 10);
 }
-
+@functions {
+    public string getNullorValue(string value)
+    {
+        return (String.IsNullOrEmpty(value) ? "" : value);
+    }
+        }
+<style>
+    .custom-table{
+        width:100%;
+    }
+    .custom-table th{
+        padding:5px;
+    }
+    .custom-table td{
+        padding:5px;
+    }
+</style>
 <input type="hidden" id="GetActiveTab" value="#Index" />
+<main class="p-2">
+    <div class="row no-gutters w-100 p-2 bg-light">
+        <div class="col-10 d-flex" >
+            <form action="Index">
+                <div class="row w-100 no-gutters">
+                    <div class="col-9 pr-1"><input type="search" name="search" value="@ViewData["search"]" class="form-control shadow-none rounded-0" /></div>
+                    <div class="col-3"><button type="submit" class="btn btn-block btn-dark shadow-none rounded-0">Search</button></div>
+                </div> 
+            </form>
+        </div>
+        <div class="col-2">
+            <a class="btn btn-block btn-info" href="@Url.Action("AddEmployee","ManageEmployee")">Add Employe</a>
+        </div>
+    </div>
+    <div class="row no-gutters w-100">
+        <div class="col-12">
+            <table class="custom-table">
+                <tr class="bg-info row w-100 no-gutters px-2">
+                    <th class="col-1">#</th>
+                    <th class="col-2">Name</th>
+                    <th class="col-3">Email</th>
+                    <th class="col-2">Number</th>
+                    <th class="col-1">IsActive</th>
+                    <th class="col-3 text-center">Action</th>
+                </tr>
+                <tbody class="bg-white">
+                    @foreach (var item in Model)
+    {
+                        <tr class="row w-100 no-gutters  px-2">
+                            <td class="col-1">@rowcount</td>
+                            <td class="col-2">@item.FirstName @getNullorValue(item.LastName)</td>
+                            <td class="col-3">@getNullorValue(item.Email)</td>
+                            <td class="col-2">@getNullorValue(item.Number)</td>
+                            <td class="col-1">@item.IsActive.Value</td>
+                            <td class="col-3 d-flex justify-content-center">
+                                <a class="btn btn-info p-0 px-1 text-white" href="@Url.Action("UpdateEmployee","ManageEmployee",new { employeid=item.EmployeId})">Edit</a>
+                                <a class="btn btn-danger p-0 px-1 text-white" href="@Url.Action("DeleteEmployee","ManageEmployee",new { employeid=item.EmployeId}))">Delete</a>
+                            </td>
+                        </tr>
+                        rowcount++;
+                    }
+                </tbody>
+                
+            </table>
+        </div>
+    </div>
+    <div class="row no-gutters w-100 bg-white">
+        <div class="col-12 col-md-6 d-flex align-items-center justify-content-center justify-content-md-start pl-0 pl-md-2">
+            <p class="text-justify">
+                page <span id="start-number">@Model.PageNumber</span>&nbsp;of <span id="total-pages">@Model.TotalPages</span>
+            </p>
+        </div>
+        <div class="col-12 col-md-6 d-flex justify-content-center justify-content-md-end align-items-center pr-0 pr-md-2">
+            <nav aria-label="Page navigation example">
+                <ul class="pagination">
+                    @if (!Model.HasPrevious)
+    {
+                        <li class="page-item disabled"><a class="page-link disabled" href="#">Previous</a></li>
+                    }
+                    else
+                    {
+                        <li class="page-item "><a class="page-link" href="#">Previous</a></li>
+                    }
+                    @{
+                        int i = 1;
+                        if (Model.PageNumber - 2 > 1)
+                        {
+                            i = Model.PageNumber - 2;
+                        }
+                        for (; i <= (Model.PageNumber + 2) && i <= Model.TotalPages; i++)
+                        {
+                            <li class="page-item"><a class="page-link" href="#">@i</a></li>
+                        }
+                    }
+
+                    @*<li class="page-item"><a class="page-link" href="#">1</a></li>
+                        <li class="page-item"><a class="page-link" href="#">2</a></li>
+                        <li class="page-item"><a class="page-link" href="#">3</a></li>*@
+                    @if (!Model.HasNext)
+    {
+                        <li class="page-item disabled"><a class="page-link disabled" href="#">Next</a></li>
+                    }
+                    else
+                    {
+                        <li class="page-item "><a class="page-link" href="#">Next</a></li>
+                    }
+                </ul>
+            </nav>
+        </div>
+    </div>
 
 
-<link href="~/CustomCSS/table.css" rel="stylesheet" />
-<div class="row">
-    <div class="col-12 col-md-8 col-xl-4">
-        <input type="text" placeholder="Search Employee by Name" class="form-control shadow-none  searchby_name_emp">
-    </div>
-    <div class="col-12 col-md-4 col-xl-4">
-        <button type="button" class="bg-info text-white shadow-none w-100 text-white mt-2 btnsearch">
-            Search
-            <img class="searchicon" src="~/Images/searchicon with out back.png" />
-        </button>
-    </div>
-    <div class="col-12 col-md-4 col-xl-4">
-        <p class="mt-2 show_all_employee">Show all Employee : 12345</p>
-    </div>
-</div>
-<div class="row no-gutters">
-    <div class="col-12 col-md-12 col-xl-12">
-        <table class="table border bg-white w-100" style="border: 0px">
-            <tr class="bg-info text-white">
-                <th>Name</th>
-                <th>Email</th>
-                <th>Department</th>
-                <th>Designation</th>
-                <th>Action</th>
-            </tr>
-            <tr>
-                <td>Zumaid khan</td>
-                <td>khan@email.com</td>
-                <td>Mcs</td>
-                <td>Manager</td>
-                <td class="d-flex flex-nowrap">
-                    <a class="ManageEmpIcon-add" title="Add" href="#"></a>
-                    <a class="ManageEmpIcon-edit" title="Edit" href="#"></a>
-                    <a class="ManageEmpIcon-delete" title="Delete" href="#"></a>
-                </td>
-            </tr>
-            <tr>
-                <td>Zumaid khan</td>
-                <td>khan@email.com</td>
-                <td>Mcs</td>
-                <td>Manager</td>
-                <td class="d-flex flex-nowrap">
-                    <a class="ManageEmpIcon-add" title="Add" href="#"></a>
-                    <a class="ManageEmpIcon-edit" title="Edit" href="#"></a>
-                    <a class="ManageEmpIcon-delete" title="Delete" href="#"></a>
-                </td>
-            </tr>
-            <tr>
-                <td>Zumaid khan</td>
-                <td>khan@email.com</td>
-                <td>Mcs</td>
-                <td>Manager</td>
-                <td class="d-flex flex-nowrap">
-                    <a class="ManageEmpIcon-add" title="Add" href="#"></a>
-                    <a class="ManageEmpIcon-edit" title="Edit" href="#"></a>
-                    <a class="ManageEmpIcon-delete" title="Delete" href="#"></a>
-                </td>
-            </tr>
-            <tr>
-                <td>Zumaid khan</td>
-                <td>khan@email.com</td>
-                <td>Mcs</td>
-                <td>Manager</td>
-                <td class="d-flex flex-nowrap">
-                    <a class="ManageEmpIcon-add" title="Add" href="#"></a>
-                    <a class="ManageEmpIcon-edit" title="Edit" href="#"></a>
-                    <a class="ManageEmpIcon-delete" title="Delete" href="#"></a>
-                </td>
-            </tr>
-            <tr>
-                <td>Zumaid khan</td>
-                <td>khan@email.com</td>
-                <td>Mcs</td>
-                <td>Manager</td>
-                <td class="d-flex flex-nowrap">
-                    <a class="ManageEmpIcon-add" title="Add" href="#"></a>
-                    <a class="ManageEmpIcon-edit" title="Edit" href="#"></a>
-                    <a class="ManageEmpIcon-delete" title="Delete" href="#"></a>
-                </td>
-            </tr>
-        </table>
-    </div>
-</div>
-<div class="row no-gutters">
-    <div class="col-12 col-md-6 col-xl-4">
-        <p>Page 1 of 20</p>
-    </div>
-    <div class="col-12 col-md-6 col-xl-4 ml-auto">
-        <ul class="pagination  justify-content-center">
-            <li><a href="#">Previous</a></li>
-            <li><a href="#">1</a></li>
-            <li><a href="#">2</a></li>
-            <li><a href="#">3</a></li>
-            <li><a href="#">4</a></li>
-            <li><a href="#">5</a></li>
-            <li><a href="#">...</a></li>
-            <li><a href="#">Next</a></li>
-        </ul>
-    </div>
-</div>
 
+</main>
