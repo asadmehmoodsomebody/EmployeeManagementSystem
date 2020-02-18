@@ -216,7 +216,7 @@
                             @if (User.IsInRole("Admin"))
                             {
                                 <li class="nav-item"><a href="@Url.Action("AddTask","Task")" class="nav-link pl-4 d-flex align-items-center" id="Submodule3"><span class="icon sidebar-icon mb-1"><i class="fa fa-cog"></i></span>Add Task</a></li>
-                                <li class="nav-item"><a href="@Url.Action("EditTask","Task")" class="nav-link pl-4 d-flex align-items-center" id="Submodule3"><span class="icon sidebar-icon mb-1"><i class="fa fa-cog"></i></span>Edit Task</a></li>
+                                @*<li class="nav-item"><a href="@Url.Action("EditTask","Task")" class="nav-link pl-4 d-flex align-items-center" id="Submodule3"><span class="icon sidebar-icon mb-1"><i class="fa fa-cog"></i></span>Edit Task</a></li>*@
                                 <li class="nav-item"><a href="@Url.Action("Index","Task")" class="nav-link pl-4 d-flex align-items-center" id="Submodule1"><span class="icon sidebar-icon mb-1"><i class="fa fa-cog"></i></span>All Tasks</a></li>
                             }
                             
