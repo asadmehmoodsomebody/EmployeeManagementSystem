@@ -2,50 +2,64 @@
 @{
     ViewBag.Title = "UpdateProject";
 }
+<style>
+    .main-div-min-height {
+        min-height: 500px;
+    }
+
+    .project-add-form {
+        position: relative;
+        height: fit-content;
+    }
+
+    .project-add-btn-div {
+        position: absolute;
+        bottom: 5px;
+        right: 2.5px;
+    }
+</style>
 
 <main>
     <div class="row no-gutters w-100 align-content-center p-2 border-bottom">
         <div class="col-11 d-flex align-self-center">
-            <h5 class="m-0 p-0">Add Project</h5>
+            <h5 class="m-0 p-0">Update Project</h5>
         </div>
     </div>
 
-    @using (@Html.BeginForm())
+    @using (@Html.BeginForm("UpdateProject", "Project", FormMethod.Post, new { @autocomplete = "off" }))
     {
-        <input type="hidden" name="ProjectId" value="@Model.ProjectId" />
-        <input type="hidden" name="CreatedBy" value="@Model.Createdby" />
-        <input type="hidden" name="CreatedOn" value="@Model.Createdon" />
-        <div class="row w-100 no-gutters bg-light">
-            <div class="col-12">
+        @Html.EditorFor(model=>model.ProjectId,new { htmlAttributes =new { @type="hidden"} })
+        <div class="row w-100 no-gutters justify-content-center px-2 pt-0 pt-lg-5 bg-light py-3 main-div-min-height shadow">
+            <div class="col-12 col-lg-8 bg-white p-2 project-add-form rounded pb-5">
                 <div class="row no-gutters w-100">
-                    <div class="col-6 px-2">
-                        <h5>Department:</h5>
-                        @Html.DropDownList("DepartmentId", ViewData["DepartmentId"] as SelectList, new { @class = "form-control" })
+                    <div class="col-12 col-lg-6 px-2">
+                        <h5 class="jumbotron-fluid"><small>Departments: </small></h5>
+                        @Html.DropDownList("DepartmentId", ViewData["DepartmentId"] as SelectList, new { @class = "form-control rounded-0 shadow-none" })
                     </div>
-                    <div class="col-6 px-2">
-                        <h5>Project Name:</h5>
-                        <input name="ProjectTitle" value="@Model.ProjectTitle" class="form-control" />
+                    <div class="col-12 col-lg-6 px-2">
+                        <h5 class="jumbotron-fluid"><small>Project Name</small></h5>
+                        @Html.EditorFor(model=>model.ProjectTitle,new { htmlAttributes=new { @class= "form-control rounded-0 shadow-none" } })
                     </div>
                 </div>
                 <div class="row no-gutters w-100 mt-3">
-                    <div class="col-6 px-2">
-                        <h5>Start Date:</h5>
-                        @Html.EditorFor(Model => Model.StartDate)
+                    <div class="col-12 col-lg-6 px-2">
+                        <h5 class="jumbotron-fluid"><small>Start Date:</small></h5>
+                        @Html.EditorFor(model => model.StartDate, new { htmlAttributes = new { @class = "form-control rounded-0 shadow-none date" } })
                     </div>
-                    <div class="col-6 px-2">
-                        <h5>End Date:</h5>
-                        <input class="form-control" name="EndDate" value="@if(Model.EndDate.HasValue) { Model.EndDate.Value.ToShortDateString(); }" type="datetime" />
+                    <div class="col-12 col-lg-6 px-2">
+                        <h5 class="jumbotron-fluid"><small>End Date:</small></h5>
+                        @Html.EditorFor(model => model.EndDate, new { htmlAttributes = new { @class = "form-control rounded-0 shadow-none date" } })
                     </div>
                 </div>
                 <div class="row no-gutters w-100 mt-3">
                     <div class="col-12 px-2">
-                        <h5>Description:</h5>
-                        <textarea class="w-100 form-control" name="ProjectDescription">@Model.ProjectDescription</textarea>
+                        <h5 class="jumbotron-fluid"><small>Description:</small></h5>
+                        @Html.TextAreaFor(model=>model.ProjectDescription,new { @class= "form-control rounded-0 shadow-none", @style ="resize:none"})
                     </div>
                 </div>
-                <div class="row no-gutters w-100 mt-3">
-                    <div class="col-12 px-2 d-flex align-items-center justify-content-end">
-                        <button class="btn btn-primary" type="submit">Update</button>
+                <div class="row no-gutters w-100 mt-3 project-add-btn-div justify-content-end">
+                    <div class="col-12 col-lg-3 px-2 d-flex align-items-center justify-content-end">
+                        <button class="btn-block rounded-0 shadow-none btn-primary" type="submit">Update</button>
                     </div>
                 </div>
             </div>
@@ -53,4 +67,6 @@
     }
 
 </main>
-
+<script>
+    $(".date").datepicker();
+</script>

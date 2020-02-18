@@ -347,6 +347,7 @@
     <Compile Include="Models\ViewModels\EmployeSalaryDepartmentViewModel.cs" />
     <Compile Include="Models\ViewModels\EmployeSalaryTemplate.cs" />
     <Compile Include="Models\ViewModels\MonthlyAttendanceViewModel.cs" />
+    <Compile Include="Models\ViewModels\ProjectTaskViewModel.cs" />
     <Compile Include="Pagination.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RoleManager.cs" />
@@ -412,6 +413,7 @@
     <Content Include="Views\Attendance\WorkHours.cshtml" />
     <Content Include="Views\Attendance\WorkHoursMonthly.cshtml" />
     <Content Include="Views\Administration\UpdateShift.cshtml" />
+    <Content Include="Views\Task\UpdateTask.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

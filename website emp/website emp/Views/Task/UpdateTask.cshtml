@@ -1,0 +1,70 @@
+﻿@model website_emp.Models.Task
+@using website_emp.Models;
+@{
+    ViewBag.Title = "UpdateTask";
+}
+@functions {
+    public SelectList getDropdownforStatus(string status)
+    {
+        using (var context = new Context())
+        {
+            SelectList list = new SelectList(new List<SelectListItem>(){
+                new SelectListItem {Value="Pending",Text="Pending" },
+                new SelectListItem {Value ="Ongoing",Text="Ongoing" },
+                new SelectListItem {Value ="Completed",Text="Completed" }
+            },"Value","Text", status);
+            return list;
+        }
+    }
+}
+<div class="row w-100 no-gutters" >
+    <div class="col">
+        <h3><small>Update Task</small></h3>
+    </div>
+</div>
+@using (Html.BeginForm("UpdateTask"))
+{
+    @Html.EditorFor(model=>model.TaskId,new { htmlAttributes= new { @type="hidden"} })
+<div class="row no-gutters w-100 justify-content-center">
+    <div class="col-8 bg-white p-2 rounded">
+        <div class="row w-100 no-gutters">
+            <div class="col-6 px-1">
+                <label>Task Title</label>
+                <label class="form-control shadow-none rounded-0">@Html.DisplayFor(model => model.TaskTitle)</label> 
+            </div>
+            <div class="col-6 px-1">
+                <label>Task Description</label>
+               <label class="form-control shadow-none rounded-0">@Html.DisplayFor(model => model.TaskDescription)</label> 
+            </div>
+        </div>
+        <div class="row w-100 no-gutters">
+            <div class="col-6 px-1">
+                <label>Task Title</label>
+                <label class="form-control shadow-none rounded-0"> @Html.DisplayFor(model => model.StartDate)</label>
+            </div>
+            <div class="col-6 px-1">
+                <label>Task Description</label>
+                <label class="form-control shadow-none rounded-0">@Html.DisplayFor(model => model.OptimizedTime)</label> 
+            </div>
+        </div>
+        <div class="row w-100 no-gutters">
+            <div class="col-6 px-1">
+                <label>Status</label>
+                @Html.DropDownList("Status", getDropdownforStatus(Model.Status),new { @class = "form-control shadow-none rounded-0" })
+            </div>
+        </div>
+        <div class="row no-gutters w-100">
+            <div class="col-12 px-1">
+                <label>Status Description</label>
+                @Html.TextAreaFor(model =>model.StatusDescription,new { @class = "form-control shadow-none rounded-0" ,@style="resize:none;"})
+            </div>
+        </div>
+        <div class="row w-100 no-gutters justify-content-end">
+            <div class="col-12 col-lg-3 p-1">
+                <button class="btn btn-primary btn-block">Update</button>
+            </div>
+        </div>
+    </div>
+</div>
+}
+

@@ -15,7 +15,7 @@ namespace website_emp.Controllers
         // GET: Task
         [HttpGet]
         [Authorize(Roles = "Admin")]
-        public ActionResult Index(string search)
+        public ActionResult Index(string search, int? pagenumber)
         {
             IEnumerable<Task> tasks = (from task in context.task
                                        where task.Deleted == false
@@ -37,17 +37,21 @@ namespace website_emp.Controllers
         || i.project.ProjectTitle.Contains(search)
                         select i;
             }
-            Pagination<Task> page = Pagination<Task>.Paged(tasks, 1, 10);
+            if (!pagenumber.HasValue)
+            {
+                pagenumber = 1;
+            }
+            Pagination<Task> page = Pagination<Task>.Paged(tasks, pagenumber.Value, 10);
             return View(page);
         }
         [Route("Task/ViewAllTasks")]
-        public ActionResult Tasks(string search)
+        public ActionResult Tasks(string search,int? pagenumber)
         {
             Employe emp = context.employe.Where(p => p.UserName == User.Identity.Name).Select(p => p).FirstOrDefault();
             IEnumerable<Task> tasks = (from task in context.task
                                        where task.Deleted == false
                                        && task.AssingedToId == emp.EmployeId
-                                       && task.Status=="Ongoing"
+                                       orderby task.StartDate descending
                                        select task
                                        ).ToList<Task>();
             foreach (var t in tasks)
@@ -64,7 +68,12 @@ namespace website_emp.Controllers
         || i.project.ProjectTitle.Contains(search)
                         select i;
             }
-            Pagination<Task> page = Pagination<Task>.Paged(tasks, 1, 10);
+           if (!pagenumber.HasValue)
+            {
+                pagenumber = 1;
+            }
+            ViewData["pagenumber"] = pagenumber.Value;
+            Pagination<Task> page = Pagination<Task>.Paged(tasks, pagenumber.Value, 10);
             return View(page);
         }
         [Authorize(Roles = "Admin")]
@@ -154,14 +163,87 @@ namespace website_emp.Controllers
 
         [Route("Task/EditTask")]
         [Authorize(Roles = "Admin")]
-        public ActionResult Edit()
+        public ActionResult Edit(long? taskid)
         {
-            return View();
+            var task = (from i in context.task
+                        where i.TaskId == taskid.Value
+                        select i
+                        ).FirstOrDefault();
+            SelectList status = new SelectList(new List<SelectListItem>
+            {
+                new SelectListItem {Value = "Pending",Text="Pending" },
+                new SelectListItem {Value= "Ongoing", Text="Ongoing" ,Selected=true},
+                new SelectListItem {Value="Completed",Text="Completed" }
+            },"Value","Text",task.Status);
+            SelectList type = new SelectList(new List<SelectListItem>
+            {
+                new SelectListItem {Value = "Bug",Text="Bug" },
+                new SelectListItem {Value= "New", Text="New" }
+            }, "Value", "Text", task.Type);
+            SelectList priority = new SelectList(new List<SelectListItem>
+            {
+                new SelectListItem {Value = "High",Text="High" },
+                new SelectListItem {Value= "Meduim", Text="Meduim" },
+                new SelectListItem {Value="Low",Text="Low" }
+            }, "Value", "Text", task.Priority);
+            var projs = (from i in context.project
+                         where i.Deleted == false
+                         select new SelectListItem
+                         {
+                             Value = i.ProjectId.ToString(),
+                             Text = i.ProjectTitle.ToString()
+                         }
+                         ).ToList();
+            SelectList project = new SelectList(projs, "Value", "Text", task.ProjectId.ToString());
+            ViewBag.status = status;
+            ViewBag.type = type;
+            ViewBag.priority = priority;
+            ViewBag.project = project;
+            return View(task);
         }
         [HttpPost]
+        [Route("Task/EditTask")]
         [Authorize(Roles = "Admin")]
         public ActionResult Edit(Task task)
         {
+            var emp = context.employe.Where(p => p.UserName == User.Identity.Name).Select(p => p).FirstOrDefault();
+            var _task = context.task.Find(task.TaskId);
+            task.Createdby = _task.Createdby;
+            task.Createdon = _task.Createdon;
+            task.project = context.project.Find(task.ProjectId);
+            task.ModifiedBy = emp.EmployeId;
+            task.Modifiedon = DateTime.Now;
+            context.Entry(_task).CurrentValues.SetValues(task);
+            context.SaveChanges();
+            return RedirectToAction("ViewAllTasks", "Task");
+        }
+        public ActionResult UpdateTask (long? taskid)
+        {
+            if (taskid.HasValue)
+            {
+                var task = (from i in context.task
+                            where i.TaskId == taskid.Value
+                            select i
+                            ).FirstOrDefault();
+                return View(task);
+            }else
+            {
+                return RedirectToAction("ViewAllTasks");
+            }
+        }
+        [HttpPost]
+        public ActionResult UpdateTask (Task task)
+        {
+            Employe emp = context.employe.Where(p => p.UserName == User.Identity.Name).Select(p => p).FirstOrDefault();
+            var _task = context.task.Find(task.TaskId);
+            _task.Modifiedon = DateTime.Now;
+            _task.ModifiedBy = emp.EmployeId;
+            _task.Status = task.Status;
+            _task.StatusDescription = task.StatusDescription;
+            if (task.Status == "Completed")
+                _task.CompletionTime = DateTime.Now;
+            context.Entry(_task).State = System.Data.Entity.EntityState.Modified;
+            context.SaveChanges();
             return View();
         }
         

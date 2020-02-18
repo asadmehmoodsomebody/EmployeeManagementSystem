@@ -24,7 +24,7 @@ namespace website_emp
                 total = total / 10;
             }
             pagelist.PageNumber = pagenumber;
-            if ((pagenumber+1 * pagelength) > items.Count()) pagelist.HasNext = false;
+            if ((pagenumber * pagelength) > items.Count()) pagelist.HasNext = false;
             else { pagelist.HasNext = true; }
             if ((pagenumber==1)) pagelist.HasPrevious= false ;
             else { pagelist.HasPrevious = true; }

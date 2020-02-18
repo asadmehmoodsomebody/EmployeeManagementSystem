@@ -199,8 +199,8 @@
                         <ul class="collapse list-unstyled p-0 is-child" id="dr4" parent="#Performance">
                             <li class="nav-item"><a href="@Url.Action("Index","Project")" class="nav-link pl-4 d-flex align-items-center" id="Submodule1"><span class="icon sidebar-icon mb-1"><i class="fa fa-cog"></i></span>Projects</a></li>
                             @if (User.IsInRole("Admin")){
-                            <li class="nav-item"><a href="@Url.Action("Add","Project")" class="nav-link pl-4 d-flex align-items-center" id="Submodule2"><span class="icon sidebar-icon mb-1"><i class="fa fa-users-cog"></i></span>Add Project</a></li>
-                            <li class="nav-item"><a href="@Url.Action("Update","Project")" class="nav-link pl-4 d-flex align-items-center" id="Submodule3"><span class="icon sidebar-icon mb-1"><i class="fa fa-cog"></i></span>Update Project</a></li>
+                            <li class="nav-item"><a href="@Url.Action("AddProject","Project")" class="nav-link pl-4 d-flex align-items-center" id="Submodule2"><span class="icon sidebar-icon mb-1"><i class="fa fa-users-cog"></i></span>Add Project</a></li>
+                            <li class="nav-item"><a href="@Url.Action("UpdateProject","Project")" class="nav-link pl-4 d-flex align-items-center" id="Submodule3"><span class="icon sidebar-icon mb-1"><i class="fa fa-cog"></i></span>Update Project</a></li>
                             }
                         </ul>
                     </li>

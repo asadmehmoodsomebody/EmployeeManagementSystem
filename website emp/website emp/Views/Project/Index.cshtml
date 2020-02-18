@@ -1,8 +1,13 @@
-﻿@model IEnumerable<website_emp.Models.Project>
+﻿@model Pagination<website_emp.Models.Project>
 @{
     ViewBag.Title = "Project";
-    int rowcount = 1;
+    int rowcount = 1 + ((Model.PageNumber - 1) * 10);
 }
+<style>
+    .main-div-min-height{
+        min-height:400px;
+    }
+</style>
 
 <main>
    <div class="row no-gutters w-100 align-content-center p-2 border-bottom">
@@ -13,7 +18,7 @@
            <a class="btn btn-primary btn-block rounded-0 shadow-none" href="@Url.Action("AddProject","Project")">Add</a>
        </div>
    </div>
-    <div class="row no-gutters w-100 bg-light">
+    <div class="row no-gutters w-100 bg-light shadow">
         <div class="col-12">
             <div class="row no-gutters w-100 flex-nowrap bg-primary text-light font-weight-bold p-2">
                 <div class="col-1">#</div>
@@ -22,56 +27,88 @@
                 <div class="col-3">End date</div>
                 <div class="col-2 text-center">Action</div>
             </div>
-            <table class="w-100">
-                @foreach (var item in Model)
-                {
-                    <tr class="row w-100 px-2 py-1 no-gutters bg-light">
-                        <td class="col-1">@rowcount</td>
-                        <td class="col-3"><a href="@Url.Action("ProjectDetail","Project",new { projectid =item.ProjectId})">@item.ProjectTitle</a></td>
-                        <td class="col-3">@item.StartDate</td>
-                        <td class="col-3">@item.EndDate</td>
-                        @if (User.IsInRole("Admin"))
-                        {
-                            <td class="col-2 text-center"><a href="">Edit</a> <a href="">Delete</a></td>
-                        }
-                        else
-                        {
-                            <td class="col-2 text-center">No Action</td>
-                        }
-                    </tr>
-                    rowcount++;
-                }
-                   
-                @*<script>
-                    for (let i = 0 ; i < 10 ; i++) {
-                        document.write(`<tr class="row w-100 px-2 py-1 no-gutters bg-light">
-                        <td class="col-1">${i+1}</td>
-                        <td class="col-3"><a href="">Project Name</a></td>
-                        <td class="col-3"><a href="">Startdate</a></td>
-                        <td class="col-3"><a href="">End date</a></td>
-                        <td class="col-2 text-center"><a href="">Edit</a> <a href="">Delete</a></td>
-                    </tr>`);
+            <div class="table-wrapper main-div-min-height">
+                <table class="w-100">
+                    @foreach (var item in Model)
+                    {
+                        <tr class="row w-100 px-2 py-1 no-gutters bg-white shadow">
+                            <td class="col-1">@rowcount</td>
+                            <td class="col-3"><a href="@Url.Action("ProjectDetail","Project",new { projectid =item.ProjectId})">@item.ProjectTitle</a></td>
+                            <td class="col-3">@item.StartDate</td>
+                            <td class="col-3">@item.EndDate</td>
+                            @if (User.IsInRole("Admin"))
+                            {
+                                <td class="col-2 text-center">
+                                    <a class="btn-warning p-1 rounded-0 shadow-none btn" href="@Url.Action("UpdateProject","Project",new { projectid = item.ProjectId})">Edit</a>
+                                    <a class="btn-danger p-1 rounded-0 shadow-none btn" href="@Url.Action("DeleteProject","Project",new { projectid = item.ProjectId})">Delete</a>
+                                </td>
+                            }
+                            else
+                            {
+                                <td class="col-2 text-center">No Action</td>
+                            }
+                        </tr>
+                        rowcount++;
                     }
 
-               </script>*@
-                
-                
-            </table>
+                    @*<script>
+                 for (let i = 0 ; i < 10 ; i++) {
+                     document.write(`<tr class="row w-100 px-2 py-1 no-gutters bg-light">
+                     <td class="col-1">${i+1}</td>
+                     <td class="col-3"><a href="">Project Name</a></td>
+                     <td class="col-3"><a href="">Startdate</a></td>
+                     <td class="col-3"><a href="">End date</a></td>
+                     <td class="col-2 text-center"><a href="">Edit</a> <a href="">Delete</a></td>
+                 </tr>`);
+                 }
+
+            </script>*@
+
+
+                </table>
+            </div>
+
             <div class="footer">
                 <div class="row no-gutters w-100">
                     <div class="col-12 col-md-6 d-flex align-items-center justify-content-center justify-content-md-start pl-0 pl-md-2">
                         <p class="text-justify">
-                            page <span id="start-number">1</span>&nbsp;of <span id="total-pages">10</span>
+                            page <span id="start-number">@Model.PageNumber</span>&nbsp;of <span id="total-pages">@Model.TotalPages</span>
                         </p>
                     </div>
-                    <div class="col-12 col-md-6 d-flex justify-content-center justify-content-md-end pr-0 pr-md-2">
+                    <div class="col-12 col-md-6 d-flex justify-content-center justify-content-md-end align-items-center pr-0 pr-md-2">
                         <nav aria-label="Page navigation example">
                             <ul class="pagination">
-                                <li class="page-item"><a class="page-link" href="#">Previous</a></li>
-                                <li class="page-item"><a class="page-link" href="#">1</a></li>
-                                <li class="page-item"><a class="page-link" href="#">2</a></li>
-                                <li class="page-item"><a class="page-link" href="#">3</a></li>
-                                <li class="page-item"><a class="page-link" href="#">Next</a></li>
+                                @if (!Model.HasPrevious)
+                                {
+                                    <li class="page-item disabled"><a class="page-link disabled" href="#">Previous</a></li>
+                                }
+                                else
+                                {
+                                    <li class="page-item "><a class="page-link" href="#">Previous</a></li>
+                                }
+                                @{
+                                    int i = 1;
+                                    if (Model.PageNumber - 2 > 1)
+                                    {
+                                        i = Model.PageNumber - 2;
+                                    }
+                                    for (; i <= (Model.PageNumber + 2) && i <= Model.TotalPages; i++)
+                                    {
+                                        <li class="page-item"><a class="page-link" href="#">@i</a></li>
+                                    }
+                                }
+
+                                @*<li class="page-item"><a class="page-link" href="#">1</a></li>
+                        <li class="page-item"><a class="page-link" href="#">2</a></li>
+                        <li class="page-item"><a class="page-link" href="#">3</a></li>*@
+                                @if (!Model.HasNext)
+                                {
+                                    <li class="page-item disabled"><a class="page-link disabled" href="#">Next</a></li>
+                                }
+                                else
+                                {
+                                    <li class="page-item "><a class="page-link" href="#">Next</a></li>
+                                }
                             </ul>
                         </nav>
                     </div>
