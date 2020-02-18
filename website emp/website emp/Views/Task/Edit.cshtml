@@ -11,21 +11,21 @@
             var departments = (from i in context.department
                                where i.IsDeleted == false
                                select new SelectListItem
-                               {
+                               { 
                                    Value = i.DepartmentId.ToString(),
                                    Text = i.DepartmentName
                                }
                                ).ToList();
-            if (departmentid.HasValue)
+        if (departmentid.HasValue)
+        {
+            foreach (var item in departments)
             {
-                foreach (var item in departments)
-                {
-                    if (item.Value == departmentid.Value.ToString())
-                        item.Selected = true;
-                }
+                if (item.Value == departmentid.Value.ToString())
+                    item.Selected = true;
             }
-            return new SelectList(departments, "Value", "Text");
         }
+        return new SelectList(departments, "Value", "Text");
+    }
     }
     public SelectList DropDownCreatorforEmploye(long? EmployeId)
     {

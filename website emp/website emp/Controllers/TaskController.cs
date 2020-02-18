@@ -13,7 +13,7 @@ namespace website_emp.Controllers
        // Migrations.Configuration con = new Migrations.Configuration();
 
         // GET: Task
-        [HttpGet]
+        [HttpGet] 
         [Authorize(Roles = "Admin")]
         public ActionResult Index(string search, int? pagenumber)
         {
@@ -140,7 +140,7 @@ namespace website_emp.Controllers
                     foreach (SelectListItem item in items)
                     {
                         if (item.Value == task.ProjectId.ToString())
-                        {
+                        { 
                             item.Selected = true;
                         }
                     }

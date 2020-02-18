@@ -10,7 +10,7 @@
             <h5 class="m-0 p-0">Project</h5>
         </div>
         <div class="col-3 d-flex justify-content-end">
-            @if (User.IsInRole("Admin"))
+            @if (User.IsInRole("Admin")) 
             {
                 <a class="btn btn-primary shadow-none rounded-0" href="@Url.Action("AddTask","Task")">Add Task</a>
             }
@@ -94,7 +94,7 @@
                         <td class="col-1">@rowcount</td>
                         <td class="col-9">@item.TaskTitle</td>
                         @if (User.IsInRole("Admin"))
-                        {
+                        { 
                             <td class="col-2 text-center">
                         <a class="btn btn-warning rounded-0 shadow-none" href="@Url.Action("EditTask","Task",new { taskid = item.TaskId})">Edit</a>
                          <a class="btn btn-danger rounded-0 shadow-none" href="@Url.Action("DeleteTask","Task",new { taskid = item.TaskId})">Delete</a> 

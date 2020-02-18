@@ -10,7 +10,7 @@ namespace website_emp.Controllers
 {
     public class ProjectController : Controller
     {
-        Context context = new Context();
+        Context context = new Context(); 
         // GET: Project
         [Route("")]
         [Route("Project")]
@@ -43,7 +43,7 @@ namespace website_emp.Controllers
                 proj.task = (from i in proj.task
                              where i.TaskTitle.Contains(search)
                              select i).ToList();
-
+                 
             }
             if (!pagenumber.HasValue)
             {
