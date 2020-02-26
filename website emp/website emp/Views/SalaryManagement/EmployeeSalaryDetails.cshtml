@@ -1,0 +1,105 @@
+﻿@model website_emp.Models.ViewModels.InvoiceEmployeEarningDeductionViewModel
+@{
+    ViewBag.Title = "EmployeeSalaryDetails";
+}
+<link href="~/CustomCSS/Salary Module Css/list of employees and their salaries.css" rel="stylesheet" />
+<input type="hidden" id="GetActiveTab" value="#EmployeeSalaries" />
+<script src="~/Scripts/GeneratePayslip.js"></script>
+<div class="Big-Box">
+    <div class="row m-3" id="hide_area">
+        <div class="col-12 col-md-6 col-xl-6 d-flex text-justify justify-content-center justify-content-sm-center justify-content-lg-start mt-3">
+            <h4>Employee Salary Slip</h4>
+        </div>
+        <div class="col-12 col-md-6 col-xl-6 d-flex text-justify justify-content-center justify-content-sm-center justify-content-lg-end mt-3">
+            <button type="submit" class="bg-info text-white form-control w-25"  onclick="printpage()">Print</button>
+            <button type="submit" class="bg-danger text-white form-control w-25  shadow">@Html.ActionLink("Cancal", "EmployeeSalaries", null, new { @class = "text-decoration-none text-white" })</button>
+        </div>
+    </div>
+    <div>
+        <div class="row m-5">
+            <div class="col-12 col-md-4">
+                <p>Employee Id</p>
+                @Html.EditorFor(model=>model.employe.EmployeId,new { htmlAttributes= new { @class="border-0 bg-white", @disabled=true
+                    } })
+            </div>
+            <div class="col-12 col-md-4 col-xl-4">
+                <p>Employee Name</p>
+                @Html.EditorFor(model=>model.employe.FirstName,new { htmlAttributes= new { @class="border-0 bg-white", @disabled=true
+                    } })
+            </div>
+            <div class="col-12 col-md-4 col-xl-4">
+                <p>Designation</p>
+                @Html.EditorFor(model=>model.employe.designation.DesignationName,new { htmlAttributes= new { @class="border-0 bg-white", @disabled=true
+                    } })
+            </div>
+            <div class="col-12 col-md-4 col-xl-4">
+                <p>Department</p>
+                @Html.EditorFor(model=>model.employe.department.DepartmentName,new { htmlAttributes= new { @class="border-0 bg-white", @disabled=true
+                    } })
+            </div>
+            <div class="col-12 col-md-4 col-xl-4">
+                <p>Date</p>
+                @Html.EditorFor(model=>model.invoice.ForMonth.Value,new { htmlAttributes= new { @class="border-0 bg-white", @disabled=true
+                    } })
+            </div>
+            <div class="col-12 col-md-4 col-xl-4">
+                <p>Year</p>
+                <input type="text" name="Year" value="@Model.invoice.ForMonth.Value.Year" class="border-0 bg-white" disabled />
+            </div>
+        </div>
+        <div class="tbl-div">
+            <table class="table table-bordered table-striped">
+                <tr class="row no-gutters w-100">
+                    <th class="col-5">Earnings</th>
+                    <th class="col-1">Amount</th>
+                    <th class="col-5">Deductions</th>
+                    <th class="col-1">Amount</th>
+                </tr>
+                <tr class="row w-100 no-gutters">
+                    <td class="col-6 p-0">
+                        <table class="w-100 border-right-0">
+                            @foreach (var item in Model.earning)
+                            {
+                                <tr class="row no-gutters w-100">
+                                    <td class="col-10">@item.ComName</td>
+                                    <td class="col-2">@item.Amount</td>
+                                </tr>
+                            }
+                            
+                        </table>
+                    </td>
+                    <td class="col-6 p-0">
+                        <table class="w-100">
+                            @foreach (var item in Model.deduction)
+                            {
+                                <tr class="row no-gutters w-100">
+                                    <td class="col-10">@item.ComName</td>
+                                    <td class="col-2">@item.Amount</td>
+                                </tr>
+                            }
+                        </table>
+                    </td>
+                </tr>
+                <tr class="row no-gutters w-100">
+                    <td class="col-5"><h5>Total Earnings</h5></td>
+                    <td class="col-1">@Model.invoice.Earning</td>
+                    <td class="col-5"><h5>Total Deductions</h5></td>
+                    <td class="col-1">@Model.invoice.Deduction</td>
+                </tr>
+                <tr class="row w-100 no-gutters" >
+                    <td colspan="2" class="text-center col-9">
+                        <h4>Net Salary</h4>
+                    </td>
+                    <td colspan="2" class="text-center col-3"><h5>@Model.invoice.NetSalary</h5></td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</div>
+<script>
+    function printpage() {
+        document.getElementById('hide_area').style.display = 'none';
+        window.print();
+        location.reload();
+    }
+</script>

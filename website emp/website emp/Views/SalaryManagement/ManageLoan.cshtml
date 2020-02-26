@@ -1,0 +1,68 @@
+﻿
+@{
+    ViewBag.Title = "ManageLoan";
+}
+<input type="hidden" id="GetActiveTab" value="#ManageLoan" />
+<link href="~/customcss/Salary Module Css/Loan.css" rel="stylesheet" />
+
+<div class="Big-Box mt-3">
+    <div class="row m-3">
+        <div class="col-12 d-flex justify-content-center justify-content-sm-center justify-content-lg-start mt-2">
+            <h5>Manage Loan</h5>
+        </div>
+    </div>
+    <div class="row m-3">
+        <div class="col-12 col-md-4 col-xl-3 d-flex justify-content-center justify-content-sm-start mt-2">
+            <button type="submit" class="bg-info text-white form-control shadow">@Html.ActionLink("Add Loan", "AddLoan", null, new { @class = "text-decoration-none text-white" })</button>
+        </div>
+        <div class="col-12 col-md-5 col-xl-4 d-flex justify-content-center justify-content-sm-center mt-2">
+            <input type="text" placeholder="search By Employee Name" class="form-control shadow">
+        </div>
+        <div class="col-12 col-md-3 col-xl-3 d-flex justify-content-center justify-content-sm-end mt-2">
+            <button type="submit" class="bg-info text-white form-control shadow">Search</button>
+        </div>
+    </div>
+    <div class="tbl-div">
+        <table class="table table-bordered table-striped tbl">
+            <tr class="bg-info text-white">
+                <th>#</th>
+                <th>Employee Name</th>
+                <th>Designation</th>
+                <th>Loan Name</th>
+                <th>Loan Amount</th>
+                <th>NO Of Installment</th>
+                <th>Remaining Loan</th>
+                <th>Date Addded</th>
+                <th>Action</th>
+            </tr>
+            @for (var a = 1; a <= 10; a++)
+            {
+                <tr>
+                    <td>@a</td>
+                    <td>Zumaid</td>
+                    <td>Web developer</td>
+                    <td>fine</td>
+                    <td>200</td>
+                    <td>4</td>
+                    <td>66</td>
+                    <td>12/10/2020</td>
+                    <td> <button type="submit" class="bg-info text-white form-control shadow">@Html.ActionLink("Edit", "EditLoan", null, new { @class = "text-decoration-none text-white" })</button></td>
+                </tr>
+            }
+        </table>
+    </div>
+    <div class="row m-3">
+        <div class="col-12 col-md-6 col-xl-6 d-flex text-justify justify-content-center justify-content-lg-start justify-content-sm-center">
+            <p>Showing page 1 of 1</p>
+        </div>
+        <div class="col-12 col-md-6 col-xl-6 d-flex text-justify justify-content-center  justify-content-sm-center justify-content-lg-end mt-3 mt-xl-0 mt-md-0">
+            <div class="pagination">
+                <button type="submit" class="page-link form-control shadow">Previous</button>
+                <button type="submit" class="page-link form-control shadow">1</button>
+                <button type="submit" class="page-link form-control shadow">2</button>
+                <button type="submit" class="page-link form-control shadow">3</button>
+                <button type="submit" class="page-link form-control shadow">Next</button>
+            </div>
+        </div>
+    </div>
+</div>

@@ -11,9 +11,9 @@ namespace website_emp.Models
     {
         [Key, DatabaseGenerated(DatabaseGeneratedOption.None)]
         public long DesignationId { get; set; }
-        [StringLength(maximumLength:150)]
+        [StringLength(maximumLength: 150)]
         public string DesignationName { get; set; }
-        public virtual ICollection<DepartmentDesignation> departmentdesignation { get; set; }
+        public virtual ICollection<Employe> Employes {get;set;}
         public long CreatedBy { get; set; }
         public DateTime? CreatedOn { get; set; }
         public long? ModifiedBy { get; set; }

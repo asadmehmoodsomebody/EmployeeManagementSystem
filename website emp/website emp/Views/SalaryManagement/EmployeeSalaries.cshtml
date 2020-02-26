@@ -1,4 +1,4 @@
-﻿@model Pagination<website_emp.Models.ViewModels.EmployeSalaryDepartmentViewModel>
+﻿@model Pagination<website_emp.Models.Invoice>
 @{
     ViewBag.Title = "EmployeeSalaries";
     int rowcount = 1 + ((Model.PageNumber - 1) * 10);
@@ -9,53 +9,42 @@
 
 <div class="Big-Box mt-3">
     <div class="bg-white">
-        <h4 class="pl-3 pt-3">List of Employees and their Salaries</h4>
-        <div class="row m-3 no-gutters">
-            <form autocomplete="off" action="@Url.Action("EmployeeSalaries","SalaryManagement")">
-                <div class="col-12  d-flex text-justify  justify-content-center justify-content-center">
-                    <p class="d-inline mb-0 pt-2">Search</p>
-                </div>
-                <div class="col-12 d-flex text-justify  justify-content-center justify-content-sm-end  input-group">
-                    <input type="text" name="search" value="@ViewData["search"]" class="shadow  form-control">
-                    @*<div class="input-group-append shadow"><span class="input-group-text fas fa-search d-flex"></span></div>*@
-                    <button type="submit" class="input-group-append shadow fas fa-search"></button>
-                </div>
-            </form>
+        <div class="col-12  d-flex text-justify justify-content-center justify-content-sm-center justify-content-lg-start mt-3">
+            <h4>Salary History</h4>
         </div>
+        <form action="@Url.Action("EmployeeSalaries","SalaryManagement")" method="get" autocomplete="off">
+        <div class="row m-3">
+            <div class="col-12 col-md-6 col-xl-6">
+                <label class="mt-0 mb-0">Select Date</label>
+                <input type="text" name="search" value="@ViewData["search"]" class="shadow date  form-control">
+                </div>
+            <div class="col-12 col-md-5 col-xl-5 mt-xl-4 mt-md-4 mt-3">
+                <button type="submit" class="form-control shadow bg-info text-white">Search</button>
+            </div>
+        </div>
+        </form>
         <div class="tbl-div">
             <table class="table table-bordered table-striped tbl">
                 <tr class="text-white">
-                    <th>Emp Id</th>
+                    <th>#</th>
                     <th>Name</th>
-                    <th>Designation</th>
-                    <th>Department</th>
-                    <th>Payroll Template</th>
+                    <th>Date</th>
+                    <th>Employe Salary</th>
+                    <th class="pl-5">Action</th>
                 </tr>
-                @foreach (var item in Model)
-                {
+                @foreach (var item  in Model)
+            {
                     <tr>
-                        <td>@rowcount</td>
+                      <td>@rowcount</td>
                         <td>@item.employe.FirstName</td>
-                        <td>@item.designation.DesignationName</td>
-                        <td>@item.employe.department.DepartmentName</td>
-                        <td>@item.employe.salarytemplate.Payroll</td>
+                        <td>@item.ForMonth.Value.ToShortDateString()</td>
+                        <td>@item.Salary</td>
+                      
+                        <td> <button type="submit" class="bg-info text-white form-control shadow">@Html.ActionLink("Details", "EmployeeSalaryDetails",new { invoiceid = item.InvoiceId}, new { @class = "text-decoration-none text-white" })</button></td>
+                        
                     </tr>
                     rowcount++;
                 }
-                @*@for (var i = 201; i <= 220; i++)
-            {
-                    <tr>
-                      <td>@i</td>
-                        <td>Zumaid khan khattak</td>
-                        <td>Web Developer</td>
-                        <td>It</td>
-                        <td>Rs:37000</td>
-                        <td>
-                            <button type="submit" class="bg-info text-white shadow border-0"><i class="fas fa-edit"></i> Edit</button>
-                            <button type="submit" class="bg-danger text-white shadow border-0"><i class="fas fa-trash-alt"></i> Delete</button>
-                        </td>
-                    </tr>
-                }*@
             </table>
         </div>
         <div class="row no-gutters w-100">
@@ -73,7 +62,7 @@
                         }
                         else
                         {
-                            <li class="page-item "><a class="page-link" href="#">Previous</a></li>
+                            <li class="page-item "><a class="page-link" href="@Url.Action("EmployeeSalaries", "SalaryManagement", new { search = ViewData["search"], pagenumber = Model.PageNumber - 1 })">Previous</a></li>
                         }
                         @{
                             int i = 1;
@@ -83,7 +72,7 @@
                             }
                             for (; i <= (Model.PageNumber + 2) && i <= Model.TotalPages; i++)
                             {
-                                <li class="page-item"><a class="page-link" href="#">@i</a></li>
+                                <li class="page-item"><a class="page-link" href="@Url.Action("EmployeeSalaries", "SalaryManagement",new { search =ViewData["search"],pagenumber=i})">@i</a></li>
                             }
                         }
 
@@ -92,11 +81,11 @@
                         <li class="page-item"><a class="page-link" href="#">3</a></li>*@
                         @if (!Model.HasNext)
                         {
-                            <li class="page-item disabled"><a class="page-link disabled" href="#">Next</a></li>
+                            <li class="page-item disabled"><a class="page-link disabled" href="@Url.Action("EmployeeSalaries", "SalaryManagement",new { search =ViewData["search"],pagenumber=ViewData["pagenumber"]})">Next</a></li>
                         }
                         else
                         {
-                            <li class="page-item "><a class="page-link" href="#">Next</a></li>
+                            <li class="page-item "><a class="page-link" href="@Url.Action("EmployeeSalaries", "SalaryManagement",new { search =ViewData["search"],pagenumber=Model.PageNumber+1})">Next</a></li>
                         }
                     </ul>
                 </nav>

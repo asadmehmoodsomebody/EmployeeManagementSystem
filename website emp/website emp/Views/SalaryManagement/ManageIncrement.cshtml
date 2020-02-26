@@ -1,0 +1,63 @@
+﻿
+@{
+    ViewBag.Title = "ManageIncrement";
+}
+<input type="hidden" id="GetActiveTab" value="#ManageIncrement" />
+<link href="~/customcss/increment.css" rel="stylesheet" />
+<div class="Big-Box mt-3">
+    <div class="row m-3">
+        <div class="col-12 d-flex justify-content-center justify-content-sm-center justify-content-lg-start mt-2">
+            <h5>Manage Increments</h5>
+        </div>
+    </div>
+    <div class="row m-3">
+        <div class="col-12 col-md-4 col-xl-3 d-flex justify-content-center justify-content-sm-start mt-2">
+            <button type="submit" class="bg-info text-white form-control shadow">@Html.ActionLink("Add New Increment ", "AddIncrement", null, new { @class = "text-decoration-none text-white" })</button>
+        </div>
+        <div class="col-12 col-md-5 col-xl-4 d-flex justify-content-center justify-content-sm-center mt-2">
+            <input type="text" placeholder="search By Employee Name" class="form-control shadow">
+        </div>
+        <div class="col-12 col-md-3 col-xl-3 d-flex justify-content-center justify-content-sm-end mt-2">
+            <button type="submit" class="bg-info text-white form-control shadow">Search</button>
+        </div>
+    </div>
+    <div class="tbl-div">
+        <table class="table table-bordered table-striped tbl">
+            <tr class="bg-info text-white">
+                <th>#</th>
+                <th>Employee Name</th>
+               <th>Created By</th>
+                <th>Increment Date</th>
+                <th>Increment Amount</th>
+                <th>Increment Purpose</th>
+                <th>Action</th>
+            </tr>
+            @for (var a = 1; a <= 10; a++)
+            {
+                <tr>
+                   <td>@a</td>
+                    <td>Zumaid Khattak</td>
+                    <td>Manager</td>
+                    <td>@DateTime.Now</td>
+                    <td>188</td>
+                    <td>Good Performance</td>
+                    <td> <button type="submit" class="bg-info text-white form-control shadow">@Html.ActionLink("Edit", "EditIncrement", null, new { @class = "text-decoration-none text-white" })</button></td>
+                </tr>
+            }
+        </table>
+    </div>
+    <div class="row m-3">
+        <div class="col-12 col-md-6 col-xl-6 d-flex text-justify justify-content-center justify-content-lg-start justify-content-sm-center">
+            <p>Showing page 1 of 1</p>
+        </div>
+        <div class="col-12 col-md-6 col-xl-6 d-flex text-justify justify-content-center  justify-content-sm-center justify-content-lg-end mt-3 mt-xl-0 mt-md-0">
+            <div class="pagination">
+                <button type="submit" class="page-link form-control shadow">Previous</button>
+                <button type="submit" class="page-link form-control shadow">1</button>
+                <button type="submit" class="page-link form-control shadow">2</button>
+                <button type="submit" class="page-link form-control shadow">3</button>
+                <button type="submit" class="page-link form-control shadow">Next</button>
+            </div>
+        </div>
+    </div>
+</div>

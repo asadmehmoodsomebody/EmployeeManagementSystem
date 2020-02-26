@@ -10,7 +10,6 @@ namespace website_emp.Models
     {
         public Context():base("Server=LAPTOP-ENVV97AF;initial catalog = EMS;integrated security = true;") {}
         public DbSet<Department> department { get; set; }
-        public DbSet<DepartmentDesignation> departmentdesignation { get; set; }
         public DbSet<Designation> designation { get; set; }
         public DbSet<Employe> employe { get; set; }
         public DbSet<EmployeModuleRight> employemoduleright { get; set; }
@@ -26,20 +25,17 @@ namespace website_emp.Models
         public DbSet<Earning> earning { get; set; }
         public DbSet<Increment>  increment { get; set; }
         public DbSet<Loan> loan { get; set; }
-        public DbSet<SalarySlip> salaryslip { get; set; }
+        public DbSet<Invoice> invoice { get; set; }
         public DbSet<Shift> shift { get; set; }
         public DbSet<FingerPrint> fingerprint { get; set; }
         public DbSet<Holiday> holiday { get; set; }
         public DbSet<Leave> leave { get; set; }
-        public DbSet<SalaryTemplate> salarytemplate { get; set; }
         public DbSet<MentainanceCounter> counter { get; set; }
         public DbSet<Task> task { get; set; }
 
 
         protected override void OnModelCreating(DbModelBuilder builder)
         {
-            builder.Entity<Employe>().HasOptional(p => p.departmentdesignation).WithMany().WillCascadeOnDelete(false);
-            builder.Entity<SalaryTemplate>().HasOptional(p => p.salaryslip).WithMany().WillCascadeOnDelete(false);
             builder.Entity<Employe>().HasOptional(a => a.fingerprint).WithRequired(b => b.employe);
             builder.Entity<Employe>().HasOptional(a => a.fingerprint).WithRequired(b => b.employe);
         }

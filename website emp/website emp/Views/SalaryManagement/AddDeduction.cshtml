@@ -1,0 +1,49 @@
+﻿@model website_emp.Models.Deduction
+
+@{
+    ViewBag.Title = "AddDeduction";
+}
+
+<input type="hidden" id="GetActiveTab" value="#ManageDeduction" />
+<link href="~/customcss/Salary Module Css/Deduction.css" rel="stylesheet" />
+<div class="Big-Box mt-3">
+    <div class="row m-3">
+        <div class="col-12 d-flex justify-content-center justify-content-sm-center justify-content-xl-start mt-2">
+            <h5>Add Deduction</h5>
+        </div>
+    </div>
+@using (Html.BeginForm()) {
+    <div class="row m-3">
+        <div class="col-12 col-md-6 col-xl-6">
+            <p>Employee Name</p>
+            @Html.DropDownList("EmployeId",ViewData["EmployeId"] as SelectList,new { @class= "form-control shadow" })
+        </div>
+        <div class="col-12 col-md-6 col-xl-6">
+            <p>Deduction Name</p>
+            @Html.EditorFor(model=>model.ComName,new { htmlAttributes=new { @class= "form-control shadow" } })
+        </div>
+    </div>
+    <div class="row m-3">
+        <div class="col-12 col-md-6 col-xl-6">
+            <p>Deduction Month</p>
+            @Html.EditorFor(model => model.ForMonth, new { htmlAttributes = new { @class = "form-control shadow" } })
+        </div>
+        <div class="col-12 col-md-6 col-xl-6">
+            <p>Deduction Amount</p>
+            @Html.EditorFor(model => model.Amount, new { htmlAttributes = new { @class = "form-control shadow" } })
+        </div>
+    </div>
+    <div class="row m-3">
+        <div class="col-12 col-md-6 col-xl-6">
+            @*<p>Deduction Description</p>*@
+            @*<textarea class="form-control shadow txtarea" placeholder="Enter Employee Description"></textarea>*@
+        </div>
+        <div class="col-12 col-md-3 col-xl-3 mt-xl-5 mt-md-5 mt-2 ">
+            <button type="submit" class="bg-info text-white form-control shadow">Add Deduction</button>
+        </div>
+        <div class="col-12 col-md-3 col-xl-3 mt-xl-5 mt-md-5 mt-2">
+            @Html.ActionLink("Cancal", "ManageDeduction", null, new { @class = "text-decoration-none text-white bg-danger text-white form-control shadow" })
+        </div>
+    </div>
+    }
+</div>

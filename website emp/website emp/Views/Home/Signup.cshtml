@@ -69,10 +69,8 @@
                 </div>
                 <label class="font-weight-bold d-block  mb-0">Department</label>
                 @Html.DropDownList("DepartmentId", ViewData["DepartmentId"] as SelectList, new { @class="form-control shadow-none rounded-0"})
-                    <label class="font-weight-bold d-block  mb-0">Department</label>
+                    <label class="font-weight-bold d-block  mb-0">Shift</label>
                 @Html.DropDownList("ShiftId", ViewData["ShiftId"] as SelectList, new { @class = "form-control shadow-none rounded-0" })
-                    <label class="font-weight-bold d-block  mb-0">Department</label>
-                  @Html.DropDownList("SalaryTemplateId", ViewData["SalaryTemplateId"] as SelectList, new { @class = "form-control shadow-none rounded-0" })
                 <button type="submit" id="Register" class="form-control bg-info mt-2  text-white rounded-0 shadow-none signuptext">Register</button>
                 }
 

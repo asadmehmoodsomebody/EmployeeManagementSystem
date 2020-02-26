@@ -1,0 +1,27 @@
+.tbl
+{
+    min-width:1100px;
+}
+.tbl-div
+{
+    width: 100%;
+    max-height:400px;
+    overflow: scroll;
+    overflow-x:auto;
+    overflow:auto;
+}
+th
+{
+    background-color:skyblue;
+    position:sticky;
+    top:0;
+}
+.txtarea
+{
+    resize: none;
+}
+p
+{
+    margin-bottom: 0px;
+    margin-top: 5px;
+}

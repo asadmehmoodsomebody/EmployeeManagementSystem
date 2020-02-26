@@ -160,16 +160,17 @@
                             <span class="ml-auto mr-2 toggle-icon" id="toggle-icon"></span>
                         </a>
                         <ul class="collapse list-unstyled p-0 is-child" id="SalaryTemplate" parent="#Salary">
-                            <li class="nav-item"><a href="@Url.Action("AddTemplate","SalaryManagement")" class="nav-link pl-4 d-flex align-items-center" id="AddTemplate"><span class="icon sidebar-icon mb-1"><i class="fa fa-hand-holding-usd"></i></span>Add Template</a></li>
+                            <li class="nav-item"><a href="@Url.Action("EmployeeSalaries","SalaryManagement")" class="nav-link pl-4 d-flex align-items-center" id="EmployeeSalaries"><span class="icon sidebar-icon mb-1"><i class="fa fa-hand-holding-usd"></i></span>Salary History</a></li>
                             <li class="nav-item"><a href="@Url.Action("AssignSalary","SalaryManagement")" class="nav-link pl-4 d-flex align-items-center" id="AssignSalary"><span class="icon sidebar-icon mb-1"><i class="fa fa-plus-circle"></i></span>Assign Salary</a></li>
-                            <li class="nav-item"><a href="@Url.Action("CheckSalary","SalaryManagement")" class="nav-link pl-4 d-flex align-items-center" id="CheckSalary"><span class="icon sidebar-icon mb-1"><i class="fa fa-meh-rolling-eyes"></i></span>Check Salary</a></li>
-
-                            <li class="nav-item"><a href="@Url.Action("TemplateList","SalaryManagement")" class="nav-link pl-4 d-flex align-items-center" id="TemplateList"><span class="icon sidebar-icon mb-1"><i class="fa fa-meh-rolling-eyes"></i></span>Template List</a></li>
-                            <li class="nav-item"><a href="@Url.Action("makepayment","SalaryManagement")" class="nav-link pl-4 d-flex align-items-center" id="makepayments"><span class="icon sidebar-icon mb-1"><i class="fa fa-meh-rolling-eyes"></i></span>Make Payments</a></li>
-                            <li class="nav-item"><a href="@Url.Action("GeneratePaySlip","SalaryManagement")" class="nav-link pl-4 d-flex align-items-center" id="GeneratePaySlip"><span class="icon sidebar-icon mb-1"><i class="fa fa-meh-rolling-eyes"></i></span>Generate Payslip</a></li>
-                            <li class="nav-item"><a href="@Url.Action("EmployeeSalaries","SalaryManagement")" class="nav-link pl-4 d-flex align-items-center" id="EmployeeSalaries"><span class="icon sidebar-icon mb-1"><i class="fa fa-meh-rolling-eyes"></i></span>Employee Salaries</a></li>
-                            <li class="nav-item"><a href="@Url.Action("ManageSalary","SalaryManagement")" class="nav-link pl-4 d-flex align-items-center" id="ManageSalary"><span class="icon sidebar-icon mb-1"><i class="fa fa-meh-rolling-eyes"></i></span>Manage Salary</a></li>
                             <li class="nav-item"><a href="@Url.Action("SalaryReport","SalaryManagement")" class="nav-link pl-4 d-flex align-items-center" id="SalaryReport"><span class="icon sidebar-icon mb-1"><i class="fa fa-meh-rolling-eyes"></i></span>Salary Report</a></li>
+                            <li class="nav-item"><a href="@Url.Action("GeneratePaySlip","SalaryManagement")" class="nav-link pl-4 d-flex align-items-center" id="GeneratePaySlip"><span class="icon sidebar-icon mb-1"><i class="fa fa-meh-rolling-eyes"></i></span>Generate Payslip</a></li>
+                            <li class="nav-item"><a href="@Url.Action("ManageBonus","SalaryManagement")" class="nav-link pl-4 d-flex align-items-center" id="ManageBonus"><span class="icon sidebar-icon mb-1"><i class="fa fa-meh-rolling-eyes"></i></span>Manage Bonus</a></li>
+                            <li class="nav-item"><a href="@Url.Action("ManageDeduction","SalaryManagement")" class="nav-link pl-4 d-flex align-items-center" id="ManageDeduction"><span class="icon sidebar-icon mb-1"><i class="fa fa-meh-rolling-eyes"></i></span>Manage Deduction</a></li>
+
+                            <li class="nav-item"><a href="@Url.Action("ManageLoan","SalaryManagement")" class="nav-link pl-4 d-flex align-items-center" id="ManageLoan"><span class="icon sidebar-icon mb-1"><i class="fa fa-meh-rolling-eyes"></i></span>Manage Loan</a></li>
+                            <li class="nav-item"><a href="@Url.Action("ManageIncrement","SalaryManagement")" class="nav-link pl-4 d-flex align-items-center" id="ManageIncrement"><span class="icon sidebar-icon mb-1"><i class="fa fa-meh-rolling-eyes"></i></span>Manage Increment</a></li>
+                           
+                            
                         </ul> 
                     </li>
                     @* End of Salary module*@
@@ -313,6 +314,7 @@
                 }
             })
         });
+        $('.date').datepicker();
     </script>
 </body>
 </html>

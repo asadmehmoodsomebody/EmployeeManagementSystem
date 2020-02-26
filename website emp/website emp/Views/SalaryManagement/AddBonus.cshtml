@@ -1,0 +1,50 @@
+﻿@model website_emp.Models.Earning
+
+@{
+    ViewBag.Title = "AddBonus";
+}
+
+<input type="hidden" id="GetActiveTab" value="#ManageBonus" />
+<link href="~/customcss/Salary Module Css/bonus.css" rel="stylesheet" />
+<div class="Big-Box mt-3">
+    <div class="row m-3">
+        <div class="col-12 d-flex justify-content-center justify-content-sm-center justify-content-lg-start mt-2">
+            <h5>Add Bonus</h5>
+        </div>
+    </div>
+@using (Html.BeginForm())
+{
+    <div class="row m-3">
+        <div class="col-12 col-md-6 col-xl-6">
+            <p>Employee Name</p>
+            @Html.DropDownList("EmployeId", ViewData["EmployeId"] as SelectList, new { @class = "form-control shadow" })
+        </div>
+        <div class="col-12 col-md-6 col-xl-6">
+            <p>Bonus Name</p>
+            <input type="text" name="ComName" class="form-control shadow" placeholder="Enter Bonus Name">
+        </div>
+    </div>
+    <div class="row m-3">
+        <div class="col-12 col-md-6 col-xl-6">
+            <p>Bonus Month</p>
+            <input type="date" name="ForMonth" class="form-control shadow">
+        </div>
+        <div class="col-12 col-md-6 col-xl-6">
+            <p>Bonus Amount</p>
+            <input type="text" name="Amount" class="form-control shadow" placeholder="Enter Bonus Amount">
+        </div>
+    </div>
+    <div class="row m-3">
+        <div class="col-12 col-md-6 col-xl-6">
+            @*<p>Bonus Description</p>
+            <textarea class="form-control shadow txtarea" placeholder="Enter Employee Description"></textarea>*@
+        </div>
+        <div class="col-12 col-md-3 col-xl-3 mt-xl-5 mt-md-5 mt-2 ">
+            <button type="submit" class="bg-info text-white form-control shadow">Add Bonus</button>
+        </div>
+        <div class="col-12 col-md-3 col-xl-3 mt-xl-5 mt-md-5 mt-2">
+            @Html.ActionLink("Cancal", "ManageBonus",null, new { @class = "text-decoration-none text-white btn-danger text-white form-control shadow btn" })
+        </div>
+    </div>
+}
+</div>

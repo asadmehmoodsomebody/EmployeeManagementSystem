@@ -1,0 +1,54 @@
+﻿
+@{
+    ViewBag.Title = "EditLoan";
+}
+
+<input type="hidden" id="GetActiveTab" value="#ManageLoan" />
+<link href="~/customcss/Salary Module Css/Loan.css" rel="stylesheet" />
+<div class="Big-Box mt-3">
+    <div class="row m-3">
+        <div class="col-12 d-flex justify-content-center justify-content-sm-center justify-content-lg-start mt-2">
+            <h5>Edit Loan</h5>
+        </div>
+    </div>
+    <div class="row m-3">
+        <div class="col-12 col-md-6 col-xl-6">
+            <p>Employee Name</p>
+            <select class="form-control shadow">
+                <option>Select one</option>
+            </select>
+        </div>
+        <div class="col-12 col-md-6 col-xl-6">
+            <p>Loan Name</p>
+            <input type="text" class="form-control shadow">
+        </div>
+    </div>
+    <div class="row m-3">
+        <div class="col-12 col-md-6 col-xl-6">
+            <p>Loan Amount</p>
+            <input type="text" class="form-control shadow">
+        </div>
+        <div class="col-12 col-md-6 col-xl-6">
+            <p>Number Of Installments</p>
+            <input type="text" class="form-control shadow">
+        </div>
+    </div>
+    <div class="row m-3">
+        <div class="col-12 col-md-6 col-xl-6">
+            <p>Remaining Installments</p>
+            <input type="text" class="form-control shadow">
+        </div>
+        <div class="col-12 col-md-6 mb-3">
+            <p>Loan Description</p>
+            <textarea class="form-control shadow txtarea h-100"></textarea>
+        </div>
+        </div>
+        <div class="row m-3">
+                <div class="col-12 col-md-3 col-xl-3 mt-xl-5 mt-md-5 mt-2">
+                    <button type="submit" class="bg-info text-white form-control shadow">Update Loan</button>
+                </div>
+                <div class="col-12 col-md-3 col-xl-3 mt-xl-5 mt-md-5 mt-2">
+                    <button type="submit" class="bg-danger text-white form-control shadow">@Html.ActionLink("Cancal", "ManageLoan", null, new { @class = "text-decoration-none text-white" })</button>
+                </div>
+            </div>
+</div>

@@ -55,14 +55,6 @@ namespace website_emp.Controllers
                                                       Value = i.ShiftId.ToString(),
                                                   }
                                            ).ToList<SelectListItem>();
-            IEnumerable<SelectListItem> st = (from k in _context.salarytemplate
-                                              where k.IsDeleted.Value == false
-                                              select new SelectListItem
-                                              {
-                                                  Text = k.TemplateName,
-                                                  Value = k.SalaryTemplateId.ToString()
-                                              }
-                                              ).ToList<SelectListItem>();
             IEnumerable<SelectListItem> dep = (from deps in _context.department
                                            where deps.IsDeleted == false
                                            select new SelectListItem
@@ -72,8 +64,7 @@ namespace website_emp.Controllers
                                            }
                                            ).ToList<SelectListItem>();
             ViewData["DepartmentId"]= new SelectList(dep,"Value", "Text");
-            ViewData["ShiftId"] = new SelectList(shifts,"Value", "Text"); 
-            ViewData["SalaryTemplateId"] = new SelectList(st, "Value", "Text");
+            ViewData["ShiftId"] = new SelectList(shifts,"Value", "Text");
             return View();
         }
         [HttpPost]
@@ -88,7 +79,6 @@ namespace website_emp.Controllers
             emp.CreatedOn = DateTime.Now;
             emp.department = _context.department.Find(emp.Departmentid);
             emp.shift = _context.shift.Find(emp.ShiftId);
-            emp.salarytemplate = _context.salarytemplate.Find(emp.SalaryTemplateId);
            try
             {
                if (ModelState.IsValid)

@@ -55,19 +55,10 @@ namespace website_emp.Controllers
 
                           }
                           ).ToList();
-            var templates = (from i in context.salarytemplate
-                             where i.IsDeleted == false
-                             select new SelectListItem
-                             {
-                                 Value = i.SalaryTemplateId.ToString(),
-                                 Text = i.TemplateName
-                             }
-                             ).ToList();
 
             des.Insert(0, new SelectListItem { Value = "", Text = "Employe" });
             ViewBag.departments = new SelectList(deps, "Value", "Text");
             ViewBag.designations = new SelectList(des, "Value", "Text");
-            ViewBag.salarytemplates = new SelectList(templates, "Value", "Text");
             ViewBag.shifts = new SelectList(shifts, "Value", "Text");
             return View();
         }
@@ -76,42 +67,6 @@ namespace website_emp.Controllers
         public ActionResult AddEmployee(Employe employe,string DesignationId)
         {
             Employe emp = context.employe.Where(p => p.UserName == User.Identity.Name).Select(p => p).FirstOrDefault();
-            if (!String.IsNullOrEmpty(DesignationId))
-            {
-               
-                long d = long.Parse(DesignationId);
-                var depdes = context.departmentdesignation.Where(p => p.DesignationId == d && p.DepartmentId == employe.Departmentid)
-                    .Select(p => p).ToList<DepartmentDesignation>();
-                if (depdes.Count() > 0)
-                {
-                    if (depdes[0].IsDeleted.Value)
-                    {
-                        depdes[0].IsDeleted = false;
-                        depdes[0].ModifiedBy = emp.EmployeId;
-                        depdes[0].Modifiedon = DateTime.Now;
-                    }
-                    employe.DepartmentDesignationId = depdes[0].DepartmentDesignationId;
-                    employe.departmentdesignation = depdes[0];
-
-                }else
-                {
-                    MentainanceCounter c = context.counter.Where(p => p.TableName == "DepartmentDesignation").Select(p => p).FirstOrDefault();
-                    c.Count++;
-                    DepartmentDesignation newdepdes = new DepartmentDesignation();
-                    newdepdes.DepartmentDesignationId = c.Count;
-                    context.SaveChanges();
-                    newdepdes.CreatedBy = emp.EmployeId;
-                    newdepdes.CreatedOn = DateTime.Now;
-                    newdepdes.IsDeleted = false;
-                    newdepdes.department = context.department.Find(employe.Departmentid);
-                    newdepdes.DepartmentId = employe.Departmentid;
-                    newdepdes.DesignationId = d;
-                    newdepdes.designation = context.designation.Find(d);
-                    employe.DepartmentDesignationId = c.Count;
-                    employe.departmentdesignation = newdepdes;
-                    context.SaveChanges();
-                }
-            }
             employe.CreatedBy = emp.EmployeId;
             employe.CreatedOn = DateTime.Now;
             employe.IsDeleted = false;
@@ -154,17 +109,12 @@ namespace website_emp.Controllers
                             Value = i.DepartmentId.ToString()
                         }).ToList();
             int depid = int.Parse(deps[0].Value);
-            var des = (from i in context.department
-                       join j in context.departmentdesignation
-                       on i.DepartmentId equals j.DepartmentId
-                       join k in context.designation on
-                       j.DesignationId equals k.DesignationId
-                       where k.IsDeleted == false && j.IsDeleted == false
-                       && i.DepartmentId == depid
+            var des = (from i in context.designation
+                       where i.IsDeleted == false
                        select new SelectListItem
                        {
-                           Value = j.DepartmentDesignationId.ToString(),
-                           Text = k.DesignationName
+                           Value = i.DesignationId.ToString(),
+                           Text = i.DesignationName
                        }).ToList();
             var shifts = (from i in context.shift
                           where i.IsDeleted == false
@@ -175,64 +125,20 @@ namespace website_emp.Controllers
 
                           }
                           ).ToList();
-            var templates = (from i in context.salarytemplate
-                             where i.IsDeleted == false
-                             select new SelectListItem
-                             {
-                                 Value = i.SalaryTemplateId.ToString(),
-                                 Text = i.TemplateName
-                             }
-                             ).ToList();
 
             des.Insert(0, new SelectListItem { Value = "", Text = "Employe" });
-            string empdesignation = (emp.DepartmentDesignationId.HasValue) ? emp.DepartmentDesignationId.Value.ToString() : "";
+            string empdesignation = context.designation.Find(emp.Designationid).DesignationId.ToString();
             ViewBag.departments = new SelectList(deps, "Value", "Text",emp.Departmentid.ToString());
             ViewBag.designations = new SelectList(des, "Value", "Text",empdesignation);
-            ViewBag.salarytemplates = new SelectList(templates, "Value", "Text",emp.SalaryTemplateId.ToString());
             ViewBag.shifts = new SelectList(shifts, "Value", "Text",emp.ShiftId.ToString());
             return View(emp);
         }
         [HttpPost]
-        public ActionResult UpdateEmployee(Employe employe,string DesignationId)
+        public ActionResult UpdateEmployee(Employe employe)
         {
             Employe emp = context.employe.Where(p => p.UserName == User.Identity.Name).Select(p => p).FirstOrDefault();
-            if (!String.IsNullOrEmpty(DesignationId))
-            {
-
-                long d = long.Parse(DesignationId);
-                var depdes = context.departmentdesignation.Where(p => p.DesignationId == d && p.DepartmentId == employe.Departmentid)
-                    .Select(p => p).ToList<DepartmentDesignation>();
-                if (depdes.Count() > 0)
-                {
-                    if (depdes[0].IsDeleted.Value)
-                    {
-                        depdes[0].IsDeleted = false;
-                        depdes[0].ModifiedBy = emp.EmployeId;
-                        depdes[0].Modifiedon = DateTime.Now;
-                    }
-                    employe.DepartmentDesignationId = depdes[0].DepartmentDesignationId;
-                    employe.departmentdesignation = depdes[0];
-
-                }
-                else
-                {
-                    MentainanceCounter c = context.counter.Where(p => p.TableName == "DepartmentDesignation").Select(p => p).FirstOrDefault();
-                    c.Count++;
-                    DepartmentDesignation newdepdes = new DepartmentDesignation();
-                    newdepdes.DepartmentDesignationId = c.Count;
-                    context.SaveChanges();
-                    newdepdes.CreatedBy = emp.EmployeId;
-                    newdepdes.CreatedOn = DateTime.Now;
-                    newdepdes.IsDeleted = false;
-                    newdepdes.department = context.department.Find(employe.Departmentid);
-                    newdepdes.DepartmentId = employe.Departmentid;
-                    newdepdes.DesignationId = d;
-                    newdepdes.designation = context.designation.Find(d);
-                    employe.DepartmentDesignationId = c.Count;
-                    employe.departmentdesignation = newdepdes;
-                    context.SaveChanges();
-                }
-            }
+           
+              
             Employe temp = context.employe.Find(employe.EmployeId);
             employe.CreatedBy = temp.CreatedBy;
             employe.CreatedOn = temp.CreatedOn;
@@ -241,6 +147,7 @@ namespace website_emp.Controllers
             employe.ModifiedBy = emp.EmployeId;
             employe.Modifiedon = DateTime.Now;
             employe.department = context.department.Find(employe.Departmentid);
+            employe.designation = context.designation.Find(employe.Designationid);
             employe.shift = context.shift.Find(employe.ShiftId);
 
             context.Entry(temp).CurrentValues.SetValues(employe);

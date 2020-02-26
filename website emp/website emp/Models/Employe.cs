@@ -9,7 +9,7 @@ namespace website_emp.Models
 {
     public class Employe
     {
-        [Required,Key,DatabaseGenerated(DatabaseGeneratedOption.None)]
+        [Key,DatabaseGenerated(DatabaseGeneratedOption.None)]
         public long EmployeId { get; set; }
         [StringLength(maximumLength: 150)]
         [Required]
@@ -41,21 +41,23 @@ namespace website_emp.Models
         public bool? IsDeleted { get; set; }
         public bool? IsActive { get; set; }
         public long Departmentid { get; set; }
-        public long? DepartmentDesignationId { get; set; }
         public virtual Department department { get; set; }
+        public long Designationid { get; set; }
+        public virtual Designation designation { get; set; }
         public virtual ICollection<Increment> increments { get; set; }
         public virtual ICollection<EmployeRole> employerole {get;set;}
         public virtual ICollection<EmployeModuleRight> moduleright { get; set; }
+        public virtual ICollection<Deduction> deduction { get; set; }
+        public virtual ICollection<Earning> earning { get; set; }
         public virtual ICollection<Task> task { get; set; }
         public long ShiftId { get; set; }
         public virtual Shift shift { get; set; }
         public virtual ICollection<Leave> leave { get; set; }
         public virtual ICollection<Attendance> attendance { get; set; }
         public virtual FingerPrint fingerprint { get; set; }
-        public virtual ICollection<SalarySlip> salaryslip { get; set; }
-        public long SalaryTemplateId { get; set; }
-        public SalaryTemplate salarytemplate { get; set; }
-        public DepartmentDesignation departmentdesignation { get; set; }
+        public virtual ICollection<Invoice> invoice { get; set; }
         public string Gender { get; set; }
+        public string EmployeType { get; set; }
+        public double Salary { get; set; }
     }
 }

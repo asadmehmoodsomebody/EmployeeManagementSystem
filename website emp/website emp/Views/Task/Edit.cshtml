@@ -1,33 +1,36 @@
 ﻿@model website_emp.Models.Task
 @using website_emp.Models;
+@using System.Reflection;
 @{
     ViewBag.Title = "Edit Task";
 }
 @functions {
+
     public SelectList DropDownCreatorforDepartments(long? departmentid)
     {
+
         using (var context = new Context())
         {
             var departments = (from i in context.department
                                where i.IsDeleted == false
                                select new SelectListItem
-                               { 
+                               {
                                    Value = i.DepartmentId.ToString(),
                                    Text = i.DepartmentName
                                }
-                               ).ToList();
-        if (departmentid.HasValue)
-        {
-            foreach (var item in departments)
+                           ).ToList();
+            if (departmentid.HasValue)
             {
-                if (item.Value == departmentid.Value.ToString())
-                    item.Selected = true;
+                foreach (var item in departments)
+                {
+                    if (item.Value == departmentid.Value.ToString())
+                        item.Selected = true;
+                }
             }
+            return new SelectList(departments, "Value", "Text");
         }
-        return new SelectList(departments, "Value", "Text");
     }
-    }
-    public SelectList DropDownCreatorforEmploye(long? EmployeId)
+    public SelectList DropDownCreatorforEmploye<T>(long? EmployeId)
     {
         using (var context = new Context())
         {
@@ -38,7 +41,7 @@
                                Value = i.EmployeId.ToString(),
                                Text = i.FirstName+" "+((string.IsNullOrEmpty(i.LastName))?"":i.LastName)
                            }
-                               ).ToList();
+                           ).ToList();
             if (EmployeId.HasValue)
             {
                 return new SelectList(employe, "Value", "Text", EmployeId.Value.ToString());
@@ -86,11 +89,11 @@
             <div class="row w-100 no-gutters input-row">
                 <div class="col-12 col-md-4 p-2 input-col">
                     <h5 class="jumbotron-fluid"><small>Assigned by</small></h5>
-                    @Html.DropDownList("AssignedById", DropDownCreatorforEmploye(Model.AssignedById), new { @class = "form-control shadow-none rounded-0" })
+                    @Html.DropDownList("AssignedById", DropDownCreatorforEmploye<int>(Model.AssignedById), new { @class = "form-control shadow-none rounded-0" })
                 </div>
                 <div class="col-12 col-md-4 p-2 input-col">
                     <h5 class="jumbotron-fluid"><small>Assigned to</small></h5>
-                    @Html.DropDownList("AssingedToId", DropDownCreatorforEmploye(Model.AssingedToId), new { @class = "form-control shadow-none rounded-0" })
+                    @Html.DropDownList("AssingedToId", DropDownCreatorforEmploye<int>(Model.AssingedToId), new { @class = "form-control shadow-none rounded-0" })
                 </div>
             </div>
             <div class="row w-100 no-gutters input-row">

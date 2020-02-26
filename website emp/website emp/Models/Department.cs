@@ -20,7 +20,6 @@ namespace website_emp.Models
         public DateTime? Modifiedon { get; set; }
         public bool? IsDeleted { get; set; }
         public virtual ICollection<Project> projcet { get; set; }
-        public virtual ICollection<DepartmentDesignation> departmentdesignation { get; set; }
         public virtual ICollection<Employe> employe { get; set; }
 
     }

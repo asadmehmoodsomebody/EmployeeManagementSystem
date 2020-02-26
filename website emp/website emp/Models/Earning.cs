@@ -18,7 +18,8 @@ namespace website_emp.Models
         public long? ModifiedBy { get; set; }
         public DateTime? Modifiedon { get; set; }
         public bool? IsDeleted { get; set; }
-        public long SalarySlipId { get; set; }
-        public virtual SalarySlip salaryslip { get; set; }
+        public long EmployeId { get; set; }
+        public Employe employe { get; set; }
+        public DateTime? ForMonth { get; set; }
     }
 }
