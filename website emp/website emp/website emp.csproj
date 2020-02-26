@@ -193,12 +193,18 @@
     <Content Include="CustomCSS\Salary Module Css\Add new template-css.css" />
     <Content Include="CustomCSS\Salary Module Css\assign-salary-to-employee.css" />
     <Content Include="CustomCSS\Salary Module Css\bigboxcss.css" />
+    <Content Include="CustomCSS\Salary Module Css\BlueBGCheckboxCss.css" />
+    <Content Include="CustomCSS\Salary Module Css\bonus.css" />
     <Content Include="CustomCSS\Salary Module Css\check salary.css" />
+    <Content Include="CustomCSS\Salary Module Css\Deduction.css" />
     <Content Include="CustomCSS\Salary Module Css\generate payslip.css" />
+    <Content Include="CustomCSS\Salary Module Css\increment.css" />
     <Content Include="CustomCSS\Salary Module Css\list of employees and their salaries.css" />
+    <Content Include="CustomCSS\Salary Module Css\Loan.css" />
     <Content Include="CustomCSS\Salary Module Css\manage salary details.css" />
     <Content Include="CustomCSS\Salary Module Css\payroll template list.css" />
     <Content Include="CustomCSS\Salary Module Css\salary-report.css" />
+    <Content Include="CustomCSS\Salary Module Css\ScrollbarCSS.css" />
     <Content Include="CustomCSS\ScrollbarCSS.css" />
     <Content Include="CustomCSS\table.css" />
     <Content Include="CustomCSS\Task.css" />
@@ -311,9 +317,17 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202002151724211_thirdcall.cs" />
-    <Compile Include="Migrations\202002151724211_thirdcall.designer.cs">
-      <DependentUpon>202002151724211_thirdcall.cs</DependentUpon>
+    <Compile Include="Migrations\202002250536450_thirdcall.cs" />
+    <Compile Include="Migrations\202002250536450_thirdcall.designer.cs">
+      <DependentUpon>202002250536450_thirdcall.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202002250747252_thirdcall3.cs" />
+    <Compile Include="Migrations\202002250747252_thirdcall3.designer.cs">
+      <DependentUpon>202002250747252_thirdcall3.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202002250955329_thirdcall4.cs" />
+    <Compile Include="Migrations\202002250955329_thirdcall4.designer.cs">
+      <DependentUpon>202002250955329_thirdcall4.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Attendance.cs" />
@@ -327,12 +341,10 @@
     <Compile Include="Models\Loan.cs" />
     <Compile Include="Models\MentainanceCounter.cs" />
     <Compile Include="Models\Project.cs" />
-    <Compile Include="Models\SalarySlip.cs" />
-    <Compile Include="Models\SalaryTemplate.cs" />
+    <Compile Include="Models\Invoice.cs" />
     <Compile Include="Models\Shift.cs" />
     <Compile Include="Models\Task.cs" />
     <Compile Include="Models\Department.cs" />
-    <Compile Include="Models\DepartmentDesignation.cs" />
     <Compile Include="Models\Designation.cs" />
     <Compile Include="Models\Employe.cs" />
     <Compile Include="Models\EmployeModuleRight.cs" />
@@ -343,9 +355,11 @@
     <Compile Include="Models\Role.cs" />
     <Compile Include="Models\RoleModuleRight.cs" />
     <Compile Include="Models\ViewModels\DepartmentViewModel.cs" />
+    <Compile Include="Models\ViewModels\EarningDeductionViewModel.cs" />
     <Compile Include="Models\ViewModels\EmployeAttendanceViewModel.cs" />
     <Compile Include="Models\ViewModels\EmployeSalaryDepartmentViewModel.cs" />
     <Compile Include="Models\ViewModels\EmployeSalaryTemplate.cs" />
+    <Compile Include="Models\ViewModels\InvoiceEmployeEarningDeductionViewModel.cs" />
     <Compile Include="Models\ViewModels\MonthlyAttendanceViewModel.cs" />
     <Compile Include="Models\ViewModels\ProjectTaskViewModel.cs" />
     <Compile Include="Pagination.cs" />
@@ -379,25 +393,15 @@
     <Content Include="Views\ManageEmployee\Department.cshtml" />
     <Content Include="Views\ManageEmployee\Designation.cshtml" />
     <Content Include="Views\Notification\Index.cshtml" />
-    <Content Include="Views\SalaryManagement\AddTemplate.cshtml" />
-    <Content Include="Views\SalaryManagement\makepayment.cshtml" />
-    <Content Include="Views\SalaryManagement\AssignSalary.cshtml" />
-    <Content Include="Views\SalaryManagement\CheckSalary.cshtml" />
-    <Content Include="Views\SalaryManagement\PayrollManagement.cshtml" />
     <Content Include="Views\Attendance\DailyAttendance.cshtml" />
     <Content Include="Views\Award\Index_Award.cshtml" />
-    <Content Include="Views\SalaryManagement\TemplateList.cshtml" />
     <Content Include="Views\Attendance\MonthlyAttendance.cshtml" />
     <Content Include="Views\Attendance\LeaveRequest.cshtml" />
-    <Content Include="Views\SalaryManagement\GeneratePaySlip.cshtml" />
-    <Content Include="Views\SalaryManagement\EmployeeSalaries.cshtml" />
-    <Content Include="Views\SalaryManagement\ManageSalary.cshtml" />
     <Content Include="Views\NoticeBoard\Notice_Board.cshtml" />
     <Content Include="Views\Attendance\LeaveRequest_E.cshtml" />
     <Content Include="Views\Attendance\Holidays.cshtml" />
     <Content Include="Views\Administration\ManageShifts.cshtml" />
     <Content Include="Views\Administration\ShiftsDetail.cshtml" />
-    <Content Include="Views\SalaryManagement\SalaryReport.cshtml" />
     <Content Include="Views\Project\Index.cshtml" />
     <Content Include="Views\Project\ProjectDetail.cshtml" />
     <Content Include="Views\Project\AddProject.cshtml" />
@@ -414,6 +418,23 @@
     <Content Include="Views\Attendance\WorkHoursMonthly.cshtml" />
     <Content Include="Views\Administration\UpdateShift.cshtml" />
     <Content Include="Views\Task\UpdateTask.cshtml" />
+    <Content Include="Views\SalaryManagement\AddBonus.cshtml" />
+    <Content Include="Views\SalaryManagement\AddDeduction.cshtml" />
+    <Content Include="Views\SalaryManagement\AddIncrement.cshtml" />
+    <Content Include="Views\SalaryManagement\AddLoan.cshtml" />
+    <Content Include="Views\SalaryManagement\AssignSalary.cshtml" />
+    <Content Include="Views\SalaryManagement\EditBonus.cshtml" />
+    <Content Include="Views\SalaryManagement\EditDeduction.cshtml" />
+    <Content Include="Views\SalaryManagement\EditIncrement.cshtml" />
+    <Content Include="Views\SalaryManagement\EditLoan.cshtml" />
+    <Content Include="Views\SalaryManagement\EmployeeSalaries.cshtml" />
+    <Content Include="Views\SalaryManagement\EmployeeSalaryDetails.cshtml" />
+    <Content Include="Views\SalaryManagement\GeneratePaySlip.cshtml" />
+    <Content Include="Views\SalaryManagement\ManageBonus.cshtml" />
+    <Content Include="Views\SalaryManagement\ManageDeduction.cshtml" />
+    <Content Include="Views\SalaryManagement\ManageIncrement.cshtml" />
+    <Content Include="Views\SalaryManagement\ManageLoan.cshtml" />
+    <Content Include="Views\SalaryManagement\SalaryReport.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -426,8 +447,14 @@
     <Folder Include="SidebarIcons\" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\202002151724211_thirdcall.resx">
-      <DependentUpon>202002151724211_thirdcall.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202002250536450_thirdcall.resx">
+      <DependentUpon>202002250536450_thirdcall.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202002250747252_thirdcall3.resx">
+      <DependentUpon>202002250747252_thirdcall3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202002250955329_thirdcall4.resx">
+      <DependentUpon>202002250955329_thirdcall4.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
