@@ -1,0 +1,36 @@
+﻿@model website_emp.Models.Loan
+@{
+    ViewBag.Title = "LoanRequest";
+}
+
+<div class="row no-gutters w-100 h-100 flex-column justify-content-center pt-4">
+    <form method="post" action="@Url.Action("LoanRequest")">
+        <div class="col w-75 bg-white d-flex flex-column align-self-center">
+            <div class="row w-100 no-gutters p-3">
+                <div class="col-6 px-1">
+                    <label>Loan Title</label>
+                    @Html.EditorFor(model => model.LaonTitle, new { htmlAttributes = new { @class = "form-control rounded-0 shadow-none" } })
+                </div>
+                <div class="col-6 px-1">
+                    <label>Amount</label>
+                    @Html.EditorFor(model => model.RequestAmount, new { htmlAttributes = new { @class = "form-control rounded-0 shadow-none" } })
+                </div>
+            </div>
+            <div class="row w-100 no-gutters p-3">
+                <div class="col-12 px-1">
+                    <label>Loan Description</label>
+                    @Html.TextBoxFor(model => model.LoanDescription, new { @class = "form-control rounded-0 shadow-none" })
+                </div>
+            </div>
+            <div class="row w-100 no-gutters p-3">
+                <div class="col-6 px-1">
+                    <input type="submit" value="Make Request" class="btn btn-info rounded-0 shadow-none" />
+                </div>
+                <div class="col-6 px-1">
+                    <a class="btn-info btn rounded-0 shadow-none" href="@ViewData["returnurl"]">Cancel</a>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
+

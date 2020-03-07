@@ -12,9 +12,9 @@
     width: 100%;
     overflow-x: auto;
     width: 100%;
-    overflow: scroll;
+    /*overflow: scroll;*/
     height: 300px;
-    overflow-y:auto;
+    /*overflow-y:auto;*/
 }
 .tbl
 {
@@ -22,7 +22,7 @@
 }
 th
 {
-    background-color:skyblue;
+    background-color:#48A1E5;
     position:sticky;
     top:0;
 }

@@ -11,8 +11,8 @@
             <h4>Employee Salary Slip</h4>
         </div>
         <div class="col-12 col-md-6 col-xl-6 d-flex text-justify justify-content-center justify-content-sm-center justify-content-lg-end mt-3">
-            <button type="submit" class="bg-info text-white form-control w-25"  onclick="printpage()">Print</button>
-            <button type="submit" class="bg-danger text-white form-control w-25  shadow">@Html.ActionLink("Cancal", "EmployeeSalaries", null, new { @class = "text-decoration-none text-white" })</button>
+            <button type="submit" class="bg-primary text-white form-control w-25"  onclick="printpage()">Print</button>
+            @Html.ActionLink("Cancal", "EmployeeSalaries", null, new { @class = "text-decoration-none text-white w-25 form-control shadow btn btn-danger" })
         </div>
     </div>
     <div>
@@ -48,7 +48,7 @@
             </div>
         </div>
         <div class="tbl-div">
-            <table class="table table-bordered table-striped">
+            <table class="table table-striped tbl">
                 <tr class="row no-gutters w-100">
                     <th class="col-5">Earnings</th>
                     <th class="col-1">Amount</th>

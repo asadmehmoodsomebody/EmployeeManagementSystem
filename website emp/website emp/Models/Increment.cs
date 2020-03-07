@@ -12,6 +12,7 @@ namespace website_emp.Models
         [Key, DatabaseGenerated(DatabaseGeneratedOption.None)]
         public long IncreamentId { get; set; }
         public DateTime? IncrementedOn { get; set; }
+        public string IncrementDescription { get; set; }
         public long Amount { get; set; }
         public long EmployeId { get; set; }
         public virtual Employe employe {get;set;}

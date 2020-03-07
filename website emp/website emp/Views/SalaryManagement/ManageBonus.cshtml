@@ -16,19 +16,19 @@
         <div class="row m-3">
 
             <div class="col-12 col-md-4 col-xl-3 d-flex justify-content-center justify-content-sm-start mt-2">
-                <button type="submit" class="bg-info text-white form-control shadow">@Html.ActionLink("Add Bonus", "AddBonus", null, new { @class = "text-decoration-none text-white" })</button>
+                @Html.ActionLink("Add Bonus", "AddBonus", null, new { @class = "text-decoration-none bg-primary text-white form-control shadow btn text-white" })
             </div>
             <div class="col-12 col-md-5 col-xl-4 d-flex justify-content-center justify-content-sm-center mt-2">
-                <input type="text" name="search" value="@ViewData["search"]" placeholder="search By Employee Name" class="form-control shadow">
+                <input type="text" name="search" value="@ViewData["search"]" placeholder="Search By Employee Name" class="form-control shadow">
             </div>
             <div class="col-12 col-md-3 col-xl-3 d-flex justify-content-center justify-content-sm-end mt-2">
-                <button type="submit" class="bg-info text-white form-control shadow">Search</button>
+                <button type="submit" class="bg-primary text-white form-control shadow">Search</button>
             </div>
 
         </div>
     </form>
     <div class="tbl-div">
-        <table class="table table-bordered table-striped tbl">
+        <table class="table table-striped tbl">
             <tr class="bg-info text-white">
                 <th>#</th>
                 <th>Employee Name</th>
@@ -49,7 +49,7 @@
                 <td>@item.ForMonth.Value.ToShortDateString()</td>
                 <td>@item.Amount</td>
                 <td>@item.CreatedOn.Value.ToShortDateString()</td>
-                <td>@Html.ActionLink("Edit", "EditBonus", new { bonusid = item.EarningId}, new { @class = "text-decoration-none text-white btn btn-info text-white form-control shadow" })</td>
+                <td>@Html.ActionLink("Edit", "EditBonus", new { bonusid = item.EarningId}, new { @class = "text-decoration-none text-white btn btn-primary text-white form-control shadow" })</td>
             </tr>
                 rowcount++;
             }

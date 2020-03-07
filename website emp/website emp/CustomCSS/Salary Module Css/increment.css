@@ -5,14 +5,14 @@
 .tbl-div
 {
     width: 100%;
-    max-height:400px;
+    max-height:300px;
     overflow: scroll;
     overflow-x:auto;
     overflow:auto;
 }
 th
 {
-    background-color:skyblue;
+    background-color:#48A1E5;
     position:sticky;
     top:0;
 }

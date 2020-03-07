@@ -26,23 +26,23 @@
             </span>
         </div>
     </div>
-    <div class="bg-white  no-gutters">
+    <div class="bg-white">
         <form action="@Url.Action("MonthlyAttendance","Attendance")">
-            <div class="row  pt-3 ml-5 mr-4">
-                <div class="col-10 col-md-6 col-xl-3">
-                    <P class="font-weight-bold mb-1">Employee</P>
+            <div class="row m-3">
+                <div class="col-sm-12 col-md-6 col-xl-3">
+                    <P class="font-weight-bold mb-0 text-center">Employee</P>
                     @Html.DropDownList("employeid", ViewBag.employes as SelectList, new { @class = "form-control shadow border-0" })
                 </div>
-                <div class="col-10 col-md-6 col-xl-3">
-                    <P class="font-weight-bold mb-1">From Date</P>
+                <div class="col-sm-12 col-md-6 col-xl-3">
+                    <P class="font-weight-bold mb-0 text-center">From Date</P>
                     <input type="date" value="@ViewData["starttime"]" name="starttime" class="form-control shadow border-0">
                 </div>
-                <div class="col-10 col-md-6 col-xl-3">
-                    <P class="font-weight-bold mb-1">To Date</P>
+                <div class="col-sm-12 col-md-6 col-xl-3">
+                    <P class="font-weight-bold mb-0 text-center">To Date</P>
                     <input type="date" value="@ViewData["endtime"]" name="endtime" class="form-control shadow border-0">
                 </div>
-                <div class="col-10  col-md-6 col-xl-3">
-                    <button type="submit" class="bg-info text-white border-0 shadow form-control btn-filter">Filter</button>
+                <div class="col-sm-12  col-md-6 col-xl-3">
+                    <button type="submit" class="bg-info text-white border-0 shadow form-control btn-filter mt-4">Filter</button>
                 </div>
             </div>
         </form>
@@ -108,7 +108,7 @@
     <div class="row no-gutters w-100">
         <div class="col-12 col-md-6 d-flex align-items-center justify-content-center justify-content-md-start pl-0 pl-md-2">
             <p class="text-justify">
-                page <span id="start-number">@Model.attendence.PageNumber</span>&nbsp;of <span id="total-pages">@Model.attendence.TotalPages</span>
+                Page <span id="start-number">@Model.attendence.PageNumber</span>&nbsp;of <span id="total-pages">@Model.attendence.TotalPages</span>
             </p>
         </div>
         <div class="col-12 col-md-6 d-flex justify-content-center justify-content-md-end align-items-center pr-0 pr-md-2">

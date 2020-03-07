@@ -19,12 +19,12 @@
                 <input type="text" name="search" value="@ViewData["search"]" class="shadow date  form-control">
                 </div>
             <div class="col-12 col-md-5 col-xl-5 mt-xl-4 mt-md-4 mt-3">
-                <button type="submit" class="form-control shadow bg-info text-white">Search</button>
+                <button type="submit" class="form-control shadow bg-primary text-white">Search</button>
             </div>
         </div>
         </form>
         <div class="tbl-div">
-            <table class="table table-bordered table-striped tbl">
+            <table class="table table-striped tbl">
                 <tr class="text-white">
                     <th>#</th>
                     <th>Name</th>
@@ -40,7 +40,7 @@
                         <td>@item.ForMonth.Value.ToShortDateString()</td>
                         <td>@item.Salary</td>
                       
-                        <td> <button type="submit" class="bg-info text-white form-control shadow">@Html.ActionLink("Details", "EmployeeSalaryDetails",new { invoiceid = item.InvoiceId}, new { @class = "text-decoration-none text-white" })</button></td>
+                        <td>@Html.ActionLink("Details", "EmployeeSalaryDetails",new { invoiceid = item.InvoiceId}, new { @class = "text-decoration-none text-white btn btn-primary form-control" })</td>
                         
                     </tr>
                     rowcount++;

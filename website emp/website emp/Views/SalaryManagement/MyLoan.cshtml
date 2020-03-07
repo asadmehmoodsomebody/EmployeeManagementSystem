@@ -1,0 +1,103 @@
+﻿@model Pagination<website_emp.Models.Loan>
+@{
+    ViewBag.Title = "MyLoan";
+    int rowcount = 1 + ((Model.PageNumber - 1) * 10);
+}
+
+<div class="row no-gutters w-100 pt-3 bg-white">
+    <table class="table">
+        <thead class="bg-info text-light">
+            <tr class="row w-100 no-gutters">
+                <th class="col-1 p-1">#</th>
+                <th class="col-2 p-1">Name</th>
+                <th class="col-2 p-1">Title</th>
+                <th class="col-1 p-1">Requested Amount</th>
+                <th class="col-1 p-1">Alloted Amount</th>
+                <th class="col-2 p-1">Request Date</th>
+                <th class="col-2 p-1">Status</th>
+                <th class="col-1 p-1">Detail</th>
+            </tr>
+        </thead>
+        <tbody class="bg-white">
+            @if (Model.Count <= 0)
+            {
+                <tr class="bg-white row w-100 no-gutters shadow">
+                    <td class="col-12 p-1 text-danger text-center">No Recoreds</td>
+                </tr>
+            }
+            else
+            {
+                foreach (var item in Model)
+                {
+                <tr class="row w-100 no-gutters shadow">
+                    <td class="col-1 p-1">@rowcount</td>
+                    <td class="col-2 p-1">@item.employe.FirstName</td>
+                    <td class="col-2 p-1">@item.LaonTitle</td>
+                    <td class="col-1 p-1">@item.RequestAmount</td>
+                    <td class="col-1 p-1">@item.AllotedAmount</td>
+                    <td class="col-2 p-1">@item.RequestDate.Value.ToShortDateString()</td>
+                    @if (!item.Accepted.HasValue){
+                    <td class="col-2 p-1"><label class="btn btn-warning">Pending</label></td>
+                    <td class="col-1 p-1"><a class="btn btn-info disabled">Details</a></td>
+                    }else if (item.Accepted.Value==false){
+                    <td class="col-2 p-1"><label class="btn btn-danger">Rejected</label></td>
+                    <td class="col-1 p-1"><a class="btn btn-info disabled">Details</a></td>
+                    }else
+                    {
+                    <td class="col-2 p-1"><label class="btn btn-success">Accepted</label></td>
+                    <td class="col-1 p-1"><a class="btn btn-info" href="@Url.Action("MyLoanDetail","SalaryManagement",new { LoanId = item.LoanId})">Details</a></td>
+                    }
+                </tr>
+                    rowcount++;
+                }
+            }
+        </tbody>
+    </table>
+</div>
+<div class="row no-gutters w-100 bg-white">
+    <div class="col-12 col-md-6 d-flex align-items-center justify-content-center justify-content-md-start pl-0 pl-md-2">
+        <p class="text-justify">
+            page <span id="start-number">@Model.PageNumber</span>&nbsp;of <span id="total-pages">@Model.TotalPages</span>
+        </p>
+    </div>
+    <div class="col-12 col-md-6 d-flex justify-content-center justify-content-md-end align-items-center pr-0 pr-md-2">
+        <nav aria-label="Page navigation example">
+            <ul class="pagination">
+                @if (!Model.HasPrevious)
+                {
+                    <li class="page-item disabled"><a class="page-link disabled" href="#">Previous</a></li>
+                }
+                else
+                {
+                    <li class="page-item "><a class="page-link" href="@Url.Action("MyLoan","SalaryManagement", new { pagenumber = Model.PageNumber - 1 })">Previous</a></li>
+                }
+                @{
+                    int i = 1;
+                    if (Model.PageNumber - 2 > 1)
+                    {
+                        i = Model.PageNumber - 2;
+                    }
+                    for (; i <= (Model.PageNumber + 2) && i <= Model.TotalPages; i++)
+                    {
+                        <li class="page-item"><a class="page-link" href="@Url.Action("MyLoan","SalaryManagement",new {pagenumber=i})">@i</a></li>
+                    }
+                }
+
+                @*<li class="page-item"><a class="page-link" href="#">1</a></li>
+                    <li class="page-item"><a class="page-link" href="#">2</a></li>
+                    <li class="page-item"><a class="page-link" href="#">3</a></li>*@
+                @if (!Model.HasNext)
+                {
+                    <li class="page-item disabled"><a class="page-link disabled" href="@Url.Action("MyLoan","SalaryManagement",new { pagenumber=ViewData["pagenumber"]})">Next</a></li>
+                }
+                else
+                {
+                    <li class="page-item "><a class="page-link" href="@Url.Action("MyLoan","SalaryManagement",new {pagenumber=Model.PageNumber+1})">Next</a></li>
+                }
+            </ul>
+        </nav>
+    </div>
+</div>
+
+
+

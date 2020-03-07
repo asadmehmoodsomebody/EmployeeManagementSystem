@@ -1,6 +1,7 @@
-﻿
+﻿@model Pagination<website_emp.Models.Attendance>
 @{
     ViewBag.Title = "WorkHours";
+    int rowcount = 1 + ((Model.PageNumber - 1) * 10);
 }
 <link href="~/CustomCSS/Attendance Module Css/WorkHoursCss.css" rel="stylesheet" />
 <input type="hidden" id="GetActiveTab" value="#WorkHours" />
@@ -17,35 +18,30 @@
     </ul>
 </div>
 <div class="Big-Box mt-0">
+    <form method="get" action="@Url.Action("WorkHours")">
     <div class="row m-3">
         <div class="col-sm-12 col-lg-3">
             <p class="mb-0">Select Department*</p>
-            <select class="form-control">
-                <option>Hrm</option>
-                <option>It</option>
-                <option>Designing</option>
-                <option>SQA</option>
-                <option>Deployment</option>
-            </select>
+            @Html.DropDownList("departmentid", ViewData["departmentid"] as SelectList,new { @class= "form-control" })
         </div>
         <div class="col-sm-12 col-lg-3">
             <p class="mb-0">Select Date*</p>
-            <input type="date" class="form-control" />
+            <input type="date" name="date" value="@ViewData["date"]" class="form-control" />
         </div>
         <div class="col-sm-12 col-lg-3">
-            <p class="mb-0">Employee ID</p>
-            <input type="text" class="form-control" />
+            <p class="mb-0">Employee Name</p>
+            <input type="text" value="@ViewData["search"]" name="search" class="form-control" />
         </div>
         <div class="col-sm-12 col-lg-3 mt-4">
             <input type="submit" class="form-control bg-primary text-white" value="Submit"  />
         </div>
     </div>
+    </form>
     <div class="Custom-Table-box">
         <table class="table table-striped Custom-Table-Width">
             <thead class="">
                 <tr class="">
-                    <th class="Custom-Table-Heading">Id</th>
-                    <th class="Custom-Table-Heading">EmployeeID</th>
+                    <th class="Custom-Table-Heading">#</th>
                     <th class="Custom-Table-Heading">Employee Name</th>
                     <th class="Custom-Table-Heading">Department</th>
                     <th class="Custom-Table-Heading">Date</th>
@@ -54,35 +50,76 @@
                     <th class="Custom-Table-Heading">Total Hours</th>
                 </tr>
             </thead>
-            @for(int i = 0; i<=10; i++)
+            <tbody>
+                @if (ViewBag.Nodata != null)
             {
-                <tr>
-                    <td>@i</td>
-                    <td>@i</td>
-                    <td>Ismail</td>
-                    <td>Developer</td>
-                    <td>02-03-2019</td>
-                    <td>08:30am</td>
-                    <td>05:00pm</td>
-                    <td>8 Hours</td>
-                </tr>
-            }
+                    <tr><td colspan="7">@ViewBag.Nodata</td></tr>
+                    ViewBag.Nodata = null;
+                }
+                else
+                {
+                    foreach (var item in Model)
+                    {
+                        <tr>
+                            <td>@rowcount</td>
+                            <td>@item.employe.FirstName</td>
+                            <td>@item.employe.department.DepartmentName</td>
+                            <td>@item.ForDay.Value.ToShortDateString()</td>
+                            <td>@item.InTime.Value.ToShortTimeString()</td>
+                            <td>@item.OutTime.Value.ToShortTimeString()</td>
+                            <td>@(item.OutTime.Value - item.InTime.Value) Hours</td>
+                        </tr>
+                        rowcount++;
+                    }
+                }
+            </tbody>
         </table>
         
     </div>
-    <div class="row mt-3">
-        <div class="col-sm-12 col-lg-9 d-flex text-justify justify-content-center justify-content-lg-start">
-            <p class="mt-3 ml-3">Showing 1 of 10 Pages</p>
+    <div class="row no-gutters w-100">
+        <div class="col-12 col-md-6 d-flex align-items-center justify-content-center justify-content-md-start pl-0 pl-md-2">
+            <p class="text-justify">
+                page <span id="start-number">@Model.PageNumber</span>&nbsp;of <span id="total-pages">@Model.TotalPages</span>
+            </p>
         </div>
-        <div class="col-sm-12 col-lg-3 d-flex justify-content-center justify-content-lg-end">
-            <ul class="pagination mr-3">
-                <li class="page-item"><a class="page-link" href="#">Previous</a></li>
-                <li class="page-item"><a class="page-link" href="#">1</a></li>
-                <li class="page-item active"><a class="page-link" href="#">2</a></li>
-                <li class="page-item"><a class="page-link" href="#">3</a></li>
-                <li class="page-item"><a class="page-link" href="#">Next</a></li>
-            </ul>
+        <div class="col-12 col-md-6 d-flex justify-content-center justify-content-md-end align-items-center pr-0 pr-md-2">
+            <nav aria-label="Page navigation example">
+                <ul class="pagination">
+                    @if (!Model.HasPrevious)
+                    {
+                        <li class="page-item disabled"><a class="page-link disabled" href="#">Previous</a></li>
+                    }
+                    else
+                    {
+                        <li class="page-item "><a class="page-link" href="@Url.Action("WorkHours", new { search = ViewData["search"], pagenumber = Model.PageNumber - 1 })">Previous</a></li>
+                    }
+                    @{
+                        int i = 1;
+                        if (Model.PageNumber - 2 > 1)
+                        {
+                            i = Model.PageNumber - 2;
+                        }
+                        for (; i <= (Model.PageNumber + 2) && i <= Model.TotalPages; i++)
+                        {
+                            <li class="page-item"><a class="page-link" href="@Url.Action("WorkHours",new { search =ViewData["search"],pagenumber=i})">@i</a></li>
+                        }
+                    }
+
+                    @*<li class="page-item"><a class="page-link" href="#">1</a></li>
+                        <li class="page-item"><a class="page-link" href="#">2</a></li>
+                        <li class="page-item"><a class="page-link" href="#">3</a></li>*@
+                    @if (!Model.HasNext)
+                    {
+                        <li class="page-item disabled"><a class="page-link disabled" href="@Url.Action("WorkHours",new { search =ViewData["search"],pagenumber=ViewData["pagenumber"]})">Next</a></li>
+                    }
+                    else
+                    {
+                        <li class="page-item "><a class="page-link" href="@Url.Action("WorkHours",new { search =ViewData["search"],pagenumber=Model.PageNumber+1})">Next</a></li>
+                    }
+                </ul>
+            </nav>
         </div>
     </div>
+
 </div>
 

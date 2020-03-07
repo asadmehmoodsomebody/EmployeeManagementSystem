@@ -1,63 +1,95 @@
-﻿
+﻿@model Pagination<website_emp.Models.Increment>
 @{
     ViewBag.Title = "ManageIncrement";
+    int rowcount = 1 + ((Model.PageNumber - 1) * 10);
 }
 <input type="hidden" id="GetActiveTab" value="#ManageIncrement" />
-<link href="~/customcss/increment.css" rel="stylesheet" />
+<link href="~/CustomCSS/Salary Module Css/increment.css" rel="stylesheet" />
 <div class="Big-Box mt-3">
     <div class="row m-3">
         <div class="col-12 d-flex justify-content-center justify-content-sm-center justify-content-lg-start mt-2">
             <h5>Manage Increments</h5>
         </div>
     </div>
-    <div class="row m-3">
-        <div class="col-12 col-md-4 col-xl-3 d-flex justify-content-center justify-content-sm-start mt-2">
-            <button type="submit" class="bg-info text-white form-control shadow">@Html.ActionLink("Add New Increment ", "AddIncrement", null, new { @class = "text-decoration-none text-white" })</button>
+    <form method="get" action="@Url.Action("ManageIncrement")">
+        <div class="row m-3">
+            <div class="col-12 col-md-4 col-xl-3 d-flex justify-content-center justify-content-sm-start mt-2">
+                @Html.ActionLink("Add New Increment ", "AddIncrement", null, new { @class = "text-decoration-none text-white form-control shadow text-center btn btn-primary" })
+            </div>
+            <div class="col-12 col-md-5 col-xl-4 d-flex justify-content-center justify-content-sm-center mt-2">
+                <input type="text" value="@ViewData["search"]" placeholder="Search By Employee Name" class="form-control shadow">
+            </div>
+            <div class="col-12 col-md-3 col-xl-3 d-flex justify-content-center justify-content-sm-end mt-2">
+                <button type="submit" class="bg-primary text-white form-control shadow">Search</button>
+            </div>
         </div>
-        <div class="col-12 col-md-5 col-xl-4 d-flex justify-content-center justify-content-sm-center mt-2">
-            <input type="text" placeholder="search By Employee Name" class="form-control shadow">
-        </div>
-        <div class="col-12 col-md-3 col-xl-3 d-flex justify-content-center justify-content-sm-end mt-2">
-            <button type="submit" class="bg-info text-white form-control shadow">Search</button>
-        </div>
-    </div>
+    </form>
     <div class="tbl-div">
-        <table class="table table-bordered table-striped tbl">
+        <table class="table table-striped tbl">
             <tr class="bg-info text-white">
                 <th>#</th>
                 <th>Employee Name</th>
-               <th>Created By</th>
                 <th>Increment Date</th>
                 <th>Increment Amount</th>
                 <th>Increment Purpose</th>
                 <th>Action</th>
             </tr>
-            @for (var a = 1; a <= 10; a++)
+            @foreach (var item in Model)
             {
                 <tr>
-                   <td>@a</td>
-                    <td>Zumaid Khattak</td>
-                    <td>Manager</td>
-                    <td>@DateTime.Now</td>
+                   <td>@rowcount</td>
+                    <td>@item.employe.FirstName</td>
+                    <td>@item.IncrementedOn.Value.ToShortDateString()</td>
                     <td>188</td>
                     <td>Good Performance</td>
-                    <td> <button type="submit" class="bg-info text-white form-control shadow">@Html.ActionLink("Edit", "EditIncrement", null, new { @class = "text-decoration-none text-white" })</button></td>
+                    <td>@Html.ActionLink("Edit", "EditIncrement", new { IncrementId = item.IncreamentId}, new { @class = "text-decoration-none text-white form-control shadow text-center btn btn-primary" })</td>
                 </tr>
             }
         </table>
     </div>
-    <div class="row m-3">
-        <div class="col-12 col-md-6 col-xl-6 d-flex text-justify justify-content-center justify-content-lg-start justify-content-sm-center">
-            <p>Showing page 1 of 1</p>
+    <div class="row no-gutters w-100">
+        <div class="col-12 col-md-6 d-flex align-items-center justify-content-center justify-content-md-start pl-0 pl-md-2">
+            <p class="text-justify">
+                page <span id="start-number">@Model.PageNumber</span>&nbsp;of <span id="total-pages">@Model.TotalPages</span>
+            </p>
         </div>
-        <div class="col-12 col-md-6 col-xl-6 d-flex text-justify justify-content-center  justify-content-sm-center justify-content-lg-end mt-3 mt-xl-0 mt-md-0">
-            <div class="pagination">
-                <button type="submit" class="page-link form-control shadow">Previous</button>
-                <button type="submit" class="page-link form-control shadow">1</button>
-                <button type="submit" class="page-link form-control shadow">2</button>
-                <button type="submit" class="page-link form-control shadow">3</button>
-                <button type="submit" class="page-link form-control shadow">Next</button>
-            </div>
+        <div class="col-12 col-md-6 d-flex justify-content-center justify-content-md-end align-items-center pr-0 pr-md-2">
+            <nav aria-label="Page navigation example">
+                <ul class="pagination">
+                    @if (!Model.HasPrevious)
+                    {
+                        <li class="page-item disabled"><a class="page-link disabled" href="#">Previous</a></li>
+                    }
+                    else
+                    {
+                        <li class="page-item "><a class="page-link" href="@Url.Action("ManageIncrements", new { search = ViewData["search"], pagenumber = Model.PageNumber - 1 })">Previous</a></li>
+                    }
+                    @{
+                        int i = 1;
+                        if (Model.PageNumber - 2 > 1)
+                        {
+                            i = Model.PageNumber - 2;
+                        }
+                        for (; i <= (Model.PageNumber + 2) && i <= Model.TotalPages; i++)
+                        {
+                            <li class="page-item"><a class="page-link" href="@Url.Action("ManageIncrements",new { search =ViewData["search"],pagenumber=i})">@i</a></li>
+                        }
+                    }
+
+                    @*<li class="page-item"><a class="page-link" href="#">1</a></li>
+                        <li class="page-item"><a class="page-link" href="#">2</a></li>
+                        <li class="page-item"><a class="page-link" href="#">3</a></li>*@
+                    @if (!Model.HasNext)
+                    {
+                        <li class="page-item disabled"><a class="page-link disabled" href="@Url.Action("ManageIncrements",new { search =ViewData["search"],pagenumber=ViewData["pagenumber"]})">Next</a></li>
+                    }
+                    else
+                    {
+                        <li class="page-item "><a class="page-link" href="@Url.Action("ManageIncrements",new { search =ViewData["search"],pagenumber=Model.PageNumber+1})">Next</a></li>
+                    }
+                </ul>
+            </nav>
         </div>
     </div>
+
 </div>

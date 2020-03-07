@@ -32,7 +32,7 @@ namespace website_emp.Models
         public DbSet<Leave> leave { get; set; }
         public DbSet<MentainanceCounter> counter { get; set; }
         public DbSet<Task> task { get; set; }
-
+        public DbSet<LoanInstallment> loaninstallment { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder builder)
         {

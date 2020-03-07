@@ -35,11 +35,11 @@
             <div class="row m-3">
                 <div class="col-sm-12 col-lg-3"></div>
                 <div class="col-sm-12 col-lg-3">
-                    <span class="">Date</span>
+                    <p class="m-0 text-center">Date</p>
                     <input type="date" name="date" value="@ViewData["date"]" class="shadow border bg-light form-control">
                 </div>
                 <div class="col-sm-12 col-lg-3">
-                    <button type="submit" class="bg-info text-white border-0 shadow form-control mt-3">Filter</button>
+                    <button type="submit" class="bg-info text-white border-0 shadow form-control mt-4">Filter</button>
 
                 </div>
 
@@ -110,7 +110,7 @@
     <div class="row no-gutters w-100">
         <div class="col-12 col-md-6 d-flex align-items-center justify-content-center justify-content-md-start pl-0 pl-md-2">
             <p class="text-justify">
-                page <span id="start-number">@Model.PageNumber</span>&nbsp;of <span id="total-pages">@Model.TotalPages</span>
+                Page <span id="start-number">@Model.PageNumber</span>&nbsp;of <span id="total-pages">@Model.TotalPages</span>
             </p>
         </div>
         <div class="col-12 col-md-6 d-flex justify-content-center justify-content-md-end align-items-center pr-0 pr-md-2">

@@ -36,15 +36,15 @@
         </div>
     </div>
     <div class="row m-3">
-        <div class="col-12 col-md-6 col-xl-6">
+        <div class="col-12 col-xl-6 mb-3">
             <p>Loan Description</p>
             <textarea class="form-control shadow txtarea" placeholder="Enter Employee Description"></textarea>
         </div>
-        <div class="col-12 col-md-3 col-xl-3 mt-xl-5 mt-md-5 mt-2 ">
-            <button type="submit" class="bg-info text-white form-control shadow">Add Loan</button>
+        <div class="col-12 col-md-6 col-xl-3 mb-3">
+            <button type="submit" class="bg-primary text-white form-control shadow">Add Loan</button>
         </div>
-        <div class="col-12 col-md-3 col-xl-3 mt-xl-5 mt-md-5 mt-2">
-            <button type="submit" class="bg-danger text-white form-control shadow">@Html.ActionLink("Cancal", "ManageLoan", null, new { @class = "text-decoration-none text-white" })</button>
+        <div class="col-12 col-md-6 col-xl-3 mb-3">
+         @Html.ActionLink("Cancal", "ManageLoan", null, new { @class = "btn-danger text-center btn text-white form-control shadow text-decoration-none" })
         </div>
     </div>
 </div>

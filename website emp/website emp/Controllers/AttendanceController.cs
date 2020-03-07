@@ -12,6 +12,14 @@ namespace website_emp.Controllers
     {
         // GET: Attendance
         Context context = new Context();
+
+        public static DateTime NewDate(DateTime datepart, DateTime timepart)
+        {
+            string date = datepart.ToShortDateString();
+            string time = timepart.ToShortTimeString();
+            string date_time = date + " " + time;
+            return DateTime.Parse(date_time);
+        }
         public ActionResult Index()
         {
             return View();
@@ -100,6 +108,14 @@ namespace website_emp.Controllers
                            ).ToList();
                 if (att.Count > 0)
                 {
+                    if (item.InTime.HasValue)
+                    {
+                        att[0].InTime = NewDate(item.ForDay.Value, item.InTime.Value);
+                    }
+                    if (item.OutTime.HasValue)
+                    {
+                        att[0].OutTime = NewDate(item.ForDay.Value, item.OutTime.Value);
+                    }
                     att[0].ModifiedBy = emp.EmployeId;
                     att[0].Modifiedon = DateTime.Now;
                     att[0].Status = item.Status;
@@ -114,6 +130,14 @@ namespace website_emp.Controllers
                     item.employe = context.employe.Find(item.EmployeId);
                     item.ForDay = DateTime.Now;
                     item.IsDeleted = false;
+                    if (item.InTime.HasValue)
+                    {
+                        item.InTime = NewDate(item.ForDay.Value, item.InTime.Value);
+                    }
+                    if (item.OutTime.HasValue)
+                    {
+                        item.OutTime = NewDate(item.ForDay.Value, item.OutTime.Value);
+                    }
                     context.attendance.Add(item);
                     context.SaveChanges();
                 }
@@ -315,14 +339,93 @@ namespace website_emp.Controllers
             Pagination<Leave> leave = Pagination<Leave>.Paged(leaves, 1, 10);
             return View(leave);
         }
-        public ActionResult WorkHours()
+        public ActionResult WorkHours(long? departmentid,DateTime? date,string search,int? pagenumber)
         {
-            return View();
+            var deps = (from i in context.department
+                                        where i.IsDeleted == false
+                                        select new SelectListItem
+                                        {
+                                            Value = i.DepartmentId.ToString(),
+                                            Text = i.DepartmentName
+                                        }
+                                        ).ToList();
+            deps.Insert(0, new SelectListItem { Value = "", Text = "Select Department" });
+            if (departmentid.HasValue)
+            {
+                ViewData["departmentid"] = new SelectList(deps, "Value", "Text", departmentid.Value.ToString());
+            }
+            else
+            {
+                ViewData["departmentid"] = new SelectList(deps, "Value", "Text","");
+            }
+            
+            date = (date.HasValue) ? date.Value : DateTime.Now.Add(TimeSpan.FromDays(-1));
+            ViewData["date"] = date.Value.ToShortDateString();
+            var workinghours = (from i in context.attendance
+                                where i.ForDay.Value.Day == date.Value.Day
+                                && i.ForDay.Value.Month == date.Value.Month
+                                && i.ForDay.Value.Year == date.Value.Year
+                                select i
+                                ).ToList();
+            foreach (var item in workinghours)
+            {
+                item.employe = context.employe.Find(item.EmployeId);
+                item.employe.department = context.department.Find(item.employe.Departmentid);
+            }
+            if (departmentid.HasValue)
+            {
+                workinghours = workinghours.Where(p => p.employe.Departmentid == departmentid.Value).Select(p => p).ToList();
+            }
+            if (!string.IsNullOrEmpty(search))
+            {
+                ViewData["search"] = search;
+                workinghours = workinghours.Where(p => p.employe.FirstName.Contains(search)).Select(p => p).ToList();
+            }
+            if (workinghours.Count <= 0)
+            {
+                ViewBag.Nodata = "No Records to show";
+            }
+            pagenumber = (pagenumber.HasValue) ? pagenumber.Value : 1;
+            return View(Pagination<Attendance>.Paged(workinghours,pagenumber.Value,10));
         }
-        public ActionResult WorkHoursMonthly()
+        public ActionResult WorkHoursMonthly(int? Month,int? Year,long? EmployeId)
         {
-            return View();
-        }
+            Month = (Month.HasValue) ? Month.Value : DateTime.Now.Month;
+            Year = (Year.HasValue) ? Year.Value : DateTime.Now.Year;
+            ViewData["Month"] = Month.Value;
+            ViewData["Year"] = Year.Value;
+            var employes = (from i in context.employe
+                            where i.IsActive == true
+                            && i.IsDeleted == false
+                            select new SelectListItem
+                            {
+                                Value = i.EmployeId.ToString(),
+                                Text = i.UserName
+                            }
+                            ).ToList();
+            employes.Insert(0, new SelectListItem { Value = "", Text = "Select Eploye" });
+            if (!EmployeId.HasValue)
+            {
+                ViewBag.message = "Select Employe From List";
+                ViewData["EmployeId"] = new SelectList(employes, "Value", "Text", "");
 
+            }else
+            {
+                ViewData["EmployeId"] = new SelectList(employes, "Value", "Text", EmployeId.Value.ToString());
+            }
+            if (EmployeId.HasValue)
+            {
+                Employe emp = context.employe.Find(EmployeId.Value);
+                emp.department = context.department.Find(emp.Departmentid);
+                emp.attendance = (from i in context.attendance
+                                  where i.EmployeId == emp.EmployeId
+                                  && i.ForDay.Value.Month == Month.Value
+                                  && i.ForDay.Value.Year == Year.Value
+                                  select i
+                                  ).ToList();
+                return View(emp);
+            }
+            return View(new Employe());
+        }
     }
 }

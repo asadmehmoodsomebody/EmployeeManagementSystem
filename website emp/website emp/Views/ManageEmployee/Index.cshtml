@@ -20,71 +20,75 @@
         padding:5px;
     }
 </style>
+<link href="~/CustomCSS/table.css" rel="stylesheet" />
 <input type="hidden" id="GetActiveTab" value="#Index" />
-<main class="p-2">
-    <div class="row no-gutters w-100 p-2 bg-light">
-        <div class="col-10 d-flex" >
-            <form action="Index">
-                <div class="row w-100 no-gutters">
-                    <div class="col-9 pr-1"><input type="search" name="search" value="@ViewData["search"]" class="form-control shadow-none rounded-0" /></div>
-                    <div class="col-3"><button type="submit" class="btn btn-block btn-dark shadow-none rounded-0">Search</button></div>
-                </div> 
-            </form>
+
+       <a class="btn-primary rounded shadow float-right mb-4" href="@Url.Action("AddEmployee","ManageEmployee")">Add Employe</a>
+<div class="Big-Box mt-3">
+    
+        <div class="row no-gutters mt-5 bg-light">
+            <div class="col-xl-8 col-sm-12">
+                <form action="Index">
+                    <div class="row no-gutters">
+                        <div class="col-lg-6 col-sm-12 pr-1"><input type="search" name="search" value="@ViewData["search"]" class="form-control shadow-none rounded-0" /></div>
+                        <div class="col-xl-6 col-sm-12"> <button type="submit" class="btn btn-block btn-primary form-control">Search</button></div>
+                    </div>
+                </form>
+            </div>
+           
         </div>
-        <div class="col-2">
-            <a class="btn btn-block btn-info" href="@Url.Action("AddEmployee","ManageEmployee")">Add Employe</a>
-        </div>
-    </div>
-    <div class="row no-gutters w-100">
-        <div class="col-12">
-            <table class="custom-table">
-                <tr class="bg-info row w-100 no-gutters px-2">
-                    <th class="col-1">#</th>
-                    <th class="col-2">Name</th>
-                    <th class="col-3">Email</th>
-                    <th class="col-2">Number</th>
-                    <th class="col-1">IsActive</th>
-                    <th class="col-3 text-center">Action</th>
-                </tr>
-                <tbody class="bg-white">
-                    @foreach (var item in Model)
+        <div class="row no-gutters w-100">
+            <div class="col-12">
+                <div class="tbl-div overflow-auto">
+                <table class="table table-striped tbl">
+                    <tr class="row no-gutters text-white px-2" style="background-color:#48A1E5">
+                        <th class="col-1">#</th>
+                        <th class="col-2">Name</th>
+                        <th class="col-3">Email</th>
+                        <th class="col-2">Number</th>
+                        <th class="col-1">IsActive</th>
+                        <th class="col-3 text-center">Action</th>
+                    </tr>
+                    <tbody class="bg-white">
+                        @foreach (var item in Model)
     {
-                        <tr class="row w-100 no-gutters  px-2">
-                            <td class="col-1">@rowcount</td>
-                            <td class="col-2">@item.FirstName @getNullorValue(item.LastName)</td>
-                            <td class="col-3">@getNullorValue(item.Email)</td>
-                            <td class="col-2">@getNullorValue(item.Number)</td>
-                            <td class="col-1">@item.IsActive.Value</td>
-                            <td class="col-3 d-flex justify-content-center">
-                                <a class="btn btn-info p-0 px-1 text-white" href="@Url.Action("UpdateEmployee","ManageEmployee",new { employeid=item.EmployeId})">Edit</a>
-                                <a class="btn btn-danger p-0 px-1 text-white" href="@Url.Action("DeleteEmployee","ManageEmployee",new { employeid=item.EmployeId}))">Delete</a>
-                            </td>
-                        </tr>
+                            <tr class="row w-100 no-gutters  px-2">
+                                <td class="col-1">@rowcount</td>
+                                <td class="col-2">@item.FirstName @getNullorValue(item.LastName)</td>
+                                <td class="col-3">@getNullorValue(item.Email)</td>
+                                <td class="col-2">@getNullorValue(item.Number)</td>
+                                <td class="col-1">@item.IsActive.Value</td>
+                                <td class="col-3 d-flex justify-content-center">
+                                    <a class="btn btn-info p-0 px-1 text-white" href="@Url.Action("UpdateEmployee","ManageEmployee",new { employeid=item.EmployeId})">Edit</a>
+                                    <a class="btn btn-danger p-0 px-1 text-white" href="@Url.Action("DeleteEmployee","ManageEmployee",new { employeid=item.EmployeId}))">Delete</a>
+                                </td>
+                            </tr>
                         rowcount++;
                     }
-                </tbody>
-                
-            </table>
+                    </tbody>
+
+                </table>
+                </div>
+            </div>
         </div>
-    </div>
-    <div class="row no-gutters w-100 bg-white">
-        <div class="col-12 col-md-6 d-flex align-items-center justify-content-center justify-content-md-start pl-0 pl-md-2">
-            <p class="text-justify">
-                page <span id="start-number">@Model.PageNumber</span>&nbsp;of <span id="total-pages">@Model.TotalPages</span>
-            </p>
-        </div>
-        <div class="col-12 col-md-6 d-flex justify-content-center justify-content-md-end align-items-center pr-0 pr-md-2">
-            <nav aria-label="Page navigation example">
-                <ul class="pagination">
-                    @if (!Model.HasPrevious)
+        <div class="row no-gutters w-100 bg-white">
+            <div class="col-12 col-md-6 d-flex align-items-center justify-content-center justify-content-md-start pl-0 pl-md-2">
+                <p class="text-justify">
+                    page <span id="start-number">@Model.PageNumber</span>&nbsp;of <span id="total-pages">@Model.TotalPages</span>
+                </p>
+            </div>
+            <div class="col-12 col-md-6 d-flex justify-content-center justify-content-md-end align-items-center pr-0 pr-md-2">
+                <nav aria-label="Page navigation example">
+                    <ul class="pagination">
+                        @if (!Model.HasPrevious)
     {
-                        <li class="page-item disabled"><a class="page-link disabled" href="#">Previous</a></li>
+                            <li class="page-item disabled"><a class="page-link disabled" href="#">Previous</a></li>
                     }
                     else
                     {
-                        <li class="page-item "><a class="page-link" href="#">Previous</a></li>
+                            <li class="page-item "><a class="page-link" href="#">Previous</a></li>
                     }
-                    @{
+                        @{
                         int i = 1;
                         if (Model.PageNumber - 2 > 1)
                         {
@@ -92,26 +96,27 @@
                         }
                         for (; i <= (Model.PageNumber + 2) && i <= Model.TotalPages; i++)
                         {
-                            <li class="page-item"><a class="page-link" href="#">@i</a></li>
+                                <li class="page-item"><a class="page-link" href="#">@i</a></li>
                         }
-                    }
+                        }
 
-                    @*<li class="page-item"><a class="page-link" href="#">1</a></li>
-                        <li class="page-item"><a class="page-link" href="#">2</a></li>
-                        <li class="page-item"><a class="page-link" href="#">3</a></li>*@
-                    @if (!Model.HasNext)
+                        @*<li class="page-item"><a class="page-link" href="#">1</a></li>
+                            <li class="page-item"><a class="page-link" href="#">2</a></li>
+                            <li class="page-item"><a class="page-link" href="#">3</a></li>*@
+                        @if (!Model.HasNext)
     {
-                        <li class="page-item disabled"><a class="page-link disabled" href="#">Next</a></li>
+                            <li class="page-item disabled"><a class="page-link disabled" href="#">Next</a></li>
                     }
                     else
                     {
-                        <li class="page-item "><a class="page-link" href="#">Next</a></li>
+                            <li class="page-item "><a class="page-link" href="#">Next</a></li>
                     }
-                </ul>
-            </nav>
+                    </ul>
+                </nav>
+            </div>
         </div>
-    </div>
 
 
 
-</main>
+   
+</div>

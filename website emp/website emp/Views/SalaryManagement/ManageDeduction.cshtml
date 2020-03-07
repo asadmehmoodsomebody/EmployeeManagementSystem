@@ -5,7 +5,7 @@
 }
 
 <input type="hidden" id="GetActiveTab" value="#ManageDeduction" />
-<link href="~/customcss/Salary Module Css/Deduction.css" rel="stylesheet" />
+<link href="~/CustomCSS/Salary Module Css/Deduction.css" rel="stylesheet" />
 <div class="Big-Box mt-3">
     <div class="row m-3">
         <div class="col-12 d-flex justify-content-center justify-content-sm-center justify-content-lg-start mt-2">
@@ -15,18 +15,18 @@
     <form action="@Url.Action("ManageDeduction","SalaryManagement")" method="get">
         <div class="row m-3">
             <div class="col-12 col-md-4 col-xl-3 d-flex justify-content-center justify-content-sm-start mt-2">
-                <button type="submit" class="bg-info text-white form-control shadow">@Html.ActionLink("Add Deduction", "AddDeduction", null, new { @class = "text-decoration-none text-white" })</button>
+                @Html.ActionLink("Add Deduction", "AddDeduction", null, new { @class = "text-decoration-none text-white text-center btn-primary form-control shadow" })
             </div>
             <div class="col-12 col-md-5 col-xl-4 d-flex justify-content-center justify-content-sm-center mt-2">
-                <input type="text" name="search" value="@ViewData["search"]" placeholder="search By Employee Name" class="form-control shadow">
+                <input type="text" name="search" value="@ViewData["search"]" placeholder="Search By Employee Name" class="form-control shadow">
             </div>
             <div class="col-12 col-md-3 col-xl-3 d-flex justify-content-center justify-content-sm-end mt-2">
-                <button type="submit" class="bg-info text-white form-control shadow">Search</button>
+                <button type="submit" class="bg-primary text-white form-control shadow">Search</button>
             </div>
         </div>
     </form>
     <div class="tbl-div">
-        <table class="table table-bordered table-striped tbl">
+        <table class="table table-striped tbl">
             <tr class="bg-info text-white">
                 <th>#</th>
                 <th>Employee Name</th>
@@ -47,7 +47,7 @@
                 <td>@item.ForMonth.Value.ToShortDateString()</td>
                 <td>@item.Amount</td>
                 <td>@item.CreatedOn.Value.ToShortDateString()</td>
-                <td> <button type="submit" class="bg-info text-white form-control shadow">@Html.ActionLink("Edit", "EditDeduction", new { deductionid =item.DeductionId}, new { @class = "text-decoration-none text-white" })</button></td>
+                <td>@Html.ActionLink("Edit", "EditDeduction", new { deductionid =item.DeductionId}, new { @class = "text-decoration-none text-white text-center btn-primary form-control shadow" })</td>
             </tr>
                 rowcount++;
             }

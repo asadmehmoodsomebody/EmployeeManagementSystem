@@ -1,9 +1,16 @@
-﻿
+﻿@model Pagination<website_emp.Models.Loan>
 @{
     ViewBag.Title = "ManageLoan";
+    int rowcount = 1 + ((Model.PageNumber - 1) * 10);
 }
+@functions {
+    public string getdata(DateTime? value)
+    {
+        return (value.HasValue) ? value.Value.ToShortDateString() : "";
+    }
+}
+<link href="~/CustomCSS/Salary Module Css/Loan.css" rel="stylesheet" />
 <input type="hidden" id="GetActiveTab" value="#ManageLoan" />
-<link href="~/customcss/Salary Module Css/Loan.css" rel="stylesheet" />
 
 <div class="Big-Box mt-3">
     <div class="row m-3">
@@ -11,58 +18,126 @@
             <h5>Manage Loan</h5>
         </div>
     </div>
-    <div class="row m-3">
-        <div class="col-12 col-md-4 col-xl-3 d-flex justify-content-center justify-content-sm-start mt-2">
-            <button type="submit" class="bg-info text-white form-control shadow">@Html.ActionLink("Add Loan", "AddLoan", null, new { @class = "text-decoration-none text-white" })</button>
+    <form method="get" action="@Url.Action("ManageLoan")">
+        <div class="row m-3">
+            <div class="col-12 col-md-4 col-xl-3 d-flex justify-content-center justify-content-sm-start mt-2">
+              @Html.ActionLink("Add Loan", "AddLoan", null, new { @class = "btn-primary text-center btn text-white form-control shadow text-decoration-none" })
+            </div>
+            <div class="col-12 col-md-5 col-xl-4 d-flex justify-content-center justify-content-sm-center mt-2">
+                <input type="text" name="search" value="@ViewData["search"]" placeholder="Search By Employee Name" class="form-control shadow">
+            </div>
+            <div class="col-12 col-md-3 col-xl-3 d-flex justify-content-center justify-content-sm-end mt-2">
+                <button type="submit" class="bg-info text-white form-control shadow">Search</button>
+            </div>
         </div>
-        <div class="col-12 col-md-5 col-xl-4 d-flex justify-content-center justify-content-sm-center mt-2">
-            <input type="text" placeholder="search By Employee Name" class="form-control shadow">
-        </div>
-        <div class="col-12 col-md-3 col-xl-3 d-flex justify-content-center justify-content-sm-end mt-2">
-            <button type="submit" class="bg-info text-white form-control shadow">Search</button>
-        </div>
-    </div>
+    </form>
     <div class="tbl-div">
-        <table class="table table-bordered table-striped tbl">
+        <table class="table  table-striped tbl">
             <tr class="bg-info text-white">
                 <th>#</th>
                 <th>Employee Name</th>
                 <th>Designation</th>
                 <th>Loan Name</th>
                 <th>Loan Amount</th>
-                <th>NO Of Installment</th>
+                <th>Alloted Loan</th>
+                <th>Accepted</th>
                 <th>Remaining Loan</th>
                 <th>Date Addded</th>
+                <th>Status</th>
                 <th>Action</th>
             </tr>
-            @for (var a = 1; a <= 10; a++)
+            @foreach (var item in Model)
             {
                 <tr>
-                    <td>@a</td>
-                    <td>Zumaid</td>
-                    <td>Web developer</td>
-                    <td>fine</td>
-                    <td>200</td>
-                    <td>4</td>
-                    <td>66</td>
-                    <td>12/10/2020</td>
-                    <td> <button type="submit" class="bg-info text-white form-control shadow">@Html.ActionLink("Edit", "EditLoan", null, new { @class = "text-decoration-none text-white" })</button></td>
+                    <td>@rowcount</td>
+                    <td>@item.employe.FirstName</td>
+                    <td>@item.employe.designation.DesignationName</td>
+                    <td>@item.LaonTitle</td>
+                    <td>@item.RequestAmount</td>
+                    <td>@item.AllotedAmount</td>
+                    @if (!item.Accepted.HasValue)
+                    {
+                        <td><label class="btn btn-warning ">Pending</label></td>
+                    }
+                    else if (item.Accepted.Value == true)
+                    {
+                        <td><label class="btn btn-success ">Accepted</label></td>
+                    }
+                    else
+                    {
+                        <td><label class="btn btn-danger ">Rejected</label></td>
+                    }
+
+                    <td>@item.Remaining</td>
+                    <td>@getdata(item.DateStartLoan)</td>
+
+                    @if (!item.IsFinished.HasValue || item.IsFinished.Value == false)
+                    {
+                        <td><label class="btn btn-warning">Ongoing</label></td>
+                        if (!item.Accepted.HasValue || item.Accepted.Value == false)
+                        {
+                            <td><a class="btn btn-danger" href="@Url.Action("EditLoan",new { LoanId=item.LoanId})">Edit</a> <a class="btn btn-warning disabled" href="@Url.Action("MyLoanDetail",new { LoanId=item.LoanId})">detail</a></td>
+                        }
+                        else
+                        {
+                            <td><a class="btn btn-danger" href="@Url.Action("EditLoan",new { LoanId=item.LoanId})">Edit</a> <a class="btn btn-warning" href="@Url.Action("MyLoanDetail",new { LoanId=item.LoanId})">detail</a></td>
+                        }
+
+                    }
+                    else
+                    {
+                        <td><label class="btn btn-success">Finished</label></td>
+                        <td><a class="btn btn-danger" href="@Url.Action("EditLoan",new { LoanId=item.LoanId})">Edit</a> <a class="btn btn-warning" href="@Url.Action("MyLoanDetail",new { LoanId=item.LoanId})">detail</a></td>
+                    }
+                    
                 </tr>
+                rowcount++;
             }
         </table>
     </div>
-    <div class="row m-3">
-        <div class="col-12 col-md-6 col-xl-6 d-flex text-justify justify-content-center justify-content-lg-start justify-content-sm-center">
-            <p>Showing page 1 of 1</p>
+    <div class="row no-gutters w-100">
+        <div class="col-12 col-md-6 d-flex align-items-center justify-content-center justify-content-md-start pl-0 pl-md-2">
+            <p class="text-justify">
+                page <span id="start-number">@Model.PageNumber</span>&nbsp;of <span id="total-pages">@Model.TotalPages</span>
+            </p>
         </div>
-        <div class="col-12 col-md-6 col-xl-6 d-flex text-justify justify-content-center  justify-content-sm-center justify-content-lg-end mt-3 mt-xl-0 mt-md-0">
-            <div class="pagination">
-                <button type="submit" class="page-link form-control shadow">Previous</button>
-                <button type="submit" class="page-link form-control shadow">1</button>
-                <button type="submit" class="page-link form-control shadow">2</button>
-                <button type="submit" class="page-link form-control shadow">3</button>
-                <button type="submit" class="page-link form-control shadow">Next</button>
-            </div>
+        <div class="col-12 col-md-6 d-flex justify-content-center justify-content-md-end align-items-center pr-0 pr-md-2">
+            <nav aria-label="Page navigation example">
+                <ul class="pagination">
+                    @if (!Model.HasPrevious)
+                    {
+                        <li class="page-item disabled"><a class="page-link disabled" href="#">Previous</a></li>
+                    }
+                    else
+                    {
+                        <li class="page-item "><a class="page-link" href="@Url.Action("ManageLoan","SalaryManagement", new { search = ViewData["search"], pagenumber = Model.PageNumber - 1 })">Previous</a></li>
+                    }
+                    @{
+                        int i = 1;
+                        if (Model.PageNumber - 2 > 1)
+                        {
+                            i = Model.PageNumber - 2;
+                        }
+                        for (; i <= (Model.PageNumber + 2) && i <= Model.TotalPages; i++)
+                        {
+                            <li class="page-item"><a class="page-link" href="@Url.Action("ManageLoan","SalaryManagement",new { search =ViewData["search"],pagenumber=i})">@i</a></li>
+                        }
+                    }
+
+                    @*<li class="page-item"><a class="page-link" href="#">1</a></li>
+                        <li class="page-item"><a class="page-link" href="#">2</a></li>
+                        <li class="page-item"><a class="page-link" href="#">3</a></li>*@
+                    @if (!Model.HasNext)
+                    {
+                        <li class="page-item disabled"><a class="page-link disabled" href="@Url.Action("ManageLoan","SalaryManagement",new { search =ViewData["search"],pagenumber=ViewData["pagenumber"]})">Next</a></li>
+                    }
+                    else
+                    {
+                        <li class="page-item "><a class="page-link" href="@Url.Action("ManageLoan","SalaryManagement",new { search =ViewData["search"],pagenumber=Model.PageNumber+1})">Next</a></li>
+                    }
+                </ul>
+            </nav>
         </div>
     </div>
+
 </div>

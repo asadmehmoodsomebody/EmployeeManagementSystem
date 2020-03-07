@@ -14,6 +14,8 @@ namespace website_emp.Models
         public DateTime? RequestDate { get; set; }
         public DateTime? DateStartLoan { get; set; }
         public  DateTime? DateEndLoan { get; set; }
+        public string LoanDescription { get; set; }
+        public string LaonTitle { get; set; }
         public double RequestAmount { get; set; }
         public double AllotedAmount { get; set; }
         public double ReductionAmount { get; set; }
@@ -26,6 +28,7 @@ namespace website_emp.Models
         public long EmployeId { get; set; }
         public Employe employe { get; set; }
         public bool? IsFinished { get; set; }
-        public bool Accepted { get; set; }
+        public bool? Accepted { get; set; }
+        public virtual ICollection<LoanInstallment> installments { get; set; }
     }
 }

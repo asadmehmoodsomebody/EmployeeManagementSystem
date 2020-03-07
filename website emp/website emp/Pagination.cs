@@ -18,6 +18,11 @@ namespace website_emp
             Pagination<T> pagelist = new Pagination<T>();
             pagelist.TotalPages = 0;
             pagelist.TotalElements = items.Count();
+            //do
+            //{
+            //    pagelist.TotalPages++;
+            //    total = total % 10;
+            //} while (total / 10 != 0);
             while (total % 10 != 0)
             {
                 pagelist.TotalPages++;

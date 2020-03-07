@@ -1,54 +1,58 @@
-﻿
+﻿@model website_emp.Models.Loan
 @{
     ViewBag.Title = "EditLoan";
 }
 
 <input type="hidden" id="GetActiveTab" value="#ManageLoan" />
-<link href="~/customcss/Salary Module Css/Loan.css" rel="stylesheet" />
+<link href="~/CustomCSS/Salary Module Css/Loan.css" rel="stylesheet" />
 <div class="Big-Box mt-3">
     <div class="row m-3">
         <div class="col-12 d-flex justify-content-center justify-content-sm-center justify-content-lg-start mt-2">
             <h5>Edit Loan</h5>
         </div>
     </div>
-    <div class="row m-3">
-        <div class="col-12 col-md-6 col-xl-6">
-            <p>Employee Name</p>
-            <select class="form-control shadow">
-                <option>Select one</option>
-            </select>
-        </div>
-        <div class="col-12 col-md-6 col-xl-6">
-            <p>Loan Name</p>
-            <input type="text" class="form-control shadow">
-        </div>
-    </div>
-    <div class="row m-3">
-        <div class="col-12 col-md-6 col-xl-6">
-            <p>Loan Amount</p>
-            <input type="text" class="form-control shadow">
-        </div>
-        <div class="col-12 col-md-6 col-xl-6">
-            <p>Number Of Installments</p>
-            <input type="text" class="form-control shadow">
-        </div>
-    </div>
-    <div class="row m-3">
-        <div class="col-12 col-md-6 col-xl-6">
-            <p>Remaining Installments</p>
-            <input type="text" class="form-control shadow">
-        </div>
-        <div class="col-12 col-md-6 mb-3">
-            <p>Loan Description</p>
-            <textarea class="form-control shadow txtarea h-100"></textarea>
-        </div>
+    <form method="post" action="@Url.Action("EditLoan")">
+        <input type="hidden" name="LoanId" value="@Model.LoanId" />
+        <div class="row m-3">
+            <div class="col-12 col-md-6 col-xl-6">
+                <p>Employee Name</p>
+                <label>@Html.DisplayFor(model => model.employe.FirstName)</label>
+            </div>
+            <div class="col-12 col-md-6 col-xl-6">
+                <p>Loan Name</p>
+                @Html.EditorFor(model => model.LaonTitle, new { htmlAttributes = new { @class = "form-control shadow" } })
+            </div>
         </div>
         <div class="row m-3">
-                <div class="col-12 col-md-3 col-xl-3 mt-xl-5 mt-md-5 mt-2">
-                    <button type="submit" class="bg-info text-white form-control shadow">Update Loan</button>
-                </div>
-                <div class="col-12 col-md-3 col-xl-3 mt-xl-5 mt-md-5 mt-2">
-                    <button type="submit" class="bg-danger text-white form-control shadow">@Html.ActionLink("Cancal", "ManageLoan", null, new { @class = "text-decoration-none text-white" })</button>
-                </div>
+            <div class="col-12 col-md-6 col-xl-6">
+                <p>Loan Amount</p>
+                @Html.EditorFor(model => model.AllotedAmount, new { htmlAttributes = new { @class = "form-control shadow" } })
             </div>
+            <div class="col-12 col-md-6 mb-3">
+                <p>Reduction Percentage</p>
+                @Html.EditorFor(model => model.ReductionAmount, new { htmlAttributes = new { @class = "form-control shadow" } })
+            </div>
+        </div>
+        <div class="row m-3">
+            <div class="col-12 col-md-6 col-xl-6">
+                <p>Loan Start Date:</p>
+                @Html.EditorFor(model => model.DateStartLoan, new { htmlAttributes = new { @class = "form-control shadow" } })
+            </div>
+            <div class="col-12 col-md-12 col-xl-6 mb-3">
+                <p>Loan Description</p>
+                @Html.TextAreaFor(model => model.LoanDescription, new { @class = "form-control shadow txtarea" })
+            </div>
+        @if (!Model.Accepted.HasValue)
+        {
+            <label>Is Accepted</label>
+            <input type="checkbox" name="Accepted" value="true" />
+        }
+            <div class="col-12 col-md-6 col-xl-3 mb-3">
+                <button type="submit" class="bg-primary text-white form-control shadow">Update Loan</button>
+            </div>
+            <div class="col-12 col-md-6 col-xl-3 mb-3">
+                <button type="submit" class="bg-danger text-white form-control shadow">@Html.ActionLink("Cancal", "ManageLoan", null, new { @class = "text-decoration-none text-white" })</button>
+            </div>
+        </div>
+    </form>
 </div>

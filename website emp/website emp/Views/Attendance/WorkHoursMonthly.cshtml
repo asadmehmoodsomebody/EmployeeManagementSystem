@@ -1,4 +1,4 @@
-﻿
+﻿@model website_emp.Models.Employe
 @{
     ViewBag.Title = "WorkHoursMonthly";
 }
@@ -16,11 +16,25 @@
     </ul>
 </div>
 <div class="Big-Box">
+    <form action="@Url.Action("WorkHoursMonthly")" method="get">
     <div class="row m-3">
         <div class="col-sm-12 col-lg-3">
             <p class="mb-0">Select Month*</p>
-            <select class="form-control">
-                <option>January</option>
+            <select name="Month" class="form-control">
+                <script>
+                    var months = ['January', 'Febrarury', 'March', 'April', 'May', 'June', 'July', 'Agust', 'September', 'Octuber', 'November', 'December'];
+                    let selected = parseInt('@ViewData["Month"]')-1;
+                    for (var i in months) {
+                        if (i == selected) {
+                            document.write(`<option selected value='${i}'>${months[i]}</option>`);
+                        } else {
+                            document.write(`<option value='${i}'>${months[i]}</option>`);
+                        }
+                        
+                    }
+                </script>
+            </select>
+                @*<option>January</option>
                 <option>Febrarury</option>
                 <option>March</option>
                 <option>April</option>
@@ -31,58 +45,84 @@
                 <option>September</option>
                 <option>Octuber</option>
                 <option>November</option>
-                <option>December</option>
+                <option>December</option>*@
 
-            </select>
+            
         </div>
         <div class="col-sm-12 col-lg-3">
             <p class="mb-0">Select Year*</p>
-            <select class="form-control">
-            <option>2015</option>
-            <option>2016</option>
-            <option>2017</option>
-            <option>2018</option>
-            <option>2019</option>
-            <option>2020</option>
-            
+            <select name="Year" class="form-control">
+                <script>
+                     selected = parseInt('@ViewData["Year"]');
+                    for (let i = 0 ; i<15;i++) {
+                        if ((i+2014) == selected) {
+                            document.write(`<option selected value='${i+2014}'>${2014+i}</option>`);
+                        } else {
+                            document.write(`<option value='${i+2014}'>${i+2014}</option>`);
+                        }
 
-            </select>
+                    }
+                </script>
+             </select>
         </div>
         <div class="col-sm-12 col-lg-3">
             <p class="mb-0">Employee ID*</p>
-            <input type="text" class="form-control" />
+            @Html.DropDownList("EmployeId", ViewData["EmployeId"] as SelectList, new { @class = "form-control" })
         </div>
         <div class="col-sm-12 col-lg-3 mt-4">
             <input type="submit" class="form-control bg-primary text-white" value="Submit" />
         </div>
     </div>
+    </form>
     <div class="Custom-Table-box">
         <table class="table table-striped Custom-Table-Width">
             <thead class="">
                 <tr class="">
-                    <th class="Custom-Table-Heading">Id</th>
+                    <th class="Custom-Table-Heading">#</th>
                     <th class="Custom-Table-Heading">Date</th>
                     <th class="Custom-Table-Heading">Employee Name</th>
                     <th class="Custom-Table-Heading">Department</th>
-                    <th class="Custom-Table-Heading">Month</th>
                     <th class="Custom-Table-Heading">In Time</th>
                     <th class="Custom-Table-Heading">Out Time</th>
                     <th class="Custom-Table-Heading">Total Hours</th>
                 </tr>
             </thead>
-            @for (int i = 1; i <= 30; i++)
-            {
-                <tr>
-                    <td>@i</td>
-                    <td>@i-02-2020</td>
-                    <td>Ismail</td>
-                    <td>Developer</td>
-                    <td>Febraruy</td>
-                    <td>08:30am</td>
-                    <td>05:00pm</td>
-                    <td>8 Hours</td>
-                </tr>
-            }
+            <tbody>
+                @if (ViewBag.message != null)
+                {
+                    <tr>
+                        <td>@ViewBag.message</td>
+                    </tr>
+                    ViewBag.message = null;
+                }
+                else
+                {
+                    int count = 0;
+                    foreach (var item in Model.attendance)
+                    {
+                        <tr>
+                            <td>@count</td>
+                            <td>@item.ForDay.Value.ToShortDateString()</td>
+                            <td>@Model.FirstName</td>
+                            <td>@Model.department.DepartmentName</td>
+                           @if (item.Status == "Leave")
+                           {
+                               <td colspan="3">Leave</td>}
+                           else if (item.Status == "Absent")
+                           {
+                            <td colspan="3">Absent</td>
+                           }
+                           else {
+                            <td> @item.InTime.Value </td>
+                            <td> @item.OutTime.Value </td>
+                            <td>@(item.OutTime.Value - item.InTime.Value) Hours</td>
+                           }
+
+                        </tr>
+                    }
+                }
+                
+            </tbody>
         </table>
 
     </div>

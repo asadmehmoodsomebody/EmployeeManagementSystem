@@ -253,6 +253,10 @@
     <Content Include="Images\tol_emp.png" />
     <Content Include="Images\top.PNG" />
     <Content Include="Images\zebra.PNG" />
+    <Content Include="Plugins\MessageBox\Assets\Images\Error.png" />
+    <Content Include="Plugins\MessageBox\Assets\Images\Success.png" />
+    <Content Include="Plugins\MessageBox\Assets\Images\Warning.png" />
+    <Content Include="Plugins\MessageBox\MessageBox.js" />
     <Content Include="Scripts\assign-salary-to-employee.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
@@ -317,19 +321,14 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202002250536450_thirdcall.cs" />
-    <Compile Include="Migrations\202002250536450_thirdcall.designer.cs">
-      <DependentUpon>202002250536450_thirdcall.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202002250747252_thirdcall3.cs" />
-    <Compile Include="Migrations\202002250747252_thirdcall3.designer.cs">
-      <DependentUpon>202002250747252_thirdcall3.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202002250955329_thirdcall4.cs" />
-    <Compile Include="Migrations\202002250955329_thirdcall4.designer.cs">
-      <DependentUpon>202002250955329_thirdcall4.cs</DependentUpon>
+    <Compile Include="Migrations\202003021539512_helloworld.cs" />
+    <Compile Include="Migrations\202003021539512_helloworld.designer.cs">
+      <DependentUpon>202003021539512_helloworld.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Models\ApiModels\DesignationApiModel.cs" />
+    <Compile Include="Models\ApiModels\EmployeApiModel.cs" />
+    <Compile Include="Models\ApiModels\GeneratePaySlipApiModel.cs" />
     <Compile Include="Models\Attendance.cs" />
     <Compile Include="Models\Context.cs" />
     <Compile Include="Models\Deduction.cs" />
@@ -339,6 +338,7 @@
     <Compile Include="Models\Holiday.cs" />
     <Compile Include="Models\Leave.cs" />
     <Compile Include="Models\Loan.cs" />
+    <Compile Include="Models\LoanInstallment.cs" />
     <Compile Include="Models\MentainanceCounter.cs" />
     <Compile Include="Models\Project.cs" />
     <Compile Include="Models\Invoice.cs" />
@@ -354,9 +354,12 @@
     <Compile Include="Models\Right.cs" />
     <Compile Include="Models\Role.cs" />
     <Compile Include="Models\RoleModuleRight.cs" />
+    <Compile Include="Models\ViewModels\DailyAttendanceViewModel.cs" />
+    <Compile Include="Models\ApiModels\DepartmentApiModel.cs" />
     <Compile Include="Models\ViewModels\DepartmentViewModel.cs" />
     <Compile Include="Models\ViewModels\EarningDeductionViewModel.cs" />
     <Compile Include="Models\ViewModels\EmployeAttendanceViewModel.cs" />
+    <Compile Include="Models\ViewModels\EmployeInvoiceViewModel.cs" />
     <Compile Include="Models\ViewModels\EmployeSalaryDepartmentViewModel.cs" />
     <Compile Include="Models\ViewModels\EmployeSalaryTemplate.cs" />
     <Compile Include="Models\ViewModels\InvoiceEmployeEarningDeductionViewModel.cs" />
@@ -435,6 +438,9 @@
     <Content Include="Views\SalaryManagement\ManageIncrement.cshtml" />
     <Content Include="Views\SalaryManagement\ManageLoan.cshtml" />
     <Content Include="Views\SalaryManagement\SalaryReport.cshtml" />
+    <Content Include="Views\SalaryManagement\LoanRequest.cshtml" />
+    <Content Include="Views\SalaryManagement\MyLoan.cshtml" />
+    <Content Include="Views\SalaryManagement\MyLoanDetail.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -447,14 +453,8 @@
     <Folder Include="SidebarIcons\" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\202002250536450_thirdcall.resx">
-      <DependentUpon>202002250536450_thirdcall.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202002250747252_thirdcall3.resx">
-      <DependentUpon>202002250747252_thirdcall3.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202002250955329_thirdcall4.resx">
-      <DependentUpon>202002250955329_thirdcall4.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202003021539512_helloworld.resx">
+      <DependentUpon>202003021539512_helloworld.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

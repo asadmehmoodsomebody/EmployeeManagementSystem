@@ -1,6 +1,6 @@
 .tbl
 {
-    min-width:1100px;
+    min-width:1000px;
 }
 .tbl-div
 {
@@ -12,7 +12,7 @@
 }
 th
 {
-    background-color:skyblue;
+    background-color:#48A1E5;
     position:sticky;
     top:0;
 }

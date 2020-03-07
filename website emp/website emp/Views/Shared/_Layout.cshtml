@@ -18,6 +18,7 @@
     <link href="~/Content/Jquery_datepicker/jquery-ui.min.css" rel="stylesheet" />
     <link href="~/Content/Jquery_datepicker/jquery-ui.structure.min.css" rel="stylesheet" />
     <link href="~/Content/Jquery_datepicker/jquery-ui.theme.min.css" rel="stylesheet" />
+    <script src="~/Plugins/MessageBox/MessageBox.js"></script>
     <script src="~/Scripts/common.js"></script>
     <title>@ViewBag.Title</title>
 </head>
@@ -93,7 +94,7 @@
                             <span class="ml-auto mr-2 toggle-icon" ></span>
                         </a>
                         <ul class="collapse list-unstyled p-0 is-child" id="Admin" parent="#Administration">
-                            <li class="nav-item"><a href="@Url.Action("ManageRoles", "Administration")" class="nav-link pl-4 d-flex align-items-center" id="ManageRoles"><span class="icon sidebar-icon mb-1"><i class="fa fa-user-tag mr-2"></i></span>Manage Roles</a></li>
+                            @*<li class="nav-item"><a href="@Url.Action("ManageRoles", "Administration")" class="nav-link pl-4 d-flex align-items-center" id="ManageRoles"><span class="icon sidebar-icon mb-1"><i class="fa fa-user-tag mr-2"></i></span>Manage Roles</a></li>*@
                             <li class="nav-item"><a href="@Url.Action("ManageShifts", "Administration")" class="nav-link pl-4 d-flex align-items-center" id="ManageShifts"><span class="icon sidebar-icon mb-1"><i class="fa fa-user-tag mr-2"></i></span>Manage Shifts</a></li>
                             <li class="nav-item"><a href="@Url.Action("ShiftsDetail", "Administration")" class="nav-link pl-4 d-flex align-items-center" id="ShiftsDetail"><span class="icon sidebar-icon mb-1"><i class="fa fa-user-tag mr-2"></i></span>ShiftsDetail</a></li>
                             @*<li class="nav-item"><a href="@Url.Action("UpdateEmployee", "ManageEmployee")" class="nav-link pl-4 d-flex align-items-center" id="UpdateEmployee"><span class="dashboard-icon icon sidebar-icon"></span>Update Employee</a></li>
@@ -147,7 +148,7 @@
                             <li class="nav-item"><a href="@Url.Action("LeaveRequest_E","Attendance")" class="nav-link pl-4 d-flex align-items-center" id="LeaveRequest_E"><span class="icon sidebar-icon mb-1"><i class="fa fa-user-alt-slash"></i></span>LeaveRequest_E</a></li>
 
 
-                            <li class="nav-item"><a href="@Url.Action("Index","Dashboard")" class="nav-link pl-4 d-flex align-items-center"><span class="icon sidebar-icon mb-1"><i class="fa fa-user-clock"></i></span>Check Work hours</a></li>
+                            <li class="nav-item"><a href="@Url.Action("WorkHours","Attendance")" class="nav-link pl-4 d-flex align-items-center" id="WorkHours"><span class="icon sidebar-icon mb-1"><i class="fa fa-user-clock"></i></span>Check Work hours</a></li>
                         </ul>
                     </li>
                     @* End of attendance module*@
@@ -242,6 +243,10 @@
     <footer class="layout-footer">
         <span>CopyRight@2019</span>
     </footer>
+    <div id="Message-box-container">
+
+    </div>
+
     <script src="~/Scripts/bootstrap.min.js"></script>
     <script>
         $('document').ready(function (e) {

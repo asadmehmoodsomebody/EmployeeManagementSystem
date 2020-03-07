@@ -43,10 +43,11 @@
                new Models.MentainanceCounter() { MaintainanceCounterId = 18, Count = 0, TableName = "Right" },
                new Models.MentainanceCounter() { MaintainanceCounterId = 19, Count = 2, TableName = "Role" },
                new Models.MentainanceCounter() { MaintainanceCounterId = 20, Count = 0, TableName = "RoleModuleRight" },
-               new Models.MentainanceCounter() { MaintainanceCounterId = 21, Count = 4, TableName = "SalarySlip" },
+               new Models.MentainanceCounter() { MaintainanceCounterId = 21, Count = 4, TableName = "Invoice" },
                new Models.MentainanceCounter() { MaintainanceCounterId = 22, Count = 1, TableName = "SalaryTemplate" },
                new Models.MentainanceCounter() { MaintainanceCounterId = 23, Count = 2, TableName = "Shift" },
-               new Models.MentainanceCounter() { MaintainanceCounterId = 24, Count = 13, TableName = "Task" }
+               new Models.MentainanceCounter() { MaintainanceCounterId = 24, Count = 13, TableName = "Task" },
+               new Models.MentainanceCounter() { MaintainanceCounterId=25,Count=0,TableName="LoanInstallment"}
               );
                 context.SaveChanges();
                 context.department.AddOrUpdate(
@@ -574,10 +575,10 @@
                     );
                 context.SaveChanges();
                 context.attendance.AddOrUpdate(
-                    new Models.Attendance { AttendanceId = 1, EmployeId = 1, employe = context.employe.Find(1), ForDay = DateTime.Parse("2/12/2020"), InTime = DateTime.Parse("2/12/2020 08:00 AM"), OutTime = DateTime.Parse("2/12/2020 05:15 PM"), IsDeleted = false, Status = "P" },
-                    new Models.Attendance { AttendanceId = 2, EmployeId = 1, employe = context.employe.Find(1), ForDay = DateTime.Parse("2/13/2020"), InTime = null, OutTime = null, IsDeleted = false, Status = "A" },
-                    new Models.Attendance { AttendanceId = 3, EmployeId = 2, employe = context.employe.Find(2), ForDay = DateTime.Parse("2/12/2020"), InTime = DateTime.Parse("2/12/2020 08:00 AM"), OutTime = DateTime.Parse("2/12/2020 05:15 PM"), IsDeleted = false, Status = "P" },
-                    new Models.Attendance { AttendanceId = 4, EmployeId = 2, employe = context.employe.Find(2), ForDay = DateTime.Parse("2/13/2020"), InTime = DateTime.Parse("2/13/2020 08:00 AM"), OutTime = DateTime.Parse("2/13/2020 05:15 PM"), IsDeleted = false, Status = "P" }
+                    new Models.Attendance { AttendanceId = 1, EmployeId = 1, employe = context.employe.Find(1), ForDay = DateTime.Parse("2/12/2020"), InTime = DateTime.Parse("2/12/2020 08:00 AM"), OutTime = DateTime.Parse("2/12/2020 05:15 PM"), IsDeleted = false, Status = "Present" },
+                    new Models.Attendance { AttendanceId = 2, EmployeId = 1, employe = context.employe.Find(1), ForDay = DateTime.Parse("2/13/2020"), InTime = null, OutTime = null, IsDeleted = false, Status = "Absent" },
+                    new Models.Attendance { AttendanceId = 3, EmployeId = 2, employe = context.employe.Find(2), ForDay = DateTime.Parse("2/12/2020"), InTime = DateTime.Parse("2/12/2020 08:00 AM"), OutTime = DateTime.Parse("2/12/2020 05:15 PM"), IsDeleted = false, Status = "Present" },
+                    new Models.Attendance { AttendanceId = 4, EmployeId = 2, employe = context.employe.Find(2), ForDay = DateTime.Parse("2/13/2020"), InTime = DateTime.Parse("2/13/2020 08:00 AM"), OutTime = DateTime.Parse("2/13/2020 05:15 PM"), IsDeleted = false, Status = "Present" }
                     );
                 context.SaveChanges();
                 context.holiday.AddOrUpdate(

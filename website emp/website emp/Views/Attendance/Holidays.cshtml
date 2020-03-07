@@ -6,46 +6,48 @@
 <input type="hidden" id="GetActiveTab" value="#Holidays"/>
 
 <div class="Big-Box mt-3">
+    <button onclick="location.href= '@Url.Action("AddHolidays", "Attendance")'" class="bg-primary shadow border-0 m-3 text-white"><i class="fa fa-plus-circle"></i> Add Holiday</button>
+           
     
-    <div class="row">
-        
-            <div class="col-lg-3 col-sm-12">
-                <button onclick="location.href= '@Url.Action("AddHolidays", "Attendance")'" class="bg-primary shadow border-0 m-3 text-white"><i class="fa fa-plus-circle"></i> Add Holiday</button>
-            </div>
-        <form action="@Url.Action("Holidays","Attendance")">
 
-            <P class="font-weight-bold mb-1">Select Month</P>
-            <select name="month" class="form-control shadow border-0">
-                <option value="January">January</option>
-                <option value="February">Febrarury</option>
-                <option value="March">March</option>
-                <option value="April">April</option>
-                <option value="May">May</option>
-                <option value="June">June</option>
-                <option value="July">July</option>
-                <option value="August">Agust</option>
-                <option value="September">September</option>
-                <option value="October">Octuber</option>
-                <option value="November">November</option>
-                <option value="December">December</option>
-            </select>
-            <P class="font-weight-bold mb-1">Select Year</P>
-            <select name="year" class="form-control shadow border-0">
-                <script>
-                    let yearstart = 2009
-                    for (let i = 1 ; i < 2021; i++) {
-                        document.write(`<option value='${yearstart + i}'>${yearstart + i}</option>`);
-                    }
+            <form action="@Url.Action("Holidays","Attendance")">
+                <div class="row m-3">
+                    <div class="col-lg-4 col-sm-12">
+                        <P class="font-weight-bold mb-1 text-center">Select Month</P>
+                        <select name="month" class="shadow border-0 form-control">
+                            <option value="January">January</option>
+                            <option value="February">Febrarury</option>
+                            <option value="March">March</option>
+                            <option value="April">April</option>
+                            <option value="May">May</option>
+                            <option value="June">June</option>
+                            <option value="July">July</option>
+                            <option value="August">Agust</option>
+                            <option value="September">September</option>
+                            <option value="October">Octuber</option>
+                            <option value="November">November</option>
+                            <option value="December">December</option>
+                        </select>
+                    </div>
+                    <div class="col-lg-4 col-sm-12">
+                        <P class="font-weight-bold mb-1 text-center">Select Year</P>
+                        <select name="year" class="shadow border-0 form-control">
+                            <script>
+                                let yearstart = 2009
+                                for (let i = 1 ; i < 2021; i++) {
+                                    document.write(`<option value='${yearstart + i}'>${yearstart + i}</option>`);
+                                }
 
-                </script>
-            </select>
+                            </script>
+                        </select>
+                    </div>
 
-            <div class="col-lg-5 col-sm-12 m-3">
-                <input type="submit" class="form-control mt-4 bg-success text-white" value="Submit" />
-            </div>
-        </form>
-
+                    <div class="col-lg-4 col-sm-12">
+                        <input type="submit" class="mt-4 bg-success text-white form-control" value="Submit" />
+                    </div>
                 </div>
+            </form>
+       
     <div class="">
         <table class="table table-striped mt-3 overflow-auto">
             <tr>
@@ -70,7 +72,7 @@
         <div class="row no-gutters w-100">
             <div class="col-12 col-md-6 d-flex align-items-center justify-content-center justify-content-md-start pl-0 pl-md-2">
                 <p class="text-justify">
-                    page <span id="start-number">@Model.PageNumber</span>&nbsp;of <span id="total-pages">@Model.TotalPages</span>
+                    Page <span id="start-number">@Model.PageNumber</span>&nbsp;of <span id="total-pages">@Model.TotalPages</span>
                 </p>
             </div>
             <div class="col-12 col-md-6 d-flex justify-content-center justify-content-md-end align-items-center pr-0 pr-md-2">
